@@ -1061,6 +1061,34 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#citool-no-longer-requires-guidcip-naming-convention-for-deployment" class="md-nav__link">
+    CiTool no longer requires GUID.cip naming convention for deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policies-with-requiredev-signers-rule-option" class="md-nav__link">
+    Policies with Required:EV Signers rule option
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-following-policy-rule-options-only-apply-to-user-mode-binariesdrivers" class="md-nav__link">
+    The following policy rule options only apply to User Mode binaries/drivers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#you-can-merge-the-same-policy-xml-file-with-itself" class="md-nav__link">
+    You can merge the same policy xml file with itself
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1134,6 +1162,20 @@ or on
     <li class="md-nav__item">
       <a href="../WDAC%20for%20Lightly%20Managed%20Devices/" class="md-nav__link">
         WDAC policy for Lightly managed device
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WDAC%20policy%20for%20BYOVD%20Kernel%20mode%20only%20protection/" class="md-nav__link">
+        WDAC policy for BYOVD Kernel mode only protection
       </a>
     </li>
   
@@ -1608,6 +1650,34 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#citool-no-longer-requires-guidcip-naming-convention-for-deployment" class="md-nav__link">
+    CiTool no longer requires GUID.cip naming convention for deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#policies-with-requiredev-signers-rule-option" class="md-nav__link">
+    Policies with Required:EV Signers rule option
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-following-policy-rule-options-only-apply-to-user-mode-binariesdrivers" class="md-nav__link">
+    The following policy rule options only apply to User Mode binaries/drivers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#you-can-merge-the-same-policy-xml-file-with-itself" class="md-nav__link">
+    You can merge the same policy xml file with itself
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1631,6 +1701,9 @@ or on
 <li>WDAC stands for Windows Defender Application Control</li>
 <li>It's used for Application and File whitelisting in Windows.</li>
 </ul>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 <h2 id="supplemental-wdac-policy-considerations">Supplemental WDAC Policy considerations<a class="headerlink" href="#supplemental-wdac-policy-considerations" title="Permanent link">&para;</a></h2>
 <h3 id="verify-policy-type">Verify Policy type<a class="headerlink" href="#verify-policy-type" title="Permanent link">&para;</a></h3>
 <p>We have to make sure the WDAC policy that we are going to use as a supplemental policy has <code>PolicyType="Supplemental Policy"</code> in the <code>SiPolicy</code> element of the XML file. If it doesn't, then <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-cipolicyidinfo?view=windowsserver2022-ps#example-3-specify-the-base-policy-id-of-a-supplemental-policy">we have to use this command</a> to change it from base policy to supplemental policy of our base policy.</p>
@@ -1673,7 +1746,7 @@ or on
 <h3 id="what-if-you-deploy-unsigned-supplemental-policy-on-signed-system">What if you Deploy Unsigned Supplemental policy on Signed system?<a class="headerlink" href="#what-if-you-deploy-unsigned-supplemental-policy-on-signed-system" title="Permanent link">&para;</a></h3>
 <p>If you deploy an unsigned supplemental policy on a system where all policies including base and supplemental, are signed, the deployed unsigned supplemental policy will be ignored.</p>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="how-deny-rules-for-files-and-certificatessigners-are-specified">How Deny rules for files and certificates/signers are specified<a class="headerlink" href="#how-deny-rules-for-files-and-certificatessigners-are-specified" title="Permanent link">&para;</a></h2>
 <h3 id="denied-file-rules">Denied File Rules<a class="headerlink" href="#denied-file-rules" title="Permanent link">&para;</a></h3>
@@ -1720,7 +1793,7 @@ or on
 </span></code></pre></div>
 <h4 id="guidance-on-creating-wdac-deny-policies"><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-wdac-deny-policy">Guidance on Creating WDAC Deny Policies</a><a class="headerlink" href="#guidance-on-creating-wdac-deny-policies" title="Permanent link">&para;</a></h4>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="how-to-verify-the-status-of-user-mode-and-kernel-mode-wdac-on-a-system">How to verify the status of User-mode and Kernel-mode WDAC on a system<a class="headerlink" href="#how-to-verify-the-status-of-user-mode-and-kernel-mode-wdac-on-a-system" title="Permanent link">&para;</a></h2>
 <h3 id="using-powershell">Using PowerShell<a class="headerlink" href="#using-powershell" title="Permanent link">&para;</a></h3>
@@ -1734,7 +1807,7 @@ or on
 <li>Windows Defender Application Control User Mode Policy (User Mode)</li>
 </ul>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="refreshing-wdac-policies">Refreshing WDAC Policies<a class="headerlink" href="#refreshing-wdac-policies" title="Permanent link">&para;</a></h2>
 <h3 id="using-the-built-in-citool"><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/operations/citool-commands">Using the built-in CiTool</a><a class="headerlink" href="#using-the-built-in-citool" title="Permanent link">&para;</a></h3>
@@ -1745,7 +1818,7 @@ or on
 <p>Using RefreshPolicy(AMD64).exe only works when you add a new policy to the Windows folder, but when you delete a policy from that folder, running RefreshPolicy(AMD64).exe won't make the apps that were previously allowed to run by the policy we just deleted, to be blocked from running again. so after we remove a policy from Windows folder, a system restart is required.</p>
 <p>This makes sense because apps that have been previously allowed to run by a policy that we just deleted might be still running in the background or even foreground, so to properly stop them, just running <code>RefreshPolicy(AMD64).exe</code> isn't enough and data loss could've occurred if that was the case.</p>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="about-signingscenarios-node-in-the-wdac-policy-xml">About <code>&lt;SigningScenarios&gt;</code> node in the WDAC policy XML<a class="headerlink" href="#about-signingscenarios-node-in-the-wdac-policy-xml" title="Permanent link">&para;</a></h2>
 <p>It consists of 2 elements:</p>
@@ -1757,14 +1830,17 @@ or on
 </span></code></pre></div>
 <p><strong>Only</strong> the <code>Value</code> needs to stay the same. So, for Kernel-mode drivers it should always be <strong>131</strong> and for User-mode binaries it should always be <strong>12</strong>, anything else can be customized.</p>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 <h2 id="merging-policies">Merging policies<a class="headerlink" href="#merging-policies" title="Permanent link">&para;</a></h2>
 <p><code>Merge-cipolicy</code> cmdlet <a href="https://learn.microsoft.com/en-us/powershell/module/configci/merge-cipolicy?view=windowsserver2022-ps#:~:text=The%20command%20does%20not%20include%20duplicates.%20For%20this%20example%2C%20we%20present%20only%20the%20first%20few%20rules.">does not include duplicates</a>, neither duplicate rules nor rules with duplicate file hashes.</p>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 <h2 id="wdac-forces-allow-list-architecture-by-nature">WDAC forces Allow-list architecture by nature<a class="headerlink" href="#wdac-forces-allow-list-architecture-by-nature" title="Permanent link">&para;</a></h2>
 <p>WDAC forces Allow-list architecture by nature, not deny-list architecture. An empty deployed policy allows nothing to run and leads to system failure. This is why Microsoft recommended blocklists include 2 Allow All rules with the Deny rules, that changes the WDAC policy's nature from being an Allow-list to being a Deny-list.</p>
-<hr />
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="about-microsoft-recommended-block-rules">About Microsoft recommended block rules<a class="headerlink" href="#about-microsoft-recommended-block-rules" title="Permanent link">&para;</a></h2>
 <h3 id="microsoft-recommended-block-rules">Microsoft recommended block rules<a class="headerlink" href="#microsoft-recommended-block-rules" title="Permanent link">&para;</a></h3>
@@ -1808,7 +1884,7 @@ or on
 <p><a href="https://github.com/MicrosoftDocs/windows-itpro-docs/issues/11429">Citation:</a> About deploying new Signed WDAC policies <strong><em>rebootlessly</em></strong> using CITool.</p>
 </blockquote>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1826,7 +1902,7 @@ or on
 </li>
 </ul>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="blocking-individual-windows-components">Blocking individual Windows components<a class="headerlink" href="#blocking-individual-windows-components" title="Permanent link">&para;</a></h2>
 <h3 id="blocking-microsoft-store">Blocking Microsoft Store<a class="headerlink" href="#blocking-microsoft-store" title="Permanent link">&para;</a></h3>
@@ -1835,7 +1911,7 @@ or on
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nb">New-CIPolicy</span> <span class="n">-FilePath</span> <span class="s2">&quot;.\store.xml&quot;</span> <span class="n">-Rules</span> <span class="nv">$Rules</span>
 </span></code></pre></div>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="file-rule-levels-security">File rule levels security<a class="headerlink" href="#file-rule-levels-security" title="Permanent link">&para;</a></h2>
 <p>(For User Mode binaries only)</p>
@@ -1854,7 +1930,7 @@ or on
 <p>P.S FileName relies on the original filename for each binary, which can be <a href="https://security.stackexchange.com/questions/210843/is-it-possible-to-change-original-filename-of-an-exe">modified.</a></p>
 <p>Find more information in <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create">Microsoft Learn</a></p>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="how-to-remove-flight-signing-certificates-from-default-example-policies">How to remove flight signing certificates from default example policies<a class="headerlink" href="#how-to-remove-flight-signing-certificates-from-default-example-policies" title="Permanent link">&para;</a></h2>
 <p>Removing these shouldn't cause any problem as long as you are using stable OS version</p>
@@ -1871,7 +1947,7 @@ or on
 </span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="nb">Remove-CIPolicyRule</span> <span class="n">-FilePath</span> <span class="s2">&quot;DefaultWindows_Enforced.xml&quot;</span> <span class="n">-Id</span> <span class="s2">&quot;ID_SIGNER_RT_FLIGHT&quot;</span>
 </span></code></pre></div>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="how-to-remove-wdac-policy-refresh-tool-certificates-from-default-example-policies">How to remove WDAC policy Refresh tool certificates from default example policies<a class="headerlink" href="#how-to-remove-wdac-policy-refresh-tool-certificates-from-default-example-policies" title="Permanent link">&para;</a></h2>
 <p>Starting with Windows 11 22H2, <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/operations/citool-commands">CITool</a> is available in Windows by default and Refresh tool is no longer needed, so use the commands below to remove the certificates that allow that tool to be executed, <strong>their order of execution is important.</strong></p>
@@ -1883,6 +1959,8 @@ or on
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">Remove-CIPolicyRule</span> <span class="n">-FilePath</span> <span class="s2">&quot;DefaultWindows_Enforced.xml&quot;</span> <span class="n">-Id</span> <span class="s2">&quot;ID_FILEATTRIB_REFRESH_POLICY&quot;</span>
 </span></code></pre></div>
 <p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 <h2 id="allowing-questionable-software-in-a-wdac-policy">Allowing questionable software in a WDAC policy<a class="headerlink" href="#allowing-questionable-software-in-a-wdac-policy" title="Permanent link">&para;</a></h2>
 <p>Questionable software such as pirated software are <strong>never</strong> recommended to be allowed to the WDAC policy because they are tampered with. Pirated software can have signed files too, but they are modified and as a result there is a mismatch between the file hash and the hash of the file saved in their digital signature. When such a mismatch exists for signed files, <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/authenticode">Authenticode</a> reports the mismatch, and the file can't be allowed in a WDAC policy.</p>
 <p>If you want to go through many files and see which ones have a mismatch between their file hash and signature hash, you can use the following <a href="https://github.com/PowerShell/PowerShell/releases">PowerShell (core)</a> command, it searches through a folder and all of its sub-folders quickly using <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7.3#-parallel">parallel</a> operations:</p>
@@ -1890,13 +1968,59 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="s2">&quot;Path\To\a\Folder&quot;</span> <span class="o">-File</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="n">-Parallel</span> <span class="p">{</span><span class="nb">Get-AuthenticodeSignature</span> <span class="n">-FilePath</span> <span class="nv">$_</span><span class="p">.</span><span class="n">FullName</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">Status</span> <span class="o">-eq</span> <span class="s1">&#39;HashMismatch&#39;</span><span class="p">}</span>
 </span></code></pre></div>
 <p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 <h2 id="about-the-concurrent-deployed-wdac-policies-limit">About the concurrent deployed WDAC policies limit<a class="headerlink" href="#about-the-concurrent-deployed-wdac-policies-limit" title="Permanent link">&para;</a></h2>
 <p>The limit as stated in <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-multiple-windows-defender-application-control-policies">the official document</a> is 32 active policies on a device at once. That is the total number of Base policies + Supplemental policies + any active system deployed policies.</p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="performing-system-reset-while-signed-wdac-policy-is-deployed">Performing system reset while Signed WDAC policy is deployed<a class="headerlink" href="#performing-system-reset-while-signed-wdac-policy-is-deployed" title="Permanent link">&para;</a></h2>
 <p>If you've deployed a Signed WDAC policy on a system and then decide to reset it, either using local install or cloud download, it will fail during the reset process. You must remove the signed WDAC policy prior to performing the reset.</p>
 <p>Unsigned WDAC policies don't have this behavior. Since they are neither cryptographically signed nor tamper-proof, they will be removed during the reset process and after reset the system will not have the WDAC policy.</p>
 <p>This behavior is true for <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Lightly-Managed-Devices">Lightly managed</a>, <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-Fully-managed-device---Variant-3">Allow Microsoft</a> and <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-Fully-managed-device---Variant-4">Default Windows</a> WDAC policy types.</p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="citool-no-longer-requires-guidcip-naming-convention-for-deployment">CiTool no longer requires GUID.cip naming convention for deployment<a class="headerlink" href="#citool-no-longer-requires-guidcip-naming-convention-for-deployment" title="Permanent link">&para;</a></h2>
+<p>Normally, <code>.cip</code> files would have to have the same name as the GUID of the xml file they were converted from, but that's no longer necessary. Using <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/operations/citool-commands">CiTool</a> in Windows 11 build <code>22621</code>, they can be deployed with any name, even without a name, and lead to a successful WDAC policy deployment.</p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="policies-with-requiredev-signers-rule-option">Policies with Required:EV Signers rule option<a class="headerlink" href="#policies-with-requiredev-signers-rule-option" title="Permanent link">&para;</a></h2>
+<p>If a base policy has rule option number 8, Required:EV Signers, it will require all kernel-mode drivers to have EV signer certificates. You cannot bypass this requirement with a Supplemental policy, you cannot allowlist non-EV signed files in any way. <strong>Non-EV signed files will be blocked even if the base policy is in Audit mode.</strong></p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="the-following-policy-rule-options-only-apply-to-user-mode-binariesdrivers">The following policy rule options only apply to User Mode binaries/drivers<a class="headerlink" href="#the-following-policy-rule-options-only-apply-to-user-mode-binariesdrivers" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Enabled:Dynamic Code Security (generation)</p>
+</li>
+<li>
+<p>Required:Enforce Store Applications</p>
+</li>
+</ul>
+<p>When we remove the <code>SigningScenario Value="12"</code> completely which is responsible for User Mode code integrity in the xml policy and also remove any signers that belong to User mode section, such as those that have <code>_user</code> in their ID, the <a href="https://learn.microsoft.com/en-us/powershell/module/configci/merge-cipolicy">Merge-CIPolicy</a> cmdlet automatically removes EKUs that belong to the policy rule options mentioned above during a merge.</p>
+<p>Removing the User mode signers, rules and <code>Enabled:UMCI</code> rule option allows us to create a Kernel-only WDAC policy that doesn't touch User mode binaries/drivers.</p>
+<p>For a Kernel-mode only WDAC policy, only the following EKUs are necessary</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nt">&lt;EKUs&gt;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WINDOWS&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182370A0306&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_ELAM&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182373D0401&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_HAL_EXT&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010a2b0601040182373d0501&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182370A0305&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nt">&lt;/EKUs&gt;</span>
+</span></code></pre></div>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="you-can-merge-the-same-policy-xml-file-with-itself">You can merge the same policy xml file with itself<a class="headerlink" href="#you-can-merge-the-same-policy-xml-file-with-itself" title="Permanent link">&para;</a></h2>
+<p>In order to automatically remove unnecessary things from a policy file, such as the EKUs mentioned earlier, you can run a command like this:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">Merge-CIPolicy</span> <span class="p">.\</span><span class="n">Policy</span><span class="p">.</span><span class="n">xml</span> <span class="n">-OutputFilePath</span> <span class="p">.\</span><span class="n">Policy1</span><span class="p">.</span><span class="n">xml</span>
+</span></code></pre></div>
+<p>It essentially merges a policy with itself, adding <code>_0</code> to each ID and SingerID of the xml nodes which is easily removable using WDACConfig module, <strong>although it's not necessary to remove them at all, they are perfectly fine.</strong></p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 
   <hr>
