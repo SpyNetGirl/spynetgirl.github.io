@@ -117,6 +117,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#git-github-desktop-and-mandatory-aslr" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -463,10 +468,50 @@ or on
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Git GitHub Desktop and Mandatory ASLR
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Git GitHub Desktop and Mandatory ASLR
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-github-desktop-git-binaries" class="md-nav__link">
+    For GitHub desktop Git binaries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-git-binaries-installed-using-standalone-installer" class="md-nav__link">
+    For Git binaries installed using standalone installer
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1078,6 +1123,30 @@ or on
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-github-desktop-git-binaries" class="md-nav__link">
+    For GitHub desktop Git binaries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-git-binaries-installed-using-standalone-installer" class="md-nav__link">
+    For Git binaries installed using standalone installer
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1095,13 +1164,19 @@ or on
   
 
 
-  <h1>Git GitHub Desktop and Mandatory ASLR</h1>
-
+<h1 id="git-github-desktop-and-mandatory-aslr">Git GitHub Desktop and Mandatory ASLR<a class="headerlink" href="#git-github-desktop-and-mandatory-aslr" title="Permanent link">&para;</a></h1>
 <p>Git executables are among few poorly written programs that have problem with Mandatory ASLR (Address Space Layout Randomization) Exploit protection feature. When you turn on Mandatory ASLR in Microsoft Defender (which is off by default), those executables fail to run.</p>
 <p>The same Git executables are bundled with GitHub desktop app. In order to use Git in Visual Studio Code or use GitHub desktop app, we need to exclude Git executables from Mandatory ASLR and let them bypass it. Executables can be excluded from Mandatory ASLR rebootlessly.</p>
-<p>You can use this PowerShell command to automatically add all Git executables bundled with GitHub desktop, to the exclusion for Mandatory ASLR</p>
+<p>You can use the following PowerShell commands to automatically add all Git executables bundled with GitHub desktop or Git itself, to the exclusion for Mandatory ASLR</p>
+<p><br></p>
+<h2 id="for-github-desktop-git-binaries">For GitHub desktop Git binaries<a class="headerlink" href="#for-github-desktop-git-binaries" title="Permanent link">&para;</a></h2>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="s2">&quot;C:\Users\$env:username\AppData\Local\GitHubDesktop\*\resources\app\git\*.exe&quot;</span> <span class="p">|</span> <span class="p">%{</span> <span class="nb">Set-ProcessMitigation</span> <span class="n">-Name</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Disable</span> <span class="n">ForceRelocateImages</span> <span class="p">}</span>
 </span></code></pre></div>
+<p><br></p>
+<h2 id="for-git-binaries-installed-using-standalone-installer">For Git binaries installed using standalone installer<a class="headerlink" href="#for-git-binaries-installed-using-standalone-installer" title="Permanent link">&para;</a></h2>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="n">-Path</span> <span class="s2">&quot;C:\Program Files\Git\*.exe&quot;</span> <span class="p">|</span> <span class="p">%{</span> <span class="nb">Set-ProcessMitigation</span> <span class="n">-Name</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Disable</span> <span class="n">ForceRelocateImages</span> <span class="p">}</span>
+</span></code></pre></div>
+<p><br></p>
 
   <hr>
 <div class="md-source-file">
