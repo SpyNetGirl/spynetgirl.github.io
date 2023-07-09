@@ -983,6 +983,47 @@ or on
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#from-cisigners" class="md-nav__link">
+    From CiSigners
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-and-automate-this-entire-process" class="md-nav__link">
+    How to use and automate this entire process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-user-mode-binaries" class="md-nav__link">
+    What about User-mode binaries?
+  </a>
+  
+    <nav class="md-nav" aria-label="What about User-mode binaries?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-rule-of-thumb" class="md-nav__link">
+    A rule of thumb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplemental-policy" class="md-nav__link">
+    Supplemental policy
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1098,6 +1139,20 @@ or on
     <li class="md-nav__item">
       <a href="../../WDACConfig%20Module/New-DenyWDACConfig/" class="md-nav__link">
         New-DenyWDACConfig available parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WDACConfig%20Module/New-KernelModeWDACConfig/" class="md-nav__link">
+        New-KernelModeWDACConfig available parameters
       </a>
     </li>
   
@@ -1303,6 +1358,47 @@ or on
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#from-cisigners" class="md-nav__link">
+    From CiSigners
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-and-automate-this-entire-process" class="md-nav__link">
+    How to use and automate this entire process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-about-user-mode-binaries" class="md-nav__link">
+    What about User-mode binaries?
+  </a>
+  
+    <nav class="md-nav" aria-label="What about User-mode binaries?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-rule-of-thumb" class="md-nav__link">
+    A rule of thumb
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supplemental-policy" class="md-nav__link">
+    Supplemental policy
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1330,6 +1426,21 @@ or on
 <p>This scenario involves removing the trust to any Kernel mode driver, whether they are vulnerable or not. It does not affect User-mode binaries or drivers.</p>
 <p>Any 3rd party software or hardware Kernel mode driver needs to be explicitly allowed. This scenario protects against all <strong>BYOVD</strong> scenarios and much more.</p>
 <p>Drivers can access the Kernel which is the core of the operating system. Microsoft requires all drivers to be digitally signed. BYOVD (Bring Your Own Vulnerable Driver) scenario involves using one of the digitally signed drivers that has a security hole to gain direct access to the core of the OS. <strong>This attack vector applies to all OSes, not just Windows.</strong></p>
+<p>As you will see below, people who are requesting and acquiring code signing certificates, even for Extended Validation certificates, aren't being <a href="https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/gcc-high-and-dod#background-screening">properly verified</a>.</p>
+<ul>
+<li>
+<p>Kernel is the key to your kingdom.</p>
+</li>
+<li>
+<p>Do not waste your time playing cat and mouse with threat actors.</p>
+</li>
+<li>
+<p>Do not use blacklisting for highly secure workstations, sensitive environments and such; it’s ineffective and insecure for a high security level.</p>
+</li>
+<li>
+<p>Whitelisting is the proper answer. This entire document and others in this repository, are exactly for this purpose.</p>
+</li>
+</ul>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
@@ -1338,7 +1449,7 @@ or on
 <p>A regular signed driver is a driver that has been digitally signed by the developer using a software publisher certificate (SPC) issued by a Microsoft approved Certificate Authority (CA).</p>
 <p>These are regular signed Kernel mode drivers from 3rd parties that shouldn't be trusted by default in a secure and high-risk environment.</p>
 <h3 id="whql-drivers">WHQL drivers<a class="headerlink" href="#whql-drivers" title="Permanent link">&para;</a></h3>
-<p>A WHQL driver is a driver that has been tested and certified by Microsoft's Windows Hardware Quality Labs (WHQL). A WHQL driver has passed Microsoft's compatibility tests and can be distributed through Windows Update or other Microsoft-supported channels, while a regular signed driver may not have passed those tests and may not be eligible. A WHQL driver is also signed by Microsoft, but with a different certificate than a regular signed driver.</p>
+<p>A WHQL driver is a driver that has been tested and certified by Microsoft's Windows Hardware Quality Labs (WHQL). A WHQL driver has passed Microsoft's compatibility tests and can be distributed through Windows Update or other Microsoft-supported channels, while a regular signed driver may not have passed those tests and may not be eligible. A WHQL driver is signed by Microsoft.</p>
 <p>WHQL drivers have a slightly higher security bar than regular Kernel mode drivers. Any driver updates are required to pass the WHQL testing too.</p>
 <h3 id="ev-signed-drivers">EV Signed Drivers<a class="headerlink" href="#ev-signed-drivers" title="Permanent link">&para;</a></h3>
 <p>EV signed kernel mode drivers are drivers that have been signed with an extended validation (EV) code signing certificate issued by a trusted certificate authority (CA).</p>
@@ -1389,9 +1500,18 @@ or on
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_AM&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;AntiMalware EKU -1.3.6.1.4.1.311.76.11.1 &quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010a2b0601040182374c0b01&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 <p><br></p>
+<p><br></p>
+<p>For our strict Kernel-mode-only WDAC policy, only the following EKUs are necessary</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;EKUs&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WINDOWS&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182370A0306&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_ELAM&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182373D0401&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_HAL_EXT&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010a2b0601040182373d0501&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">&lt;/EKUs&gt;</span>
+</span></code></pre></div>
+<p><br></p>
 <h3 id="from-the-filerules-section">From the FileRules section<a class="headerlink" href="#from-the-filerules-section" title="Permanent link">&para;</a></h3>
 <p>User Mode Refresh policy program</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;FileAttrib</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_FILEATTRIB_REFRESH_POLICY&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;RefreshPolicy.exe FileAttribute&quot;</span><span class="w"> </span><span class="na">FileName=</span><span class="s">&quot;RefreshPolicy.exe&quot;</span><span class="w"> </span><span class="na">MinimumFileVersion=</span><span class="s">&quot;10.0.19042.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;FileAttrib</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_FILEATTRIB_REFRESH_POLICY&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;RefreshPolicy.exe FileAttribute&quot;</span><span class="w"> </span><span class="na">FileName=</span><span class="s">&quot;RefreshPolicy.exe&quot;</span><span class="w"> </span><span class="na">MinimumFileVersion=</span><span class="s">&quot;10.0.19042.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 <p><br></p>
 <h3 id="from-the-signers-section">From the Signers section<a class="headerlink" href="#from-the-signers-section" title="Permanent link">&para;</a></h3>
@@ -1402,18 +1522,18 @@ or on
 <ul>
 <li>Any Signer with <code>_RT</code> in its ID indicating that it belongs to Windows Runtime, which is User mode only.</li>
 </ul>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_RT_PRODUCTION&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Product Root 2010 RT EKU&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;06&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_RT_EXT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">&lt;/Signer&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_RT_FLIGHT&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Flighting Root 2014 RT EKU&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;0E&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_RT_EXT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nt">&lt;/Signer&gt;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_RT_STANDARD&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Standard Root 2011 RT EKU&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;07&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_RT_EXT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nt">&lt;/Signer&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_RT_PRODUCTION&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Product Root 2010 RT EKU&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;06&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_RT_EXT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;/Signer&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_RT_FLIGHT&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Flighting Root 2014 RT EKU&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;0E&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_RT_EXT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nt">&lt;/Signer&gt;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_RT_STANDARD&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Standard Root 2011 RT EKU&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;07&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_RT_EXT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nt">&lt;/Signer&gt;</span>
 </span></code></pre></div>
 <p><br></p>
 <ul>
@@ -1427,35 +1547,35 @@ or on
 <p>They are actually 1 certificate but in 3 different Hashing algorithms</p>
 </li>
 </ul>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA2&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Product Root 2010 WHQL EKU&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;06&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;/Signer&gt;</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA1&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Product Root WHQL EKU SHA1&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;05&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nt">&lt;/Signer&gt;</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_WHQL_MD5&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Product Root WHQL EKU MD5&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;04&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nt">&lt;/Signer&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA2&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Product Root 2010 WHQL EKU&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;06&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">&lt;/Signer&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA1&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Product Root WHQL EKU SHA1&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;05&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nt">&lt;/Signer&gt;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_WHQL_MD5&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Product Root WHQL EKU MD5&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;04&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nt">&lt;/Signer&gt;</span>
 </span></code></pre></div>
 <p><br></p>
 <ul>
 <li>And this Signer which allows WHQL for insider builds</li>
 </ul>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_WHQL_FLIGHT_SHA2&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Flighting Root 2014 WHQL EKU&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;0E&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">&lt;/Signer&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_WHQL_FLIGHT_SHA2&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Flighting Root 2014 WHQL EKU&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;0E&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nt">&lt;/Signer&gt;</span>
 </span></code></pre></div>
 <p><br></p>
 <ul>
 <li>Test Signer, for when <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/the-testsigning-boot-configuration-option">Driver signing test</a> is used, <code>Bcdedit.exe -set TESTSIGNING ON</code></li>
 </ul>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_TEST2010&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;MincryptKnownRootMicrosoftTestRoot2010&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;0A&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">&lt;/Signer&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_TEST2010&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;MincryptKnownRootMicrosoftTestRoot2010&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;0A&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">&lt;/Signer&gt;</span>
 </span></code></pre></div>
 <p><br></p>
 <h3 id="from-the-signingscenarios-section">From the SigningScenarios section<a class="headerlink" href="#from-the-signingscenarios-section" title="Permanent link">&para;</a></h3>
@@ -1463,58 +1583,91 @@ or on
 <ul>
 <li>Responsible for WHQL Signers we removed above</li>
 </ul>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_MD5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_MD5&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 <p><br></p>
 <ul>
 <li>Responsible for insider builds WHQL signers</li>
 </ul>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_FLIGHT_SHA2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_FLIGHT_SHA2&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 <p><br></p>
 <ul>
 <li>Responsible for Test Signer we removed above</li>
 </ul>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_TEST2010&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_TEST2010&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 <p><br></p>
 <h4 id="in-the-user-mode-signing-scenario-block">In the User Mode Signing Scenario block<a class="headerlink" href="#in-the-user-mode-signing-scenario-block" title="Permanent link">&para;</a></h4>
-<p>This entire block should be removed</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cm">&lt;!--User Mode Signing Scenario--&gt;</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">&lt;SigningScenario</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNINGSCENARIO_UMCI&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;User Mode Signing Scenario&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">&lt;ProductSigners&gt;</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">&lt;AllowedSigners&gt;</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WINDOWS_PRODUCTION_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_ELAM_PRODUCTION_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_HAL_PRODUCTION_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA2_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA1_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_MD5_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WINDOWS_FLIGHT_ROOT_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_ELAM_FLIGHT_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_HAL_FLIGHT_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_FLIGHT_SHA2_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_STORE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_STORE_FLIGHT_ROOT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_RT_PRODUCTION&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_DRM&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_DCODEGEN&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_AM&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_RT_FLIGHT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_RT_STANDARD&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_MICROSOFT_REFRESH_POLICY&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="w">      </span><span class="cm">&lt;!-- Test signer is trusted by ConfigCI, however, it will not be trusted by CI unless testsigning BCD is set --&gt;</span>
-</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_TEST2010_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a><span class="w">    </span><span class="nt">&lt;/AllowedSigners&gt;</span>
-</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="w">  </span><span class="nt">&lt;/ProductSigners&gt;</span>
-</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="nt">&lt;/SigningScenario&gt;</span>
+<p>This entire block should either be removed</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cm">&lt;!--User Mode Signing Scenario--&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">&lt;SigningScenario</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNINGSCENARIO_UMCI&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;User Mode Signing Scenario&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">&lt;ProductSigners&gt;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">&lt;AllowedSigners&gt;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WINDOWS_PRODUCTION_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_ELAM_PRODUCTION_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_HAL_PRODUCTION_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA2_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_SHA1_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_MD5_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WINDOWS_FLIGHT_ROOT_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_ELAM_FLIGHT_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_HAL_FLIGHT_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_WHQL_FLIGHT_SHA2_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_STORE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_STORE_FLIGHT_ROOT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_RT_PRODUCTION&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_DRM&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_DCODEGEN&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_AM&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_RT_FLIGHT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_RT_STANDARD&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_MICROSOFT_REFRESH_POLICY&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">      </span><span class="cm">&lt;!-- Test signer is trusted by ConfigCI, however, it will not be trusted by CI unless testsigning BCD is set --&gt;</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="w">      </span><span class="nt">&lt;AllowedSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_TEST2010_USER&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="w">    </span><span class="nt">&lt;/AllowedSigners&gt;</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">  </span><span class="nt">&lt;/ProductSigners&gt;</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="nt">&lt;/SigningScenario&gt;</span>
+</span></code></pre></div>
+<p>Or replaced with</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">&lt;SigningScenario</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;12&quot;</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNINGSCENARIO_UMCI&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;User Mode Signing Scenario&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">&lt;ProductSigners</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nt">&lt;/SigningScenario&gt;</span>
 </span></code></pre></div>
 <p><br></p>
 <h3 id="flight-root-signers-optional">Flight root signers - Optional<a class="headerlink" href="#flight-root-signers-optional" title="Permanent link">&para;</a></h3>
 <p>They can also be removed if you don't intend to use Windows insider builds. They all have <code>flight</code> or <code>_flight</code> in their ID.</p>
 <p>When removing them, also use the <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create">4 Disabled:Flight Signing policy rule option.</a></p>
+<p><br></p>
+<h3 id="from-cisigners">From CiSigners<a class="headerlink" href="#from-cisigners" title="Permanent link">&para;</a></h3>
+<p>Remove this item which is for Windows Store EKU</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">&lt;CiSigner</span><span class="w"> </span><span class="na">SignerId=</span><span class="s">&quot;ID_SIGNER_STORE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="how-to-use-and-automate-this-entire-process">How to use and automate this entire process<a class="headerlink" href="#how-to-use-and-automate-this-entire-process" title="Permanent link">&para;</a></h2>
+<p><strong>Use the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New%E2%80%90KernelModeWDACConfig">WDACConfig module</a></strong> to automatically Audit and deploy the Strict Kernel-mode WDAC policies.</p>
+<p>As mentioned earlier, this policy only enforces and applies to Kernel-mode drivers, so your non-Kernel mode files are unaffected. Keep in mind that Kernel-mode does not mean programs that require Administrator privileges, those 2 categories are completely different. Also, not all drivers are Kernel mode, <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode"><strong>there are user-mode drivers too.</strong></a></p>
+<p>This strict Kernel mode policy can be perfectly deployed side by side any other WDAC policy.</p>
+<p>For instance, since HVCI is turned on by default on my system, the <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules">Microsoft Recommended driver block rules</a> is automatically deployed and it's only Kernel mode. It has 2 allow all rules, making it primarily a block-list policy.</p>
+<p>Then I deploy Strict Kernel-mode WDAC policy, which also only applies to Kernel-mode drivers. It doesn't have allow all rules of course, instead it allows Windows components that are required for Windows to function properly to run and then will let you hand pick any 3rd party Kernel-mode drivers and easily allow them in your policy.</p>
+<p>Now the Allow all rules that exist in the first policy are neutralized. <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-multiple-windows-defender-application-control-policies">Only applications allowed by both policies run without generating block events.</a>, so since the same allow all rules do not exist in our Strict Kernel-mode base policy, they no longer apply.</p>
+<p><br></p>
+<h2 id="what-about-user-mode-binaries">What about User-mode binaries?<a class="headerlink" href="#what-about-user-mode-binaries" title="Permanent link">&para;</a></h2>
+<p>So far we've only been doing Kernel-mode administration. We can use User-mode WDAC policies as well.</p>
+<p>After using those 2 Kernel-mode policies, I deploy a 3rd policy which is going to authorize and validate User-mode binaries too. I choose the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Lightly-Managed-Devices">Lightly managed WDAC policy</a> that utilizes <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/use-windows-defender-application-control-with-intelligent-security-graph">ISG (Intelligent Security Graph)</a>. This policy applies to both Kernel and User modes, but since we already know the logic and learned that only applications allowed by all base policies are allowed to run, we're confident that our Strict Kernel-mode base policy is the only one in charge of authorizing and validating Kernel-mode files/drivers. Our User-mode WDAC policy that utilizes ISG validates User-mode binaries only.</p>
+<p><br></p>
+<h3 id="a-rule-of-thumb">A rule of thumb<a class="headerlink" href="#a-rule-of-thumb" title="Permanent link">&para;</a></h3>
+<p>The strictest policy wins the race in multiple base policy deployments, which in this case is the Strict Kernel-Mode policy. Even though ISG policy which uses Allow Microsoft rules and allows all the WHQL signed drivers, they still won't be able to run unless the Kernel-Mode policy authorizes them, because for a Kernel driver to be allowed to run in this scenario, all base policies must allow it.</p>
+<p>So only the policy that has the least allow listings in common with all other policies takes priority.</p>
+<p><br></p>
+<h3 id="supplemental-policy">Supplemental policy<a class="headerlink" href="#supplemental-policy" title="Permanent link">&para;</a></h3>
+<p>Each of the deployed policies (except for the automatically deployed block rules by HVCI) support having supplemental policies. So, whenever you feel the need to allow additional files that are Kernel-mode drivers or User-mode binaries blocked by ISG, you can add a Supplemental policy for them.</p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 
   <hr>
@@ -1522,11 +1675,11 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-07T14:57:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T14:20:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-07T14:57:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-07</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T14:20:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
       
     
   </small>

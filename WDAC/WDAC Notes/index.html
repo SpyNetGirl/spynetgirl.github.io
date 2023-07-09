@@ -1089,6 +1089,13 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#-audit-parameter-of-the-configci-cmdlets" class="md-nav__link">
+    -Audit parameter of the ConfigCI cmdlets
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1283,6 +1290,20 @@ or on
     <li class="md-nav__item">
       <a href="../../WDACConfig%20Module/New-DenyWDACConfig/" class="md-nav__link">
         New-DenyWDACConfig available parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WDACConfig%20Module/New-KernelModeWDACConfig/" class="md-nav__link">
+        New-KernelModeWDACConfig available parameters
       </a>
     </li>
   
@@ -1678,6 +1699,13 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#-audit-parameter-of-the-configci-cmdlets" class="md-nav__link">
+    -Audit parameter of the ConfigCI cmdlets
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1988,7 +2016,7 @@ or on
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="policies-with-requiredev-signers-rule-option">Policies with Required:EV Signers rule option<a class="headerlink" href="#policies-with-requiredev-signers-rule-option" title="Permanent link">&para;</a></h2>
-<p>If a base policy has rule option number 8, Required:EV Signers, it will require all kernel-mode drivers to have EV signer certificates. You cannot bypass this requirement with a Supplemental policy, you cannot allowlist non-EV signed files in any way. <strong>Non-EV signed files will be blocked even if the base policy is in Audit mode.</strong></p>
+<p>If a base policy has rule option number 8, Required:EV Signers, it will require all kernel-mode drivers to have EV signer certificates. You cannot bypass this requirement with a Supplemental policy, you cannot allowlist non-EV signed files in any way. <strong>Non-EV signed files will be blocked even if the base policy is in Audit mode.</strong> This is true for any type of base policy such as Default Windows, Allow Microsoft, Strict Kernel mode etc.</p>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
@@ -2022,17 +2050,27 @@ or on
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
+<h2 id="-audit-parameter-of-the-configci-cmdlets">-Audit parameter of the ConfigCI cmdlets<a class="headerlink" href="#-audit-parameter-of-the-configci-cmdlets" title="Permanent link">&para;</a></h2>
+<p>When you use <code>-Audit</code> parameter of ConfigCI cmdlets such as <a href="https://learn.microsoft.com/en-us/powershell/module/configci/get-systemdriver">Get-SystemDriver</a> and <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy">New-CIPolicy</a>, these 2 event logs are scanned</p>
+<ol>
+<li>AppLocker – MSI and Script event log</li>
+<li>CodeIntegrity - Operational</li>
+</ol>
+<p><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/event-id-explanations"><strong>Explained more in here</strong></a></p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-02T08:49:49+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T14:20:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-04-25T05:38:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-04-25</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T14:20:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
       
     
   </small>
