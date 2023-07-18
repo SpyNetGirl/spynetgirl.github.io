@@ -19,7 +19,7 @@
         <link rel="next" href="../WDACConfig/">
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
@@ -960,6 +960,34 @@ or on
   
   
     <li class="md-nav__item">
+      <a href="../Get-CommonWDACConfig/" class="md-nav__link">
+        Get-CommonWDACConfig available parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Invoke-WDACSimulation/" class="md-nav__link">
+        Invoke-WDACSimulation available parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../New-DenyWDACConfig/" class="md-nav__link">
         New-DenyWDACConfig available parameters
       </a>
@@ -1079,8 +1107,8 @@ or on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#7-optional-parameters" class="md-nav__link">
-    7 optional parameters
+  <a href="#8-optional-parameters" class="md-nav__link">
+    8 optional parameters
   </a>
   
 </li>
@@ -1161,8 +1189,8 @@ or on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#7-optional-parameters" class="md-nav__link">
-    7 optional parameters
+  <a href="#8-optional-parameters" class="md-nav__link">
+    8 optional parameters
   </a>
   
 </li>
@@ -1209,7 +1237,8 @@ or on
 <p><br></p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/Harden-Windows-Security/main/images/Wiki%20APNGs/Set-CommonWDACConfig.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://raw.githubusercontent.com/HotCakeX/Harden-Windows-Security/main/images/Wiki%20APNGs/Set-CommonWDACConfig.apng" /></a></p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Set-CommonWDACConfig</span> <span class="p">[[</span><span class="n">-SignedPolicyPath</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">string</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-UnsignedPolicyPath</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">string</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-SignToolPath</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">string</span><span class="p">&gt;]</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">[[</span><span class="n">-CertCN</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">string</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-CertPath</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">string</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-DeleteUserConfig</span><span class="p">]</span> <span class="p">[</span><span class="n">-Open</span><span class="p">]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">[[</span><span class="n">-CertCN</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">string</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-StrictKernelPolicyGUID</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">guid</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-StrictKernelNoFlightRootsPolicyGUID</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">guid</span><span class="p">&gt;]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">[[</span><span class="n">-CertPath</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">string</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-DeleteUserConfig</span><span class="p">]</span> 
 </span></code></pre></div>
 <p><br></p>
 <p>Use this cmdlet to store the values for common and frequently used parameters so that you won't have to specify them again every time.</p>
@@ -1224,7 +1253,7 @@ or on
 </span></code></pre></div>
 <p>If correct and valid values for the missing parameters exist in User Configuration file, the cmdlet will automatically detect and use them seamlessly.</p>
 <p><br></p>
-<h3 id="7-optional-parameters">7 optional parameters<a class="headerlink" href="#7-optional-parameters" title="Permanent link">&para;</a></h3>
+<h3 id="8-optional-parameters">8 optional parameters<a class="headerlink" href="#8-optional-parameters" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>-SignedPolicyPath &lt;String&gt;</code>: Path to the xml file of a Signed policy. Supports tab completion by showing only the base policies in the current working directory.</p>
@@ -1245,7 +1274,10 @@ or on
 <p><code>-DeleteUserConfig</code>: Deletes the <code>.WDACConfig</code> folder in User directory and everything in it.</p>
 </li>
 <li>
-<p><code>-Open</code>: Opens the Configuration Json file with the default viewer.</p>
+<p><code>-StrictKernelPolicyGUID</code>: GUID of the Strict Kernel mode policy (Mainly used Internally by the module)</p>
+</li>
+<li>
+<p><code>-StrictKernelNoFlightRootsPolicyGUID</code>:  GUID of the Strict Kernel no Flights root mode policy (Mainly used Internally by the module)</p>
 </li>
 </ul>
 <p><br></p>
@@ -1255,7 +1287,7 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T14:20:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T15:00:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
       
         <br>
         Created:

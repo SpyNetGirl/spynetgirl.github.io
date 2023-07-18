@@ -10,20 +10,20 @@
       
       
       
-        <link rel="canonical" href="https://spynetgirl.github.io/WDACConfig%20Module/New-WDACConfig/">
+        <link rel="canonical" href="https://spynetgirl.github.io/WDACConfig%20Module/Invoke-WDACSimulation/">
       
       
-        <link rel="prev" href="../New-SupplementalWDACConfig/">
+        <link rel="prev" href="../Get-CommonWDACConfig/">
       
       
-        <link rel="next" href="../Remove-WDACConfig/">
+        <link rel="next" href="../New-DenyWDACConfig/">
       
       <link rel="icon" href="../../images/logo.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
-        <title>New-WDACConfig available parameters - SpyNetGirl Blog</title>
+        <title>Invoke-WDACSimulation available parameters - SpyNetGirl Blog</title>
       
     
     
@@ -118,7 +118,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#new-wdacconfig-available-parameters" class="md-skip">
+        <a href="#invoke-wdacsimulation-available-parameters" class="md-skip">
           Skip to content
         </a>
       
@@ -172,7 +172,7 @@ or on
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              New-WDACConfig available parameters
+              Invoke-WDACSimulation available parameters
             
           </span>
         </div>
@@ -972,11 +972,65 @@ or on
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Invoke-WDACSimulation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Invoke-WDACSimulation available parameters
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Invoke-WDACSimulation available parameters
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2-mandatory-parameters" class="md-nav__link">
+    2 mandatory parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1028,242 +1082,11 @@ or on
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          New-WDACConfig available parameters
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../New-WDACConfig/" class="md-nav__link">
         New-WDACConfig available parameters
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-getblockrules" class="md-nav__link">
-    New-WDACConfig -GetBlockRules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-getdriverblockrules" class="md-nav__link">
-    New-WDACConfig -GetDriverBlockRules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-makeallowmsftwithblockrules" class="md-nav__link">
-    New-WDACConfig -MakeAllowMSFTWithBlockRules
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -MakeAllowMSFTWithBlockRules">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are" class="md-nav__link">
-    The outputs of the parameter are
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-optional-parameters" class="md-nav__link">
-    3 optional parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-deploylatestdriverblockrules" class="md-nav__link">
-    New-WDACConfig -DeployLatestDriverBlockRules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-deploylatestblockrules" class="md-nav__link">
-    New-WDACConfig -DeployLatestBlockRules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-setautoupdatedriverblockrules" class="md-nav__link">
-    New-WDACConfig -SetAutoUpdateDriverBlockRules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-prepmsftonlyaudit" class="md-nav__link">
-    New-WDACConfig -PrepMSFTOnlyAudit
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -PrepMSFTOnlyAudit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-optional-parameter" class="md-nav__link">
-    1 optional parameter
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-prepdefaultwindowsaudit" class="md-nav__link">
-    New-WDACConfig -PrepDefaultWindowsAudit
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -PrepDefaultWindowsAudit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-optional-parameter_1" class="md-nav__link">
-    1 optional parameter
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-makepolicyfromauditlogs" class="md-nav__link">
-    New-WDACConfig -MakePolicyFromAuditLogs
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -MakePolicyFromAuditLogs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-mandatory-parameter" class="md-nav__link">
-    1 mandatory parameter
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-optional-parameters" class="md-nav__link">
-    12 optional parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_1" class="md-nav__link">
-    The outputs of the parameter are
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-makelightpolicy" class="md-nav__link">
-    New-WDACConfig -MakeLightPolicy
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -MakeLightPolicy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#3-optional-parameters_1" class="md-nav__link">
-    3 optional parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_2" class="md-nav__link">
-    The outputs of the parameter are
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-makedefaultwindowswithblockrules" class="md-nav__link">
-    New-WDACConfig -MakeDefaultWindowsWithBlockRules
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -MakeDefaultWindowsWithBlockRules">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_3" class="md-nav__link">
-    The outputs of the parameter are
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-optional-parameters_2" class="md-nav__link">
-    3 optional parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1348,189 +1171,12 @@ or on
     Notes
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-getblockrules" class="md-nav__link">
-    New-WDACConfig -GetBlockRules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-getdriverblockrules" class="md-nav__link">
-    New-WDACConfig -GetDriverBlockRules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-makeallowmsftwithblockrules" class="md-nav__link">
-    New-WDACConfig -MakeAllowMSFTWithBlockRules
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -MakeAllowMSFTWithBlockRules">
+    <nav class="md-nav" aria-label="Notes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are" class="md-nav__link">
-    The outputs of the parameter are
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-optional-parameters" class="md-nav__link">
-    3 optional parameters
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-deploylatestdriverblockrules" class="md-nav__link">
-    New-WDACConfig -DeployLatestDriverBlockRules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-deploylatestblockrules" class="md-nav__link">
-    New-WDACConfig -DeployLatestBlockRules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-setautoupdatedriverblockrules" class="md-nav__link">
-    New-WDACConfig -SetAutoUpdateDriverBlockRules
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-prepmsftonlyaudit" class="md-nav__link">
-    New-WDACConfig -PrepMSFTOnlyAudit
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -PrepMSFTOnlyAudit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-optional-parameter" class="md-nav__link">
-    1 optional parameter
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-prepdefaultwindowsaudit" class="md-nav__link">
-    New-WDACConfig -PrepDefaultWindowsAudit
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -PrepDefaultWindowsAudit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-optional-parameter_1" class="md-nav__link">
-    1 optional parameter
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-makepolicyfromauditlogs" class="md-nav__link">
-    New-WDACConfig -MakePolicyFromAuditLogs
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -MakePolicyFromAuditLogs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-mandatory-parameter" class="md-nav__link">
-    1 mandatory parameter
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12-optional-parameters" class="md-nav__link">
-    12 optional parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_1" class="md-nav__link">
-    The outputs of the parameter are
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-makelightpolicy" class="md-nav__link">
-    New-WDACConfig -MakeLightPolicy
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -MakeLightPolicy">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#3-optional-parameters_1" class="md-nav__link">
-    3 optional parameters
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_2" class="md-nav__link">
-    The outputs of the parameter are
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-wdacconfig-makedefaultwindowswithblockrules" class="md-nav__link">
-    New-WDACConfig -MakeDefaultWindowsWithBlockRules
-  </a>
-  
-    <nav class="md-nav" aria-label="New-WDACConfig -MakeDefaultWindowsWithBlockRules">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_3" class="md-nav__link">
-    The outputs of the parameter are
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-optional-parameters_2" class="md-nav__link">
-    3 optional parameters
+  <a href="#2-mandatory-parameters" class="md-nav__link">
+    2 mandatory parameters
   </a>
   
 </li>
@@ -1558,7 +1204,7 @@ or on
   
 
 
-<h1 id="new-wdacconfig-available-parameters">New-WDACConfig available parameters<a class="headerlink" href="#new-wdacconfig-available-parameters" title="Permanent link">&para;</a></h1>
+<h1 id="invoke-wdacsimulation-available-parameters">Invoke-WDACSimulation available parameters<a class="headerlink" href="#invoke-wdacsimulation-available-parameters" title="Permanent link">&para;</a></h1>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -1575,328 +1221,30 @@ or on
 </li>
 </ul>
 <p><br></p>
-<h2 id="new-wdacconfig-getblockrules">New-WDACConfig -GetBlockRules<a class="headerlink" href="#new-wdacconfig-getblockrules" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-GetBlockRules.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-GetBlockRules.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-GetBlockRules</span><span class="p">]</span>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Invoke-WDACSimulation.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Invoke-WDACSimulation.apng" /></a></p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Invoke-WDACSimulation</span> <span class="n">-FolderPath</span> <span class="p">&lt;</span><span class="n">string</span><span class="p">&gt;</span> <span class="n">-XmlFilePath</span> <span class="p">&lt;</span><span class="n">string</span><span class="p">&gt;</span>
 </span></code></pre></div>
 <p><br></p>
-<p>Creates a WDAC policy file called <strong><em>Microsoft recommended block rules.xml</em></strong> from <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/blob/public/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules.md">the official source</a> for <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules">Microsoft recommended block rules</a>, with <em>AllowAll</em> rules and audit mode rule option removed. The policy sets <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">HVCI to strict</a>.</p>
+<p>This cmdlet allows you to simulate a WDAC deployment. Select a folder and a policy xml file, it will show you whether the files in the folder would be allowed or blocked by your WDAC policy if it was actually deployed on a system and those files were run.</p>
 <p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><strong>Current limitations of this cmdlet that will be fixed in future module version</strong></p>
+<ol>
+<li>
+<p>Currently, this cmdlet is only suitable for xml policy files generated by <strong>Level: FilePublisher</strong> and <strong>Fallback: Hash</strong>. If the policy was generated by other levels and fallbacks such as filepaths, the output of this cmdlet will not be accurate.</p>
+</li>
+<li>
+<p>In some edge cases, WDAC cmdlets such as <code>New-CiPolicy</code> create hash rules for a digitally valid signed file instead of creating Signer rules which are based on file's digital signature. In such cases, if there is a Signer in the Signers section of the xml policy that matches the details of this specific signed file (Intermediate certificate + TBS + Leaf cert's CN), <code>Invoke-WDACSimulation</code> cmdlet shows that the file is allowed by Signer instead of hash, which is not true.</p>
+</li>
+</ol>
+<p><em>This is the newest addition to the WDACConfig module.</em></p>
 <p><br></p>
-<h2 id="new-wdacconfig-getdriverblockrules">New-WDACConfig -GetDriverBlockRules<a class="headerlink" href="#new-wdacconfig-getdriverblockrules" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-GetDriverBlockRules.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-GetDriverBlockRules.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-GetDriverBlockRules</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Creates a WDAC policy file called <strong><em>Microsoft recommended driver block rules.xml</em></strong> from <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/blob/public/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules.md">the official source</a> for <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules">Microsoft recommended driver block rules</a>, with <em>AllowAll</em> rules and audit mode rule option removed. The policy sets <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">HVCI to strict</a>. Extra information regarding the version and last updated date of <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/commits/public/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules.md">the GitHub document</a> containing block rules will also be displayed.</p>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="new-wdacconfig-makeallowmsftwithblockrules">New-WDACConfig -MakeAllowMSFTWithBlockRules<a class="headerlink" href="#new-wdacconfig-makeallowmsftwithblockrules" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakeAllowMSFTWithBlockRules.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakeAllowMSFTWithBlockRules.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakeAllowMSFTWithBlockRules</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deployit</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Calls the <a href="#new-wdacconfig--getblockrules">-GetBlockRules</a> parameter to get the Microsoft recommended block rules, and merges them with <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/example-wdac-base-policies"><em>AllowMicrosoft default policy</em></a>. The Policy uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">strict HVCI</a> and has the following <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">rule options</a>:</p>
-<p><br></p>
-<table>
-<thead>
-<tr>
-<th>Rule number</th>
-<th>Rule option</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>Enabled:UMCI</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Required:WHQL</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Enabled:Inherit Default Policy</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Enabled:Unsigned System Integrity Policy</td>
-</tr>
-<tr>
-<td>11</td>
-<td>Disabled:Script Enforcement</td>
-</tr>
-<tr>
-<td>12</td>
-<td>Required:Enforce Store Applications</td>
-</tr>
-<tr>
-<td>16</td>
-<td>Enabled:Update Policy No Reboot</td>
-</tr>
-<tr>
-<td>17</td>
-<td>Enabled:Allow Supplemental Policies</td>
-</tr>
-<tr>
-<td>19</td>
-<td>Enabled:Dynamic Code Security</td>
-</tr>
-<tr>
-<td>20</td>
-<td>Enabled:Revoked Expired As Unsigned</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<h3 id="the-outputs-of-the-parameter-are">The outputs of the parameter are<a class="headerlink" href="#the-outputs-of-the-parameter-are" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>AllowMicrosoftPlusBlockRules.xml</strong> policy file</li>
-<li><strong>{GUID}.cip</strong> for the policy above</li>
-</ul>
-<p><br></p>
-<h3 id="3-optional-parameters">3 optional parameters<a class="headerlink" href="#3-optional-parameters" title="Permanent link">&para;</a></h3>
+<h3 id="2-mandatory-parameters">2 mandatory parameters<a class="headerlink" href="#2-mandatory-parameters" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><code>-Deployit</code>: Indicates that the module will automatically deploy the <strong><em>AllowMicrosoftPlusBlockRules</em></strong> policy after creation.</p>
+<p><code>-FolderPath &lt;string&gt;</code>: Path to a folder. Supports argument tab completion, select the parameter then press TAB to open the Folder picker GUI.</p>
 </li>
 <li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
-</li>
-<li>
-<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
-</li>
-<li>
-<blockquote>
-<p>In addition to being WHQL signed, this rule requires that drivers must have been submitted by a partner that has an Extended Verification (EV) certificate. All Windows 10 and later, or Windows 11 drivers will meet this requirement.</p>
-</blockquote>
-</li>
-</ul>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="new-wdacconfig-deploylatestdriverblockrules">New-WDACConfig -DeployLatestDriverBlockRules<a class="headerlink" href="#new-wdacconfig-deploylatestdriverblockrules" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-DeployLatestDriverBlockRules.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-DeployLatestDriverBlockRules.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-DeployLatestDriverBlockRules</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>With the help of PowerShell, uses <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules#steps-to-download-and-apply-the-vulnerable-driver-blocklist-binary">the official method</a> to deploy the latest version of <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules">Microsoft recommended driver block rules</a>.</p>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="new-wdacconfig-deploylatestblockrules">New-WDACConfig -DeployLatestBlockRules<a class="headerlink" href="#new-wdacconfig-deploylatestblockrules" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-DeployLatestBlockRules.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-DeployLatestBlockRules.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-DeployLatestBlockRules</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Deploys the <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules">latest Microsoft recommended block rules</a> (For User Mode binaries). It has the 2 default AllowAll rules so it can be deployed as a standalone base policy. Uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">Strict HVCI</a>.</p>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="new-wdacconfig-setautoupdatedriverblockrules">New-WDACConfig -SetAutoUpdateDriverBlockRules<a class="headerlink" href="#new-wdacconfig-setautoupdatedriverblockrules" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-SetAutoUpdateDriverBlockRules.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-SetAutoUpdateDriverBlockRules.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-SetAutoUpdateDriverBlockRules</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Creates a scheduled task that runs every 7 days to automatically perform <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules#steps-to-download-and-apply-the-vulnerable-driver-blocklist-binary">the official method</a> for updating Microsoft recommended driver block rules.</p>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="new-wdacconfig-prepmsftonlyaudit">New-WDACConfig -PrepMSFTOnlyAudit<a class="headerlink" href="#new-wdacconfig-prepmsftonlyaudit" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-PrepMSFTOnlyAudit.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-PrepMSFTOnlyAudit.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-PrepMSFTOnlyAudit</span><span class="p">]</span> <span class="p">[</span><span class="n">-LogSize</span> <span class="p">&lt;</span><span class="n">Int64</span><span class="p">&gt;]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Prepares the system for generating Audit event logs <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Fully-Managed-Devices">for a fully managed device</a>, by deploying the default AllowMicrosoft policy in Audit mode. No reboot required.</p>
-<p>After deployment, audit event logs will start to be created for any file that is run but wouldn't be allowed to if the AllowMicrosoft policy was deployed in enforced mode.</p>
-<p>It's recommended to use the optional parameter below to increase the log size of Code Integrity events category so that new events won't overwrite the older ones and everything will be captured.</p>
-<h3 id="1-optional-parameter">1 optional parameter<a class="headerlink" href="#1-optional-parameter" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>-LogSize &lt;Int64&gt;</code> - Specifies the log size for <strong><em>Microsoft-Windows-CodeIntegrity/Operational</em></strong> events. The values must be in the form of <code>&lt;Digit + Data measurement unit&gt;</code>. e.g., 2MB, 10MB, 1GB, 1TB. The minimum accepted value is 1MB which is the default.</li>
-</ul>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="new-wdacconfig-prepdefaultwindowsaudit">New-WDACConfig -PrepDefaultWindowsAudit<a class="headerlink" href="#new-wdacconfig-prepdefaultwindowsaudit" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-PrepDefaultWindowsAudit%20-LogSize%2050MB.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-PrepDefaultWindowsAudit%20-LogSize%2050MB.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-PrepDefaultWindowsAudit</span><span class="p">]</span> <span class="p">[</span><span class="n">-LogSize</span> <span class="p">&lt;</span><span class="n">Int64</span><span class="p">&gt;]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Prepares the system for Default Windows auditing. It will trigger audit logs to be created for any file that is run but is not part of the Windows; Unlike <a href="#new-wdacconfig--prepmsftonlyaudit">-PrepMSFTOnlyAudit</a> parameter that triggers audit logs for any file that is not signed by Microsoft's trusted root certificate.</p>
-<p>This parameter also scans the WDACConfig module files and PowerShell core files, adds them to the Prep audit mode base policy that it deploys, so that the final Supplemental policy generated from Event viewer audit logs won't include those files.</p>
-<p>It's recommended to use the optional parameter below to increase the log size of Code Integrity events category so that new events won't overwrite the older ones and everything will be captured.</p>
-<h3 id="1-optional-parameter_1">1 optional parameter<a class="headerlink" href="#1-optional-parameter_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>-LogSize &lt;Int64&gt;</code> - Specifies the log size for <strong><em>Microsoft-Windows-CodeIntegrity/Operational</em></strong> events. The values must be in the form of <code>&lt;Digit + Data measurement unit&gt;</code>. e.g., 2MB, 10MB, 1GB, 1TB. The minimum accepted value is 1MB which is the default.</li>
-</ul>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="new-wdacconfig-makepolicyfromauditlogs">New-WDACConfig -MakePolicyFromAuditLogs<a class="headerlink" href="#new-wdacconfig-makepolicyfromauditlogs" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakePolicyFromAuditLogs.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakePolicyFromAuditLogs.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakePolicyFromAuditLogs</span><span class="p">]</span> <span class="n">-BasePolicyType</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-Deployit</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">[</span><span class="n">-AllowFileNameFallbacks</span><span class="p">]</span> <span class="p">[</span><span class="n">-SpecificFileNameLevel</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-NoDeletedFiles</span><span class="p">]</span> <span class="p">[</span><span class="n">-NoUserPEs</span><span class="p">]</span> <span class="p">[</span><span class="n">-NoScript</span><span class="p">]</span> <span class="p">[</span><span class="n">-Level</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Fallbacks</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-LogSize</span> <span class="p">&lt;</span><span class="n">Int64</span><span class="p">&gt;]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Creates a WDAC policy using the Audit event logs generated <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Fully-Managed-Devices">for a fully managed device</a>.</p>
-<h3 id="1-mandatory-parameter">1 mandatory parameter<a class="headerlink" href="#1-mandatory-parameter" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>-BasePolicyType &lt;String&gt;</code>: You need to select between <strong><a href="#new-wdacconfig--makeallowmsftwithblockrules">Allow Microsoft Base</a></strong> and <strong><a href="#new-wdacconfig--makedefaultwindowswithblockrules">Default Windows Base</a></strong>, based on which prep audit mode base policy deployed on the system.</li>
-</ul>
-<h3 id="12-optional-parameters">12 optional parameters<a class="headerlink" href="#12-optional-parameters" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><code>-Deployit</code>: Indicates that the module will automatically remove the WDAC policy deployed using either <a href="#new-wdacconfig--prepmsftonlyaudit">-PrepMSFTOnlyAudit</a> or <a href="#new-wdacconfig--prepdefaultwindowsaudit">-PrepDefaultWindowsAudit</a> parameters, then deploys the supplemental policy created from Audit event logs along with the selected base policy type, both in enforced mode.</p>
-</li>
-<li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
-</li>
-<li>
-<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
-</li>
-<li>
-<blockquote>
-<p>In addition to being WHQL signed, this rule requires that drivers must have been submitted by a partner that has an Extended Verification (EV) certificate. All Windows 10 and later, or Windows 11 drivers will meet this requirement.</p>
-</blockquote>
-</li>
-<li>
-<p><code>-Debug</code>: Indicates that the module will output 3 additional files for debugging purposes and also write debug messages on the console:</p>
-</li>
-<li><em>FileRulesAndFileRefs.txt</em> - Contains the File Rules and Rule refs for the Hash of the files that no longer exist on the disk.</li>
-<li><em>DeletedFilesHashes.xml</em> - Policy file that contains File Rules and Rule refs for the files that no longer exist on the disk.</li>
-<li>
-<p><em>AuditLogsPolicy_NoDeletedFiles.xml</em> - The policy file generated from Audit Event logs based on the specified Level and Fallback parameters.</p>
-</li>
-<li>
-<p><code>-LogSize &lt;Int64&gt;</code> - Specifies the log size for <strong><em>Microsoft-Windows-CodeIntegrity/Operational</em></strong> events. The values must be in the form of <code>&lt;Digit + Data measurement unit&gt;</code>. e.g., 2MB, 10MB, 1GB, 1TB. The minimum accepted value is 1MB which is the default.</p>
-</li>
-<li>
-<p><code>-Levels &lt;String&gt;</code>: Offers the same official <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-level">Levels</a> for scanning of event logs. If no level is specified the default, which is set to <strong><em>FilePublisher</em></strong> in this module, will be used.</p>
-</li>
-<li>
-<p><code>-Fallbacks &lt;String[]&gt;</code>: Offers the same official <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-fallback">Fallbacks</a> for scanning of event logs. If no fallbacks is specified the default, which is set to <strong><em>Hash</em></strong> in this module, will be used.</p>
-</li>
-<li>
-<p><code>-AllowFileNameFallbacks</code>: <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-allowfilenamefallbacks">More info available on Microsoft Learn</a></p>
-</li>
-<li>
-<p><code>-SpecificFileNameLevel</code>: You can choose one of the following options: "OriginalFileName", "InternalName", "FileDescription", "ProductName", "PackageFamilyName", "FilePath". <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-specificfilenamelevel">More info available on Microsoft Learn</a></p>
-</li>
-<li>
-<p><code>-NoDeletedFiles</code>: Indicates that files that were run during program installations but then were deleted and are no longer on the disk, won't be added to the supplemental policy. This can mean the programs you installed will be allowed to run but installation/reinstallation might not be allowed once the policies are deployed.</p>
-</li>
-<li>
-<p><code>-NoUserPEs</code>: By default the module includes user PEs in the scan. When you use this switch parameter, they won't be included. <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-userpes">More info available on Microsoft Learn</a></p>
-</li>
-<li>
-<p><code>-NoScript</code>: <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-noscript">More info available on Microsoft Learn</a></p>
-</li>
-</ul>
-<p><br></p>
-<h3 id="the-outputs-of-the-parameter-are_1">The outputs of the parameter are<a class="headerlink" href="#the-outputs-of-the-parameter-are_1" title="Permanent link">&para;</a></h3>
-<p>All of the outputs are saved in a folder named "WDAC" inside the current working directory.</p>
-<ul>
-<li>
-<p><strong><em>AllowMicrosoftPlusBlockRules.xml</em></strong>: base policy created using <a href="#new-wdacconfig--makeallowmsftwithblockrules">-MakeAllowMSFTWithBlockRules</a> parameter</p>
-</li>
-<li>
-<p><strong><em>SupplementalPolicy.xml</em></strong>: The supplemental policy created using the script.</p>
-</li>
-<li>
-<p><strong><em>{GUID}.cip</em></strong>: Binary file for AllowMicrosoft Policy, ready for deployment.</p>
-</li>
-<li>
-<p><strong><em>{GUID}.cip</em></strong>: Binary file for SupplementalPolicy policy, ready for deployment.</p>
-</li>
-</ul>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="new-wdacconfig-makelightpolicy">New-WDACConfig -MakeLightPolicy<a class="headerlink" href="#new-wdacconfig-makelightpolicy" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakeLightPolicy%20-RequireEVSigners.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakeLightPolicy%20-RequireEVSigners.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakeLightPolicy</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deployit</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Creates a WDAC policy for a <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Lightly-Managed-Devices">Lightly managed system</a>. The Policy uses has the same specifications as <a href="#new-wdacconfig--makeallowmsftwithblockrules">-MakeAllowMSFTWithBlockRules</a>, with the following additional <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">rule options</a>:</p>
-<p><br></p>
-<table>
-<thead>
-<tr>
-<th>Rule number</th>
-<th>Rule option</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>14</td>
-<td>Enabled:Intelligent Security Graph Authorization</td>
-</tr>
-<tr>
-<td>15</td>
-<td>Enabled:Invalidate EAs on Reboot</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<h3 id="3-optional-parameters_1">3 optional parameters<a class="headerlink" href="#3-optional-parameters_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><code>-Deployit</code>: Indicates that the module will automatically deploy the <strong><em>SignedAndReputable.xml</em></strong> policy file after creation.</p>
-</li>
-<li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
-</li>
-<li>
-<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
-</li>
-<li>
-<blockquote>
-<p>In addition to being WHQL signed, this rule requires that drivers must have been submitted by a partner that has an Extended Verification (EV) certificate. All Windows 10 and later, or Windows 11 drivers will meet this requirement.</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="the-outputs-of-the-parameter-are_2">The outputs of the parameter are<a class="headerlink" href="#the-outputs-of-the-parameter-are_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong><em>SignedAndReputable.xml</em></strong></li>
-<li><strong><em>{GUID}.cip</em></strong></li>
-</ul>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="new-wdacconfig-makedefaultwindowswithblockrules">New-WDACConfig -MakeDefaultWindowsWithBlockRules<a class="headerlink" href="#new-wdacconfig-makedefaultwindowswithblockrules" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakeDefaultWindowsWithBlockRules.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakeDefaultWindowsWithBlockRules.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakeDefaultWindowsWithBlockRules</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deployit</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Calls the <a href="#new-wdacconfig--getblockrules">-GetBlockRules</a> parameter to get the Microsoft recommended block rules, and merges them with <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/example-wdac-base-policies"><em>DefaultWindows_Enforced policy</em></a>. The Policy uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">strict HVCI</a> and uses the <a href="#new-wdacconfig--makeallowmsftwithblockrules">same policy rule options as -MakeAllowMSFTWithBlockRules</a> parameter.</p>
-<p><br></p>
-<blockquote>
-<p>Since the module uses PowerShell and not Windows PowerShell that is pre-installed in Windows, this parameter will automatically scan <code>C:\Program Files\PowerShell</code> directory and add PowerShell files to the <strong><em>DefaultWindowsPlusBlockRules.xml</em></strong> policy file so that you will be able to continue using the module after deploying the policy. The scan uses <strong><em>FilePublisher</em></strong> level and <strong><em>Hash</em></strong> fallback.</p>
-</blockquote>
-<h3 id="the-outputs-of-the-parameter-are_3">The outputs of the parameter are<a class="headerlink" href="#the-outputs-of-the-parameter-are_3" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong><em>DefaultWindowsPlusBlockRules.xml</em></strong> policy file</li>
-<li><strong><em>{GUID}.cip</em></strong> for the policy above</li>
-</ul>
-<p><br></p>
-<h3 id="3-optional-parameters_2">3 optional parameters<a class="headerlink" href="#3-optional-parameters_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><code>-Deployit</code>: Indicates that the module will automatically deploy the <strong><em>DefaultWindowsPlusBlockRules</em></strong> policy after creation.</p>
-</li>
-<li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
-</li>
-<li>
-<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
-</li>
-<li>
-<blockquote>
-<p>In addition to being WHQL signed, this rule requires that drivers must have been submitted by a partner that has an Extended Verification (EV) certificate. All Windows 10 and later, or Windows 11 drivers will meet this requirement.</p>
-</blockquote>
+<p><code>-XmlFilePath &lt;string&gt;</code>: Path to a xml file. Supports argument tab completion, select the parameter then press TAB to open the file picker that shows only xml files.</p>
 </li>
 </ul>
 <p><br></p>
@@ -1906,11 +1254,11 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T14:20:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-18T22:57:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-18</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T14:20:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-18T22:57:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-18</span>
       
     
   </small>
@@ -1941,7 +1289,7 @@ or on
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../New-SupplementalWDACConfig/" class="md-footer__link md-footer__link--prev" aria-label="Previous: New-SupplementalWDACConfig available parameters" rel="prev">
+          <a href="../Get-CommonWDACConfig/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Get-CommonWDACConfig available parameters" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1950,20 +1298,20 @@ or on
                 Previous
               </span>
               <div class="md-ellipsis">
-                New-SupplementalWDACConfig available parameters
+                Get-CommonWDACConfig available parameters
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Remove-WDACConfig/" class="md-footer__link md-footer__link--next" aria-label="Next: Remove-WDACConfig available parameters" rel="next">
+          <a href="../New-DenyWDACConfig/" class="md-footer__link md-footer__link--next" aria-label="Next: New-DenyWDACConfig available parameters" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Remove-WDACConfig available parameters
+                New-DenyWDACConfig available parameters
               </div>
             </div>
             <div class="md-footer__button md-icon">

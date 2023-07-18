@@ -19,7 +19,7 @@
         <link rel="next" href="../New-SupplementalWDACConfig/">
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
@@ -960,6 +960,34 @@ or on
   
   
     <li class="md-nav__item">
+      <a href="../Get-CommonWDACConfig/" class="md-nav__link">
+        Get-CommonWDACConfig available parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Invoke-WDACSimulation/" class="md-nav__link">
+        Invoke-WDACSimulation available parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../New-DenyWDACConfig/" class="md-nav__link">
         New-DenyWDACConfig available parameters
       </a>
@@ -1321,9 +1349,9 @@ or on
 <h3 id="how-to-use">How to use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h3>
 <p>This cmdlet creates a Kernel-mode WDAC policy based on the Default Windows example policy. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection">You can read more about that process in here.</a></p>
 <p>The default parameter indicates that the Strict Kernel-mode WDAC policy will be deployed with flight root certificates, allowing you to use insider builds of the OS.</p>
-<p>First you need to use the <strong>PrepMode</strong> parameter to deploy the base policy in Audit mode, then restart your system, after restart event logs are generated for Kernel-mode drivers that are running but would otherwise get blocked if the policy was not deployed in Audit mode.</p>
+<p>First you need to use the <strong>PrepMode</strong> parameter to deploy the base policy in Audit mode, then reboot your system, after reboot event logs are generated for Kernel-mode drivers that are running but would otherwise get blocked if the policy was not deployed in Audit mode.</p>
 <p><br></p>
-<p>Now you need to use the <strong>AuditAndEnforce</strong> parameter to create the final base policy. This parameter will scan the event logs, create a supplemental policy for the drivers detected in event logs, merge the supplemental policy with the Strict Kernel-mode base policy and deploy it as a single base policy.</p>
+<p>Now you need to use the <strong>AuditAndEnforce</strong> parameter to create the final base policy. This parameter will scan the event logs, create a supplemental policy for the drivers detected in event logs, merge the supplemental policy with the Strict Kernel-mode base policy and deploy it as a single base policy. <strong>No reboot required after deploying the final enforced mode policy, reboot is only required 1 time, after deploying the Audit mode policy.</strong></p>
 <p>Hardware drivers are scanned based on their certificates so they won't require a policy update when they are updated as long as they are still signed with the same certificate.</p>
 <p>The deployed base policy can have supplemental policies too so if in the future you need to allow more Kernel-mode drivers to run on your system, you can use the following command to automatically create and deploy a Supplemental policy.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Edit-WDACConfig</span> <span class="n">-AllowNewAppsAuditEvents</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;Kernel mode drivers for software X&quot;</span> <span class="n">-PolicyPaths</span> <span class="p">&lt;</span><span class="n">Path</span> <span class="n">to</span> <span class="n">Strict</span> <span class="n">Kernel-mode</span> <span class="n">policy</span> <span class="n">xml</span> <span class="n">file</span><span class="p">&gt;</span> <span class="n">-Fallbacks</span> <span class="n">None</span> <span class="n">-NoUserPEs</span> <span class="n">-NoScript</span>
@@ -1356,8 +1384,8 @@ or on
 <h3 id="how-to-use_1">How to use<a class="headerlink" href="#how-to-use_1" title="Permanent link">&para;</a></h3>
 <p>This cmdlet creates a Kernel-mode WDAC policy based on the Default Windows example policy. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection">You can read more about that process in here.</a></p>
 <p>The NoFlightRoots parameter indicates that the Strict Kernel-mode WDAC policy will not be deployed with flight root certificates, disallowing you to use insider builds of the OS.</p>
-<p>First you need to use the <strong>PrepMode</strong> parameter to deploy the base policy in Audit mode, then restart your system, after restart event logs are generated for Kernel-mode drivers that are running but would otherwise get blocked if the policy was not deployed in Audit mode.</p>
-<p>Now you need to use the <strong>AuditAndEnforce</strong> parameter to create the final base policy. This parameter will scan the event logs, create a supplemental policy for the drivers detected in event logs, merge the supplemental policy with the Strict Kernel-mode base policy and deploy it as a single base policy.</p>
+<p>First you need to use the <strong>PrepMode</strong> parameter to deploy the base policy in Audit mode, then reboot your system, after reboot event logs are generated for Kernel-mode drivers that are running but would otherwise get blocked if the policy was not deployed in Audit mode.</p>
+<p>Now you need to use the <strong>AuditAndEnforce</strong> parameter to create the final base policy. This parameter will scan the event logs, create a supplemental policy for the drivers detected in event logs, merge the supplemental policy with the Strict Kernel-mode base policy and deploy it as a single base policy. <strong>No reboot required after deploying the final enforced mode policy, reboot is only required 1 time, after deploying the Audit mode policy.</strong></p>
 <p>Hardware drivers are scanned based on their certificates so they won't require a policy update when they are updated as long as they are still signed with the same certificate.</p>
 <p>The deployed base policy can have supplemental policies too so if in the future you need to allow more Kernel-mode drivers to run on your system, you can use the following command to automatically create and deploy a Supplemental policy.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Edit-WDACConfig</span> <span class="n">-AllowNewAppsAuditEvents</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;Kernel mode drivers for software X&quot;</span> <span class="n">-PolicyPaths</span> <span class="p">&lt;</span><span class="n">Path</span> <span class="n">to</span> <span class="n">Strict</span> <span class="n">Kernel-mode</span> <span class="n">policy</span> <span class="n">xml</span> <span class="n">file</span><span class="p">&gt;</span> <span class="n">-Fallbacks</span> <span class="n">None</span> <span class="n">-NoUserPEs</span> <span class="n">-NoScript</span>
@@ -1385,11 +1413,11 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T15:00:29+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T15:00:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T15:00:29+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T15:00:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
       
     
   </small>

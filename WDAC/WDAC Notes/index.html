@@ -19,7 +19,7 @@
         <link rel="next" href="../WDAC%20for%20Fully%20Managed%20Devices%20%282nd%20variant%29/">
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
@@ -1096,6 +1096,33 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#about-double-signed-files-and-filepublisher-level" class="md-nav__link">
+    About double-signed files and FilePublisher level
+  </a>
+  
+    <nav class="md-nav" aria-label="About double-signed files and FilePublisher level">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-example" class="md-nav__link">
+    An example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-notes" class="md-nav__link">
+    Some Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1276,6 +1303,34 @@ or on
     <li class="md-nav__item">
       <a href="../../WDACConfig%20Module/Edit-WDACConfig/" class="md-nav__link">
         Edit-WDACConfig available parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WDACConfig%20Module/Get-CommonWDACConfig/" class="md-nav__link">
+        Get-CommonWDACConfig available parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WDACConfig%20Module/Invoke-WDACSimulation/" class="md-nav__link">
+        Invoke-WDACSimulation available parameters
       </a>
     </li>
   
@@ -1706,6 +1761,33 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#about-double-signed-files-and-filepublisher-level" class="md-nav__link">
+    About double-signed files and FilePublisher level
+  </a>
+  
+    <nav class="md-nav" aria-label="About double-signed files and FilePublisher level">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#an-example" class="md-nav__link">
+    An example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#some-notes" class="md-nav__link">
+    Some Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2060,13 +2142,46 @@ or on
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
+<h2 id="about-double-signed-files-and-filepublisher-level">About double-signed files and FilePublisher level<a class="headerlink" href="#about-double-signed-files-and-filepublisher-level" title="Permanent link">&para;</a></h2>
+<p>Sometimes there are files that are signed by 2 certificates, aka double signed files.</p>
+<p>When FilePublisher level is used, WDAC creates rules for both of the intermediate certificates of those files, and each rule will have a singer assigned to it. If the file is either User mode only or Kernel mode only, then 2 Signers will be created for it, one for each certificate.</p>
+<p>Depending on Kernel or use mode, 2 Allowed Signers are created for the file in either UMCI or KMCI Signing scenario sections.</p>
+<p>However, if the file is a kernel mode driver and user mode driver, then 4 signers are created for it, 2 Allowed Signers in the UMCI Signing Scenario and 2 in the KMCI Signing scenario.</p>
+<h3 id="an-example">An example<a class="headerlink" href="#an-example" title="Permanent link">&para;</a></h3>
+<p><br></p>
+<p>In the signer below</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_F_2&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Windows Third Party Component CA 2014&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;TBS&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;D8BE9E4D9074088EF818BC6F6FB64955E90378B2754155126FEEBBBD969CF0AE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">&lt;CertPublisher</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;Microsoft Windows Hardware Compatibility Publisher&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">&lt;FileAttribRef</span><span class="w"> </span><span class="na">RuleID=</span><span class="s">&quot;ID_FILEATTRIB_F_46&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nt">&lt;/Signer&gt;</span>
+</span></code></pre></div>
+<p><br></p>
+<ul>
+<li><code>Name="Microsoft Windows Third Party Component CA 2014"</code> is the Common name of the Intermediate certificate of the file</li>
+<li><code>Value="D8BE9E4D9074088EF818BC6F6FB64955E90378B2754155126FEEBBBD969CF0AE"</code> is the TBS (To Be Signed) values of the same Intermediate certificate</li>
+<li><code>Value="Microsoft Windows Hardware Compatibility Publisher"</code> is the Common name of the Leaf certificate of the file</li>
+</ul>
+<p><br></p>
+<h3 id="some-notes">Some Notes<a class="headerlink" href="#some-notes" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>If 2 files have the same Leaf certificate CN and also have an Intermediate certificate in common (that has the same TBS and CN) then they should be listed under the same Signer.</p>
+</li>
+<li>
+<p>Any Intermediate certificate in the certificate chain/path of a file can be used to allow a file using FilePublisher.</p>
+</li>
+</ol>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T14:20:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T15:00:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
       
         <br>
         Created:
