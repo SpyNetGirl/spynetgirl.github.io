@@ -698,6 +698,47 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#native-boot-hyper-v-vms-vhdx" class="md-nav__link">
+    Native boot Hyper-V VMs, VHDX
+  </a>
+  
+    <nav class="md-nav" aria-label="Native boot Hyper-V VMs, VHDX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-need-to-pay-attention-to-a-few-things-though" class="md-nav__link">
+    You need to pay attention to a few things though:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vhdx-native-booting-is-very-easy-and-flexible-you-can-do-it-even-if" class="md-nav__link">
+    VHDX native booting is very easy and flexible, you can do it even if:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-the-vhdx-bootable" class="md-nav__link">
+    How to make the VHDX bootable:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-the-change-by-running-this-command" class="md-nav__link">
+    Verify the change by running this command
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1282,6 +1323,47 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#native-boot-hyper-v-vms-vhdx" class="md-nav__link">
+    Native boot Hyper-V VMs, VHDX
+  </a>
+  
+    <nav class="md-nav" aria-label="Native boot Hyper-V VMs, VHDX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-need-to-pay-attention-to-a-few-things-though" class="md-nav__link">
+    You need to pay attention to a few things though:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vhdx-native-booting-is-very-easy-and-flexible-you-can-do-it-even-if" class="md-nav__link">
+    VHDX native booting is very easy and flexible, you can do it even if:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-make-the-vhdx-bootable" class="md-nav__link">
+    How to make the VHDX bootable:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-the-change-by-running-this-command" class="md-nav__link">
+    Verify the change by running this command
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1342,6 +1424,8 @@ or on
 <li><a href="https://learn.microsoft.com/en-us/powershell/module/pki/export-pfxcertificate?view=windowsserver2022-ps">Export-PfxCertificate</a></li>
 </ul>
 <p><br></p>
+<hr />
+<p><br></p>
 <h2 id="how-to-enable-nested-virtualization-for-all-the-vms-on-the-hyper-v-host">How to enable Nested Virtualization for all the VMs on the Hyper-V host<a class="headerlink" href="#how-to-enable-nested-virtualization-for-all-the-vms-on-the-hyper-v-host" title="Permanent link">&para;</a></h2>
 <p>Source:</p>
 <p>https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/nested-virtualization</p>
@@ -1358,6 +1442,8 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nb">Get-VM</span><span class="p">).</span><span class="n">name</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nb">get-VMProcessor</span> <span class="n">-VMName</span> <span class="nv">$_</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-Property</span> <span class="n">VMName</span><span class="p">,</span><span class="n">ExposeVirtualizationExtensions</span>
 </span></code></pre></div>
 <p><br></p>
+<hr />
+<p><br></p>
 <h2 id="confidential-computing-on-azure">Confidential Computing on Azure<a class="headerlink" href="#confidential-computing-on-azure" title="Permanent link">&para;</a></h2>
 <p>Azure confidential computing makes it easier to trust the cloud provider, by reducing the need for trust across various aspects of the compute cloud infrastructure. Azure confidential computing minimizes trust for the host OS kernel, the hypervisor, the VM admin, and the host admin.</p>
 <h3 id="continue-reading">Continue reading<a class="headerlink" href="#continue-reading" title="Permanent link">&para;</a></h3>
@@ -1372,33 +1458,97 @@ or on
 <p><br></p>
 <h3 id="shielded-vms-are-deprecated-concepts">Shielded VMs are deprecated concepts<a class="headerlink" href="#shielded-vms-are-deprecated-concepts" title="Permanent link">&para;</a></h3>
 <p><a href="https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server-2022#features-were-no-longer-developing">They are deprecated starting with Windows Server 2022.</a>. They were prone to modern attacks such as side-channel.</p>
-<details class="optional-class">
+<details>
 <summary>The following details about Shielded VMs are old and no longer valid</summary>
-<ul>
-<li>Shielded VMs can't be simply moved to another Hyper-V host and used there, nor can they be de-shielded      in another host, if the certificate is not in place on the new host. This results in the error "the key     protector could not be unwrapped", which is desired.</li>
-<li>Shielding a VM is for keeping bad actors or malware out of the VM, not for keeping malware inside VM. i.      e., Shielding a VM is for keeping the VM secure, not for keeping the host secure.</li>
-<li>You can use the command below to get details about your Hyper-V host, including checks whether your       host runs in local/standalone mode or is part of a <a href="https://learn.microsoft.com/en-us/      windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms">Guarded Fabric</a></li>
-</ul>
+
+<br>
+
+* Shielded VMs can't be simply moved to another Hyper-V host and used there, nor can they be de-shielded in another host, if the certificate is not in place on the new host. This results in the error "the key protector could not be unwrapped", which is desired.
+* Shielding a VM is for keeping bad actors or malware out of the VM, not for keeping malware inside VM. i.e., Shielding a VM is for keeping the VM secure, not for keeping the host secure.
+* You can use the command below to get details about your Hyper-V host, including checks whether your host runs in local/standalone mode or is part of a [Guarded Fabric](https://learn.microsoft.com/en-us/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms)
+
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">HgsClientConfiguration</span>
 </span></code></pre></div>
-<p><br></p>
-<p>Note that this configuration is for standalone systems. an actual shielded virtual machine is a lot more      secure because the host's security and health is properly attested in a Guarded Fabric, using <a href="https://learn.microsoft.com/en-us/windows-server/security/    guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node">Host     Guardian Service (HGS)</a> on a <a href="https://www.    microsoft.com/en-us/windows-server/">Windows Server</a>.</p>
-<ul>
-<li>
-<p>Here is an official video about the feature and how it protects your VMs:</p>
-<ul>
-<li>
-<p><a href="https://www.youtube.com/watch?v=Vp5E1-4Ks8E">Introduction to Shielded Virtual Machines in Windows Server 2016 - YouTube</a></p>
-</li>
-<li>
-<p><a href="https://www.youtube.com/@MSFTMechanics">Microsoft Mechanics</a></p>
-</li>
-</ul>
-</li>
-</ul>
+
+<br>
+
+Note that this configuration is for standalone systems. an actual shielded virtual machine is a lot more secure because the host's security and health is properly attested in a Guarded Fabric, using [Host Guardian Service (HGS)](https://learn.microsoft.com/en-us/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node) on a [Windows Server](https://www.microsoft.com/en-us/windows-server/).
+
+- Here is an official video about the feature and how it protects your VMs:
+
+  - [Introduction to Shielded Virtual Machines in Windows Server 2016 - YouTube](https://www.youtube.com/watch?v=Vp5E1-4Ks8E)
+
+  - [Microsoft Mechanics](https://www.youtube.com/@MSFTMechanics)
+
 </details>
+
+<p><br></p>
+<hr />
+<p><br></p>
 <h2 id="scenario-hyper-v-enhanced-session-mode-no-authentication-in-the-vms-os">Scenario: Hyper-V, Enhanced session mode, no authentication in the VM's OS<a class="headerlink" href="#scenario-hyper-v-enhanced-session-mode-no-authentication-in-the-vms-os" title="Permanent link">&para;</a></h2>
 <p>When you create a VM in Hyper-V that doesn't have any authentication method for login such as Password or PIN, and use Enhanced session-mode to connect to it, there might be an issue where the RDP disconnects once after each restart of the VM and Hyper-V virtual machine connection asks you to connect to the VM again by clicking/tapping on the connect button. <strong>To fix this, set a local password for the user account of the OS in VM.</strong></p>
+<p><br></p>
+<hr />
+<p><br></p>
+<h2 id="native-boot-hyper-v-vms-vhdx">Native boot Hyper-V VMs, VHDX<a class="headerlink" href="#native-boot-hyper-v-vms-vhdx" title="Permanent link">&para;</a></h2>
+<p>There are <a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/deploy-windows-on-a-vhd--native-boot?view=windows-11">guides</a> for native booting a VHDX and it's very easy to do. If you already have a Hyper-V VM, you can add it to the Windows boot manager so that during a reboot you will have the option to boot the VHDX.</p>
+<h3 id="you-need-to-pay-attention-to-a-few-things-though">You need to pay attention to a few things though:<a class="headerlink" href="#you-need-to-pay-attention-to-a-few-things-though" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>The VHDX should be on a drive that is NTFS formatted, for now booting from ReFS is not supported.</p>
+</li>
+<li>
+<p>The drive that hosts the VHDX file must have more free space than the assigned size of the VHDX. The size you see in the file explorer is not the same as the size of the disk you assigned to the VHDX when creating it. It's easier if you have a fixed size VHDX instead of a dynamically expanding one. To find the real size of the VHDX, you can boot it in Hyper-V and check the drives inside it.</p>
+</li>
+<li>
+<p>Merge all checkpoints and delete them before attempting to native boot VHDX.</p>
+</li>
+</ol>
+<p><br></p>
+<h3 id="vhdx-native-booting-is-very-easy-and-flexible-you-can-do-it-even-if">VHDX native booting is very easy and flexible, you can do it even if:<a class="headerlink" href="#vhdx-native-booting-is-very-easy-and-flexible-you-can-do-it-even-if" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Your host has Secure boot enabled</p>
+</li>
+<li>
+<p>You use Signed WDAC policies</p>
+</li>
+<li>
+<p>Your VM wasn't <a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation">SysPrepped</a> before natively booting it on physical machine</p>
+</li>
+<li>
+<p>VM has secure boot and TPM</p>
+</li>
+</ol>
+<p><br></p>
+<h3 id="how-to-make-the-vhdx-bootable">How to make the VHDX bootable:<a class="headerlink" href="#how-to-make-the-vhdx-bootable" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Double-click/tap on the VHDX file to mount it</li>
+<li>Run this in CMD or PowerShell</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>bcdboot D:\Windows /d
+</span></code></pre></div>
+<blockquote>
+<p><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcdboot-command-line-options-techref-di">Bcdboot</a></p>
+<p>Use the /d option to preserve the existing boot order.</p>
+</blockquote>
+<p><br></p>
+<h3 id="verify-the-change-by-running-this-command">Verify the change by running this command<a class="headerlink" href="#verify-the-change-by-running-this-command" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>bcdedit /enum
+</span></code></pre></div>
+<blockquote>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/bcdedit">Bcdedit</a></p>
+</blockquote>
+<p><br></p>
+<p>The description of the boot entry is the same one you see during OS selection menu. You can change it with this command in PowerShell:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>bcdedit /set &#39;{default}&#39; description &#39;VHDX Boot&#39;
+</span></code></pre></div>
+<p>or in CMD:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>bcdedit /set {default} description &#39;VHDX Boot&#39;
+</span></code></pre></div>
+<p>If <code>{default}</code> is not the correct identifier, then change it according to the result of the <code>bcdedit /enum</code></p>
+<p>There are three different identifiers: The chosen default OS has identifier {default}, the current OS you are signed in at the moment is {current}. All other entries have a long hexadecimal identifier.</p>
+<p><br></p>
 
   <hr>
 <div class="md-source-file">
