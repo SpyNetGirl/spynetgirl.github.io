@@ -940,6 +940,13 @@ or on
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#dual-boot-os-configurations" class="md-nav__link">
+    Dual boot OS configurations
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1517,6 +1524,13 @@ or on
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#dual-boot-os-configurations" class="md-nav__link">
+    Dual boot OS configurations
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1810,6 +1824,9 @@ Once you open it, you can follow <a href="https://learn.microsoft.com/en-us/wind
 <p><br></p>
 <h3 id="when-we-activate-smart-app-control">When we activate Smart App Control<a class="headerlink" href="#when-we-activate-smart-app-control" title="Permanent link">&para;</a></h3>
 <p>After completely deploying the Signed WDAC policy, if we turn on Smart App Control, which is <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/example-wdac-base-policies">a variation of WDAC</a>, then it will take control of the Windows Defender Application Control User Mode Policy. After turning off Smart App Control, the signed WDAC policy will automatically take the control. So, after deploying the Signed WDAC policy, Smart App Control can either be turned on or turned off, either way, the signed WDAC policy will not be disabled and will turn on as soon as Smart App Control is turned off.</p>
+<p><br></p>
+<h3 id="dual-boot-os-configurations">Dual boot OS configurations<a class="headerlink" href="#dual-boot-os-configurations" title="Permanent link">&para;</a></h3>
+<p>When you deploy a Signed WDAC policy on a system that uses Secure Boot, it will be enforced on all of the OSes that boot on the physical machine, because the policy resides on the EFI partition. This means that if you perform a clean install of a second Windows OS or natively boot a VHDX (Hyper-V VM), the policy will apply to them as well.</p>
 <p><br>
 <br></p>
 <h2 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h2>
@@ -1865,7 +1882,7 @@ Once you open it, you can follow <a href="https://learn.microsoft.com/en-us/wind
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T14:20:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-25T10:13:51+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-25</span>
       
         <br>
         Created:
