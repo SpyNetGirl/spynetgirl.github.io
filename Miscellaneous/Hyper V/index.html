@@ -19,7 +19,7 @@
         <link rel="next" href="../Overrides%20for%20Microsoft%20Security%20Baseline/">
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
@@ -739,6 +739,26 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#some-hyper-v-nested-virtualization-screenshots" class="md-nav__link">
+    Some Hyper-V nested virtualization screenshots
+  </a>
+  
+    <nav class="md-nav" aria-label="Some Hyper-V nested virtualization screenshots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-specs-all-from-2016-2017-couldnt-find-any-older-to-test" class="md-nav__link">
+    Hardware specs - All from 2016-2017, couldn't find any older to test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1364,6 +1384,26 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#some-hyper-v-nested-virtualization-screenshots" class="md-nav__link">
+    Some Hyper-V nested virtualization screenshots
+  </a>
+  
+    <nav class="md-nav" aria-label="Some Hyper-V nested virtualization screenshots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-specs-all-from-2016-2017-couldnt-find-any-older-to-test" class="md-nav__link">
+    Hardware specs - All from 2016-2017, couldn't find any older to test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1424,7 +1464,7 @@ or on
 <li><a href="https://learn.microsoft.com/en-us/powershell/module/pki/export-pfxcertificate?view=windowsserver2022-ps">Export-PfxCertificate</a></li>
 </ul>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="how-to-enable-nested-virtualization-for-all-the-vms-on-the-hyper-v-host">How to enable Nested Virtualization for all the VMs on the Hyper-V host<a class="headerlink" href="#how-to-enable-nested-virtualization-for-all-the-vms-on-the-hyper-v-host" title="Permanent link">&para;</a></h2>
 <p>Source:</p>
@@ -1433,16 +1473,17 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Set-VMProcessor</span> <span class="n">-VMName</span> <span class="p">&lt;</span><span class="n">VMName</span><span class="p">&gt;</span> <span class="n">-ExposeVirtualizationExtensions</span> <span class="nv">$true</span>
 </span></code></pre></div>
 <p>but in order to automatically enable nested virtualization for all VMs, this is how I do it</p>
-<blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>All of the VMs must be in Off state when enabling nested virtualization</p>
-</blockquote>
+</div>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nb">Get-VM</span><span class="p">).</span><span class="n">name</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nb">Set-VMProcessor</span> <span class="n">-VMName</span> <span class="nv">$_</span> <span class="n">-ExposeVirtualizationExtensions</span> <span class="nv">$true</span><span class="p">}</span>
 </span></code></pre></div>
 <p>This is how to verify nested virtualization is enabled for all of your VMs</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nb">Get-VM</span><span class="p">).</span><span class="n">name</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nb">get-VMProcessor</span> <span class="n">-VMName</span> <span class="nv">$_</span><span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-Property</span> <span class="n">VMName</span><span class="p">,</span><span class="n">ExposeVirtualizationExtensions</span>
 </span></code></pre></div>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="confidential-computing-on-azure">Confidential Computing on Azure<a class="headerlink" href="#confidential-computing-on-azure" title="Permanent link">&para;</a></h2>
 <p>Azure confidential computing makes it easier to trust the cloud provider, by reducing the need for trust across various aspects of the compute cloud infrastructure. Azure confidential computing minimizes trust for the host OS kernel, the hypervisor, the VM admin, and the host admin.</p>
@@ -1458,37 +1499,39 @@ or on
 <p><br></p>
 <h3 id="shielded-vms-are-deprecated-concepts">Shielded VMs are deprecated concepts<a class="headerlink" href="#shielded-vms-are-deprecated-concepts" title="Permanent link">&para;</a></h3>
 <p><a href="https://learn.microsoft.com/en-us/windows-server/get-started/removed-deprecated-features-windows-server-2022#features-were-no-longer-developing">They are deprecated starting with Windows Server 2022.</a>. They were prone to modern attacks such as side-channel.</p>
-<details>
+<details class="note">
 <summary>The following details about Shielded VMs are old and no longer valid</summary>
-
-<br>
-
-* Shielded VMs can't be simply moved to another Hyper-V host and used there, nor can they be de-shielded in another host, if the certificate is not in place on the new host. This results in the error "the key protector could not be unwrapped", which is desired.
-* Shielding a VM is for keeping bad actors or malware out of the VM, not for keeping malware inside VM. i.e., Shielding a VM is for keeping the VM secure, not for keeping the host secure.
-* You can use the command below to get details about your Hyper-V host, including checks whether your host runs in local/standalone mode or is part of a [Guarded Fabric](https://learn.microsoft.com/en-us/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms)
-
+<p><br></p>
+<ul>
+<li>Shielded VMs can't be simply moved to another Hyper-V host and used there, nor can they be de-shielded in another       host, if the certificate is not in place on the new host. This results in the error "the key protector could not be       unwrapped", which is desired.</li>
+<li>Shielding a VM is for keeping bad actors or malware out of the VM, not for keeping malware inside VM. i.e., Shielding       a VM is for keeping the VM secure, not for keeping the host secure.</li>
+<li>You can use the command below to get details about your Hyper-V host, including checks whether your host runs in      local/standalone mode or is part of a <a href="https://learn.microsoft.com/en-us/windows-server/security/     guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms">Guarded Fabric</a></li>
+</ul>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">HgsClientConfiguration</span>
 </span></code></pre></div>
-
-<br>
-
-Note that this configuration is for standalone systems. an actual shielded virtual machine is a lot more secure because the host's security and health is properly attested in a Guarded Fabric, using [Host Guardian Service (HGS)](https://learn.microsoft.com/en-us/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node) on a [Windows Server](https://www.microsoft.com/en-us/windows-server/).
-
-- Here is an official video about the feature and how it protects your VMs:
-
-  - [Introduction to Shielded Virtual Machines in Windows Server 2016 - YouTube](https://www.youtube.com/watch?v=Vp5E1-4Ks8E)
-
-  - [Microsoft Mechanics](https://www.youtube.com/@MSFTMechanics)
-
-</details>
-
 <p><br></p>
-<hr />
+<p>Note that this configuration is for standalone systems. an actual shielded virtual machine is a lot more secure because       the host's security and health is properly attested in a Guarded Fabric, using <a href="https://     learn.microsoft.com/en-us/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node">Host Guardian Service (HGS)</a>      on a <a href="https://www.microsoft.com/en-us/windows-server/">Windows Server</a>.</p>
+<ul>
+<li>
+<p>Here is an official video about the feature and how it protects your VMs:</p>
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?     v=Vp5E1-4Ks8E">Introduction to Shielded Virtual Machines in Windows Server 2016 - YouTube</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/@MSFTMechanics">Microsoft Mechanics</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="scenario-hyper-v-enhanced-session-mode-no-authentication-in-the-vms-os">Scenario: Hyper-V, Enhanced session mode, no authentication in the VM's OS<a class="headerlink" href="#scenario-hyper-v-enhanced-session-mode-no-authentication-in-the-vms-os" title="Permanent link">&para;</a></h2>
 <p>When you create a VM in Hyper-V that doesn't have any authentication method for login such as Password or PIN, and use Enhanced session-mode to connect to it, there might be an issue where the RDP disconnects once after each restart of the VM and Hyper-V virtual machine connection asks you to connect to the VM again by clicking/tapping on the connect button. <strong>To fix this, set a local password for the user account of the OS in VM.</strong></p>
 <p><br></p>
-<hr />
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="native-boot-hyper-v-vms-vhdx">Native boot Hyper-V VMs, VHDX<a class="headerlink" href="#native-boot-hyper-v-vms-vhdx" title="Permanent link">&para;</a></h2>
 <p>There are <a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/deploy-windows-on-a-vhd--native-boot?view=windows-11">guides</a> for native booting a VHDX and it's very easy to do. If you already have a Hyper-V VM, you can add it to the Windows boot manager so that during a reboot you will have the option to boot the VHDX.</p>
@@ -1528,17 +1571,19 @@ Note that this configuration is for standalone systems. an actual shielded virtu
 </ol>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>bcdboot D:\Windows /d
 </span></code></pre></div>
-<blockquote>
-<p><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcdboot-command-line-options-techref-di">Bcdboot</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a href="https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/     bcdboot-command-line-options-techref-di">Bcdboot</a></p>
 <p>Use the /d option to preserve the existing boot order.</p>
-</blockquote>
+</div>
 <p><br></p>
 <h3 id="verify-the-change-by-running-this-command">Verify the change by running this command<a class="headerlink" href="#verify-the-change-by-running-this-command" title="Permanent link">&para;</a></h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>bcdedit /enum
 </span></code></pre></div>
-<blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/bcdedit">Bcdedit</a></p>
-</blockquote>
+</div>
 <p><br></p>
 <p>The description of the boot entry is the same one you see during OS selection menu. You can change it with this command in PowerShell:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>bcdedit /set &#39;{default}&#39; description &#39;VHDX Boot&#39;
@@ -1548,6 +1593,53 @@ Note that this configuration is for standalone systems. an actual shielded virtu
 </span></code></pre></div>
 <p>If <code>{default}</code> is not the correct identifier, then change it according to the result of the <code>bcdedit /enum</code></p>
 <p>There are three different identifiers: The chosen default OS has identifier {default}, the current OS you are signed in at the moment is {current}. All other entries have a long hexadecimal identifier.</p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="some-hyper-v-nested-virtualization-screenshots">Some Hyper-V nested virtualization screenshots<a class="headerlink" href="#some-hyper-v-nested-virtualization-screenshots" title="Permanent link">&para;</a></h2>
+<p>To display how optimized and powerful Hyper-V hypervisor is (including any feature that runs on it such as Windows Sandbox, WSL, WSA, MDAG and more), here are some screenshots taken on a very old hardware, hardware that is not even officially supported by Windows 11, yet you can virtualize 5 operation systems nested in each other, and the last nested virtualized OS still has full functionality including direct file copy from host to guest, full Internet connectivity, ability to listen to music, do tasks and so on.</p>
+<h4 id="hardware-specs-all-from-2016-2017-couldnt-find-any-older-to-test">Hardware specs - All from 2016-2017, couldn't find any older to test<a class="headerlink" href="#hardware-specs-all-from-2016-2017-couldnt-find-any-older-to-test" title="Permanent link">&para;</a></h4>
+<ol>
+<li>CPU: Intel Core I7 7700k</li>
+<li>RAM: 16GB</li>
+<li>GPU: N/A (Intel IGPU)</li>
+<li>SSD: 256 GB M.2</li>
+</ol>
+<details>
+
+<summary>
+<a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/diamond-7.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img width="30" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/diamond-7.gif"></a>
+Click/Tap here to see the screenshots
+<a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/diamond-7.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img width="30" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/diamond-7.gif"></a>
+</summary>
+
+<br>
+
+<a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Hyper-V%20Nested%20Virtualization/1%20(1).png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Hyper-V%20Nested%20Virtualization/1%20(1).png"></a>
+
+<br>
+
+<br>
+
+<a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Hyper-V%20Nested%20Virtualization/1%20(2).png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Hyper-V%20Nested%20Virtualization/1%20(2).png"></a>
+
+<br>
+
+<br>
+
+<a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Hyper-V%20Nested%20Virtualization/1%20(3).png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Hyper-V%20Nested%20Virtualization/1%20(3).png"></a>
+
+<br>
+
+<br>
+
+<a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Hyper-V%20Nested%20Virtualization/1%20(4).png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Hyper-V%20Nested%20Virtualization/1%20(4).png"></a>
+
+</details>
+
+<p><br></p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 
   <hr>
