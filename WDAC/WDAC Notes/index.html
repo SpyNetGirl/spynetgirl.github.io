@@ -1190,6 +1190,33 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-does-hvci-option-set-to-strict-mean" class="md-nav__link">
+    What does HVCI option set to Strict mean?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue-reading-about-byovd-protection-with-wdac" class="md-nav__link">
+     Continue reading about BYOVD protection with WDAC
+  </a>
+  
+    <nav class="md-nav" aria-label="Continue reading about BYOVD protection with WDAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wdac-policy-for-byovd-kernel-mode-only-protection" class="md-nav__link">
+    WDAC policy for BYOVD Kernel mode only protection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1855,6 +1882,33 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-does-hvci-option-set-to-strict-mean" class="md-nav__link">
+    What does HVCI option set to Strict mean?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue-reading-about-byovd-protection-with-wdac" class="md-nav__link">
+     Continue reading about BYOVD protection with WDAC
+  </a>
+  
+    <nav class="md-nav" aria-label="Continue reading about BYOVD protection with WDAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wdac-policy-for-byovd-kernel-mode-only-protection" class="md-nav__link">
+    WDAC policy for BYOVD Kernel mode only protection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2241,6 +2295,26 @@ or on
 </ol>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="what-does-hvci-option-set-to-strict-mean">What does <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">HVCI option</a> set to Strict mean?<a class="headerlink" href="#what-does-hvci-option-set-to-strict-mean" title="Permanent link">&para;</a></h2>
+<p><a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity">HVCI</a> stands for <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control">Hypervisor-protected Code Integrity</a> and it is a feature that uses virtualization-based security (VBS) to protect the Windows kernel from memory attacks. HVCI can be set to different options in a WDAC policy, such as Enabled, DebugMode, or Strict. Setting HVCI to Strict in a WDAC policy provides the highest level of protection for kernel mode code integrity, as it enforces these additional restrictions:</p>
+<ul>
+<li>
+<p>It prevents unsigned drivers from loading, even if they are allowed by the WDAC policy.
+It prevents drivers that are not compatible with HVCI from loading, even if they are signed and allowed by the WDAC policy.</p>
+</li>
+<li>
+<p>It prevents drivers that have been tampered with or modified from loading, even if they are signed and allowed by the WDAC policy.</p>
+</li>
+<li>
+<p>Setting HVCI to Strict in a WDAC policy can help prevent malware or attackers from exploiting vulnerabilities in kernel mode drivers or bypassing the WDAC policy enforcement. </p>
+</li>
+</ul>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="continue-reading-about-byovd-protection-with-wdac"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/arrow-pink.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img width="65" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/arrow-pink.gif"></a> Continue reading about BYOVD protection with WDAC<a class="headerlink" href="#continue-reading-about-byovd-protection-with-wdac" title="Permanent link">&para;</a></h2>
+<h4 id="wdac-policy-for-byovd-kernel-mode-only-protection"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection">WDAC policy</a> for BYOVD Kernel mode only protection<a class="headerlink" href="#wdac-policy-for-byovd-kernel-mode-only-protection" title="Permanent link">&para;</a></h4>
 <p><br></p>
 
   <hr>
