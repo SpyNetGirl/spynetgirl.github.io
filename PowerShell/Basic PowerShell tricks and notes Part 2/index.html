@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://spynetgirl.github.io/PowerShell/Basic%20PowerShell%20tricks%20and%20notes%20Part%202/">
       
       
-        <link rel="prev" href="../../Miscellaneous/Overrides%20for%20Microsoft%20Security%20Baseline/">
+        <link rel="prev" href="../../Miscellaneous/Things%20to%20do%20for%20clean%20installing%20Windows/">
       
       
         <link rel="next" href="../Basic%20PowerShell%20tricks%20and%20notes/">
@@ -686,6 +686,20 @@ or on
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Things%20to%20do%20for%20clean%20installing%20Windows/" class="md-nav__link">
+        Things to do when clean installing Windows
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -870,6 +884,62 @@ or on
         <li class="md-nav__item">
   <a href="#how-to-access-properties-of-an-object-in-powershell" class="md-nav__link">
     How to access properties of an object in PowerShell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dot-sourcing" class="md-nav__link">
+    Dot-sourcing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-custom-script-to-generate-random-words-in-powershell" class="md-nav__link">
+    A custom script to generate random words in PowerShell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-see-all-the-shared-folders-and-drives" class="md-nav__link">
+    How to see all the shared folders and drives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-example-of-using-f-format-operator" class="md-nav__link">
+    An example of using -f format operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-list-all-of-the-positional-parameters-of-a-cmdlet" class="md-nav__link">
+    How to list all of the Positional Parameters of a Cmdlet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-the-number-of-fans-and-details-about-them-in-powershell" class="md-nav__link">
+    How to get the number of fans and details about them in PowerShell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-the-last-reboot-time-in-powershell" class="md-nav__link">
+    How to get the last reboot time in PowerShell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-add-a-ps-custom-object-to-another-ps-custom-object" class="md-nav__link">
+    How to add a PS custom object to another PS custom object
   </a>
   
 </li>
@@ -1437,6 +1507,62 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dot-sourcing" class="md-nav__link">
+    Dot-sourcing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-custom-script-to-generate-random-words-in-powershell" class="md-nav__link">
+    A custom script to generate random words in PowerShell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-see-all-the-shared-folders-and-drives" class="md-nav__link">
+    How to see all the shared folders and drives
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-example-of-using-f-format-operator" class="md-nav__link">
+    An example of using -f format operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-list-all-of-the-positional-parameters-of-a-cmdlet" class="md-nav__link">
+    How to list all of the Positional Parameters of a Cmdlet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-the-number-of-fans-and-details-about-them-in-powershell" class="md-nav__link">
+    How to get the number of fans and details about them in PowerShell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-the-last-reboot-time-in-powershell" class="md-nav__link">
+    How to get the last reboot time in PowerShell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-add-a-ps-custom-object-to-another-ps-custom-object" class="md-nav__link">
+    How to add a PS custom object to another PS custom object
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1585,6 +1711,89 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">$(</span><span class="nb">Get-MpPreference</span><span class="p">).</span><span class="n">puaprotection</span>
 </span></code></pre></div>
 <p><br></p>
+<h2 id="dot-sourcing">Dot-sourcing<a class="headerlink" href="#dot-sourcing" title="Permanent link">&para;</a></h2>
+<p>To dot-source a PowerShell function in the same script file, you can use the dot operator <code>.</code> followed by the path of the script file containing the function. The path can be relative or absolute. Here's an example:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c"># Contents of MyFunctions.ps1</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="k">function</span> <span class="n">MyFunction</span> <span class="p">{</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;Hello World!&quot;</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">}</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="c"># Contents of Main.ps1</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="p">.</span> <span class="p">./</span><span class="n">MyFunctions</span><span class="p">.</span><span class="n">ps1</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="n">MyFunction</span>
+</span></code></pre></div>
+<p>In this example, <code>Main.ps1</code> dot-sources <code>MyFunctions.ps1</code> using the dot operator and then calls <code>MyFunction</code>. When you run <code>Main.ps1</code>, it will output <code>Hello World!</code> to the console.</p>
+<p>The dot operator tells PowerShell to execute the script file in the current scope instead of a new scope. This means that any functions or variables defined in the script file will be available in the current scope.</p>
+<p><br></p>
+<h2 id="a-custom-script-to-generate-random-words-in-powershell">A custom script to generate random words in PowerShell<a class="headerlink" href="#a-custom-script-to-generate-random-words-in-powershell" title="Permanent link">&para;</a></h2>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c"># Generate four variables with random names</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nv">$TotallyRandomNamesArray</span> <span class="p">=</span> <span class="p">@()</span> <span class="c"># Create an empty array to store the names</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-lt</span> <span class="n">4</span><span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="c"># Loop four times</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    <span class="nv">$Chars</span> <span class="p">=</span> <span class="no">[CHAR[]]</span><span class="p">(</span><span class="nb">Get-Random</span> <span class="n">-Minimum</span> <span class="n">97</span> <span class="n">-Maximum</span> <span class="n">123</span> <span class="n">-Count</span> <span class="n">11</span><span class="p">)</span> <span class="c"># Generate random English letters</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    <span class="nv">$Chars</span><span class="p">[</span><span class="n">0</span><span class="p">]</span> <span class="p">=</span> <span class="no">[CHAR]</span><span class="p">::</span><span class="n">ToUpper</span><span class="p">(</span><span class="nv">$Chars</span><span class="p">[</span><span class="n">0</span><span class="p">])</span> <span class="c"># Change the first character to upper-case</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    <span class="nv">$TotallyRandomNamesArray</span> <span class="p">+=</span> <span class="n">-join</span> <span class="nv">$Chars</span> <span class="c"># Add the name to the array</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="p">}</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="c"># Assign the names from the Names array to the individual variables</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="nv">$TotallyRandomName1</span><span class="p">,</span> <span class="nv">$TotallyRandomName2</span><span class="p">,</span> <span class="nv">$TotallyRandomName3</span><span class="p">,</span> <span class="nv">$TotallyRandomName4</span> <span class="p">=</span> <span class="nv">$TotallyRandomNamesArray</span>
+</span></code></pre></div>
+<p><br></p>
+<h2 id="how-to-see-all-the-shared-folders-and-drives">How to see all the shared folders and drives<a class="headerlink" href="#how-to-see-all-the-shared-folders-and-drives" title="Permanent link">&para;</a></h2>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">Get-CimInstance</span> <span class="n">-Class</span> <span class="n">Win32_Share</span>
+</span></code></pre></div>
+<p>There are other ways that are not native PowerShell cmdlets, such as</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>net view \\$env:computername /all
+</span></code></pre></div>
+<p>and</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>net share
+</span></code></pre></div>
+<blockquote>
+<p>Also visible from Computer =&gt; System Tools =&gt; Shared Folders =&gt; Shares</p>
+</blockquote>
+<p><br></p>
+<h2 id="an-example-of-using-f-format-operator">An example of using -f format operator<a class="headerlink" href="#an-example-of-using-f-format-operator" title="Permanent link">&para;</a></h2>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nb">Write-output</span><span class="p">(</span><span class="s2">&quot;The drivername {0} is vulnerable with a matching SHA256 hash of {1}&quot;</span> <span class="o">-f</span> <span class="nv">$Filename</span><span class="p">,</span> <span class="nv">$SHA256</span><span class="p">)</span>
+</span></code></pre></div>
+<p><a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.3#format-operator--f">More info</a></p>
+<p><br></p>
+<h2 id="how-to-list-all-of-the-positional-parameters-of-a-cmdlet">How to list all of the Positional Parameters of a Cmdlet<a class="headerlink" href="#how-to-list-all-of-the-positional-parameters-of-a-cmdlet" title="Permanent link">&para;</a></h2>
+<p>In this example we use the </p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">Get-Help</span> <span class="n">-Name</span> <span class="s2">&quot;Get-ChildItem&quot;</span> <span class="n">-Parameter</span> <span class="p">*</span> <span class="p">|</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="k">position</span> <span class="p">|</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nb">Select-Object</span> <span class="n">-Property</span> <span class="n">name</span><span class="p">,</span> <span class="k">position</span>
+</span></code></pre></div>
+<p><br></p>
+<h2 id="how-to-get-the-number-of-fans-and-details-about-them-in-powershell">How to get the number of fans and details about them in PowerShell<a class="headerlink" href="#how-to-get-the-number-of-fans-and-details-about-them-in-powershell" title="Permanent link">&para;</a></h2>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">(</span><span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="n">root</span><span class="p">/</span><span class="n">CIMV2</span> <span class="n">-ClassName</span> <span class="n">Win32_Fan</span><span class="p">).</span><span class="n">count</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="n">root</span><span class="p">/</span><span class="n">CIMV2</span> <span class="n">-ClassName</span> <span class="n">Win32_Fan</span>
+</span></code></pre></div>
+<blockquote>
+<p>P.S VMs don't have fans.</p>
+</blockquote>
+<p><br></p>
+<h2 id="how-to-get-the-last-reboot-time-in-powershell">How to get the last reboot time in PowerShell<a class="headerlink" href="#how-to-get-the-last-reboot-time-in-powershell" title="Permanent link">&para;</a></h2>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="no">[datetime]</span><span class="p">(</span><span class="nb">Get-CimInstance</span> <span class="n">-ClassName</span> <span class="n">win32_operatingsystem</span> <span class="n">-ComputerName</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">LastBootUpTime</span>
+</span></code></pre></div>
+<p><br></p>
+<h2 id="how-to-add-a-ps-custom-object-to-another-ps-custom-object">How to add a PS custom object to another PS custom object<a class="headerlink" href="#how-to-add-a-ps-custom-object-to-another-ps-custom-object" title="Permanent link">&para;</a></h2>
+<p>You can use the <code>Add-Member`` cmdlet with the</code>-InputObject<code>parameter. The `-InputObject</code> parameter specifies the custom object that you want to add a property to, and the <code>-Value`` parameter specifies the custom object that you want to add as a property. For example, you can use this code to add the</code>$CustomObject<code>to another custom object called `$ParentObject</code>:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nv">$HashTable</span> <span class="p">=</span> <span class="p">@{</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;Alice&#39;</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    <span class="n">Age</span> <span class="p">=</span> <span class="n">25</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>    <span class="n">Occupation</span> <span class="p">=</span> <span class="s1">&#39;Teacher&#39;</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="p">}</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nv">$CustomObject</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="nv">$HashTable</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="c"># Create another custom object</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="nv">$ParentObject</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>    <span class="n">ID</span> <span class="p">=</span> <span class="n">123</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>    <span class="n">Location</span> <span class="p">=</span> <span class="s1">&#39;London&#39;</span>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="p">}</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="c"># Add the $CustomObject as a property to the $ParentObject</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="nb">Add-Member</span> <span class="n">-InputObject</span> <span class="nv">$ParentObject</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="n">Child</span> <span class="n">-Value</span> <span class="nv">$CustomObject</span>
+</span></code></pre></div>
+<p><br></p>
 
   <hr>
 <div class="md-source-file">
@@ -1626,7 +1835,7 @@ or on
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../Miscellaneous/Overrides%20for%20Microsoft%20Security%20Baseline/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Optional overrides for Microsoft Security Baseline" rel="prev">
+          <a href="../../Miscellaneous/Things%20to%20do%20for%20clean%20installing%20Windows/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Things to do when clean installing Windows" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1635,7 +1844,7 @@ or on
                 Previous
               </span>
               <div class="md-ellipsis">
-                Optional overrides for Microsoft Security Baseline
+                Things to do when clean installing Windows
               </div>
             </div>
           </a>
