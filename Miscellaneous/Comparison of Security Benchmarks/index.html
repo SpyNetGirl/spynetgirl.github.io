@@ -10,20 +10,20 @@
       
       
       
-        <link rel="canonical" href="https://spynetgirl.github.io/WDACConfig%20Module/New-KernelModeWDACConfig/">
+        <link rel="canonical" href="https://spynetgirl.github.io/Miscellaneous/Comparison%20of%20Security%20Benchmarks/">
       
       
-        <link rel="prev" href="../New-DenyWDACConfig/">
+        <link rel="prev" href="../About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/">
       
       
-        <link rel="next" href="../New-SupplementalWDACConfig/">
+        <link rel="next" href="../Create%20Bootable%20USB%20flash%20drive%20with%20no%203rd%20party%20tools/">
       
       <link rel="icon" href="../../images/logo.png">
       <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
-        <title>New-KernelModeWDACConfig available parameters - SpyNetGirl Blog</title>
+        <title>Comparison of security benchmarks - SpyNetGirl Blog</title>
       
     
     
@@ -118,7 +118,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#new-kernelmodewdacconfig-available-parameters" class="md-skip">
+        <a href="#comparison-of-security-benchmarks" class="md-skip">
           Skip to content
         </a>
       
@@ -172,7 +172,7 @@ or on
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              New-KernelModeWDACConfig available parameters
+              Comparison of security benchmarks
             
           </span>
         </div>
@@ -320,13 +320,15 @@ or on
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../Miscellaneous/About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-tabs__link">
+      <a href="../About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-tabs__link md-tabs__link--active">
         Miscellaneous
       </a>
     </li>
@@ -368,15 +370,13 @@ or on
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../Confirm-WDACConfig/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../WDACConfig%20Module/Confirm-WDACConfig/" class="md-tabs__link">
         WDACConfig Module
       </a>
     </li>
@@ -563,16 +563,16 @@ or on
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-        
-      
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
       
@@ -581,7 +581,7 @@ or on
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Miscellaneous
@@ -594,7 +594,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../Miscellaneous/About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-nav__link">
+      <a href="../About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-nav__link">
         About TLS, DNS, Encryption and OPSEC concepts
       </a>
     </li>
@@ -606,11 +606,107 @@ or on
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Miscellaneous/Comparison%20of%20Security%20Benchmarks/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Comparison of security benchmarks
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Comparison of security benchmarks
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#some-of-the-pitfalls-of-relying-on-third-party-benchmarks" class="md-nav__link">
+    Some of the pitfalls of relying on third-party benchmarks 
+  </a>
+  
+    <nav class="md-nav" aria-label="Some of the pitfalls of relying on third-party benchmarks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clipboard-sharing-from-guest-to-host" class="md-nav__link">
+     Clipboard sharing from guest to host !
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renaming-built-in-administrator-and-guest-accounts" class="md-nav__link">
+     Renaming built-in administrator and guest accounts !
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-windows-hello-pin-and-using-traditional-passwords-instead" class="md-nav__link">
+     Disabling Windows Hello PIN and using traditional passwords instead !
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-configuration-for-early-launch-anti-malware" class="md-nav__link">
+     Bad configuration for Early Launch Anti Malware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-windows-error-reporting" class="md-nav__link">
+     Disabling Windows Error reporting !
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-be-continued" class="md-nav__link">
+    To be continued...
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aspects-that-are-lacking" class="md-nav__link">
+    Aspects that are lacking 
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -622,7 +718,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../Miscellaneous/Create%20Bootable%20USB%20flash%20drive%20with%20no%203rd%20party%20tools/" class="md-nav__link">
+      <a href="../Create%20Bootable%20USB%20flash%20drive%20with%20no%203rd%20party%20tools/" class="md-nav__link">
         Create Bootable flash drive no 3rd party tools
       </a>
     </li>
@@ -636,7 +732,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../Miscellaneous/Event%20Viewer/" class="md-nav__link">
+      <a href="../Event%20Viewer/" class="md-nav__link">
         Event Viewer
       </a>
     </li>
@@ -650,7 +746,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../Miscellaneous/Group%20Policy/" class="md-nav__link">
+      <a href="../Group%20Policy/" class="md-nav__link">
         Group Policy usage in this GitHub repository
       </a>
     </li>
@@ -664,7 +760,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../Miscellaneous/How%20to%20compact%20your%20OS%20and%20free%20up%20extra%20space/" class="md-nav__link">
+      <a href="../How%20to%20compact%20your%20OS%20and%20free%20up%20extra%20space/" class="md-nav__link">
         How to compact your OS and free up extra space
       </a>
     </li>
@@ -678,7 +774,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../Miscellaneous/Hyper%20V/" class="md-nav__link">
+      <a href="../Hyper%20V/" class="md-nav__link">
         Hyper-V Tips and Tricks
       </a>
     </li>
@@ -692,7 +788,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../Miscellaneous/Overrides%20for%20Microsoft%20Security%20Baseline/" class="md-nav__link">
+      <a href="../Overrides%20for%20Microsoft%20Security%20Baseline/" class="md-nav__link">
         Optional overrides for Microsoft Security Baseline
       </a>
     </li>
@@ -706,7 +802,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../Miscellaneous/Things%20to%20do%20for%20clean%20installing%20Windows/" class="md-nav__link">
+      <a href="../Things%20to%20do%20for%20clean%20installing%20Windows/" class="md-nav__link">
         Things to do when clean installing Windows
       </a>
     </li>
@@ -968,16 +1064,16 @@ or on
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
       
       
       
@@ -986,7 +1082,7 @@ or on
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_7">
           <span class="md-nav__icon md-icon"></span>
           WDACConfig Module
@@ -999,7 +1095,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Confirm-WDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Confirm-WDACConfig/" class="md-nav__link">
         Confirm-WDACConfig available parameters
       </a>
     </li>
@@ -1013,7 +1109,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Deploy-SignedWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Deploy-SignedWDACConfig/" class="md-nav__link">
         Deploy-SignedWDACConfig available parameters
       </a>
     </li>
@@ -1027,7 +1123,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Edit-SignedWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Edit-SignedWDACConfig/" class="md-nav__link">
         Edit-SignedWDACConfig available parameters
       </a>
     </li>
@@ -1041,7 +1137,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Edit-WDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Edit-WDACConfig/" class="md-nav__link">
         Edit-WDACConfig available parameters
       </a>
     </li>
@@ -1055,7 +1151,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Get-CommonWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Get-CommonWDACConfig/" class="md-nav__link">
         Get-CommonWDACConfig available parameters
       </a>
     </li>
@@ -1069,7 +1165,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Invoke-WDACSimulation/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Invoke-WDACSimulation/" class="md-nav__link">
         Invoke-WDACSimulation available parameters
       </a>
     </li>
@@ -1083,7 +1179,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../New-DenyWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/New-DenyWDACConfig/" class="md-nav__link">
         New-DenyWDACConfig available parameters
       </a>
     </li>
@@ -1095,119 +1191,11 @@ or on
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          New-KernelModeWDACConfig available parameters
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../WDACConfig%20Module/New-KernelModeWDACConfig/" class="md-nav__link">
         New-KernelModeWDACConfig available parameters
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
-  </a>
-  
-    <nav class="md-nav" aria-label="Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#during-the-prepmodes-the-following-event-log-categories-are-cleared" class="md-nav__link">
-    During the PrepModes, the following event log categories are cleared
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-kernelmodewdacconfig-default" class="md-nav__link">
-    New-KernelModeWDACConfig -Default
-  </a>
-  
-    <nav class="md-nav" aria-label="New-KernelModeWDACConfig -Default">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    How to use
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-optional-parameter" class="md-nav__link">
-    4 optional parameter
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-kernelmodewdacconfig-noflightroots" class="md-nav__link">
-    New-KernelModeWDACConfig -NoFlightRoots
-  </a>
-  
-    <nav class="md-nav" aria-label="New-KernelModeWDACConfig -NoFlightRoots">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-use_1" class="md-nav__link">
-    How to use
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-optional-parameter_1" class="md-nav__link">
-    4 optional parameter
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1219,7 +1207,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../New-SupplementalWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/New-SupplementalWDACConfig/" class="md-nav__link">
         New-SupplementalWDACConfig available parameters
       </a>
     </li>
@@ -1233,7 +1221,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../New-WDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/New-WDACConfig/" class="md-nav__link">
         New-WDACConfig available parameters
       </a>
     </li>
@@ -1247,7 +1235,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Remove-WDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Remove-WDACConfig/" class="md-nav__link">
         Remove-WDACConfig available parameters
       </a>
     </li>
@@ -1261,7 +1249,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Set-CommonWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Set-CommonWDACConfig/" class="md-nav__link">
         Set-CommonWDACConfig available parameters
       </a>
     </li>
@@ -1275,7 +1263,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../WDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/WDACConfig/" class="md-nav__link">
         WDACConfig Windows Defender PowerShell Module
       </a>
     </li>
@@ -1316,16 +1304,51 @@ or on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
+  <a href="#some-of-the-pitfalls-of-relying-on-third-party-benchmarks" class="md-nav__link">
+    Some of the pitfalls of relying on third-party benchmarks 
   </a>
   
-    <nav class="md-nav" aria-label="Notes">
+    <nav class="md-nav" aria-label="Some of the pitfalls of relying on third-party benchmarks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#during-the-prepmodes-the-following-event-log-categories-are-cleared" class="md-nav__link">
-    During the PrepModes, the following event log categories are cleared
+  <a href="#clipboard-sharing-from-guest-to-host" class="md-nav__link">
+     Clipboard sharing from guest to host !
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#renaming-built-in-administrator-and-guest-accounts" class="md-nav__link">
+     Renaming built-in administrator and guest accounts !
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-windows-hello-pin-and-using-traditional-passwords-instead" class="md-nav__link">
+     Disabling Windows Hello PIN and using traditional passwords instead !
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bad-configuration-for-early-launch-anti-malware" class="md-nav__link">
+     Bad configuration for Early Launch Anti Malware
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-windows-error-reporting" class="md-nav__link">
+     Disabling Windows Error reporting !
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to-be-continued" class="md-nav__link">
+    To be continued...
   </a>
   
 </li>
@@ -1336,56 +1359,9 @@ or on
 </li>
       
         <li class="md-nav__item">
-  <a href="#new-kernelmodewdacconfig-default" class="md-nav__link">
-    New-KernelModeWDACConfig -Default
+  <a href="#aspects-that-are-lacking" class="md-nav__link">
+    Aspects that are lacking 
   </a>
-  
-    <nav class="md-nav" aria-label="New-KernelModeWDACConfig -Default">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    How to use
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-optional-parameter" class="md-nav__link">
-    4 optional parameter
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#new-kernelmodewdacconfig-noflightroots" class="md-nav__link">
-    New-KernelModeWDACConfig -NoFlightRoots
-  </a>
-  
-    <nav class="md-nav" aria-label="New-KernelModeWDACConfig -NoFlightRoots">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#how-to-use_1" class="md-nav__link">
-    How to use
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-optional-parameter_1" class="md-nav__link">
-    4 optional parameter
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1407,112 +1383,124 @@ or on
   
 
 
-<h1 id="new-kernelmodewdacconfig-available-parameters">New-KernelModeWDACConfig available parameters<a class="headerlink" href="#new-kernelmodewdacconfig-available-parameters" title="Permanent link">&para;</a></h1>
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<h1 id="comparison-of-security-benchmarks">Comparison of security benchmarks <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/lovelybat.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/lovelybat.gif" width="50"></a><a class="headerlink" href="#comparison-of-security-benchmarks" title="Permanent link">&para;</a></h1>
+<p>I conducted a thorough analysis of some of the prominent security benchmarks/guidelines for my GitHub repository and I discovered some fascinating insights. By analysis, I mean that I examined every single recommendation in them and compared them with my own suggestions and Microsoft Security Baselines.</p>
+<p>The majority of the recommendations in the security benchmarks align with the Microsoft Security Baselines, which are a set of best practices for securing various products and services. Only a small fraction of the recommendations deviate from the baselines, and they are either additional enhancements (rarely), redundant suggestions or erroneous advice that undermine security!</p>
+<p>For my reviews I used the latest available version of each benchmark.</p>
+<p><br></p>
+<h2 id="some-of-the-pitfalls-of-relying-on-third-party-benchmarks">Some of the pitfalls of relying on third-party benchmarks <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/whyme.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/whyme.gif" width="50"></a><a class="headerlink" href="#some-of-the-pitfalls-of-relying-on-third-party-benchmarks" title="Permanent link">&para;</a></h2>
+<h3 id="clipboard-sharing-from-guest-to-host"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Clipboard sharing from guest to host !<a class="headerlink" href="#clipboard-sharing-from-guest-to-host" title="Permanent link">&para;</a></h3>
+<p>CIS 18.10.44.5 (L1) recommends allowing clipboard operation from an isolated session to the host, i.e. guest to host redirection, which is a highly insecure and irrational suggestion!</p>
+<p>These are their precise official words:</p>
+<blockquote>
+<p>Rationale:
+The primary purpose of Microsoft Defender Application Guard is to present a 
+"sandboxed container" for visiting untrusted websites. If the host clipboard is made 
+available to Microsoft Defender Application Guard, a compromised Microsoft Defender 
+Application Guard session will have access to its content, potentially exposing sensitive 
+information to a malicious website or application. <strong>However, the risk is reduced if the 
+Microsoft Defender Application Guard clipboard is made accessible to the host, and 
+indeed that functionality may often be necessary from an operational standpoint</strong></p>
+</blockquote>
+<p><br></p>
+<h3 id="renaming-built-in-administrator-and-guest-accounts"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Renaming built-in administrator and guest accounts !<a class="headerlink" href="#renaming-built-in-administrator-and-guest-accounts" title="Permanent link">&para;</a></h3>
+<p>Both CIS and STIG suggest altering the name of the built-in administrator and guest accounts as a security measure.</p>
+<p>This is futile as those built-in accounts can be readily identified by PowerShell, regardless of any modifications to its name or description (which I have done).</p>
+<p>For example, the <code>BUILTIN\Administrator</code> account always has a relative identifier (RID) of <code>500</code>. </p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Get-LocalUser</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="n">-FilterScript</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">SID</span> <span class="o">-like</span> <span class="s1">&#39;S-1-5-*-500&#39;</span><span class="p">}</span>
+</span></code></pre></div>
+<blockquote>
+<p>Thanks <a href="https://github.com/elliot-huffman">Elliot Huffman</a> for suggesting the shorter command! </p>
+</blockquote>
+<details>
+
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="n">System</span><span class="p">.</span><span class="n">DirectoryServices</span><span class="p">.</span><span class="n">AccountManagement</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">$principalContext</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">DirectoryServices</span><span class="p">.</span><span class="n">AccountManagement</span><span class="p">.</span><span class="n">PrincipalContext</span><span class="p">(</span><span class="no">[System.DirectoryServices.AccountManagement.ContextType]</span><span class="p">::</span><span class="n">Machine</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">$userPrincipal</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">DirectoryServices</span><span class="p">.</span><span class="n">AccountManagement</span><span class="p">.</span><span class="n">UserPrincipal</span><span class="p">(</span><span class="nv">$principalContext</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nv">$searcher</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="n">DirectoryServices</span><span class="p">.</span><span class="n">AccountManagement</span><span class="p">.</span><span class="n">PrincipalSearcher</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nv">$searcher</span><span class="p">.</span><span class="n">QueryFilter</span> <span class="p">=</span> <span class="nv">$userPrincipal</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nv">$searcher</span><span class="p">.</span><span class="n">FindAll</span><span class="p">()</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Sid</span> <span class="o">-Like</span> <span class="s2">&quot;*-500&quot;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">SamAccountName</span><span class="p">&lt;/</span><span class="n">details</span><span class="p">&gt;</span>
+</span></code></pre></div>
+
+</details>
+
+<p><br></p>
+<h3 id="disabling-windows-hello-pin-and-using-traditional-passwords-instead"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Disabling Windows Hello PIN and using traditional passwords instead !<a class="headerlink" href="#disabling-windows-hello-pin-and-using-traditional-passwords-instead" title="Permanent link">&para;</a></h3>
+<p>These benchmarks recommend disabling Windows Hello PIN and opting for passwords instead. Stig V-253423 and CIS 18.9.27.4.</p>
+<p>They argue that this is for domain accounts</p>
+<p>Their rationale, which is very wrong, is</p>
+<blockquote>
+<p>A PIN is created from a much smaller selection of characters than a password, so in 
+most cases a PIN will be much less robust than a password.</p>
+</blockquote>
+<p>It is a grave security lapse to propose such a policy and then label the benchmark/guideline as “CIS Microsoft Windows 11 Stand-alone Benchmark”, highlighting that it is intended for stand-alone computers, while simultaneously suggesting to disable PIN for domain-joined devices. This is a glaring inconsistency and a perilous practice.</p>
+<p>The guideline/benchmark is fundamentally flawed if it presupposes that the computer is domain-joined, despite the label indicating that it is stand-alone. It also neglects to consider that some users may actually be stand-alone (home users that account for the majority of the users) or use Microsoft Entra ID, and this policy is nonsensical for them.</p>
+<p>STIG commits the same error, as it only provides a generic Windows 11 guideline/benchmark and recommends disabling Windows Hello PIN, without taking into account the factors mentioned above.</p>
+<p>You can <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-why-pin-is-better-than-password">read this Microsoft document</a> to find out why a PIN is better than an online password</p>
+<p>There are proper policies regarding anti-hammering features that can enhance the security of PINs over passwords. I utilize them in my script and <a href="https://github.com/HotCakeX/Harden-Windows-Security#lock-screen">you can find them here</a>.</p>
+<p>The benchmarks/guidelines seem to be uninformed of the fact that Windows allows <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/feature-multifactor-unlock">multi-factor unlock</a>, which can enforce a combination of PIN and biometric factors (plus more), to enforce <strong>PIN + Facial recognition</strong> OR <strong>PIN + Fingerprint</strong> etc.</p>
+<p><br></p>
+<h3 id="bad-configuration-for-early-launch-anti-malware"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Bad configuration for Early Launch Anti Malware<a class="headerlink" href="#bad-configuration-for-early-launch-anti-malware" title="Permanent link">&para;</a></h3>
+<p>CIS in 18.9.13.1</p>
+<blockquote>
+<p>The recommended state for this setting is: Enabled: Good, unknown and bad but 
+critical</p>
+</blockquote>
+<p>That's not even a recommendation, that's the default value! If you use <a href="https://github.com/HotCakeX/Harden-Windows-Security#miscellaneous-configurations">Harden Windows Security script</a> it sets it to <strong>Good Only</strong>, which is the correct recommendation for a secure environment.</p>
+<p><br></p>
+<h3 id="disabling-windows-error-reporting"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Disabling Windows Error reporting !<a class="headerlink" href="#disabling-windows-error-reporting" title="Permanent link">&para;</a></h3>
+<p>Their rationale is:</p>
+<blockquote>
+<p>...There is no benefit to the corporation to report these errors directly to Microsoft...</p>
+</blockquote>
+<p>Indeed, the corporation that uses the software benefits from it by reporting the problems. This exact way of thinking that leads to making such a policy is the reason why problems remain unsolved, because they are not reported to Microsoft and the IT staff of the companies are simply unable to resolve the problem themselves, since they are not the ones developing the OS.</p>
+<p><br></p>
+<h3 id="to-be-continued">To be continued...<a class="headerlink" href="#to-be-continued" title="Permanent link">&para;</a></h3>
+<p>These benchmarks or guidelines have numerous flaws and I have only examined two of them. There are many other benchmarks, standards, guidelines, etc. that may also contain errors or inconsistencies and are totally <strong>unsafe</strong> to implement them.</p>
+<p><br></p>
+<h2 id="aspects-that-are-lacking">Aspects that are lacking <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/gothwink.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/gothwink.gif" width="50"></a><a class="headerlink" href="#aspects-that-are-lacking" title="Permanent link">&para;</a></h2>
+<p>The benchmarks omit many new security features that the <a href="https://github.com/HotCakeX/Harden-Windows-Security">Harden Windows Security script</a> implements.</p>
+<p>Everything in the repository is carefully researched, evaluated and tested. The script ensures that nothing is redundant or incompatible with the latest version of Windows. Older versions of the OS are obsolete and insecure, and should be avoided in any environment that requires protection. Threat actors can exploit vulnerabilities and use PoCs even on the same day that an update is released, this applies to any OS.</p>
+<p>The security measures in the Harden Windows Security repository are also perfectly suitable for regular home users.</p>
+<p>There are many security measures that are missing from the benchmarks/guidelines, such as the ones I use in:</p>
 <ul>
 <li>
-<p><strong>Mandatory</strong> parameters indicate you always need to provide values for them.</p>
+<p><a href="https://github.com/HotCakeX/Harden-Windows-Security#microsoft-security-baselines">Microsoft Defender category</a></p>
 </li>
 <li>
-<p><strong>Automatic</strong> parameters indicate that if you used <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Set-CommonWDACConfig">Set-CommonWDACConfig</a> cmdlet to set default values for them, the module will automatically use them. This saves time and prevents repetitive tasks. However, if no value exists in User Configurations for an Automatic parameter and you didn't explicitly provide a value for that parameter either, then you will see an error asking you to provide value for it. Explicitly providing a value for an Automatic parameter in the command line overrides its default value in User Configurations, meaning the module will ignore the value of the same parameter in the User Configurations file.</p>
+<p><a href="https://github.com/HotCakeX/Harden-Windows-Security#miscellaneous-configurations">Miscellaneous Category</a></p>
 </li>
 <li>
-<p><strong>Optional</strong> parameters indicate that they are not required and without using them the module will automatically run with the optimal settings.</p>
+<p><a href="https://github.com/HotCakeX/Harden-Windows-Security#edge-browser-configurations">Edge Browser category</a></p>
 </li>
 <li>
-<p>Many cmdlets and parameters of the module support the PowerShell's built-in <code>-Debug</code> switch and when that switch is used, they display extra details and debugging messages on the console, showing you what's happening under the hood.</p>
+<p><a href="https://github.com/HotCakeX/Harden-Windows-Security#tls-security">TLS Security category</a> </p>
+</li>
+<li>
+<p><a href="https://github.com/HotCakeX/Harden-Windows-Security#lock-screen">Lock screen category</a></p>
+</li>
+<li>
+<p>And more</p>
 </li>
 </ul>
+<p>The benchmarks/guidelines suggest using application control or whitelisting, but that's just it, a suggestion, no <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Introduction">comprehensive guide about how to do it</a>.</p>
 <p><br></p>
-<h3 id="during-the-prepmodes-the-following-event-log-categories-are-cleared">During the PrepModes, <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/event-id-explanations">the following event log categories</a> are cleared<a class="headerlink" href="#during-the-prepmodes-the-following-event-log-categories-are-cleared" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>Applications and Services logs – Microsoft – Windows – CodeIntegrity – Operational includes events about Application Control policy activation and the control of executables, dlls, and drivers.</p>
-</li>
-<li>
-<p>Applications and Services logs – Microsoft – Windows – AppLocker – MSI and Script includes events about the control of MSI installers, scripts, and COM objects.</p>
-</li>
-</ul>
-<p>This behavior is required so that the audit phase will have the correct logs to scan and add to the base policy for allow listing. This behavior can be changed/improved in a future module update.</p>
-<p>Before the audit mode phase, make sure you trust all the files and programs installed on your system, otherwise you risk allow listing vulnerable or malicious drivers in your policy.</p>
+<p align="center">
+<a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/thankyou.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/thankyou.gif"></a>
+</p>
+
 <p><br></p>
-<h2 id="new-kernelmodewdacconfig-default">New-KernelModeWDACConfig -Default<a class="headerlink" href="#new-kernelmodewdacconfig-default" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/Harden-Windows-Security/main/images/Wiki%20APNGs/New-KernelModeWDACConfig%20-Default%20-PrepMode.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://raw.githubusercontent.com/HotCakeX/Harden-Windows-Security/main/images/Wiki%20APNGs/New-KernelModeWDACConfig%20-Default%20-PrepMode.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-KernelModeWDACConfig</span> <span class="p">[</span><span class="n">-Default</span><span class="p">]</span> <span class="p">[</span><span class="n">-PrepMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-AuditAndEnforce</span><span class="p">]</span> <span class="p">[</span><span class="n">-EVSigners</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deployit</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<h3 id="how-to-use">How to use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h3>
-<p>This cmdlet creates a Kernel-mode WDAC policy based on the Default Windows example policy. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection">You can read more about that process in here.</a></p>
-<p>The default parameter indicates that the Strict Kernel-mode WDAC policy will be deployed with flight root certificates, allowing you to use insider builds of the OS.</p>
-<p>First you need to use the <strong>PrepMode</strong> parameter to deploy the base policy in Audit mode, then reboot your system, after reboot event logs are generated for Kernel-mode drivers that are running but would otherwise get blocked if the policy was not deployed in Audit mode.</p>
-<p><br></p>
-<p>Now you need to use the <strong>AuditAndEnforce</strong> parameter to create the final base policy. This parameter will scan the event logs, create a supplemental policy for the drivers detected in event logs, merge the supplemental policy with the Strict Kernel-mode base policy and deploy it as a single base policy. <strong>No reboot required after deploying the final enforced mode policy, reboot is only required 1 time, after deploying the Audit mode policy.</strong></p>
-<p>Hardware drivers are scanned based on their certificates so they won't require a policy update when they are updated as long as they are still signed with the same certificate.</p>
-<p>The deployed base policy can have supplemental policies too so if in the future you need to allow more Kernel-mode drivers to run on your system, you can use the following command to automatically create and deploy a Supplemental policy.</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Edit-WDACConfig</span> <span class="n">-AllowNewAppsAuditEvents</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;Kernel mode drivers for software X&quot;</span> <span class="n">-PolicyPaths</span> <span class="p">&lt;</span><span class="n">Path</span> <span class="n">to</span> <span class="n">Strict</span> <span class="n">Kernel-mode</span> <span class="n">policy</span> <span class="n">xml</span> <span class="n">file</span><span class="p">&gt;</span> <span class="n">-Fallbacks</span> <span class="n">None</span> <span class="n">-NoUserPEs</span> <span class="n">-NoScript</span>
-</span></code></pre></div>
-<p><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-WDACConfig"><strong>More info about the command above</strong></a></p>
-<p><br></p>
-<h3 id="4-optional-parameter">4 optional parameter<a class="headerlink" href="#4-optional-parameter" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><code>-PrepMode</code>: Deploys the Strict Kernel-mode WDAC policy in Audit mode, preparing the system for an Audit.</p>
-</li>
-<li>
-<p><code>-AuditAndEnforce</code>: Audits the system using event logs for any blocked drivers, generates and deploys the final Strict Kernel-mode WDAC policy on the system.</p>
-</li>
-<li>
-<p><code>-EVSigners</code>: Uses EVSigners policy rule option. If you want to use this parameter, make sure you use it for both PrepMode and AuditAndEnforce parameters. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-Notes#policies-with-requiredev-signers-rule-option">Read more about EV Signers</a></p>
-</li>
-<li>
-<p><code>-Deployit</code>: Indicates that the policy will be deployed. If you want to deploy the final strict kernel-mode base policy Signed, do not use this parameter with <code>-AuditAndEnforce</code>. Instead just create the policy and then use <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig">Deploy-SignedWDACConfig</a> cmdlet to deploy it.</p>
-</li>
-</ul>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="new-kernelmodewdacconfig-noflightroots">New-KernelModeWDACConfig -NoFlightRoots<a class="headerlink" href="#new-kernelmodewdacconfig-noflightroots" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/Harden-Windows-Security/main/images/Wiki%20APNGs/New-KernelModeWDACConfig%20-NoFlightRoots%20-PrepMode.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://raw.githubusercontent.com/HotCakeX/Harden-Windows-Security/main/images/Wiki%20APNGs/New-KernelModeWDACConfig%20-NoFlightRoots%20-PrepMode.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-KernelModeWDACConfig</span> <span class="p">[</span><span class="n">-NoFlightRoots</span><span class="p">]</span> <span class="p">[</span><span class="n">-PrepMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-AuditAndEnforce</span><span class="p">]</span> <span class="p">[</span><span class="n">-EVSigners</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deployit</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<h3 id="how-to-use_1">How to use<a class="headerlink" href="#how-to-use_1" title="Permanent link">&para;</a></h3>
-<p>This cmdlet creates a Kernel-mode WDAC policy based on the Default Windows example policy. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection">You can read more about that process in here.</a></p>
-<p>The NoFlightRoots parameter indicates that the Strict Kernel-mode WDAC policy will not be deployed with flight root certificates, disallowing you to use insider builds of the OS.</p>
-<p>First you need to use the <strong>PrepMode</strong> parameter to deploy the base policy in Audit mode, then reboot your system, after reboot event logs are generated for Kernel-mode drivers that are running but would otherwise get blocked if the policy was not deployed in Audit mode.</p>
-<p>Now you need to use the <strong>AuditAndEnforce</strong> parameter to create the final base policy. This parameter will scan the event logs, create a supplemental policy for the drivers detected in event logs, merge the supplemental policy with the Strict Kernel-mode base policy and deploy it as a single base policy. <strong>No reboot required after deploying the final enforced mode policy, reboot is only required 1 time, after deploying the Audit mode policy.</strong></p>
-<p>Hardware drivers are scanned based on their certificates so they won't require a policy update when they are updated as long as they are still signed with the same certificate.</p>
-<p>The deployed base policy can have supplemental policies too so if in the future you need to allow more Kernel-mode drivers to run on your system, you can use the following command to automatically create and deploy a Supplemental policy.</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Edit-WDACConfig</span> <span class="n">-AllowNewAppsAuditEvents</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;Kernel mode drivers for software X&quot;</span> <span class="n">-PolicyPaths</span> <span class="p">&lt;</span><span class="n">Path</span> <span class="n">to</span> <span class="n">Strict</span> <span class="n">Kernel-mode</span> <span class="n">policy</span> <span class="n">xml</span> <span class="n">file</span><span class="p">&gt;</span> <span class="n">-Fallbacks</span> <span class="n">None</span> <span class="n">-NoUserPEs</span> <span class="n">-NoScript</span>
-</span></code></pre></div>
-<p><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-WDACConfig"><strong>More info about the command above</strong></a></p>
-<p><br></p>
-<h3 id="4-optional-parameter_1">4 optional parameter<a class="headerlink" href="#4-optional-parameter_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><code>-PrepMode</code>: Deploys the Strict Kernel-mode WDAC policy in Audit mode, preparing the system for an Audit.</p>
-</li>
-<li>
-<p><code>-AuditAndEnforce</code>: Audits the system using event logs for any blocked drivers, generates and deploys the final Strict Kernel-mode WDAC policy on the system.</p>
-</li>
-<li>
-<p><code>-EVSigners</code>: Uses EVSigners policy rule option. If you want to use this parameter, make sure you use it for both PrepMode and AuditAndEnforce parameters. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-Notes#policies-with-requiredev-signers-rule-option">Read more about EV Signers</a></p>
-</li>
-<li>
-<p><code>-Deployit</code>: Indicates that the policy will be deployed. If you want to deploy the final strict kernel-mode no flight roots base policy Signed, do not use this parameter with <code>-AuditAndEnforce</code>. Instead just create the policy and then use <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig">Deploy-SignedWDACConfig</a> cmdlet to deploy it.</p>
-</li>
-</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-18T22:57:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-06T14:54:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-06</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T15:00:57+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-06T14:54:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-06</span>
       
     
   </small>
@@ -1543,7 +1531,7 @@ or on
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../New-DenyWDACConfig/" class="md-footer__link md-footer__link--prev" aria-label="Previous: New-DenyWDACConfig available parameters" rel="prev">
+          <a href="../About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About TLS, DNS, Encryption and OPSEC concepts" rel="prev">
             <div class="md-footer__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
             </div>
@@ -1552,20 +1540,20 @@ or on
                 Previous
               </span>
               <div class="md-ellipsis">
-                New-DenyWDACConfig available parameters
+                About TLS, DNS, Encryption and OPSEC concepts
               </div>
             </div>
           </a>
         
         
           
-          <a href="../New-SupplementalWDACConfig/" class="md-footer__link md-footer__link--next" aria-label="Next: New-SupplementalWDACConfig available parameters" rel="next">
+          <a href="../Create%20Bootable%20USB%20flash%20drive%20with%20no%203rd%20party%20tools/" class="md-footer__link md-footer__link--next" aria-label="Next: Create Bootable flash drive no 3rd party tools" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                New-SupplementalWDACConfig available parameters
+                Create Bootable flash drive no 3rd party tools
               </div>
             </div>
             <div class="md-footer__button md-icon">
