@@ -1141,8 +1141,8 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-optional-parameters" class="md-nav__link">
-    7 optional parameters
+  <a href="#6-optional-parameters" class="md-nav__link">
+    6 optional parameters
   </a>
   
 </li>
@@ -1354,8 +1354,8 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-optional-parameters" class="md-nav__link">
-    7 optional parameters
+  <a href="#6-optional-parameters" class="md-nav__link">
+    6 optional parameters
   </a>
   
 </li>
@@ -1457,7 +1457,7 @@ or on
 <h2 id="new-denywdacconfig-normal">New-DenyWDACConfig -Normal<a class="headerlink" href="#new-denywdacconfig-normal" title="Permanent link">&para;</a></h2>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-DenyWDACConfig%20-Normal.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-DenyWDACConfig%20-Normal.apng" /></a></p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-DenyWDACConfig</span> <span class="p">[</span><span class="n">-Normal</span><span class="p">]</span> <span class="n">-PolicyName</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="n">-ScanLocations</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;</span> <span class="p">[</span><span class="n">-Level</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">[</span><span class="n">-Fallbacks</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-AllowFileNameFallbacks</span><span class="p">]</span> <span class="p">[</span><span class="n">-SpecificFileNameLevel</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-NoUserPEs</span><span class="p">]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">[</span><span class="n">-Fallbacks</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-SpecificFileNameLevel</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-NoUserPEs</span><span class="p">]</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">[</span><span class="n">-NoScript</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deployit</span><span class="p">]</span>
 </span></code></pre></div>
 <p><br></p>
@@ -1471,7 +1471,7 @@ or on
 <p><code>ScanLocations &lt;String[]&gt;</code>: Accepts one or more comma separated folder paths. Supports argument completion, when you press tab, folder picker GUI will open allowing you to easily select a folder, you can then add a comma <code>,</code> and press tab again to select another folder path or paste a folder path manually, works both ways.</p>
 </li>
 </ul>
-<h3 id="7-optional-parameters">7 optional parameters<a class="headerlink" href="#7-optional-parameters" title="Permanent link">&para;</a></h3>
+<h3 id="6-optional-parameters">6 optional parameters<a class="headerlink" href="#6-optional-parameters" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>-Deployit</code>: Indicates that the module will automatically deploy the Deny base policy after creation.</p>
@@ -1481,9 +1481,6 @@ or on
 </li>
 <li>
 <p><code>-Fallbacks &lt;String[]&gt;</code>: Offers the same official <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-fallback">Fallbacks</a> for scanning of the specified directory path. If no fallbacks is specified the default, which is set to <strong><em>Hash</em></strong> in this module, will be used.</p>
-</li>
-<li>
-<p><code>-AllowFileNameFallbacks</code>: <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-allowfilenamefallbacks">More info available on Microsoft Learn</a></p>
 </li>
 <li>
 <p><code>-SpecificFileNameLevel</code>: You can choose one of the following options: "OriginalFileName", "InternalName", "FileDescription", "ProductName", "PackageFamilyName", "FilePath". <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-specificfilenamelevel">More info available on Microsoft Learn</a></p>
@@ -1555,7 +1552,7 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-18T22:57:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-14T09:17:20+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-14</span>
       
         <br>
         Created:

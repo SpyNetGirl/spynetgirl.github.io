@@ -1285,8 +1285,8 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-optional-parameters" class="md-nav__link">
-    12 optional parameters
+  <a href="#11-optional-parameters" class="md-nav__link">
+    11 optional parameters
   </a>
   
 </li>
@@ -1565,8 +1565,8 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#12-optional-parameters" class="md-nav__link">
-    12 optional parameters
+  <a href="#11-optional-parameters" class="md-nav__link">
+    11 optional parameters
   </a>
   
 </li>
@@ -1764,11 +1764,13 @@ or on
 </li>
 <li>
 <p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
-</li>
+<ul>
 <li>
 <blockquote>
 <p>In addition to being WHQL signed, this rule requires that drivers must have been submitted by a partner that has an Extended Verification (EV) certificate. All Windows 10 and later, or Windows 11 drivers will meet this requirement.</p>
 </blockquote>
+</li>
+</ul>
 </li>
 </ul>
 <p><br></p>
@@ -1833,9 +1835,8 @@ or on
 <p><br></p>
 <h2 id="new-wdacconfig-makepolicyfromauditlogs">New-WDACConfig -MakePolicyFromAuditLogs<a class="headerlink" href="#new-wdacconfig-makepolicyfromauditlogs" title="Permanent link">&para;</a></h2>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakePolicyFromAuditLogs.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakePolicyFromAuditLogs.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakePolicyFromAuditLogs</span><span class="p">]</span> <span class="n">-BasePolicyType</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-Deployit</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">[</span><span class="n">-AllowFileNameFallbacks</span><span class="p">]</span> <span class="p">[</span><span class="n">-SpecificFileNameLevel</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-NoDeletedFiles</span><span class="p">]</span> <span class="p">[</span><span class="n">-NoUserPEs</span><span class="p">]</span> <span class="p">[</span><span class="n">-NoScript</span><span class="p">]</span> <span class="p">[</span><span class="n">-Level</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Fallbacks</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-LogSize</span> <span class="p">&lt;</span><span class="n">Int64</span><span class="p">&gt;]</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakePolicyFromAuditLogs</span><span class="p">]</span> <span class="n">-BasePolicyType</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-Deployit</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span> <span class="p">[</span><span class="n">-SpecificFileNameLevel</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-NoDeletedFiles</span><span class="p">]</span> <span class="p">[</span><span class="n">-NoUserPEs</span><span class="p">]</span> <span class="p">[</span><span class="n">-NoScript</span><span class="p">]</span> <span class="p">[</span><span class="n">-Level</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Fallbacks</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;]</span> <span class="p">[</span><span class="n">-LogSize</span> <span class="p">&lt;</span><span class="n">Int64</span><span class="p">&gt;]</span>
 </span></code></pre></div>
 <p><br></p>
 <p>Creates a WDAC policy using the Audit event logs generated <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Fully-Managed-Devices">for a fully managed device</a>.</p>
@@ -1843,7 +1844,7 @@ or on
 <ul>
 <li><code>-BasePolicyType &lt;String&gt;</code>: You need to select between <strong><a href="#new-wdacconfig--makeallowmsftwithblockrules">Allow Microsoft Base</a></strong> and <strong><a href="#new-wdacconfig--makedefaultwindowswithblockrules">Default Windows Base</a></strong>, based on which prep audit mode base policy deployed on the system.</li>
 </ul>
-<h3 id="12-optional-parameters">12 optional parameters<a class="headerlink" href="#12-optional-parameters" title="Permanent link">&para;</a></h3>
+<h3 id="11-optional-parameters">11 optional parameters<a class="headerlink" href="#11-optional-parameters" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>-Deployit</code>: Indicates that the module will automatically remove the WDAC policy deployed using either <a href="#new-wdacconfig--prepmsftonlyaudit">-PrepMSFTOnlyAudit</a> or <a href="#new-wdacconfig--prepdefaultwindowsaudit">-PrepDefaultWindowsAudit</a> parameters, then deploys the supplemental policy created from Audit event logs along with the selected base policy type, both in enforced mode.</p>
@@ -1853,19 +1854,21 @@ or on
 </li>
 <li>
 <p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
-</li>
+<ul>
 <li>
 <blockquote>
 <p>In addition to being WHQL signed, this rule requires that drivers must have been submitted by a partner that has an Extended Verification (EV) certificate. All Windows 10 and later, or Windows 11 drivers will meet this requirement.</p>
 </blockquote>
 </li>
+</ul>
+</li>
 <li>
 <p><code>-Debug</code>: Indicates that the module will output 3 additional files for debugging purposes and also write debug messages on the console:</p>
-</li>
+<ul>
 <li><em>FileRulesAndFileRefs.txt</em> - Contains the File Rules and Rule refs for the Hash of the files that no longer exist on the disk.</li>
 <li><em>DeletedFilesHashes.xml</em> - Policy file that contains File Rules and Rule refs for the files that no longer exist on the disk.</li>
-<li>
-<p><em>AuditLogsPolicy_NoDeletedFiles.xml</em> - The policy file generated from Audit Event logs based on the specified Level and Fallback parameters.</p>
+<li><em>AuditLogsPolicy_NoDeletedFiles.xml</em> - The policy file generated from Audit Event logs based on the specified Level and Fallback parameters.</li>
+</ul>
 </li>
 <li>
 <p><code>-LogSize &lt;Int64&gt;</code> - Specifies the log size for <strong><em>Microsoft-Windows-CodeIntegrity/Operational</em></strong> events. The values must be in the form of <code>&lt;Digit + Data measurement unit&gt;</code>. e.g., 2MB, 10MB, 1GB, 1TB. The minimum accepted value is 1MB which is the default.</p>
@@ -1875,9 +1878,6 @@ or on
 </li>
 <li>
 <p><code>-Fallbacks &lt;String[]&gt;</code>: Offers the same official <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-fallback">Fallbacks</a> for scanning of event logs. If no fallbacks is specified the default, which is set to <strong><em>Hash</em></strong> in this module, will be used.</p>
-</li>
-<li>
-<p><code>-AllowFileNameFallbacks</code>: <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-allowfilenamefallbacks">More info available on Microsoft Learn</a></p>
 </li>
 <li>
 <p><code>-SpecificFileNameLevel</code>: You can choose one of the following options: "OriginalFileName", "InternalName", "FileDescription", "ProductName", "PackageFamilyName", "FilePath". <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-specificfilenamelevel">More info available on Microsoft Learn</a></p>
@@ -1948,11 +1948,13 @@ or on
 </li>
 <li>
 <p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
-</li>
+<ul>
 <li>
 <blockquote>
 <p>In addition to being WHQL signed, this rule requires that drivers must have been submitted by a partner that has an Extended Verification (EV) certificate. All Windows 10 and later, or Windows 11 drivers will meet this requirement.</p>
 </blockquote>
+</li>
+</ul>
 </li>
 </ul>
 <h3 id="the-outputs-of-the-parameter-are_2">The outputs of the parameter are<a class="headerlink" href="#the-outputs-of-the-parameter-are_2" title="Permanent link">&para;</a></h3>
@@ -1989,11 +1991,13 @@ or on
 </li>
 <li>
 <p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
-</li>
+<ul>
 <li>
 <blockquote>
 <p>In addition to being WHQL signed, this rule requires that drivers must have been submitted by a partner that has an Extended Verification (EV) certificate. All Windows 10 and later, or Windows 11 drivers will meet this requirement.</p>
 </blockquote>
+</li>
+</ul>
 </li>
 </ul>
 <p><br></p>
@@ -2003,7 +2007,7 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-18T22:57:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-14T09:17:20+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-14</span>
       
         <br>
         Created:
