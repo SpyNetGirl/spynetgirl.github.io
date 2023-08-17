@@ -960,6 +960,20 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#some-best-practices-for-powershell-code" class="md-nav__link">
+    Some best practices for PowerShell code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-crlf-instead-of-lf-for-end-of-line-characters" class="md-nav__link">
+    Use CRLF instead of LF for end of line characters
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1579,6 +1593,20 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#some-best-practices-for-powershell-code" class="md-nav__link">
+    Some best practices for PowerShell code
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-crlf-instead-of-lf-for-end-of-line-characters" class="md-nav__link">
+    Use CRLF instead of LF for end of line characters
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1810,13 +1838,24 @@ or on
 </span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a><span class="nb">Add-Member</span> <span class="n">-InputObject</span> <span class="nv">$ParentObject</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="n">Child</span> <span class="n">-Value</span> <span class="nv">$CustomObject</span>
 </span></code></pre></div>
 <p><br></p>
+<h2 id="some-best-practices-for-powershell-code">Some best practices for PowerShell code<a class="headerlink" href="#some-best-practices-for-powershell-code" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Specify variable types explicitly</li>
+<li>Use Single quotes instead of double quotes for strings whenever possible, for example when the string value isn't interpolated.</li>
+</ol>
+<p>You can access the settings page of PowerShell extension in VS Code and enable options that automatically apply the aforementioned best practices when you format your code with (CTRL + Shift + F) shortcut.</p>
+<p><br></p>
+<h2 id="use-crlf-instead-of-lf-for-end-of-line-characters">Use CRLF instead of LF for end of line characters<a class="headerlink" href="#use-crlf-instead-of-lf-for-end-of-line-characters" title="Permanent link">&para;</a></h2>
+<p>In Visual Studio Code for example, you can see at the bottom right corner whether your end of line sequence is set to CRLF or LF, Windows uses CRLF.</p>
+<p>When you upload a PowerShell script to GitHub you need to make sure it's set to CRLF. PowerShell codes that are signed have big signature blocks at the end of them. PowerShell expects CRLF when doing authenticode signatures. You can also add those scripts to a <code>.gitattribute</code> config to your repo so that PowerShell files are uploaded with CRLF and not with LF.</p>
+<p><br></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-05T18:10:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-17T21:55:10+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-17</span>
       
         <br>
         Created:
