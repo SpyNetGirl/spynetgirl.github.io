@@ -668,6 +668,13 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#notes-for-unprotect-windowssecurity-cmdlet" class="md-nav__link">
+    Notes for Unprotect-WindowsSecurity cmdlet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#security-scoring-system" class="md-nav__link">
     Security Scoring System
   </a>
@@ -1429,6 +1436,13 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#notes-for-unprotect-windowssecurity-cmdlet" class="md-nav__link">
+    Notes for Unprotect-WindowsSecurity cmdlet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#security-scoring-system" class="md-nav__link">
     Security Scoring System
   </a>
@@ -1475,8 +1489,8 @@ or on
 <p><br></p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Administrator privileges for compliance checking and Removing Hardening measures</strong></li>
-<li><strong>Administrator OR Standard user privileges for the Hardening mode, just like the Harden Windows Security script</strong></li>
+<li>Administrator privileges for compliance checking and Removing Hardening measures</li>
+<li>Administrator OR Standard user privileges for the Hardening mode, just like the Harden Windows Security script</li>
 <li><a href="https://github.com/PowerShell/PowerShell/releases">PowerShell core version 7.3 and above</a></li>
 </ul>
 <p><br></p>
@@ -1521,6 +1535,18 @@ or on
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
+<h2 id="notes-for-unprotect-windowssecurity-cmdlet">Notes for Unprotect-WindowsSecurity cmdlet<a class="headerlink" href="#notes-for-unprotect-windowssecurity-cmdlet" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Bitlocker Encrypted drives are not decrypted when you invoke this cmdlet.</p>
+</li>
+<li>
+<p>Security features in the <a href="https://github.com/HotCakeX/Harden-Windows-Security#device-guard">Device Guard category</a> that are activated by UEFI Lock remain enabled even after you execute this cmdlet. UEFI Lock is a security mechanism that prevents malware from disabling crucial security features. UEFI locked security features are based on Proof of Physical Presence. To deactivate them, you need to restart your computer, access the UEFI, disable secure boot, restart again and then you will be able to disable them.</p>
+</li>
+</ol>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 <h2 id="security-scoring-system">Security Scoring System<a class="headerlink" href="#security-scoring-system" title="Permanent link">&para;</a></h2>
 <p>Based on the score that you get you will see a different ASCII art!</p>
 <p><br></p>
@@ -1535,7 +1561,7 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-17T13:27:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-17</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-17T13:59:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-17</span>
       
         <br>
         Created:
