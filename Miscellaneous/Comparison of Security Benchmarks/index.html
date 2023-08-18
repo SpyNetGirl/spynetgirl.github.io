@@ -694,6 +694,13 @@ or on
 </li>
         
           <li class="md-nav__item">
+  <a href="#not-enabling-important-attack-surface-reduction-rules" class="md-nav__link">
+     Not enabling important Attack Surface Reduction rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#to-be-continued" class="md-nav__link">
     To be continued...
   </a>
@@ -1363,6 +1370,13 @@ or on
 </li>
         
           <li class="md-nav__item">
+  <a href="#not-enabling-important-attack-surface-reduction-rules" class="md-nav__link">
+     Not enabling important Attack Surface Reduction rules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#to-be-continued" class="md-nav__link">
     To be continued...
   </a>
@@ -1475,6 +1489,15 @@ critical</p>
 <p>CIS 18.10.43.5.2 (L2), suggests disabling Cloud Protection of Microsoft Defender. <strong>This is precisely the kind of security measure that Threat Actors and advanced persistent threats (APTs) seek to disable</strong> and then CIS is suggesting to disable it, astonishing.</p>
 <p>This is an extremely <a href="https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/cloud-protection-microsoft-defender-antivirus?view=o365-worldwide">important security feature</a> that should never be disabled and there is no rationale that justifies disabling it. This feature also uses the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/use-wdac-with-intelligent-security-graph">Intelligent Security Graph (ISG)</a>.</p>
 <p><br></p>
+<h3 id="not-enabling-important-attack-surface-reduction-rules"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Not enabling important Attack Surface Reduction rules<a class="headerlink" href="#not-enabling-important-attack-surface-reduction-rules" title="Permanent link">&para;</a></h3>
+<p>CIS in 18.10.43.6.1.2 (L1) intentionally leaves out very important ASR rules</p>
+<ol>
+<li><a href="https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/attack-surface-reduction-rules-reference?view=o365-worldwide#use-advanced-protection-against-ransomware">Use advanced protection against ransomware</a></li>
+<li><a href="https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/attack-surface-reduction-rules-reference?view=o365-worldwide#block-executable-files-from-running-unless-they-meet-a-prevalence-age-or-trusted-list-criterion">Block executable files from running unless they meet a prevalence, age, or trusted list criterion</a></li>
+<li><a href="https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/attack-surface-reduction-rules-reference?view=o365-worldwide#block-process-creations-originating-from-psexec-and-wmi-commands">Block process creations originating from PSExec and WMI commands</a></li>
+</ol>
+<p>Rule #2 has the potential to prevent zero-days!</p>
+<p><br></p>
 <h3 id="to-be-continued">To be continued...<a class="headerlink" href="#to-be-continued" title="Permanent link">&para;</a></h3>
 <p>These benchmarks or guidelines have numerous flaws and I have only examined two of them. There are many other benchmarks, standards, guidelines, etc. that may also contain errors or inconsistencies and are totally <strong>unsafe</strong> to implement them.</p>
 <p><br></p>
@@ -1516,7 +1539,7 @@ critical</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-18T05:55:51+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-18T08:05:48+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-18</span>
       
         <br>
         Created:
