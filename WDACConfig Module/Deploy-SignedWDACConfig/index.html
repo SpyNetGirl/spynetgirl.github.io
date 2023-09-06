@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.6">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.0e669242.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -1408,8 +1408,8 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#1-optional-parameter" class="md-nav__link">
-    1 optional parameter
+  <a href="#2-optional-parameter" class="md-nav__link">
+    2 optional parameter
   </a>
   
 </li>
@@ -1718,8 +1718,8 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#1-optional-parameter" class="md-nav__link">
-    1 optional parameter
+  <a href="#2-optional-parameter" class="md-nav__link">
+    2 optional parameter
   </a>
   
 </li>
@@ -1773,8 +1773,10 @@ or on
 <p><br></p>
 <h3 id="signs-and-deploys-a-wdac-policy"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control">Signs and Deploys a WDAC policy</a><a class="headerlink" href="#signs-and-deploys-a-wdac-policy" title="Permanent link">&para;</a></h3>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/Deploy-SignedWDACConfig.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/Deploy-SignedWDACConfig.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Deploy-SignedWDACConfig</span> <span class="n">-CertPath</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="n">-PolicyPaths</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;</span> <span class="n">-CertCN</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-SignToolPath</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Deploy-SignedWDACConfig</span> <span class="n">-PolicyPaths</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;</span> <span class="p">[</span><span class="n">-CertPath</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-CertCN</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SignToolPath</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span>
 </span></code></pre></div>
+<p><br></p>
+<p>Creates and signs a <code>CIP</code> file that can be either deployed locally using the <code>-Deploy</code> parameter or you can deploy the signed policy binary on a different machine using the built-in <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/citool-commands">Citool</a>.</p>
 <p><br></p>
 <h3 id="1-mandatory-parameter">1 mandatory parameter<a class="headerlink" href="#1-mandatory-parameter" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1789,9 +1791,14 @@ or on
 <p><code>CertCN &lt;String&gt;</code>: Common name of the certificate - Supports argument completion so you don't have to manually enter the Certificate's CN, just make sure the <code>-CertPath</code> is specified and the certificate is installed in the personal store of the user certificates, then press TAB to auto complete the name. You can however enter it manually if you want to.</p>
 </li>
 </ul>
-<h3 id="1-optional-parameter">1 optional parameter<a class="headerlink" href="#1-optional-parameter" title="Permanent link">&para;</a></h3>
+<h3 id="2-optional-parameter">2 optional parameter<a class="headerlink" href="#2-optional-parameter" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>-SignToolPath &lt;String&gt;</code>: Supports tab completion by showing only <code>.exe</code> files.</li>
+<li>
+<p><code>-SignToolPath &lt;String&gt;</code>: Supports tab completion by showing only <code>.exe</code> files.</p>
+</li>
+<li>
+<p><code>-Deploy</code>: Deploys the signed policy on the system</p>
+</li>
 </ul>
 <h3 id="you-can-use-it-in-2-different-ways">You can use it in 2 different ways<a class="headerlink" href="#you-can-use-it-in-2-different-ways" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1809,7 +1816,7 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-07-09T14:20:00+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-07-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-09-06T17:12:45+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-09-06</span>
       
         <br>
         Created:
@@ -2058,7 +2065,7 @@ or on
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.78eede0e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
