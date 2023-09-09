@@ -2368,7 +2368,7 @@ or on
 <p>That will also change/create the <code>&lt;BasePolicyID&gt;GUID&lt;/BasePolicyID&gt;</code> element in the supplemental policy XML file. The GUID will be the <code>PolicyID</code> of the base policy specified in the command.</p>
 <p><br></p>
 <h3 id="verify-policy-rule-options">Verify Policy Rule options<a class="headerlink" href="#verify-policy-rule-options" title="Permanent link">&para;</a></h3>
-<p>We have to make sure that the supplemental policy does not contain any policy rule options that only work with a base policy. <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create">This chart shows which ones can be used in a supplemental policy.</a></p>
+<p>We have to make sure that the supplemental policy does not contain any policy rule options that only work with a base policy. <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create">This chart shows which ones can be used in a supplemental policy.</a></p>
 <p><br></p>
 <p>You can <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-ruleoption">use this PowerShell code</a> to automatically make sure non-supplemental policy rule options don't exist in a supplemental policy XML file:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$supplementalPolicyPath</span> <span class="p">=</span> <span class="s2">&quot;.\Supplemental_Policy.xml&quot;</span>
@@ -2377,7 +2377,7 @@ or on
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
 </span></code></pre></div>
 <p><br></p>
-<p>A supplemental policy <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create">can only have these policy rule options</a>:</p>
+<p>A supplemental policy <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create">can only have these policy rule options</a>:</p>
 <ul>
 <li>5 Enabled:Inherit Default Policy</li>
 <li>6 Enabled:Unsigned System Integrity Policy (Default)</li>
@@ -2390,7 +2390,7 @@ or on
 <h3 id="deny-rules-in-supplemental-policy-are-invalid">Deny rules in supplemental policy are invalid<a class="headerlink" href="#deny-rules-in-supplemental-policy-are-invalid" title="Permanent link">&para;</a></h3>
 <p>Deny rules are ignored in supplemental policies by WDAC engine. Supplemental policies are only meant to expand what the base policy trusts, that's why only allow rules are supported in supplemental policies, and that's also the reason why we don't need to merge Microsoft recommended block rules or driver block rules with a supplemental policy.</p>
 <p><strong>When the base policy has a deny rule for a file and we allow the same file in a supplemental policy, the file will still be blocked, because explicit deny rules have the highest priority.</strong></p>
-<p><strong><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#file-rule-precedence-order">Rule Precedence</a></strong></p>
+<p><strong><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#file-rule-precedence-order">Rule Precedence</a></strong></p>
 <p><br></p>
 <h3 id="signing-a-supplemental-policy">Signing a Supplemental policy<a class="headerlink" href="#signing-a-supplemental-policy" title="Permanent link">&para;</a></h3>
 <p>When adding the details of the code signing certificate to a base WDAC Policy, make sure you <strong>add</strong> the <code>-Supplemental</code> switch parameter to the <a href="https://learn.microsoft.com/en-us/powershell/module/configci/add-signerrule">add-signerrule</a> cmdlet when signing a base WDAC policy that is going to have supplemental policies later on. That parameter can only be used for a base policy.</p>
@@ -2449,7 +2449,7 @@ or on
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">&lt;/SigningScenario&gt;</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nt">&lt;/SigningScenarios&gt;</span>
 </span></code></pre></div>
-<h4 id="guidance-on-creating-wdac-deny-policies"><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-wdac-deny-policy">Guidance on Creating WDAC Deny Policies</a><a class="headerlink" href="#guidance-on-creating-wdac-deny-policies" title="Permanent link">&para;</a></h4>
+<h4 id="guidance-on-creating-wdac-deny-policies"><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/create-wdac-deny-policy">Guidance on Creating WDAC Deny Policies</a><a class="headerlink" href="#guidance-on-creating-wdac-deny-policies" title="Permanent link">&para;</a></h4>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
@@ -2468,7 +2468,7 @@ or on
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="refreshing-wdac-policies">Refreshing WDAC Policies<a class="headerlink" href="#refreshing-wdac-policies" title="Permanent link">&para;</a></h2>
-<h3 id="using-the-built-in-citool"><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/operations/citool-commands">Using the built-in CiTool</a><a class="headerlink" href="#using-the-built-in-citool" title="Permanent link">&para;</a></h3>
+<h3 id="using-the-built-in-citool"><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/citool-commands">Using the built-in CiTool</a><a class="headerlink" href="#using-the-built-in-citool" title="Permanent link">&para;</a></h3>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">CITool</span> <span class="p">-</span><span class="n">-refresh</span>
 </span></code></pre></div>
 <p><br></p>
@@ -2502,8 +2502,8 @@ or on
 <p><br></p>
 <h2 id="about-microsoft-recommended-block-rules">About Microsoft recommended block rules<a class="headerlink" href="#about-microsoft-recommended-block-rules" title="Permanent link">&para;</a></h2>
 <h3 id="microsoft-recommended-block-rules">Microsoft recommended block rules<a class="headerlink" href="#microsoft-recommended-block-rules" title="Permanent link">&para;</a></h3>
-<p>From <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules">Microsoft recommended block rules</a> document, copy the WDAC policy XML at the end (you might need to expand that section to view it), use a text editor like <a href="https://code.visualstudio.com/">VS Code</a> to edit it as recommended:</p>
-<p>The blocklist policy includes "Allow all" rules for both kernel and user mode that make it safe to deploy as a standalone WDAC policy. We can even deploy it side-by-side with AllowMicrosoft policy, by keeping its allow rules in place. <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-multiple-windows-defender-application-control-policies">Refer to this document about how multiple base policies work.</a></p>
+<p>From <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/applications-that-can-bypass-wdac">Microsoft recommended block rules</a> document, copy the WDAC policy XML at the end (you might need to expand that section to view it), use a text editor like <a href="https://code.visualstudio.com/">VS Code</a> to edit it as recommended:</p>
+<p>The blocklist policy includes "Allow all" rules for both kernel and user mode that make it safe to deploy as a standalone WDAC policy. We can even deploy it side-by-side with AllowMicrosoft policy, by keeping its allow rules in place. <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/deploy-multiple-wdac-policies">Refer to this document about how multiple base policies work.</a></p>
 <p>"Only applications allowed by both policies (All Base policies) run without generating block events", that means even though the Microsoft recommended block rules have <strong>2 allow all rules</strong>, they don't actually allow everything to run, because the same allow all rules don't exist in the default AllowMicrosoft policy, it only contains explicit allow rules.</p>
 <p>On Windows versions 1903 and above, Microsoft recommends converting this policy to multiple policy format using the <code>Set-CiPolicyIdInfo</code> cmdlet with the <code>-ResetPolicyId</code> switch. Then, you can deploy it as a Base policy side-by-side with any other policies in your environment.</p>
 <p>If merging into an existing policy that includes an explicit allowlist, you should first remove the two "Allow all" rules and their corresponding FileRuleRefs:</p>
@@ -2520,13 +2520,13 @@ or on
 <p>Deploying Microsoft recommended block rules (Driver or user mode) alone, after removing the allow all rules from them, will cause boot failure, for obvious reasons.</p>
 </li>
 <li>
-<p><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules">How to check the version of Microsoft recommended <strong><em>driver</em></strong> block rules that are being enforced</a></p>
+<p><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/deploy-multiple-wdac-policies">How to check the version of Microsoft recommended <strong><em>driver</em></strong> block rules that are being enforced</a></p>
 </li>
 <li>
-<p>The version is mentioned in <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/event-id-explanations">Code Integrity operational event logs</a> with an event ID of <code>3099</code> in the General tab.</p>
+<p>The version is mentioned in <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/event-id-explanations">Code Integrity operational event logs</a> with an event ID of <code>3099</code> in the General tab.</p>
 </li>
 <li>
-<p>We don't need to use the <strong>Recommended Kernel Block Rules</strong> in WDAC when creating a policy because <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules#microsoft-vulnerable-driver-blocklist">it's already being enforced by default</a> and if we want to update it more regularly, we can do so <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules#steps-to-download-and-apply-the-vulnerable-driver-blocklist-binary">by following this section of the document.</a> Or by <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Fast-and-Automatic-Microsoft-Recommended-Driver-Block-Rules-updates">Fast and Automatic Microsoft Recommended Driver Block Rules updates</a>.</p>
+<p>We don't need to use the <strong>Recommended Kernel Block Rules</strong> in WDAC when creating a policy because <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules#microsoft-vulnerable-driver-blocklist">it's already being enforced by default</a> and if we want to update it more regularly, we can do so <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules#steps-to-download-and-apply-the-vulnerable-driver-blocklist-binary">by following this section of the document.</a> Or by <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Fast-and-Automatic-Microsoft-Recommended-Driver-Block-Rules-updates">Fast and Automatic Microsoft Recommended Driver Block Rules updates</a>.</p>
 </li>
 </ul>
 <p><br></p>
@@ -2553,10 +2553,10 @@ or on
 <p>Using <a href="https://learn.microsoft.com/en-us/dotnet/framework/tools/signtool-exe">Signtool.exe</a> with <code>-fd certHash</code> will default to the algorithm used on the signing certificate. For example, if the certificate has <code>SHA512</code> hashing algorithm, the file that is being signed will use the same algorithm.</p>
 </li>
 <li>
-<p>Sometimes <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy">New-CIPolicy</a> Cmdlet creates 2 file rules for each driver file, such as <code>.sys</code> files. One of them is stored in <strong>Driver signing scenarios</strong> section under <code>&lt;SigningScenario Value="131" ID="ID_SIGNINGSCENARIO_DRIVERS_1" FriendlyName=""&gt;</code> and the other is stored in <strong>User mode signing scenarios</strong> section under <code>&lt;SigningScenario Value="12" ID="ID_SIGNINGSCENARIO_WINDOWS" FriendlyName=""&gt;</code>. <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#why-does-scan-create-eight-hash-rules-for-certain-xml-files">More info here</a></p>
+<p>Sometimes <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy">New-CIPolicy</a> Cmdlet creates 2 file rules for each driver file, such as <code>.sys</code> files. One of them is stored in <strong>Driver signing scenarios</strong> section under <code>&lt;SigningScenario Value="131" ID="ID_SIGNINGSCENARIO_DRIVERS_1" FriendlyName=""&gt;</code> and the other is stored in <strong>User mode signing scenarios</strong> section under <code>&lt;SigningScenario Value="12" ID="ID_SIGNINGSCENARIO_WINDOWS" FriendlyName=""&gt;</code>. <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#why-does-scan-create-eight-hash-rules-for-certain-xml-files">More info here</a></p>
 </li>
 <li>
-<p><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-2-windows-defender-application-control-policy---file-rule-levels">File rule levels</a> and Cmdlets like <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy">New-CiPolicy</a> only create rules for binaries such as <code>.dll</code>, <code>.sys</code> and <code>.exe</code> files.</p>
+<p><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-2-windows-defender-application-control-policy---file-rule-levels">File rule levels</a> and Cmdlets like <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy">New-CiPolicy</a> only create rules for binaries such as <code>.dll</code>, <code>.sys</code> and <code>.exe</code> files.</p>
 </li>
 </ul>
 <p><br></p>
@@ -2575,7 +2575,7 @@ or on
 <p>(For User Mode binaries only)</p>
 <ul>
 <li>
-<p>Hash (Best for any files, specially unsigned files)</p>
+<p>Hash (Best for any files, especially unsigned files)</p>
 </li>
 <li>
 <p>FilePublisher (Best for Signed files)</p>
@@ -2586,7 +2586,7 @@ or on
 </ul>
 <p>The rest are less secure and more permissive than the 3 file rule levels mentioned above.</p>
 <p>P.S FileName relies on the original filename for each binary, which can be <a href="https://security.stackexchange.com/questions/210843/is-it-possible-to-change-original-filename-of-an-exe">modified.</a></p>
-<p>Find more information in <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create">Microsoft Learn</a></p>
+<p>Find more information in <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create">Microsoft Learn</a></p>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
@@ -2608,7 +2608,7 @@ or on
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="how-to-remove-wdac-policy-refresh-tool-certificates-from-default-example-policies">How to remove WDAC policy Refresh tool certificates from default example policies<a class="headerlink" href="#how-to-remove-wdac-policy-refresh-tool-certificates-from-default-example-policies" title="Permanent link">&para;</a></h2>
-<p>Starting with Windows 11 22H2, <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/operations/citool-commands">CITool</a> is available in Windows by default and Refresh tool is no longer needed, so use the commands below to remove the certificates that allow that tool to be executed, <strong>their order of execution is important.</strong></p>
+<p>Starting with Windows 11 22H2, <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/citool-commands">CITool</a> is available in Windows by default and Refresh tool is no longer needed, so use the commands below to remove the certificates that allow that tool to be executed, <strong>their order of execution is important.</strong></p>
 <ul>
 <li><a href="https://learn.microsoft.com/en-us/powershell/module/configci/remove-cipolicyrule">Remove-CIPolicyRule</a></li>
 <li><a href="https://github.com/MicrosoftDocs/windows-powershell-docs/issues/3312">Note</a></li>
@@ -2629,7 +2629,7 @@ or on
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="about-the-concurrent-deployed-wdac-policies-limit">About the concurrent deployed WDAC policies limit<a class="headerlink" href="#about-the-concurrent-deployed-wdac-policies-limit" title="Permanent link">&para;</a></h2>
-<p>The limit as stated in <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-multiple-windows-defender-application-control-policies">the official document</a> is 32 active policies on a device at once. That is the total number of Base policies + Supplemental policies + any active system deployed policies.</p>
+<p>The limit as stated in <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/deploy-multiple-wdac-policies">the official document</a> is 32 active policies on a device at once. That is the total number of Base policies + Supplemental policies + any active system deployed policies.</p>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
@@ -2641,7 +2641,7 @@ or on
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="citool-no-longer-requires-guidcip-naming-convention-for-deployment">CiTool no longer requires GUID.cip naming convention for deployment<a class="headerlink" href="#citool-no-longer-requires-guidcip-naming-convention-for-deployment" title="Permanent link">&para;</a></h2>
-<p>Normally, <code>.cip</code> files would have to have the same name as the GUID of the xml file they were converted from, but that's no longer necessary. Using <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/operations/citool-commands">CiTool</a> in Windows 11 build <code>22621</code>, they can be deployed with any name, even without a name, and lead to a successful WDAC policy deployment.</p>
+<p>Normally, <code>.cip</code> files would have to have the same name as the GUID of the xml file they were converted from, but that's no longer necessary. Using <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/citool-commands">CiTool</a> in Windows 11 build <code>22621</code>, they can be deployed with any name, even without a name, and lead to a successful WDAC policy deployment.</p>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
@@ -2686,7 +2686,7 @@ or on
 <li>AppLocker – MSI and Script event log</li>
 <li>CodeIntegrity - Operational</li>
 </ol>
-<p><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/event-id-explanations"><strong>Explained more in here</strong></a></p>
+<p><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/event-id-explanations"><strong>Explained more in here</strong></a></p>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>

@@ -2098,10 +2098,10 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-GetBlockRules</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span>
 </span></code></pre></div>
 <p><br></p>
-<p>Creates a WDAC policy file called <strong><em>Microsoft recommended block rules.xml</em></strong> from <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/blob/public/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules.md">the official source</a> for <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules">Microsoft recommended block rules</a>, with <em>AllowAll</em> rules and audit mode rule option removed. The policy sets <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">HVCI to strict</a>.</p>
+<p>Creates a WDAC policy file called <strong><em>Microsoft recommended block rules.xml</em></strong> from <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/blob/public/windows/security/application-security/application-control/windows-defender-application-control/design/applications-that-can-bypass-wdac.md">the official source</a> for <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/applications-that-can-bypass-wdac">Microsoft recommended block rules</a>, with <em>AllowAll</em> rules and audit mode rule option removed. The policy sets <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">HVCI to strict</a>.</p>
 <h3 id="1-optional-parameter">1 optional parameter<a class="headerlink" href="#1-optional-parameter" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>-Deploy</code>: Deploys the <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules">latest Microsoft recommended block rules</a> (For User Mode binaries). It has the 2 default AllowAll rules so it can be deployed as a standalone base policy. Uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">Strict HVCI</a>.</li>
+<li><code>-Deploy</code>: Deploys the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/applications-that-can-bypass-wdac">latest Microsoft recommended block rules</a> (For User Mode binaries). It has the 2 default AllowAll rules so it can be deployed as a standalone base policy. Uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">Strict HVCI</a>.</li>
 </ul>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
@@ -2111,7 +2111,7 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-GetDriverBlockRules</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span>
 </span></code></pre></div>
 <p><br></p>
-<p>Creates a WDAC policy file called <strong><em>Microsoft recommended driver block rules.xml</em></strong> from <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/blob/public/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules.md">the official source</a> for <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules">Microsoft recommended driver block rules</a>, with <em>AllowAll</em> rules and audit mode rule option removed. The policy sets <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">HVCI to strict</a>. Extra information regarding the version and last updated date of <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/commits/public/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules.md">the GitHub document</a> containing block rules will also be displayed.</p>
+<p>Creates a WDAC policy file called <strong><em>Microsoft recommended driver block rules.xml</em></strong> from <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/blob/public/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules.md">the official source</a> for <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules">Microsoft recommended driver block rules</a>, with <em>AllowAll</em> rules and audit mode rule option removed. The policy sets <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">HVCI to strict</a>. Extra information regarding the version and last updated date of <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/commits/public/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules.md">the GitHub document</a> containing block rules will also be displayed.</p>
 <h3 id="1-optional-parameters">1 optional parameters<a class="headerlink" href="#1-optional-parameters" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>-Deploy</code>: With the help of PowerShell, uses <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules#steps-to-download-and-apply-the-vulnerable-driver-blocklist-binary">the official method</a> to deploy the latest version of <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules">Microsoft recommended driver block rules</a>.</li>
@@ -2124,7 +2124,7 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakeAllowMSFTWithBlockRules</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
 </span></code></pre></div>
 <p><br></p>
-<p>Calls the <a href="#new-wdacconfig--getblockrules">-GetBlockRules</a> parameter to get the Microsoft recommended block rules, and merges them with <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/example-wdac-base-policies"><em>AllowMicrosoft default policy</em></a>. The Policy uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">strict HVCI</a> and has the following <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">rule options</a>:</p>
+<p>Calls the <a href="#new-wdacconfig--getblockrules">-GetBlockRules</a> parameter to get the Microsoft recommended block rules, and merges them with <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/example-wdac-base-policies"><em>AllowMicrosoft default policy</em></a>. The Policy uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">strict HVCI</a> and has the following [rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options:</p>
 <p><br></p>
 <table>
 <thead>
@@ -2189,10 +2189,10 @@ or on
 <p><code>-Deploy</code>: Indicates that the module will automatically deploy the <strong><em>AllowMicrosoftPlusBlockRules</em></strong> policy after creation.</p>
 </li>
 <li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
+<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> [policy rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options.</p>
 </li>
 <li>
-<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
+<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
 <ul>
 <li>
 <blockquote>
@@ -2241,7 +2241,7 @@ or on
 <p><br></p>
 <p>Creates a WDAC policy that once deployed, prepares the system for Default Windows auditing. It will trigger audit logs to be created for any file that is run but is not part of the Windows; Unlike <a href="#new-wdacconfig--prepmsftonlyaudit">-PrepMSFTOnlyAudit</a> parameter that triggers audit logs for any file that is not signed by Microsoft's trusted root certificate.</p>
 <p>This parameter also scans the WDACConfig module files and PowerShell core files, adds them to the Prep audit mode base policy that it deploys, so that the final Supplemental policy generated from Event viewer audit logs won't include those files.</p>
-<p>It's recommended to use the optional parameter below to increase the log size of Code Integrity events category so that new events won't overwrite the older ones and everything will be captured.</p>
+<p>It's recommended to use the optional parameter below to increase the log size of Code Integrity events category so that new events won't overwrite the older ones, and everything will be captured.</p>
 <h3 id="2-optional-parameter_1">2 optional parameter<a class="headerlink" href="#2-optional-parameter_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -2271,10 +2271,10 @@ or on
 <p><code>-Deploy</code>: Indicates that the module will automatically remove the WDAC policy deployed using either <a href="#new-wdacconfig--prepmsftonlyaudit">-PrepMSFTOnlyAudit</a> or <a href="#new-wdacconfig--prepdefaultwindowsaudit">-PrepDefaultWindowsAudit</a> parameters, then deploys the supplemental policy created from Audit event logs along with the selected base policy type, both in enforced mode.</p>
 </li>
 <li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
+<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> [policy rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options.</p>
 </li>
 <li>
-<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
+<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
 <ul>
 <li>
 <blockquote>
@@ -2298,7 +2298,7 @@ or on
 <p><code>-Levels &lt;String&gt;</code>: Offers the same official <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-level">Levels</a> for scanning of event logs. If no level is specified the default, which is set to <strong><em>FilePublisher</em></strong> in this module, will be used.</p>
 </li>
 <li>
-<p><code>-Fallbacks &lt;String[]&gt;</code>: Offers the same official <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-fallback">Fallbacks</a> for scanning of event logs. If no fallbacks is specified the default, which is set to <strong><em>Hash</em></strong> in this module, will be used.</p>
+<p><code>-Fallbacks &lt;String[]&gt;</code>: Offers the same official <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-fallback">Fallbacks</a> for scanning of event logs. If no fallbacks are specified the default, which is set to <strong><em>Hash</em></strong> in this module, will be used.</p>
 </li>
 <li>
 <p><code>-SpecificFileNameLevel</code>: You can choose one of the following options: "OriginalFileName", "InternalName", "FileDescription", "ProductName", "PackageFamilyName", "FilePath". <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-specificfilenamelevel">More info available on Microsoft Learn</a></p>
@@ -2307,7 +2307,7 @@ or on
 <p><code>-NoDeletedFiles</code>: Indicates that files that were run during program installations but then were deleted and are no longer on the disk, won't be added to the supplemental policy. This can mean the programs you installed will be allowed to run but installation/reinstallation might not be allowed once the policies are deployed.</p>
 </li>
 <li>
-<p><code>-NoUserPEs</code>: By default the module includes user PEs in the scan. When you use this switch parameter, they won't be included. <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-userpes">More info available on Microsoft Learn</a></p>
+<p><code>-NoUserPEs</code>: By default, the module includes user PEs in the scan. When you use this switch parameter, they won't be included. <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-userpes">More info available on Microsoft Learn</a></p>
 </li>
 <li>
 <p><code>-NoScript</code>: <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-noscript">More info available on Microsoft Learn</a></p>
@@ -2338,7 +2338,7 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakeLightPolicy</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
 </span></code></pre></div>
 <p><br></p>
-<p>Creates a WDAC policy for a <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Lightly-Managed-Devices">Lightly managed system</a>. The Policy uses has the same specifications as <a href="#new-wdacconfig--makeallowmsftwithblockrules">-MakeAllowMSFTWithBlockRules</a>, with the following additional <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">rule options</a>:</p>
+<p>Creates a WDAC policy for a <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Lightly-Managed-Devices">Lightly managed system</a>. The Policy uses has the same specifications as <a href="#new-wdacconfig--makeallowmsftwithblockrules">-MakeAllowMSFTWithBlockRules</a>, with the following additional [rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options:</p>
 <p><br></p>
 <table>
 <thead>
@@ -2365,10 +2365,10 @@ or on
 <p><code>-Deploy</code>: Indicates that the module will automatically deploy the <strong><em>SignedAndReputable.xml</em></strong> policy file after creation.</p>
 </li>
 <li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
+<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> [policy rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options.</p>
 </li>
 <li>
-<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
+<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
 <ul>
 <li>
 <blockquote>
@@ -2391,7 +2391,7 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakeDefaultWindowsWithBlockRules</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
 </span></code></pre></div>
 <p><br></p>
-<p>Calls the <a href="#new-wdacconfig--getblockrules">-GetBlockRules</a> parameter to get the Microsoft recommended block rules, and merges them with <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/example-wdac-base-policies"><em>DefaultWindows_Enforced policy</em></a>. The Policy uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">strict HVCI</a> and uses the <a href="#new-wdacconfig--makeallowmsftwithblockrules">same policy rule options as -MakeAllowMSFTWithBlockRules</a> parameter.</p>
+<p>Calls the <a href="#new-wdacconfig--getblockrules">-GetBlockRules</a> parameter to get the Microsoft recommended block rules, and merges them with <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/example-wdac-base-policies"><em>DefaultWindows_Enforced policy</em></a>. The Policy uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">strict HVCI</a> and uses the <a href="#new-wdacconfig--makeallowmsftwithblockrules">same policy rule options as -MakeAllowMSFTWithBlockRules</a> parameter.</p>
 <p><br></p>
 <blockquote>
 <p>Since the module uses PowerShell and not Windows PowerShell that is pre-installed in Windows, this parameter will automatically scan <code>C:\Program Files\PowerShell</code> directory and add PowerShell files to the <strong><em>DefaultWindowsPlusBlockRules.xml</em></strong> policy file so that you will be able to continue using the module after deploying the policy. The scan uses <strong><em>FilePublisher</em></strong> level and <strong><em>Hash</em></strong> fallback.</p>
@@ -2408,10 +2408,10 @@ or on
 <p><code>-Deploy</code>: Indicates that the module will automatically deploy the <strong><em>DefaultWindowsPlusBlockRules</em></strong> policy after creation.</p>
 </li>
 <li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
+<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> [policy rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options.</p>
 </li>
 <li>
-<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
+<p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
 <ul>
 <li>
 <blockquote>

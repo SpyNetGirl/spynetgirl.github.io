@@ -1825,7 +1825,7 @@ or on
 </ul>
 <p><br></p>
 <h2 id="my-wdacconfig-module"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig">My WDACConfig Module</a><a class="headerlink" href="#my-wdacconfig-module" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig"><strong>WDACConfig</strong></a> is an advanced PowerShell module designed with the aim of automating <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control">Application and File whitelisting in Windows</a> using Windows Defender Application Control. Install it from <a href="https://www.powershellgallery.com/packages/WDACConfig/">PowerShell gallery</a>.</p>
+<p><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig"><strong>WDACConfig</strong></a> is an advanced PowerShell module designed with the aim of automating <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/wdac">Application and File whitelisting in Windows</a> using Windows Defender Application Control. Install it from <a href="https://www.powershellgallery.com/packages/WDACConfig/">PowerShell gallery</a>.</p>
 <p><br></p>
 <h2 id="wdac-usage-levels">WDAC usage levels<a class="headerlink" href="#wdac-usage-levels" title="Permanent link">&para;</a></h2>
 <p>There are many ways you can utilize WDAC features and here they are sorted by the level of restriction and protection they provide; From top (having the least restriction and protection) to bottom (having the most restriction and protection).</p>
@@ -1834,21 +1834,21 @@ or on
 <p>Use Microsoft recommended driver block rules.</p>
 <ul>
 <li><strong>No user action required</strong>. Starting with Windows 11 2022 update, the vulnerable driver blocklist is enabled by default for all devices, using HVCI or Memory Integrity.</li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules">The built-in driver blocklist is updated with each new major release of Windows, typically 1-2 times per year.</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules">The built-in driver blocklist is updated with each new major release of Windows, typically 1-2 times per year.</a></li>
 </ul>
 </li>
 <li>
 <p>Update Microsoft recommended driver block rules <strong>outside of the twice a year schedule.</strong></p>
 <ul>
-<li>The drivers block list itself <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/commits/public/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules.md">is updated more frequently</a> than twice a year schedule, <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Fast-and-Automatic-Microsoft-Recommended-Driver-Block-Rules-updates">use my WDAC Module to download and apply them regularly and <strong><em>automatically</em></strong>.</a></li>
+<li>The drivers block list itself <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/commits/public/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules.md">is updated more frequently</a> than twice a year schedule, <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Fast-and-Automatic-Microsoft-Recommended-Driver-Block-Rules-updates">use my WDAC Module to download and apply them regularly and <strong><em>automatically</em></strong>.</a></li>
 </ul>
 </li>
 <li>Use Microsoft recommended block rules PLUS Recommended driver block rules<ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules">The WDAC XML policy content is provided here</a>, copy them, create a new XML file and paste the content in it and save it. <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-cipolicyidinfo?view=windowsserver2022-ps#-resetpolicyid">Reset its policy ID and convert it to multiple policy format</a>. <a href="https://docs.microsoft.com/en-us/powershell/module/configci/convertfrom-cipolicy">Convert it to <code>.cip</code> policy binary</a> and then <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/operations/citool-commands">deploy it</a>. Keep it up to date by regularly repeating this.</li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/applications-that-can-bypass-wdac">The WDAC XML policy content is provided here</a>, copy them, create a new XML file and paste the content in it and save it. <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-cipolicyidinfo?view=windowsserver2022-ps#-resetpolicyid">Reset its policy ID and convert it to multiple policy format</a>. <a href="https://docs.microsoft.com/en-us/powershell/module/configci/convertfrom-cipolicy">Convert it to <code>.cip</code> policy binary</a> and then <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/citool-commands#deploy-a-wdac-policy">deploy it</a>. Keep it up to date by regularly repeating this.</li>
 </ul>
 </li>
 <li>Create WDAC policy for <strong>Lightly managed devices</strong><ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-wdac-policy-for-lightly-managed-devices">Microsoft's guide: Create a WDAC policy for lightly managed devices</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/create-wdac-policy-for-lightly-managed-devices">Microsoft's guide: Create a WDAC policy for lightly managed devices</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Lightly-Managed-Devices">My guide: WDAC for Lightly Managed Devices</a></li>
 </ul>
 </li>
@@ -1863,9 +1863,9 @@ or on
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Fully-Managed-Devices-(2nd-variant)">WDAC for Fully managed device - Variant 2</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-Fully-managed-device---Variant-3">WDAC for Fully managed device - Variant 3</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-Fully-managed-device---Variant-4">WDAC for Fully managed device - Variant 4</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-wdac-policy-for-fully-managed-devices">Microsoft's guide: Create a WDAC policy for fully managed devices</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-initial-default-policy">Microsoft's guide: Create a WDAC policy for fixed-workload devices (reference computer)</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/audit-windows-defender-application-control-policies">Microsoft's guide: Use audit events to create WDAC policy rules</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/create-wdac-policy-for-fully-managed-devices">Microsoft's guide: Create a WDAC policy for fully managed devices</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/create-wdac-policy-using-reference-computer">Microsoft's guide: Create a WDAC policy for fixed-workload devices (reference computer)</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/audit-wdac-policies">Microsoft's guide: Use audit events to create WDAC policy rules</a></li>
 </ul>
 </li>
 </ol>
@@ -1878,7 +1878,7 @@ or on
 </ul>
 <p><br></p>
 <h2 id="plan-for-windows-defender-application-control-lifecycle-policy-management">Plan for Windows Defender Application Control lifecycle policy management<a class="headerlink" href="#plan-for-windows-defender-application-control-lifecycle-policy-management" title="Permanent link">&para;</a></h2>
-<p>Microsoft provides the <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/plan-windows-defender-application-control-management">following official document</a> to understand the decisions you need to make to establish the processes for managing and maintaining Windows Defender Application Control (WDAC) policies. The rest of them are mentioned below at the <strong>Resources</strong> section.</p>
+<p>Microsoft provides the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/plan-wdac-management">following official document</a> to understand the decisions you need to make to establish the processes for managing and maintaining Windows Defender Application Control (WDAC) policies. The rest of them are mentioned below at the <strong>Resources</strong> section.</p>
 <p><br></p>
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <p><em>There are a lot more WDAC resources and cmdlets available on Microsoft's websites.</em></p>
@@ -1892,25 +1892,25 @@ or on
 </ul>
 <h2 id="documents">Documents<a class="headerlink" href="#documents" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control">Application Control for Windows</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/understand-windows-defender-application-control-policy-design-decisions">Understand Windows Defender Application Control policy design decisions</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide">Deploying Windows Defender Application Control (WDAC) policies</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-multiple-windows-defender-application-control-policies">Use multiple Windows Defender Application Control Policies</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/audit-windows-defender-application-control-policies">Use audit events to create WDAC policy rules</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/merge-windows-defender-application-control-policies">Merge Windows Defender Application Control (WDAC) policies</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#windows-defender-application-control-policy-rules">Understand Windows Defender Application Control (WDAC) policy rules and file rules</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/appidtagging/debugging-operational-guide-appid-tagging-policies">Testing and Debugging AppId Tagging Policies</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-editing-policy">Editing existing base and supplemental WDAC policies with the Wizard</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac-wizard-create-supplemental-policy">Creating a new Supplemental Policy with the Wizard</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/wdac">Application Control for Windows</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/understand-wdac-policy-design-decisions">Understand Windows Defender Application Control policy design decisions</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/wdac-deployment-guide">Deploying Windows Defender Application Control (WDAC) policies</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/deploy-multiple-wdac-policies">Use multiple Windows Defender Application Control Policies</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/audit-wdac-policies">Use audit events to create WDAC policy rules</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/merge-wdac-policies">Merge Windows Defender Application Control (WDAC) policies</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#windows-defender-application-control-policy-rules">Understand Windows Defender Application Control (WDAC) policy rules and file rules</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/AppIdTagging/debugging-operational-guide-appid-tagging-policies">Testing and Debugging AppId Tagging Policies</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-wizard-editing-policy">Editing existing base and supplemental WDAC policies with the Wizard</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-wizard-create-supplemental-policy">Creating a new Supplemental Policy with the Wizard</a></li>
 <li><a href="https://schneegans.de/windows/wdac-policy-generator/">Generate Windows Defender Application Control (WDAC) policies Online</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/example-wdac-base-policies">Windows Defender Application Control (WDAC) example base policies</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/configure-the-application-identity-service">Configure the Application Identity service</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules">Microsoft recommended driver block rules</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules">Microsoft recommended block rules</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-initial-default-policy">Create a WDAC policy using a reference computer (for fixed-workload devices)</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-wdac-policy-for-fully-managed-devices">Create a WDAC policy for fully managed devices</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-wdac-policy-for-lightly-managed-devices">Create a WDAC policy for lightly managed devices</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-wdac-deny-policy">Guidance on Creating WDAC Deny Policies</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/example-wdac-base-policies">Windows Defender Application Control (WDAC) example base policies</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/applocker/configure-the-application-identity-service">Configure the Application Identity service</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules">Microsoft recommended driver block rules</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/applications-that-can-bypass-wdac">Microsoft recommended block rules</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/create-wdac-policy-using-reference-computer">Create a WDAC policy using a reference computer (for fixed-workload devices)</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/create-wdac-policy-for-fully-managed-devices">Create a WDAC policy for fully managed devices</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/create-wdac-policy-for-lightly-managed-devices">Create a WDAC policy for lightly managed devices</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/create-wdac-deny-policy">Guidance on Creating WDAC Deny Policies</a></li>
 <li><a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-hvci-enablement">Hypervisor-protected Code Integrity enablement</a></li>
 </ul>
 <p><br></p>

@@ -1977,15 +1977,15 @@ or on
 <h4 id="parameter-info_3"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--makepolicyfromauditlogs">Parameter Info</a><a class="headerlink" href="#parameter-info_3" title="Permanent link">&para;</a></h4>
 <p><br></p>
 <p>All of the outputs are saved in a folder named "WDAC" inside the current working directory.</p>
-<p><strong>If you use the <code>-Deployit</code> optional switch parameter with the commands above, 3 things will automatically happen:</strong></p>
+<p><strong>If you use the <code>-Deploy</code> optional switch parameter with the commands above, 3 things will automatically happen:</strong></p>
 <ol>
 <li>The deployed Prep mode base policy will be removed.</li>
 <li>The actual base policy will be deployed depending on whichever you choose.</li>
 <li>The Supplemental policy generated from Audit logs will be deployed.</li>
 </ol>
 <p><br></p>
-<p>If you don't use the <code>-Deployit</code> switch, you can deploy the <code>.cip</code> binary files manually using <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/operations/citool-commands">CITool</a>.</p>
-<p><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide">More info on deployment</a></p>
+<p>If you don't use the <code>-Deploy</code> switch, you can deploy the <code>.cip</code> binary files manually using <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/citool-commands">CITool</a>.</p>
+<p><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/wdac-deployment-guide">More info on deployment</a></p>
 <p><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control"><strong>Information about how to Sign and Deploy a Signed WDAC policy.</strong></a></p>
 <p><br></p>
 <pre class="mermaid"><code>flowchart TD

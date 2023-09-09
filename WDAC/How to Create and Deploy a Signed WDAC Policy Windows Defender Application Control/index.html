@@ -2089,16 +2089,16 @@ or on
 <p>By deploying a <strong>Signed</strong> Windows Defender Application Control policy, a system will be secure and resistant to any form of tampering (<a href="https://github.com/HotCakeX/Harden-Windows-Security">if coupled with Bitlocker and other built-in security features</a>), in a way that <strong>even the system administrator can't tamper or disable this security policy.</strong></p>
 </li>
 <li>
-<p>The <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies#removing-wdac-policies"><strong>only</strong> way for this security feature</a> to be turned off, modified, updated or disabled will be to have access to the certificate and certificate's private keys used to sign it.</p>
+<p>The <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/disable-wdac-policies#removing-wdac-policies"><strong>only</strong> way for this security feature</a> to be turned off, modified, updated or disabled will be to have access to the certificate and certificate's private keys used to sign it.</p>
 </li>
 <li>
-<p><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-design-guide">Refer to Microsoft's website</a> or <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Introduction">my other wiki posts</a> If you want to learn about WDAC itself and how to create a customized WDAC for your own environment.</p>
+<p><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-design-guide">Refer to Microsoft's website</a> or <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Introduction">my other wiki posts</a> If you want to learn about WDAC itself and how to create a customized WDAC policy for your own environment.</p>
 </li>
 <li>
 <p>Always test and deploy your WDAC policy in Audit mode first to make sure it works correctly, before deploying the Signed version of it.</p>
-</li>
-<li>
-<p>The <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig">WDACConfig</a> module has an optional parameter called <code>-TestMode</code> that will deploy the policies with <strong><em>Boot Audit on Failure</em></strong> and <strong><em>Advanced Boot Options Menu</em></strong> policy rule options.</p>
+<ul>
+<li>The <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig">WDACConfig</a> module has an optional parameter called <code>-TestMode</code> that will deploy the policies with <strong><em>Boot Audit on Failure</em></strong> and <strong><em>Advanced Boot Options Menu</em></strong> policy rule options.</li>
+</ul>
 </li>
 <li>
 <p>Keep the xml file(s) of the deployed base policy(s) in a safe place, they are needed if you decide to disable the signed deployed WDAC policy later on.</p>
@@ -2129,8 +2129,10 @@ or on
 <p>Latest Windows Server, it's free for 180 days for evaluation and comes in ISO and VHDX formats. Preferably use Windows Server insider vNext because it has the newest features and visual upgrades.</p>
 <ul>
 <li><a href="https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022">Download Windows Server 2022</a> from <a href="https://www.microsoft.com/en-us/evalcenter">Microsoft Evaluation Center</a></li>
-<li><a href="https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver">Download Windows Server insider vNext</a></li>
+<li><a href="https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver">Download Windows Server insider vNext</a><ul>
 <li><a href="https://techcommunity.microsoft.com/t5/windows-server-insiders/bd-p/WindowsServerInsiders">Insider activation keys</a></li>
+</ul>
+</li>
 </ul>
 <p><br></p>
 <p>Once we have our Windows installation media (ISO or VHDX), we need to set up a Hyper-V VM on our host. For this guide, our host is a Windows 11 pro for workstations machine.</p>
@@ -2168,8 +2170,7 @@ or on
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">Install-ADDSForest</span> <span class="n">-DomainName</span> <span class="n">CAServer</span><span class="p">.</span><span class="n">com</span> <span class="n">-DomainNetbiosName</span> <span class="n">CASERVER0</span> <span class="n">-SafeModeAdministratorPassword</span> <span class="nv">$password</span> <span class="n">-InstallDNS</span><span class="p">:</span><span class="nv">$false</span> <span class="n">-Force</span>
 </span></code></pre></div>
-<p><br>
-<br></p>
+<p><br></p>
 <h3 id="using-gui-install-active-directory-certification-service-and-set-up-an-enterprise-root-ca-certificate-authority">Using GUI: Install Active Directory Certification Service and set up an Enterprise root CA (Certificate Authority)<a class="headerlink" href="#using-gui-install-active-directory-certification-service-and-set-up-an-enterprise-root-ca-certificate-authority" title="Permanent link">&para;</a></h3>
 <p>From Server Manager =&gt; Add Roles and Features =&gt; Role-based or feature-based installation =&gt; Select the current server we are on =&gt; Select Active Directory Certification Service =&gt; Select Next for the rest of the steps and finally select install.</p>
 <p>After installation is over, open the notifications in the Server Manager, (there will probably be a yellow icon on it), Select "Configure Active Directory Certificate Service on the destination server".</p>
@@ -2192,7 +2193,7 @@ or on
 </span></code></pre></div>
 <p><br></p>
 <h3 id="configure-the-validity-period-of-the-issued-certificates-on-the-server">Configure the Validity period of the issued certificates on the server<a class="headerlink" href="#configure-the-validity-period-of-the-issued-certificates-on-the-server" title="Permanent link">&para;</a></h3>
-<p><a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/identity/change-certificates-expiration-date">Microsoft official guide for this</a></p>
+<p><a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/identity/change-certificates-expiration-date">Microsoft guide for this</a></p>
 <p>We Increase the validity period of the certificates issued by the CA to 30 years:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">certutil</span> <span class="n">-setreg</span> <span class="n">ca</span><span class="p">\</span><span class="n">ValidityPeriod</span> <span class="s2">&quot;Years&quot;</span> 
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">certutil</span> <span class="n">-setreg</span> <span class="n">ca</span><span class="p">\</span><span class="n">ValidityPeriodUnits</span> <span class="s2">&quot;30&quot;</span>
@@ -2205,17 +2206,19 @@ or on
 <p><br></p>
 <h2 id="follow-the-official-guide-to-create-certificate-template-and-generate-the-signing-certificate">Follow the official guide to create certificate template and generate the signing certificate<a class="headerlink" href="#follow-the-official-guide-to-create-certificate-template-and-generate-the-signing-certificate" title="Permanent link">&para;</a></h2>
 <p>Now open Certification Authority, you can do so by searching for it in Windows search or from Server Manager =&gt; Tools.
-Once you open it, you can follow <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-code-signing-cert-for-windows-defender-application-control">the official guide from Microsoft</a> to create the certificate template for WDAC policy signing and then request and create a certificate.</p>
+Once you open it, you can follow <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/create-code-signing-cert-for-wdac">the guide from Microsoft</a> to create the certificate template for WDAC policy signing and then request and create a certificate.</p>
 <p><br></p>
 <p>Note that If the Server doesn't have at least 1 network adapter connected to it, then Certificate Templates don't load,</p>
-<details class="optional-class">
-<summary>Screenshot</summary>
-<p><a class="glightbox" href="https://user-images.githubusercontent.com/118815227/219699959-fdf7b0df-ddae-45f8-ab2e-4381e88cefb0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://user-images.githubusercontent.com/118815227/219699959-fdf7b0df-ddae-45f8-ab2e-4381e88cefb0.png" /></a></p>
+<details><summary>Screenshot</summary>
+
+<a class="glightbox" href="https://user-images.githubusercontent.com/118815227/219699959-fdf7b0df-ddae-45f8-ab2e-4381e88cefb0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://user-images.githubusercontent.com/118815227/219699959-fdf7b0df-ddae-45f8-ab2e-4381e88cefb0.png"></a>
+
 </details>
-<p>That's why our Hyper-V VM Server has at least one Private Virtual Network Adapter.</p>
+
+<p>That's why our Hyper-V VM Server needs at least one Virtual Network Adapter.</p>
 <p><br></p>
-<p>The <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-code-signing-cert-for-windows-defender-application-control">guide suggests</a> using a client computer to request and create the certificate but since we are going to use the certificate for non-domain-joined computers and don't need to use the Active Directory, we can perform all of the steps on the same Windows Server VM.</p>
-<p>These are some optional <strong><em>deviations</em></strong> from the <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-code-signing-cert-for-windows-defender-application-control">official guide</a> that <strong>result in creating a successful and more secure certificate</strong> for our WDAC policy signing:</p>
+<p>The <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/create-code-signing-cert-for-wdac">guide suggests</a> using a client computer to request and create the certificate but since we are going to use the certificate for non-domain-joined computers and don't need to use the Active Directory, we can perform all of the steps on the same Windows Server VM.</p>
+<p>These are some optional <strong><em>deviations</em></strong> from the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/create-code-signing-cert-for-wdac">official guide</a> that <strong>result in creating a successful and more secure certificate</strong> for our WDAC policy signing:</p>
 <ul>
 <li>
 <p>On the Compatibility tab, you can select Windows Server 2016 from the Certification Authority list and select Windows 10 / Windows Server 2016 from the Certificate recipient list.</p>
@@ -2227,39 +2230,58 @@ Once you open it, you can follow <a href="https://learn.microsoft.com/en-us/wind
 <p>On the Cryptography tab, you can set the Provider Category to <code>Key Storage Provider</code> <a href="https://learn.microsoft.com/en-us/windows/win32/secgloss/c-gly?redirectedfrom=MSDN#_security_cryptographic_service_provider_gly">(KSP)</a>. Set the Algorithm Name to <code>RSA</code>. Set the Minimum key size to <code>4096</code>. Set Request hash to <code>SHA512</code>.</p>
 </li>
 </ul>
-<p>As the <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-code-signing-cert-for-windows-defender-application-control">Microsoft's guide</a> suggests, you need to go to security tab to verify account access of the user(s) requesting the certificate, <strong>but since we are requesting and creating our certificate on the same CA server, we don't need to change anything there.</strong></p>
+<p>As the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/create-code-signing-cert-for-wdac">Microsoft's guide</a> suggests, you need to go to security tab to verify account access of the user(s) requesting the certificate, <strong>but since we are requesting and creating our certificate on the same CA server, we don't need to change anything there.</strong></p>
 <p><br></p>
-<details class="optional-class">
-<summary>If we want to use a 2nd PC to do this, as described in Microsoft document (Totally Unnecessary)</summary>
-<p><h3>Additional steps to perform on Windows Server</h3></p>
-<hr />
-<p><strong>If</strong> you are going to create a new user account in "Active Directory Users and Computers" for use on the client VM, in Certification Authority when duplicating the certificate template, go to Security Tab and set the correct permissions for that user account so that it will be able to request and enroll the certificate.</p>
-<p>For instance, since you are the only person who is going to use the Active Directory, you can even give <code>Full Control</code> permission to <code>Authenticated Users</code> group.</p>
-<p>Alternatively, you can use the same administrator account that you are currently using on Windows Server, which exists by default in the Active Directory, to log into the other client computer. One can log into multiple computers with the same user account across an Active Directory domain. There is no limit by default to how many concurrent logins an active directory user can have.</p>
-<p>Make sure the Windows Server and Windows client VMs both use the same Hyper-V Private Virtual switch network adapter. The VMs need to have static IP addresses on the same subnet in order to communicate with each other.</p>
-<p>Go to Windows Settings =&gt; Network &amp; Internet =&gt; Ethernet =&gt; in "IP Assignment" select "Edit" =&gt; Set it to "Manual" =&gt; Toggle the IPv4 =&gt; in IP Address Enter <code>10.10.10.1</code> and in Subnet Mask enter <code>255.0.0.0</code>. Without configuring anything else, save it.</p>
-<p>Use the Edit button for DNS server assignment, set it to Manual, toggle the IPv4 button and in the Preferred DNS field enter <code>127.0.0.1</code>. Save everything and exit settings.</p>
-<p><br></p>
-<p><h3>Steps to perform on Client VM</h3></p>
-<hr />
-<p>Make sure the client VM is running the latest version of Windows, and it follows the same prerequisites explained above.</p>
-<p>Go to Windows Settings =&gt; Network &amp; Internet =&gt; Ethernet =&gt; in "IP Assignment" select "Edit" =&gt; Set it to "Manual" =&gt; Toggle the IPv4 =&gt; in IP Address Enter <code>10.10.10.2</code> and in Subnet Mask enter <code>255.0.0.0</code>. Without configuring anything else, save it.</p>
-<p>Now use the Edit button for DNS server assignment, set it to Manual, toggle the IPv4 button and in the Preferred DNS field enter the static IP address of the Windows Server VM, which was <code>10.10.10.1</code>. Save everything and exit settings.</p>
-<p>Open an elevated PowerShell and <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/add-computer">enter this</a> to join the Active Directory domain:</p>
+<details>
+<summary> If we want to use a 2nd PC to do this, as described in Microsoft document (Totally Unnecessary) </summary>
+
+<h3> Additional steps to perform on Windows Server </h3>
+
+If you are going to create a new user account in "Active Directory Users and Computers" for use on the client VM, in Certification Authority when duplicating the certificate template, go to Security Tab and set the correct permissions for that user account so that it will be able to request and enroll the certificate.
+
+For instance, since you are the only person who is going to use the Active Directory, you can even give `Full Control` permission to `Authenticated Users` group.
+
+Alternatively, you can use the same administrator account that you are currently using on Windows Server, which exists by default in the Active Directory, to log into the other client computer. One can log into multiple computers with the same user account across an Active Directory domain. There is no limit by default to how many concurrent logins an active directory user can have.
+
+Make sure the Windows Server and Windows client VMs both use the same Hyper-V Private Virtual switch network adapter. The VMs need to have static IP addresses on the same subnet in order to communicate with each other.
+
+Go to Windows Settings => Network & Internet => Ethernet => in "IP Assignment" select "Edit" => Set it to "Manual" => Toggle the IPv4 => in IP Address Enter `10.10.10.1` and in Subnet Mask enter `255.0.0.0`. Without configuring anything else, save it.
+
+Use the Edit button for DNS server assignment, set it to Manual, toggle the IPv4 button and in the Preferred DNS field enter `127.0.0.1`. Save everything and exit settings.
+
+<br>
+
+<h3> Steps to perform on Client VM </h3>
+
+Make sure the client VM is running the latest version of Windows, and it follows the same prerequisites explained above.
+
+Go to Windows Settings => Network & Internet => Ethernet => in "IP Assignment" select "Edit" => Set it to "Manual" => Toggle the IPv4 => in IP Address Enter `10.10.10.2` and in Subnet Mask enter `255.0.0.0`. Without configuring anything else, save it.
+
+Now use the Edit button for DNS server assignment, set it to Manual, toggle the IPv4 button and in the Preferred DNS field enter the static IP address of the Windows Server VM, which was `10.10.10.1`. Save everything and exit settings.
+
+Open an elevated PowerShell and <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.management/add-computer">enter this</a> to join the Active Directory domain:
+
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Add-Computer</span> <span class="n">-DomainName</span> <span class="p">&lt;</span><span class="n">Domain</span><span class="p">&gt;</span> <span class="n">-Restart</span>
 </span></code></pre></div>
-<p>You will be asked for credentials. If you are going to use the same Administrator account from Windows Server, use <code>Administrator</code> for username and enter the password of the Windows Server in the password field, otherwise use the password you set when creating the new user account in Active Directory Users and Computers.</p>
-<p>After the client machine restarted, use <code>Other user</code> option on the lock screen and this time you will be using the Active Directory credentials to log into the machine. If using the built-in Administrator account, the password will be the same as the password on Windows Server account, but the username will be in the <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#85;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#68;&#111;&#109;&#97;&#105;&#110;">&#85;&#115;&#101;&#114;&#110;&#97;&#109;&#101;&#64;&#68;&#111;&#109;&#97;&#105;&#110;</a> format, so in this case, it will be <code>Administrator@CAServer.com</code>.</p>
-<p>Since you are using Administrator account, you can by default use Enhanced session in Hyper-V too.</p>
-<p>To request the certificate and enroll it, you can follow <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-code-signing-cert-for-windows-defender-application-control">the official Microsoft guide</a>.</p>
-<p><br></p>
+
+You will be asked for credentials. If you are going to use the same Administrator account from Windows Server, use `Administrator` for username and enter the password of the Windows Server in the password field, otherwise use the password you set when creating the new user account in Active Directory Users and Computers.
+
+After the client machine restarted, use `Other user` option on the lock screen and this time you will be using the Active Directory credentials to log into the machine. If using the built-in Administrator account, the password will be the same as the password on Windows Server account, but the username will be in the <Username@Domain> format, so in this case, it will be `Administrator@CAServer.com`.
+
+Since you are using Administrator account, you can by default use Enhanced session in Hyper-V too.
+
+To request the certificate and enroll it, you can follow <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/create-code-signing-cert-for-wdac">the Microsoft guide</a>.
+
+<br>
+
 </details>
+
 <p><br></p>
 <h2 id="create-a-signed-wdac-policy">Create a Signed WDAC policy<a class="headerlink" href="#create-a-signed-wdac-policy" title="Permanent link">&para;</a></h2>
 <p>Once we have the certificate in the User Certificates store of either the Windows Server or a client machine, Right-click on it =&gt; All tasks =&gt; Export. Export the <strong>Private key</strong> and export all the Extended Properties, set a password for the certificate and set Encryption to <code>AES256-SHA256</code>. Select a location to export and it will create a <code>.pfx</code> file.</p>
 <p>You also need to export the certificate <strong>without private key</strong>, in <code>DER encoded binary X.509</code> format which will create a <code>.cer</code> certificate file. We need this certificate to sign the WDAC policy.</p>
 <p>It is important to keep these 2 files, specially <code>.pfx</code> that contains the private key, in a safe place, such as <a href="https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview">Azure Key Vault Managed HSM</a> or <a href="https://support.microsoft.com/en-us/office/protect-your-onedrive-files-in-personal-vault-6540ef37-e9bf-4121-a773-56f98dce78c4">OneDrive Personal Vault</a>, so that if you delete all the VMs you created, you will be able to continue using the same certificate to sign further WDAC policies and supplemental policies, at least for the next 22 years, before it needs a renewal. As you can see, all of that setup must be done just once <strong><em>every few decades.</em></strong></p>
-<p>The <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/personal-information-exchange---pfx--files">Personal Information Exchange (.pfx)</a> file has great importance because it contains the Public key and <strong>Private key</strong> of the certificate so anyone who has access to this file <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies#removing-wdac-policies">can disable</a> the deployed Signed WDAC policy. It should never be shared with anyone outside your circle of trust. It is a password-protected file by nature.</p>
+<p>The <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/personal-information-exchange---pfx--files">Personal Information Exchange (.pfx)</a> file has great importance because it contains the Public key and <strong>Private key</strong> of the certificate so anyone who has access to this file <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/disable-wdac-policies#removing-wdac-policies">can disable</a> the deployed Signed WDAC policy. It should never be shared with anyone outside your circle of trust. It is a password-protected file by nature.</p>
 <p><br></p>
 <h2 id="use-wdacconfig-module-to-sign-and-deploy-wdac-policies">Use <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig">WDACConfig module</a> to sign and deploy WDAC policies<a class="headerlink" href="#use-wdacconfig-module-to-sign-and-deploy-wdac-policies" title="Permanent link">&para;</a></h2>
 <p><br></p>
@@ -2290,7 +2312,7 @@ Once you open it, you can follow <a href="https://learn.microsoft.com/en-us/wind
 <p><br></p>
 <h2 id="system-behavior">System Behavior<a class="headerlink" href="#system-behavior" title="Permanent link">&para;</a></h2>
 <h3 id="activation-process">Activation Process<a class="headerlink" href="#activation-process" title="Permanent link">&para;</a></h3>
-<p>After the signed WDAC policy binary <code>.cip</code> is copied to the <code>EFI</code> partition as part of the deployment process, and system is restarted oncee, we can see in System Information that WDAC user-mode is being enforced and when you try to install an application not permitted by the deployed policy, it will be successfully blocked. At this point, since we are using UEFI Secure Boot, the <strong>Anti Tampering</strong> protection of the <strong>Signed WDAC</strong> kicks in and starts protecting WDAC policy against any tampering. We need to reboot the system one more time, <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/use-signed-policies-to-protect-windows-defender-application-control-against-tampering#verify-and-deploy-the-signed-policy">to verify everything</a> and make sure there is no boot failure.</p>
+<p>After the signed WDAC policy binary <code>.cip</code> is copied to the <code>EFI</code> partition as part of the deployment process, and system is restarted oncee, we can see in System Information that WDAC user-mode is being enforced and when you try to install an application not permitted by the deployed policy, it will be successfully blocked. At this point, since we are using UEFI Secure Boot, the <strong>Anti Tampering</strong> protection of the <strong>Signed WDAC</strong> kicks in and starts protecting WDAC policy against any tampering. We need to reboot the system one more time, <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/use-signed-policies-to-protect-wdac-against-tampering#verify-and-deploy-the-signed-policy">to verify everything</a> and make sure there is no boot failure.</p>
 <p>Deploying a Signed WDAC policy without restarting is the same as deploying Unsigned policies, because the Signed policy can be easily removed just like an Unsigned policy. So always make sure you restart at least once after deploying a Signed WDAC policy.</p>
 <p><br></p>
 <h3 id="if-someone-forcefully-deletes-the-deployed-wdac-policy-file">If Someone forcefully deletes the deployed WDAC policy file<a class="headerlink" href="#if-someone-forcefully-deletes-the-deployed-wdac-policy-file" title="Permanent link">&para;</a></h3>
@@ -2302,27 +2324,29 @@ Once you open it, you can follow <a href="https://learn.microsoft.com/en-us/wind
 <p>Deleting the <code>.cip</code> policy file from the <code>EFI</code> partition located at <code>\EFI\Microsoft\Boot\CIPolicies\Active</code> and restarting the device will result in a boot failure. Before system restart, nothing happens and it will remain active. This is another self-protection method of a Signed WDAC policy. To recover from this state, the person will need to disable Secure Boot in the UEFI firmware settings. There are only 3 scenarios at this point:</p>
 </li>
 <li>
-<p>If, as suggested in the <a href="https://github.com/HotCakeX/Harden-Windows-Security#security-recommendations">Security Recommendations</a>, you set a strong password for the UEFI firmware of your hardware, they can't access the firmware. This security measure <a href="https://github.com/HotCakeX/Harden-Windows-Security">alongside the rest of the Windows built-in security features</a> such as Bitlocker device encryption will provide the <strong>Ultimate protection for a Windows device against any threats and any person, no matter physical, real-life or Internet threats.</strong></p>
+<p>If, as suggested in the <a href="https://github.com/HotCakeX/Harden-Windows-Security#security-recommendations">Security Recommendations</a>, you set a strong password for the UEFI firmware of your hardware, they can't access the firmware. This security measure <a href="https://github.com/HotCakeX/Harden-Windows-Security">alongside the rest of the Windows built-in security features</a> such as BitLocker device encryption will provide the <strong>Ultimate protection for a Windows device against any threats and any person, no matter physical, real-life or Internet threats.</strong></p>
 </li>
 <li>
-<p>If UEFI firmware is not password protected, the person can disable Secure Boot and/or TPM in UEFI firmware settings, they can even flash the entire UEFI firmware memory by physically abusing the device to get past the UEFI password, but since the device is Bitlocker protected, <strong>a total Lock Down will be triggered</strong> and the person will need to provide the 48-digit recovery key of the OS drive in order to even complete the boot process into Windows lock screen. Assuming the person also has access to the Windows PIN, they will also need to provide 48-digit recovery password of any subsequent Bitlocker protected drive(s) in order to access them (if the drive(s) aren't set to be auto-unlocked with OS drive). <strong>This is more than Security-In-Depth.</strong> If UEFI firmware has any unpatched vulnerability, Device Guard feautres will take care of it.</p>
+<p>If UEFI firmware is not password protected, the person can disable Secure Boot and/or TPM in UEFI firmware settings, they can even flash the entire UEFI firmware memory by physically abusing the device to get past the UEFI password, but since the device is BitLocker protected, <strong>a total Lock Down will be triggered</strong> and the person will need to provide the 48-digit recovery key of the OS drive in order to even complete the boot process into Windows lock screen. Assuming the person also has access to the Windows PIN, they will also need to provide 48-digit recovery password of any subsequent BitLocker protected drive(s) in order to access them (if the drive(s) aren't set to be auto-unlocked with OS drive). <strong>This is more than Security-In-Depth.</strong> If UEFI firmware has any unpatched vulnerability, Device Guard features will take care of it.</p>
 </li>
 <li>
 <p>Since steps 1 and 2 are impossible to bypass for a rouge person, there will be only one option left. To completely recycle the physical device, get rid of the inaccessible hardware such as SSD and then sell the remaining hardware parts. Either way, <strong>your data remains secure and inaccessible to any unauthorized person(s) at all times.</strong></p>
 </li>
 </ul>
-<details class="optional-class">
-<summary>Screenshot of a message after forcefully deleting a Signed WDAC policy from the EFI partition</summary>
-<p><a class="glightbox" href="https://user-images.githubusercontent.com/118815227/219513251-3722745f-1aa5-4b5c-b4b0-e1a928b786a1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://user-images.githubusercontent.com/118815227/219513251-3722745f-1aa5-4b5c-b4b0-e1a928b786a1.png" /></a></p>
+<details><summary>Screenshot of a message after forcefully deleting a Signed WDAC policy from the EFI partition</summary>
+
+<a class="glightbox" href="https://user-images.githubusercontent.com/118815227/219513251-3722745f-1aa5-4b5c-b4b0-e1a928b786a1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://user-images.githubusercontent.com/118815227/219513251-3722745f-1aa5-4b5c-b4b0-e1a928b786a1.png"></a>
+
 </details>
+
 <p><br></p>
 <h3 id="when-we-activate-smart-app-control">When we activate Smart App Control<a class="headerlink" href="#when-we-activate-smart-app-control" title="Permanent link">&para;</a></h3>
-<p>After completely deploying the Signed WDAC policy, if we turn on Smart App Control, which is <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/example-wdac-base-policies">a variation of WDAC</a>, then it will take control of the Windows Defender Application Control User Mode Policy. After turning off Smart App Control, the signed WDAC policy will automatically take the control. So, after deploying the Signed WDAC policy, Smart App Control can either be turned on or turned off, either way, the signed WDAC policy will not be disabled and will turn on as soon as Smart App Control is turned off.</p>
+<p>After completely deploying the Signed WDAC policy, if we turn on Smart App Control, which is <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/example-wdac-base-policies">a variation of WDAC</a>, then it will take control of the Windows Defender Application Control User Mode Policy. After turning off Smart App Control, the signed WDAC policy will automatically take the control. So, after deploying the Signed WDAC policy, Smart App Control can either be turned on or turned off, either way, the signed WDAC policy will not be disabled and will turn on as soon as Smart App Control is turned off.</p>
 <p><br></p>
 <h3 id="dual-boot-os-configurations">Dual boot OS configurations<a class="headerlink" href="#dual-boot-os-configurations" title="Permanent link">&para;</a></h3>
 <p>When you deploy a Signed WDAC policy on a system that uses Secure Boot, it will be enforced on all of the OSes that boot on the physical machine, because the policy resides on the EFI partition. This means that if you perform a clean install of a second Windows OS or natively boot a VHDX (Hyper-V VM), the policy will apply to them as well.</p>
-<p><br>
-<br></p>
+<p><br></p>
+<p><br></p>
 <h2 id="extras">Extras<a class="headerlink" href="#extras" title="Permanent link">&para;</a></h2>
 <h3 id="how-to-interact-with-the-hidden-efi-partition">How to interact with the hidden EFI partition<a class="headerlink" href="#how-to-interact-with-the-hidden-efi-partition" title="Permanent link">&para;</a></h3>
 <p>Using <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart">Diskpart</a>, Open an elevated PowerShell console and run these commands <strong>one by one</strong>:</p>
@@ -2356,18 +2380,18 @@ Once you open it, you can follow <a href="https://learn.microsoft.com/en-us/wind
 <p><br></p>
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/use-signed-policies-to-protect-windows-defender-application-control-against-tampering">Use signed policies to protect Windows Defender Application Control against tampering</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/create-code-signing-cert-for-windows-defender-application-control">Create a code signing cert for Windows Defender Application Control</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deployment/deploy-wdac-policies-with-script#deploying-signed-policies">Deploying signed policies</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/use-signed-policies-to-protect-wdac-against-tampering">Use signed policies to protect Windows Defender Application Control against tampering</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/create-code-signing-cert-for-wdac">Create a code signing cert for Windows Defender Application Control</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/deploy-wdac-policies-with-script#deploying-signed-policies">Deploying signed policies</a></li>
 <li><a href="https://webapp-wdac-wizard.azurewebsites.net/">WDAC Policy Wizard</a></li>
 <li><a href="https://schneegans.de/windows/wdac-policy-generator/">Generate Windows Defender Application Control (WDAC) policies Online</a></li>
 <li><a href="https://desktop.gov.au/blueprint/abac/wdac-policy-creation.html">WDAC policy creation - Australian Government</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create">Understand Windows Defender Application Control (WDAC) policy rules and file rules</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create">Understand Windows Defender Application Control (WDAC) policy rules and file rules</a></li>
 <li><a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-">Install Active Directory Domain Services</a></li>
 <li><a href="https://learn.microsoft.com/en-us/powershell/module/adcsdeployment/install-adcscertificationauthority">Install-AdcsCertificationAuthority</a></li>
 <li><a href="https://learn.microsoft.com/en-us/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority">Install the Certification Authority</a></li>
 <li><a href="https://learn.microsoft.com/en-us/windows-server/get-started/editions-comparison-windows-server-2022?tabs=full-comparison">Comparison of Standard, Datacenter, and Datacenter: Azure Edition editions of Windows Server 2022</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies">Remove Windows Defender Application Control (WDAC) policies</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/disable-wdac-policies">Remove Windows Defender Application Control (WDAC) policies</a></li>
 <li><a href="https://learn.microsoft.com/en-us/powershell/module/configci/add-signerrule">Add-SignerRule</a></li>
 </ul>
 

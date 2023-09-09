@@ -1232,7 +1232,7 @@ or on
         
           <li class="md-nav__item">
   <a href="#based-on-signer-rules-hashes-file-names-etc" class="md-nav__link">
-    Based on signer rules, hashes, file names etc
+    Based on signer rules, hashes, file names etc.
   </a>
   
 </li>
@@ -1292,7 +1292,7 @@ or on
       
         <li class="md-nav__item">
   <a href="#what-to-do-when-there-is-an-update-for-an-allowed-app" class="md-nav__link">
-    What to do when there is an update for an allowed app ?
+    What to do when there is an update for an allowed app?
   </a>
   
 </li>
@@ -1739,7 +1739,7 @@ or on
         
           <li class="md-nav__item">
   <a href="#based-on-signer-rules-hashes-file-names-etc" class="md-nav__link">
-    Based on signer rules, hashes, file names etc
+    Based on signer rules, hashes, file names etc.
   </a>
   
 </li>
@@ -1799,7 +1799,7 @@ or on
       
         <li class="md-nav__item">
   <a href="#what-to-do-when-there-is-an-update-for-an-allowed-app" class="md-nav__link">
-    What to do when there is an update for an allowed app ?
+    What to do when there is an update for an allowed app?
   </a>
   
 </li>
@@ -1859,7 +1859,7 @@ or on
     N --&gt; O[New-SupplementalWDACConfig -FilePathWildCards]</code></pre>
 <hr />
 <p><br></p>
-<p><em>Every time I use the word "App", I'm referring to regular Win32 programs as well as Microsoft Store installed apps; Basically any software that you can run.</em></p>
+<p><em>Every time I use the word "App", I'm referring to regular Win32 programs as well as Microsoft Store installed apps; Basically, any software that you can run.</em></p>
 <p>This scenario provides a very high protection level. Using the WDACConfig module, it's very easy to deploy, manage and maintain a system with this configuration.</p>
 <h2 id="deploy-the-allow-microsoft-base-policy-on-the-system">Deploy the Allow Microsoft base policy on the system<a class="headerlink" href="#deploy-the-allow-microsoft-base-policy-on-the-system" title="Permanent link">&para;</a></h2>
 <p>Start by creating the Allow Microsoft base policy xml file, which allows only files and apps that are signed by Microsoft's trusted root certificate.</p>
@@ -1881,7 +1881,7 @@ or on
 <p><br></p>
 <h2 id="creating-supplemental-policy-for-apps-already-installed">Creating Supplemental policy for apps already installed<a class="headerlink" href="#creating-supplemental-policy-for-apps-already-installed" title="Permanent link">&para;</a></h2>
 <p>If you deployed the Allow Microsoft base policy on a system that already had apps installed, you can create Supplemental policy for them using the following syntaxes. <strong>After creating each Supplemental policy, you need to sign and deploy it <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig">using the same Cmdlet we used above.</a></strong></p>
-<h3 id="based-on-signer-rules-hashes-file-names-etc">Based on signer rules, hashes, file names etc<a class="headerlink" href="#based-on-signer-rules-hashes-file-names-etc" title="Permanent link">&para;</a></h3>
+<h3 id="based-on-signer-rules-hashes-file-names-etc">Based on signer rules, hashes, file names etc.<a class="headerlink" href="#based-on-signer-rules-hashes-file-names-etc" title="Permanent link">&para;</a></h3>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-SupplementalWDACConfig</span> <span class="n">-Normal</span> <span class="n">-ScanLocation</span> <span class="s2">&quot;C:\Program Files\Program&quot;</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;App&#39;s Name&quot;</span> <span class="n">-PolicyPath</span> <span class="s2">&quot;C:\AllowMicrosoftPlusBlockRules.xml&quot;</span>
 </span></code></pre></div>
 <ul>
@@ -1927,20 +1927,20 @@ or on
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-SignedWDACConfig#edit-signedwdacconfig--mergesupplementalpolicies">Parameter info</a></li>
 </ul>
 <p><br></p>
-<h2 id="what-to-do-when-there-is-an-update-for-an-allowed-app">What to do when there is an update for an allowed app ?<a class="headerlink" href="#what-to-do-when-there-is-an-update-for-an-allowed-app" title="Permanent link">&para;</a></h2>
+<h2 id="what-to-do-when-there-is-an-update-for-an-allowed-app">What to do when there is an update for an allowed app?<a class="headerlink" href="#what-to-do-when-there-is-an-update-for-an-allowed-app" title="Permanent link">&para;</a></h2>
 <p>If you've created a Supplemental policy for an app that is already installed and now there is a newer version of that app available, you have multiple options:</p>
 <ol>
 <li>
 <p>If the Supplemental policy that you created to allow that app is based on FilePath with wildcards, then the app can be updated and no change in policy is required.</p>
 </li>
 <li>
-<p>If the Supplemental policy is based on <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/manage-packaged-apps-with-windows-defender-application-control">PFN (Package Family Name)</a> of the app, available only for <a href="https://learn.microsoft.com/en-us/windows/msix/overview">MSIX</a> apps installed through Microsoft Store, then you don't need to take any action and the app will be updated without any issues.</p>
+<p>If the Supplemental policy is based on <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/manage-packaged-apps-with-wdac">PFN (Package Family Name)</a> of the app, available only for <a href="https://learn.microsoft.com/en-us/windows/msix/overview">MSIX</a> apps installed through Microsoft Store, then you don't need to take any action and the app will be updated without any issues.</p>
 </li>
 <li>
 <p>If the Supplemental policy is only based on the app's digital signature, which is common for well-made apps, then you don't need to take any further action. As long as the new version of the app has the same digital signature / developer identity, then it will be allowed to run.</p>
 </li>
 <li>
-<p>If the Supplemental policy is based on individual File Paths (in contrast to wildcard FilePath rules), or based on <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create#table-3-windows-defender-application-control-policy---filename-levels">FileName rules</a>, then most likely there is no need for any further action to be taken as long as the new app's version uses the same file names or the same file paths for its components.</p>
+<p>If the Supplemental policy is based on individual File Paths (in contrast to wildcard FilePath rules), or based on <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-3-windows-defender-application-control-policy---filename-levels">FileName rules</a>, then most likely there is no need for any further action to be taken as long as the new app's version uses the same file names or the same file paths for its components.</p>
 </li>
 <li>
 <p>If the Supplemental policy is based on Hash of the app's files, either partially (mixed with signer rules) or entirely (for apps without any digital identity/signature) then all you have to do is to remove the deployed Supplemental policy and create a new Supplemental policy for the app using live audit mode in the module as explained above. Don't need to reboot immediately, but to finish the removal process of a Supplemental policy, whether it's signed or unsigned, a reboot will be eventually needed.</p>

@@ -1455,7 +1455,7 @@ or on
         
           <li class="md-nav__item">
   <a href="#important-notes-and-tips-about-wdac-policies" class="md-nav__link">
-    Important Notes and Tips  about WDAC policies
+    Important Notes and Tips about WDAC policies
   </a>
   
 </li>
@@ -1970,7 +1970,7 @@ or on
         
           <li class="md-nav__item">
   <a href="#important-notes-and-tips-about-wdac-policies" class="md-nav__link">
-    Important Notes and Tips  about WDAC policies
+    Important Notes and Tips about WDAC policies
   </a>
   
 </li>
@@ -2003,7 +2003,7 @@ or on
 <p>Drivers can access the Kernel which is the core of the operating system. Microsoft requires all drivers to be digitally signed:</p>
 <ul>
 <li>Kernel mode Hardware drivers <strong>need</strong> to be signed with an <strong>EV (Extended Validation)</strong> certificate</li>
-<li>Kernel mode virtual drivers <strong>can</strong> be signed with an standard certificate as well</li>
+<li>Kernel mode virtual drivers <strong>can</strong> be signed with a standard certificate as well</li>
 </ul>
 <p>A BYOVD (Bring Your Own Vulnerable Driver) scenario involves exploiting one of the digitally signed drivers that harbors a security flaw to attain direct access to the core of the OS. <strong>This attack vector applies to all OSes, not just Windows.</strong></p>
 <p>People who seek to obtain code signing certificates, even for Extended Validation certificates, are not undergoing <a href="https://learn.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/office-365-us-government/gcc-high-and-dod#background-screening">proper verification</a>.</p>
@@ -2062,7 +2062,7 @@ or on
 <p><code>"ID_EKU_STORE"</code> for Microsoft Store apps, Usermode only.</p>
 </li>
 <li>
-<p><code>"ID_EKU_DCODEGEN"</code> for .NET hardening <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/use-windows-defender-application-control-with-dynamic-code-security">Dynamic Code Security</a>, user mode only, the linked document mentions it's Usermode too.</p>
+<p><code>"ID_EKU_DCODEGEN"</code> for .NET hardening <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-and-dotnet">Dynamic Code Security</a>, user mode only, the linked document mentions it's Usermode too.</p>
 </li>
 <li>
 <p><code>"ID_EKU_AM"</code> Usermode only.</p>
@@ -2229,7 +2229,7 @@ or on
 <p><br></p>
 <h3 id="flight-root-signers-optional">Flight root signers - Optional<a class="headerlink" href="#flight-root-signers-optional" title="Permanent link">&para;</a></h3>
 <p>They can also be removed if you don't intend to use Windows insider builds. They all have <code>flight</code> or <code>_flight</code> in their ID.</p>
-<p>When removing them, also use the <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/select-types-of-rules-to-create">4 Disabled:Flight Signing policy rule option.</a></p>
+<p>When removing them, also use the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create">4 Disabled:Flight Signing policy rule option.</a></p>
 <p><br></p>
 <h3 id="from-cisigners">From CiSigners<a class="headerlink" href="#from-cisigners" title="Permanent link">&para;</a></h3>
 <p>Remove this item which is for Windows Store EKU</p>
@@ -2242,13 +2242,13 @@ or on
 <p><strong>Use the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New%E2%80%90KernelModeWDACConfig">WDACConfig module</a></strong> to automatically Audit and deploy the Strict Kernel-mode WDAC policies.</p>
 <p>As mentioned earlier, this policy only enforces and applies to Kernel-mode drivers, so your non-Kernel mode files are unaffected. Keep in mind that Kernel-mode does not mean programs that require Administrator privileges, those 2 categories are completely different. Also, not all drivers are Kernel mode, <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode"><strong>there are user-mode drivers too.</strong></a></p>
 <p>This strict Kernel mode policy can be perfectly deployed side by side any other WDAC policy.</p>
-<p>For instance, since HVCI is turned on by default on my system, the <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-driver-block-rules">Microsoft Recommended driver block rules</a> is automatically deployed and it's only Kernel mode. It has 2 allow all rules, making it primarily a block-list policy.</p>
+<p>For instance, since HVCI is turned on by default on my system, the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules">Microsoft Recommended driver block rules</a> is automatically deployed and it's only Kernel mode. It has 2 allow all rules, making it primarily a block-list policy.</p>
 <p>Then I deploy Strict Kernel-mode WDAC policy, which also only applies to Kernel-mode drivers. It doesn't have allow all rules of course, instead it allows Windows components that are required for Windows to function properly to run and then will let you hand pick any 3rd party Kernel-mode drivers and easily allow them in your policy.</p>
-<p>Now the Allow all rules that exist in the first policy are neutralized. <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-multiple-windows-defender-application-control-policies">Only applications allowed by both policies run without generating block events.</a>, so since the same allow all rules do not exist in our Strict Kernel-mode base policy, they no longer apply.</p>
+<p>Now the Allow all rules that exist in the first policy are neutralized. <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/deploy-multiple-wdac-policies">Only applications allowed by both policies run without generating block events.</a>, so since the same allow all rules do not exist in our Strict Kernel-mode base policy, they no longer apply.</p>
 <p><br></p>
 <h2 id="what-about-user-mode-binaries">What About User-mode Binaries?<a class="headerlink" href="#what-about-user-mode-binaries" title="Permanent link">&para;</a></h2>
-<p>So far we've only been doing Kernel-mode administration. We can use User-mode WDAC policies as well.</p>
-<p>After using those 2 Kernel-mode policies, I deploy a 3rd policy which is going to authorize and validate User-mode binaries too. I choose the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Lightly-Managed-Devices">Lightly managed WDAC policy</a> that utilizes <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/use-windows-defender-application-control-with-intelligent-security-graph">ISG (Intelligent Security Graph)</a>. This policy applies to both Kernel and User modes, but since we already know the logic and learned that only applications allowed by all base policies are allowed to run, we're confident that our Strict Kernel-mode base policy is the only one in charge of authorizing and validating Kernel-mode files/drivers. Our User-mode WDAC policy that utilizes ISG validates User-mode binaries only.</p>
+<p>So far, we've only been doing Kernel-mode administration. We can use User-mode WDAC policies as well.</p>
+<p>After using those 2 Kernel-mode policies, I deploy a 3rd policy which is going to authorize and validate User-mode binaries too. I choose the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Lightly-Managed-Devices">Lightly managed WDAC policy</a> that utilizes <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/use-wdac-with-intelligent-security-graph">ISG (Intelligent Security Graph)</a>. This policy applies to both Kernel and User modes, but since we already know the logic and learned that only applications allowed by all base policies are allowed to run, we're confident that our Strict Kernel-mode base policy is the only one in charge of authorizing and validating Kernel-mode files/drivers. Our User-mode WDAC policy that utilizes ISG validates User-mode binaries only.</p>
 <p><br></p>
 <h3 id="a-rule-of-thumb">A rule of thumb<a class="headerlink" href="#a-rule-of-thumb" title="Permanent link">&para;</a></h3>
 <p>The strictest policy wins the race in multiple base policy deployments, which in this case is the Strict Kernel-Mode policy. Even though ISG policy which uses Allow Microsoft rules and allows all the WHQL signed drivers, they still won't be able to run unless the Kernel-Mode policy authorizes them, because for a Kernel driver to be allowed to run in this scenario, all base policies must allow it.</p>
@@ -2260,7 +2260,7 @@ or on
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="continue-reading-about-important-wdac-notes"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/arrow-pink.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img width="65" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/arrow-pink.gif"></a> Continue reading about important WDAC notes<a class="headerlink" href="#continue-reading-about-important-wdac-notes" title="Permanent link">&para;</a></h2>
-<h4 id="important-notes-and-tips-about-wdac-policies"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-Notes">Important Notes and Tips </a> about WDAC policies<a class="headerlink" href="#important-notes-and-tips-about-wdac-policies" title="Permanent link">&para;</a></h4>
+<h4 id="important-notes-and-tips-about-wdac-policies"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-Notes">Important Notes and Tips</a> about WDAC policies<a class="headerlink" href="#important-notes-and-tips-about-wdac-policies" title="Permanent link">&para;</a></h4>
 <p><br></p>
 
   <hr>

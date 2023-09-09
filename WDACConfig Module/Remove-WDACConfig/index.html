@@ -1802,7 +1802,7 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Remove-WDACConfig</span> <span class="p">[</span><span class="n">-SignedBase</span><span class="p">]</span> <span class="n">-PolicyPaths</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;</span> <span class="n">-CertCN</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;</span> <span class="p">[</span><span class="n">-SignToolPath</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
 </span></code></pre></div>
 <p><br></p>
-<p>Uses <a href="https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies">the official procedure</a> to Re-Deploy the Signed base WDAC policies with <strong><em>Enabled:Unsigned System Integrity Policy</em></strong> rule option.</p>
+<p>Uses <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/disable-wdac-policies">the official procedure</a> to Re-Deploy the Signed base WDAC policies with <strong><em>Enabled:Unsigned System Integrity Policy</em></strong> rule option.</p>
 <h3 id="1-mandatory-parameter">1 mandatory parameter<a class="headerlink" href="#1-mandatory-parameter" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>-PolicyPaths &lt;String[]</code>: Path to xml file(s) of the currently deployed policy that you want to remove, can be multiple. Supports tab completion by showing only <code>.xml</code> files.</li>
