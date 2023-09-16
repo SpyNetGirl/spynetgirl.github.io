@@ -1237,17 +1237,17 @@ or on
       
         <li class="md-nav__item">
   <a href="#deploy-the-default-windows-base-policy-on-the-system" class="md-nav__link">
-    Deploy the Default Windows base policy on the system
+    Deploy the Default Windows Base Policy on the System
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#creating-supplemental-policy-for-apps-already-installed" class="md-nav__link">
-    Creating Supplemental policy for apps already installed
+    Creating Supplemental Policy for Apps Already Installed
   </a>
   
-    <nav class="md-nav" aria-label="Creating Supplemental policy for apps already installed">
+    <nav class="md-nav" aria-label="Creating Supplemental Policy for Apps Already Installed">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1278,10 +1278,10 @@ or on
       
         <li class="md-nav__item">
   <a href="#creating-supplemental-policy-for-new-app-installations-or-apps-already-installed" class="md-nav__link">
-    Creating Supplemental policy for new app installations or apps already installed
+    Creating Supplemental Policy for New App Installations or Apps Already Installed
   </a>
   
-    <nav class="md-nav" aria-label="Creating Supplemental policy for new app installations or apps already installed">
+    <nav class="md-nav" aria-label="Creating Supplemental Policy for New App Installations or Apps Already Installed">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1305,14 +1305,14 @@ or on
       
         <li class="md-nav__item">
   <a href="#what-to-do-if-you-have-a-lot-of-supplemental-policies" class="md-nav__link">
-    What to do if you have a lot of Supplemental policies?
+    What to Do if You Have a Lot of Supplemental Policies?
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#what-to-do-when-there-is-an-update-for-an-allowed-app" class="md-nav__link">
-    What to do when there is an update for an allowed app?
+    What to Do When There Is an Update for an Allowed App?
   </a>
   
 </li>
@@ -1724,17 +1724,17 @@ or on
       
         <li class="md-nav__item">
   <a href="#deploy-the-default-windows-base-policy-on-the-system" class="md-nav__link">
-    Deploy the Default Windows base policy on the system
+    Deploy the Default Windows Base Policy on the System
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#creating-supplemental-policy-for-apps-already-installed" class="md-nav__link">
-    Creating Supplemental policy for apps already installed
+    Creating Supplemental Policy for Apps Already Installed
   </a>
   
-    <nav class="md-nav" aria-label="Creating Supplemental policy for apps already installed">
+    <nav class="md-nav" aria-label="Creating Supplemental Policy for Apps Already Installed">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1765,10 +1765,10 @@ or on
       
         <li class="md-nav__item">
   <a href="#creating-supplemental-policy-for-new-app-installations-or-apps-already-installed" class="md-nav__link">
-    Creating Supplemental policy for new app installations or apps already installed
+    Creating Supplemental Policy for New App Installations or Apps Already Installed
   </a>
   
-    <nav class="md-nav" aria-label="Creating Supplemental policy for new app installations or apps already installed">
+    <nav class="md-nav" aria-label="Creating Supplemental Policy for New App Installations or Apps Already Installed">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1792,14 +1792,14 @@ or on
       
         <li class="md-nav__item">
   <a href="#what-to-do-if-you-have-a-lot-of-supplemental-policies" class="md-nav__link">
-    What to do if you have a lot of Supplemental policies?
+    What to Do if You Have a Lot of Supplemental Policies?
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#what-to-do-when-there-is-an-update-for-an-allowed-app" class="md-nav__link">
-    What to do when there is an update for an allowed app?
+    What to Do When There Is an Update for an Allowed App?
   </a>
   
 </li>
@@ -1863,7 +1863,7 @@ or on
 <p><br></p>
 <p><em>Every time I use the word "App", I'm referring to regular Win32 programs as well as Microsoft Store installed apps; Basically, any software that you can run.</em></p>
 <p>This scenario provides the ultimate protection level. Using the WDACConfig module, it's very easy to deploy, manage and maintain a system with this configuration.</p>
-<h2 id="deploy-the-default-windows-base-policy-on-the-system">Deploy the Default Windows base policy on the system<a class="headerlink" href="#deploy-the-default-windows-base-policy-on-the-system" title="Permanent link">&para;</a></h2>
+<h2 id="deploy-the-default-windows-base-policy-on-the-system">Deploy the Default Windows Base Policy on the System<a class="headerlink" href="#deploy-the-default-windows-base-policy-on-the-system" title="Permanent link">&para;</a></h2>
 <p>Start by creating the Default Windows base policy xml file, which allows only files and apps that come pre-installed in Windows to run and anything else is blocked.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-MakeDefaultWindowsWithBlockRules</span>
 </span></code></pre></div>
@@ -1872,7 +1872,7 @@ or on
 </ul>
 <p><br></p>
 <p>Now what we have the policy xml file for the Default Windows base policy, we need to sign and deploy it.</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Deploy-SignedWDACConfig</span> <span class="n">-CertPath</span> <span class="s2">&quot;C:\Certificate.cer&quot;</span> <span class="n">-PolicyPaths</span> <span class="s2">&quot;C:\DefaultWindowsPlusBlockRules.xml&quot;</span> <span class="n">-CertCN</span> <span class="s2">&quot;WDAC Certificate&quot;</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Deploy-SignedWDACConfig</span> <span class="n">-CertPath</span> <span class="s2">&quot;C:\Certificate.cer&quot;</span> <span class="n">-PolicyPaths</span> <span class="s2">&quot;C:\DefaultWindowsPlusBlockRules.xml&quot;</span> <span class="n">-CertCN</span> <span class="s2">&quot;WDAC Certificate&quot;</span> <span class="n">-Deploy</span>
 </span></code></pre></div>
 <ul>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig">Cmdlet info</a></li>
@@ -1881,7 +1881,7 @@ or on
 <p>Since this is a signed base policy, you need to perform a reboot after deployment so that <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control#if-someone-forcefully-deletes-the-deployed-wdac-policy-file">the anti-tamper protection of a signed base policy</a> will start.</p>
 <p>After deploying the base policy, you can create Supplemental policies to allow other apps that don't come by default with Windows to run. To do that, you have multiple options.</p>
 <p><br></p>
-<h2 id="creating-supplemental-policy-for-apps-already-installed">Creating Supplemental policy for apps already installed<a class="headerlink" href="#creating-supplemental-policy-for-apps-already-installed" title="Permanent link">&para;</a></h2>
+<h2 id="creating-supplemental-policy-for-apps-already-installed">Creating Supplemental Policy for Apps Already Installed<a class="headerlink" href="#creating-supplemental-policy-for-apps-already-installed" title="Permanent link">&para;</a></h2>
 <p>If you deployed the Default Windows base policy on a system that already had apps installed, you can create Supplemental policy for them using the following syntaxes. <strong>After creating each Supplemental policy, you need to sign and deploy it <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig">using the same Cmdlet we used above.</a></strong></p>
 <h3 id="based-on-signer-rules-hashes-file-names-etc">Based on signer rules, hashes, file names etc.<a class="headerlink" href="#based-on-signer-rules-hashes-file-names-etc" title="Permanent link">&para;</a></h3>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-SupplementalWDACConfig</span> <span class="n">-Normal</span> <span class="n">-ScanLocation</span> <span class="s2">&quot;C:\Program Files\Program&quot;</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;App&#39;s Name&quot;</span> <span class="n">-PolicyPath</span> <span class="s2">&quot;C:\DefaultWindowsPlusBlockRules.xml&quot;</span> 
@@ -1903,7 +1903,7 @@ or on
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-SupplementalWDACConfig#new-supplementalwdacconfig--installedappxpackages">Parameter info</a></li>
 </ul>
 <p><br></p>
-<h2 id="creating-supplemental-policy-for-new-app-installations-or-apps-already-installed">Creating Supplemental policy for new app installations or apps already installed<a class="headerlink" href="#creating-supplemental-policy-for-new-app-installations-or-apps-already-installed" title="Permanent link">&para;</a></h2>
+<h2 id="creating-supplemental-policy-for-new-app-installations-or-apps-already-installed">Creating Supplemental Policy for New App Installations or Apps Already Installed<a class="headerlink" href="#creating-supplemental-policy-for-new-app-installations-or-apps-already-installed" title="Permanent link">&para;</a></h2>
 <p>If the app you are trying to allow isn't installed and when you try to install it you see a blocked/error message, you can use the following syntaxes to allow them to run and then automatically create Supplemental policy for them.</p>
 <p>These methods also work for apps that were installed prior to deploying the Default Windows base policy and now you want to allow them to run by creating Supplemental policy for them.</p>
 <p>You can create a Supplemental policy for more than 1 app at a time by browsing for multiple apps' install directories using the commands below.</p>
@@ -1921,7 +1921,7 @@ or on
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-SignedWDACConfig#edit-signedwdacconfig--allownewapps">Parameter info</a></li>
 </ul>
 <p><br></p>
-<h2 id="what-to-do-if-you-have-a-lot-of-supplemental-policies">What to do if you have a lot of Supplemental policies?<a class="headerlink" href="#what-to-do-if-you-have-a-lot-of-supplemental-policies" title="Permanent link">&para;</a></h2>
+<h2 id="what-to-do-if-you-have-a-lot-of-supplemental-policies">What to Do if You Have a Lot of Supplemental Policies?<a class="headerlink" href="#what-to-do-if-you-have-a-lot-of-supplemental-policies" title="Permanent link">&para;</a></h2>
 <p>Currently, the limit for the number of policies (Base + Supplemental) that can be deployed on a system at a time is 32. So if you are getting close to that limit, you can merge some or all of your Supplemental policies automatically into 1 using the command below:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Edit-SignedWDACConfig</span> <span class="n">-MergeSupplementalPolicies</span> <span class="n">-CertPath</span> <span class="s2">&quot;C:\Certificate.cer&quot;</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;Merge of Multiple Supplementals&quot;</span> <span class="n">-PolicyPaths</span> <span class="s2">&quot;C:\DefaultWindowsPlusBlockRules.xml&quot;</span> <span class="n">-CertCN</span> <span class="s2">&quot;WDAC Certificate&quot;</span> <span class="n">-SuppPolicyPaths</span> <span class="s2">&quot;C:\Supplemental policy for App1.xml&quot;</span><span class="p">,</span><span class="s2">&quot;C:\Supplemental policy for App 2.xml&quot;</span><span class="p">,</span><span class="s2">&quot;C:\Supplemental policy for App 3.xml&quot;</span>
 </span></code></pre></div>
@@ -1929,14 +1929,14 @@ or on
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-SignedWDACConfig#edit-signedwdacconfig--mergesupplementalpolicies">Parameter info</a></li>
 </ul>
 <p><br></p>
-<h2 id="what-to-do-when-there-is-an-update-for-an-allowed-app">What to do when there is an update for an allowed app?<a class="headerlink" href="#what-to-do-when-there-is-an-update-for-an-allowed-app" title="Permanent link">&para;</a></h2>
+<h2 id="what-to-do-when-there-is-an-update-for-an-allowed-app">What to Do When There Is an Update for an Allowed App?<a class="headerlink" href="#what-to-do-when-there-is-an-update-for-an-allowed-app" title="Permanent link">&para;</a></h2>
 <p>If you've created a Supplemental policy for an app that is already installed and now there is a newer version of that app available, you have multiple options:</p>
 <ol>
 <li>
 <p>If the Supplemental policy that you created to allow that app is based on FilePath with wildcards, then the app can be updated and no change in policy is required.</p>
 </li>
 <li>
-<p>If the Supplemental policy is based on <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/manage-packaged-apps-with-wdac">PFN (Package Family Name)</a> of the app, available only for <a href="https://learn.microsoft.com/en-us/windows/msix/overview">MSIX</a> apps installed through Microsoft Store, then you don't need to take any action and the app will be updated without any issues.</p>
+<p>If the Supplemental policy is based on <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/manage-packaged-apps-with-wdac">PFN (Package Family Name)</a> of the app, available only for apps that use <a href="https://learn.microsoft.com/en-us/windows/msix/overview">MSIX</a> installers, like some of the modern apps installed through Microsoft Store, then you don't need to take any action and the app will be updated without any issues.</p>
 </li>
 <li>
 <p>If the Supplemental policy is only based on the app's digital signature, which is common for well-made apps, then you don't need to take any further action. As long as the new version of the app has the same digital signature / developer identity, then it will be allowed to run.</p>

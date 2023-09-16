@@ -1379,10 +1379,10 @@ or on
       
         <li class="md-nav__item">
   <a href="#what-to-do-if-you-have-a-lot-of-supplemental-policies" class="md-nav__link">
-    What to do if you have a lot of Supplemental policies?
+    What to Do if You Have a Lot of Supplemental Policies?
   </a>
   
-    <nav class="md-nav" aria-label="What to do if you have a lot of Supplemental policies?">
+    <nav class="md-nav" aria-label="What to Do if You Have a Lot of Supplemental Policies?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1393,8 +1393,8 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#ssigned-version" class="md-nav__link">
-    Ssigned version
+  <a href="#signed-version_1" class="md-nav__link">
+    Signed version
   </a>
   
 </li>
@@ -1413,7 +1413,7 @@ or on
       
         <li class="md-nav__item">
   <a href="#what-to-do-when-there-is-an-update-for-an-allowed-app" class="md-nav__link">
-    What to do when there is an update for an allowed app?
+    What to Do When There Is an Update for an Allowed App?
   </a>
   
 </li>
@@ -1887,10 +1887,10 @@ or on
       
         <li class="md-nav__item">
   <a href="#what-to-do-if-you-have-a-lot-of-supplemental-policies" class="md-nav__link">
-    What to do if you have a lot of Supplemental policies?
+    What to Do if You Have a Lot of Supplemental Policies?
   </a>
   
-    <nav class="md-nav" aria-label="What to do if you have a lot of Supplemental policies?">
+    <nav class="md-nav" aria-label="What to Do if You Have a Lot of Supplemental Policies?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1901,8 +1901,8 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#ssigned-version" class="md-nav__link">
-    Ssigned version
+  <a href="#signed-version_1" class="md-nav__link">
+    Signed version
   </a>
   
 </li>
@@ -1921,7 +1921,7 @@ or on
       
         <li class="md-nav__item">
   <a href="#what-to-do-when-there-is-an-update-for-an-allowed-app" class="md-nav__link">
-    What to do when there is an update for an allowed app?
+    What to Do When There Is an Update for an Allowed App?
   </a>
   
 </li>
@@ -1987,7 +1987,7 @@ or on
 <ul>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--makelightpolicy">Parameter info</a></li>
 </ul>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Deploy-SignedWDACConfig</span> <span class="n">-CertPath</span> <span class="s2">&quot;C:\Certificate.cer&quot;</span> <span class="n">-PolicyPaths</span> <span class="s2">&quot;C:\Users\HotCakeX\SignedAndReputable.xml&quot;</span> <span class="n">-CertCN</span> <span class="s2">&quot;WDAC Certificate&quot;</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Deploy-SignedWDACConfig</span> <span class="n">-CertPath</span> <span class="s2">&quot;C:\Certificate.cer&quot;</span> <span class="n">-PolicyPaths</span> <span class="s2">&quot;C:\Users\HotCakeX\SignedAndReputable.xml&quot;</span> <span class="n">-CertCN</span> <span class="s2">&quot;WDAC Certificate&quot;</span> <span class="n">-Deploy</span>
 </span></code></pre></div>
 <ul>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig">Cmdlet info</a></li>
@@ -1998,10 +1998,10 @@ or on
 <p>The module creates <strong><em>Signed and Reputable WDAC base Policy</em></strong> based on <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/example-wdac-base-policies">AllowMicrosoft policy template</a> with <strong><em>ISG</em></strong> related <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">rule options</a>, then merges <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/applications-that-can-bypass-wdac">Microsoft recommended block rules</a> with it. We don't merge <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules">Microsoft recommended <strong><em>driver</em></strong> block rules</a> because it is already enabled by default in Windows.</p>
 </li>
 <li>
-<p>The module also automatically stars the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/applocker/configure-the-application-identity-service">Application Identity</a> (<code>AppIDSvc</code>) service required for <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/use-wdac-with-intelligent-security-graph#enable-the-necessary-services-to-allow-wdac-to-use-the-isg-correctly-on-the-client">ISG Authorization</a> and sets its startup to Automatic. It's a protected service so can't be disabled or modified using Services snap-in.</p>
+<p>The module also automatically starts the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/applocker/configure-the-application-identity-service">Application Identity</a> (<code>AppIDSvc</code>) service required for <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/use-wdac-with-intelligent-security-graph#enable-the-necessary-services-to-allow-wdac-to-use-the-isg-correctly-on-the-client">ISG Authorization</a> and sets its startup mode to Automatic. It's a protected service so can't be disabled or modified using Services snap-in.</p>
 </li>
 <li>
-<p>ISG Authorization requires active Internet connection for obvious reasons, to communicate with the global ISG network etc.</p>
+<p>ISG Authorization requires active Internet connection to communicate with the global ISG network.</p>
 </li>
 <li>
 <p>Recommended to perform a reboot regardless of whether you are deploying signed or unsigned version of the "Signed and Reputable" WDAC base policy.</p>
@@ -2011,7 +2011,10 @@ or on
 <p>After finishing deploying the Signed and Reputable base policy, if there is an app that is getting blocked and you want to allow it, you can create Supplemental policies to expand your base policy. To do that, you have multiple options.</p>
 <p><br></p>
 <h2 id="creating-supplemental-policy-for-apps-already-installed">Creating Supplemental policy for apps already installed<a class="headerlink" href="#creating-supplemental-policy-for-apps-already-installed" title="Permanent link">&para;</a></h2>
-<p>The following commands use the <code>-Deploy</code> optional switch parameter, meaning after Supplemental policy creation, they are automatically deployed on the system. If you chose the Signed path, omit it from the commands and instead use the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig"><code>Deploy-SignedWDACConfig</code> Cmdlet</a> to Sign and Deploy the Supplemental policy xml files.</p>
+<p>The following commands use the <code>-Deploy</code> optional switch parameter, meaning after Supplemental policy creation, they are automatically deployed on the system.</p>
+<ul>
+<li>If you chose the Signed path, omit it from the commands and instead use the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig">Deploy-SignedWDACConfig</a> cmdlet to Sign and Deploy the Supplemental policy xml files.</li>
+</ul>
 <h3 id="based-on-signer-rules-hashes-file-names-etc">Based on signer rules, hashes, file names etc.<a class="headerlink" href="#based-on-signer-rules-hashes-file-names-etc" title="Permanent link">&para;</a></h3>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">New-SupplementalWDACConfig</span> <span class="n">-Normal</span> <span class="n">-ScanLocation</span> <span class="s2">&quot;C:\Program Files\Program&quot;</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;App&#39;s Name&quot;</span> <span class="n">-PolicyPath</span> <span class="s2">&quot;C:\SignedAndReputable.xml&quot;</span> <span class="n">-Deploy</span>
 </span></code></pre></div>
@@ -2033,7 +2036,7 @@ or on
 </ul>
 <p><br></p>
 <h2 id="creating-supplemental-policy-for-new-app-installations-or-apps-already-installed">Creating Supplemental policy for new app installations or apps already installed<a class="headerlink" href="#creating-supplemental-policy-for-new-app-installations-or-apps-already-installed" title="Permanent link">&para;</a></h2>
-<p>If the app you are trying to allow isn't installed and when you try to install it you see a blocked/error message, you can use the following syntaxes to allow them to run and then automatically create Supplemental policy for them.</p>
+<p>If the app you are trying to allow isn't installed, and when you try to install it you see a blocked/error message, you can use the following syntaxes to allow them to run and then automatically create Supplemental policy for them.</p>
 <p>These methods also work for apps that were installed prior to deploying the "Signed and Reputable" base policy and now you want to allow them to run by creating Supplemental policy for them.</p>
 <p>You can create a Supplemental policy for more than 1 app at a time by browsing for multiple apps' install directories using the commands below.</p>
 <p><br></p>
@@ -2063,7 +2066,7 @@ or on
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-SignedWDACConfig#edit-signedwdacconfig--allownewapps">Parameter info</a></li>
 </ul>
 <p><br></p>
-<h2 id="what-to-do-if-you-have-a-lot-of-supplemental-policies">What to do if you have a lot of Supplemental policies?<a class="headerlink" href="#what-to-do-if-you-have-a-lot-of-supplemental-policies" title="Permanent link">&para;</a></h2>
+<h2 id="what-to-do-if-you-have-a-lot-of-supplemental-policies">What to Do if You Have a Lot of Supplemental Policies?<a class="headerlink" href="#what-to-do-if-you-have-a-lot-of-supplemental-policies" title="Permanent link">&para;</a></h2>
 <p>Currently, the limit for the number of policies (Base + Supplemental) that can be deployed on a system at a time is 32. So if you are getting close to that limit, you can merge some or all of your Supplemental policies automatically into 1 using the command below:</p>
 <h3 id="unsigned-version_1">Unsigned version<a class="headerlink" href="#unsigned-version_1" title="Permanent link">&para;</a></h3>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">Edit-WDACConfig</span> <span class="n">-MergeSupplementalPolicies</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;Merge of Multiple Supplementals&quot;</span> <span class="n">-PolicyPaths</span> <span class="s2">&quot;C:\SignedAndReputable.xml&quot;</span> <span class="n">-SuppPolicyPaths</span> <span class="s2">&quot;C:\Supplemental policy for App1.xml&quot;</span><span class="p">,</span><span class="s2">&quot;C:\Supplemental policy for App 2.xml&quot;</span><span class="p">,</span><span class="s2">&quot;C:\Supplemental policy for App 3.xml&quot;</span>
@@ -2072,7 +2075,7 @@ or on
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-WDACConfig#edit-wdacconfig--mergesupplementalpolicies">Parameter info</a></li>
 </ul>
 <p><br></p>
-<h3 id="ssigned-version">Ssigned version<a class="headerlink" href="#ssigned-version" title="Permanent link">&para;</a></h3>
+<h3 id="signed-version_1">Signed version<a class="headerlink" href="#signed-version_1" title="Permanent link">&para;</a></h3>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">Edit-SignedWDACConfig</span> <span class="n">-MergeSupplementalPolicies</span> <span class="n">-CertPath</span> <span class="s2">&quot;C:\Certificate.cer&quot;</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;Merge of Multiple Supplementals&quot;</span> <span class="n">-PolicyPaths</span> <span class="s2">&quot;C:\SignedAndReputable.xml&quot;</span> <span class="n">-CertCN</span> <span class="s2">&quot;WDAC Certificate&quot;</span> <span class="n">-SuppPolicyPaths</span> <span class="s2">&quot;C:\Supplemental policy for App1.xml&quot;</span><span class="p">,</span><span class="s2">&quot;C:\Supplemental policy for App 2.xml&quot;</span><span class="p">,</span><span class="s2">&quot;C:\Supplemental policy for App 3.xml&quot;</span>
 </span></code></pre></div>
 <ul>
@@ -2092,14 +2095,14 @@ or on
 </li>
 </ul>
 <p><br></p>
-<h2 id="what-to-do-when-there-is-an-update-for-an-allowed-app">What to do when there is an update for an allowed app?<a class="headerlink" href="#what-to-do-when-there-is-an-update-for-an-allowed-app" title="Permanent link">&para;</a></h2>
+<h2 id="what-to-do-when-there-is-an-update-for-an-allowed-app">What to Do When There Is an Update for an Allowed App?<a class="headerlink" href="#what-to-do-when-there-is-an-update-for-an-allowed-app" title="Permanent link">&para;</a></h2>
 <p>If you've created a Supplemental policy for an app that is already installed and now there is a newer version of that app available, you have multiple options:</p>
 <ol>
 <li>
 <p>If the Supplemental policy that you created to allow that app is based on FilePath with wildcards, then the app can be updated and no change in policy is required.</p>
 </li>
 <li>
-<p>If the Supplemental policy is based on <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/manage-packaged-apps-with-wdac">PFN (Package Family Name)</a> of the app, available only for <a href="https://learn.microsoft.com/en-us/windows/msix/overview">MSIX</a> apps installed through Microsoft Store, then you don't need to take any action and the app will be updated without any issues.</p>
+<p>If the Supplemental policy is based on <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/manage-packaged-apps-with-wdac">PFN (Package Family Name)</a> of the app, available only for apps that use <a href="https://learn.microsoft.com/en-us/windows/msix/overview">MSIX</a> installers, like some of the modern apps installed through Microsoft Store, then you don't need to take any action and the app will be updated without any issues.</p>
 </li>
 <li>
 <p>If the Supplemental policy is only based on the app's digital signature, which is common for well-made apps, then you don't need to take any further action. As long as the new version of the app has the same digital signature / developer identity, then it will be allowed to run.</p>

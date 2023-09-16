@@ -2124,7 +2124,7 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakeAllowMSFTWithBlockRules</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
 </span></code></pre></div>
 <p><br></p>
-<p>Calls the <a href="#new-wdacconfig--getblockrules">-GetBlockRules</a> parameter to get the Microsoft recommended block rules, and merges them with <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/example-wdac-base-policies"><em>AllowMicrosoft default policy</em></a>. The Policy uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">strict HVCI</a> and has the following [rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options:</p>
+<p>Calls the <a href="#new-wdacconfig--getblockrules">-GetBlockRules</a> parameter to get the Microsoft recommended block rules, and merges them with <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/example-wdac-base-policies"><em>AllowMicrosoft default policy</em></a>. The Policy uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">strict HVCI</a> and has the following <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">rule options</a>:</p>
 <p><br></p>
 <table>
 <thead>
@@ -2189,7 +2189,7 @@ or on
 <p><code>-Deploy</code>: Indicates that the module will automatically deploy the <strong><em>AllowMicrosoftPlusBlockRules</em></strong> policy after creation.</p>
 </li>
 <li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> [policy rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options.</p>
+<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
 </li>
 <li>
 <p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
@@ -2271,7 +2271,7 @@ or on
 <p><code>-Deploy</code>: Indicates that the module will automatically remove the WDAC policy deployed using either <a href="#new-wdacconfig--prepmsftonlyaudit">-PrepMSFTOnlyAudit</a> or <a href="#new-wdacconfig--prepdefaultwindowsaudit">-PrepDefaultWindowsAudit</a> parameters, then deploys the supplemental policy created from Audit event logs along with the selected base policy type, both in enforced mode.</p>
 </li>
 <li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> [policy rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options.</p>
+<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
 </li>
 <li>
 <p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
@@ -2338,7 +2338,7 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakeLightPolicy</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
 </span></code></pre></div>
 <p><br></p>
-<p>Creates a WDAC policy for a <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Lightly-Managed-Devices">Lightly managed system</a>. The Policy uses has the same specifications as <a href="#new-wdacconfig--makeallowmsftwithblockrules">-MakeAllowMSFTWithBlockRules</a>, with the following additional [rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options:</p>
+<p>Creates a WDAC policy for a <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Lightly-Managed-Devices">Lightly managed system</a>. The Policy uses has the same specifications as <a href="#new-wdacconfig--makeallowmsftwithblockrules">-MakeAllowMSFTWithBlockRules</a>, with the following additional <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">rule options</a>:</p>
 <p><br></p>
 <table>
 <thead>
@@ -2365,7 +2365,7 @@ or on
 <p><code>-Deploy</code>: Indicates that the module will automatically deploy the <strong><em>SignedAndReputable.xml</em></strong> policy file after creation.</p>
 </li>
 <li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> [policy rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options.</p>
+<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
 </li>
 <li>
 <p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>
@@ -2408,7 +2408,7 @@ or on
 <p><code>-Deploy</code>: Indicates that the module will automatically deploy the <strong><em>DefaultWindowsPlusBlockRules</em></strong> policy after creation.</p>
 </li>
 <li>
-<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> [policy rule options](https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options.</p>
+<p><code>-TestMode</code>: Indicates that the created/deployed policy will have <strong><em>Enabled:Boot Audit on Failure</em></strong> and <strong><em>Enabled:Advanced Boot Options Menu</em></strong> <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-1-windows-defender-application-control-policy---policy-rule-options">policy rule options</a>.</p>
 </li>
 <li>
 <p><code>-RequireEVSigners</code>: Indicates that the created/deployed policy will have <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/wdac-wizard-create-base-policy#advanced-policy-rules-description">Require EV Signers</a> policy rule option.</p>

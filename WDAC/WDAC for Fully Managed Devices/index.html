@@ -1317,17 +1317,17 @@ or on
       
         <li class="md-nav__item">
   <a href="#generate-audit-event-logs-on-the-system" class="md-nav__link">
-    Generate Audit event logs on the system
+    Generate Audit Event Logs on the System
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#generate-supplemental-policy-from-the-audit-event-logs" class="md-nav__link">
-    Generate Supplemental policy from the Audit event logs
+    Generate Supplemental Policy From the Audit Event Logs
   </a>
   
-    <nav class="md-nav" aria-label="Generate Supplemental policy from the Audit event logs">
+    <nav class="md-nav" aria-label="Generate Supplemental Policy From the Audit Event Logs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1822,17 +1822,17 @@ or on
       
         <li class="md-nav__item">
   <a href="#generate-audit-event-logs-on-the-system" class="md-nav__link">
-    Generate Audit event logs on the system
+    Generate Audit Event Logs on the System
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#generate-supplemental-policy-from-the-audit-event-logs" class="md-nav__link">
-    Generate Supplemental policy from the Audit event logs
+    Generate Supplemental Policy From the Audit Event Logs
   </a>
   
-    <nav class="md-nav" aria-label="Generate Supplemental policy from the Audit event logs">
+    <nav class="md-nav" aria-label="Generate Supplemental Policy From the Audit Event Logs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1943,17 +1943,17 @@ or on
 <li>Default Windows: Allows only files and apps that come pre-installed by Windows.</li>
 </ol>
 <h3 id="deploy-the-allow-microsoft-prep-mode-base-policy">Deploy the Allow Microsoft Prep mode base policy<a class="headerlink" href="#deploy-the-allow-microsoft-prep-mode-base-policy" title="Permanent link">&para;</a></h3>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-PrepMSFTOnlyAudit</span> <span class="n">-LogSize</span> <span class="n">10MB</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-PrepMSFTOnlyAudit</span> <span class="n">-LogSize</span> <span class="n">10MB</span> <span class="n">-Deploy</span>
 </span></code></pre></div>
 <h4 id="parameter-info"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--prepmsftonlyaudit">Parameter Info</a><a class="headerlink" href="#parameter-info" title="Permanent link">&para;</a></h4>
 <h3 id="deploy-the-default-windows-prep-mode-base-policy">Deploy the Default Windows Prep mode base policy<a class="headerlink" href="#deploy-the-default-windows-prep-mode-base-policy" title="Permanent link">&para;</a></h3>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-PrepDefaultWindowsAudit</span> <span class="n">-LogSize</span> <span class="n">10MB</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-PrepDefaultWindowsAudit</span> <span class="n">-LogSize</span> <span class="n">10MB</span> <span class="n">-Deploy</span>
 </span></code></pre></div>
 <h4 id="parameter-info_1"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--prepdefaultwindowsaudit">Parameter Info</a><a class="headerlink" href="#parameter-info_1" title="Permanent link">&para;</a></h4>
 <p><br></p>
 <p>Depending on whichever of the option you choose, it deploys the base policy in audit mode. No reboot required.</p>
 <p><br></p>
-<h2 id="generate-audit-event-logs-on-the-system">Generate Audit event logs on the system<a class="headerlink" href="#generate-audit-event-logs-on-the-system" title="Permanent link">&para;</a></h2>
+<h2 id="generate-audit-event-logs-on-the-system">Generate Audit Event Logs on the System<a class="headerlink" href="#generate-audit-event-logs-on-the-system" title="Permanent link">&para;</a></h2>
 <p>Install all of the programs that you want to allow in the WDAC policy, on the VM. These are the programs that you want to allow to run and be installed on the target system once you've deployed the WDAC policy.</p>
 <ul>
 <li>
@@ -1966,7 +1966,7 @@ or on
 <p>These event logs are exactly what we need to identify and create Allow rules for the detected files.</p>
 <p>Only files that are executed during Prep mode phase generate event logs, so by simply installing a program using its installer, we can't trigger event log generation for each of the components and executables that each program has. So, after installing the programs, run them, use them a bit as you normally would so that all of the programs' components are executed and event logs generated for them.</p>
 <p><br></p>
-<h2 id="generate-supplemental-policy-from-the-audit-event-logs">Generate Supplemental policy from the Audit event logs<a class="headerlink" href="#generate-supplemental-policy-from-the-audit-event-logs" title="Permanent link">&para;</a></h2>
+<h2 id="generate-supplemental-policy-from-the-audit-event-logs">Generate Supplemental Policy From the Audit Event Logs<a class="headerlink" href="#generate-supplemental-policy-from-the-audit-event-logs" title="Permanent link">&para;</a></h2>
 <h3 id="if-you-chose-the-allow-microsoft-path">If you chose the Allow Microsoft path<a class="headerlink" href="#if-you-chose-the-allow-microsoft-path" title="Permanent link">&para;</a></h3>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-MakePolicyFromAuditLogs</span> <span class="n">-BasePolicyType</span> <span class="s1">&#39;Allow Microsoft Base&#39;</span> <span class="n">-NoDeletedFiles</span>
 </span></code></pre></div>
