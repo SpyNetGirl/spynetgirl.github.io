@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -1736,8 +1736,8 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-optional-parameters_2" class="md-nav__link">
-    3 optional parameters
+  <a href="#5-optional-parameters" class="md-nav__link">
+    5 optional parameters
   </a>
   
 </li>
@@ -2047,8 +2047,8 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-optional-parameters_2" class="md-nav__link">
-    3 optional parameters
+  <a href="#5-optional-parameters" class="md-nav__link">
+    5 optional parameters
   </a>
   
 </li>
@@ -2388,7 +2388,8 @@ or on
 <p><br></p>
 <h2 id="new-wdacconfig-makedefaultwindowswithblockrules">New-WDACConfig -MakeDefaultWindowsWithBlockRules<a class="headerlink" href="#new-wdacconfig-makedefaultwindowswithblockrules" title="Permanent link">&para;</a></h2>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakeDefaultWindowsWithBlockRules.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/New-WDACConfig%20-MakeDefaultWindowsWithBlockRules.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakeDefaultWindowsWithBlockRules</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span> <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">New-WDACConfig</span> <span class="p">[</span><span class="n">-MakeDefaultWindowsWithBlockRules</span><span class="p">]</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span> <span class="p">[</span><span class="n">-IncludeSignTool</span><span class="p">]</span> <span class="p">[</span><span class="n">-SignToolPath</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="p">[</span><span class="n">-TestMode</span><span class="p">]</span> <span class="p">[</span><span class="n">-RequireEVSigners</span><span class="p">]</span>
 </span></code></pre></div>
 <p><br></p>
 <p>Calls the <a href="#new-wdacconfig--getblockrules">-GetBlockRules</a> parameter to get the Microsoft recommended block rules, and merges them with <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/example-wdac-base-policies"><em>DefaultWindows_Enforced policy</em></a>. The Policy uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">strict HVCI</a> and uses the <a href="#new-wdacconfig--makeallowmsftwithblockrules">same policy rule options as -MakeAllowMSFTWithBlockRules</a> parameter.</p>
@@ -2402,7 +2403,7 @@ or on
 <li><strong><em>{GUID}.cip</em></strong> for the policy above</li>
 </ul>
 <p><br></p>
-<h3 id="3-optional-parameters_2">3 optional parameters<a class="headerlink" href="#3-optional-parameters_2" title="Permanent link">&para;</a></h3>
+<h3 id="5-optional-parameters">5 optional parameters<a class="headerlink" href="#5-optional-parameters" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>-Deploy</code>: Indicates that the module will automatically deploy the <strong><em>DefaultWindowsPlusBlockRules</em></strong> policy after creation.</p>
@@ -2420,6 +2421,12 @@ or on
 </li>
 </ul>
 </li>
+<li>
+<p><code>-IncludeSignTool</code>: Indicates that the Default Windows policy that is being created must include Allow rules for <code>SignTool.exe</code>. This parameter must be used when you intend to Sign and Deploy the Default Windows policy.</p>
+</li>
+<li>
+<p><code>-SignToolPath &lt;String&gt;</code>: <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig#you-can-use-it-in-2-different-ways">How to use it</a></p>
+</li>
 </ul>
 <p><br></p>
 
@@ -2428,7 +2435,7 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-09-09T16:16:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-09-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-09-19T22:33:05+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-09-19</span>
       
         <br>
         Created:

@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -1236,6 +1236,13 @@ or on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#video-guide" class="md-nav__link">
+    Video Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#deploy-the-default-windows-base-policy-on-the-system" class="md-nav__link">
     Deploy the Default Windows Base Policy on the System
   </a>
@@ -1723,6 +1730,13 @@ or on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#video-guide" class="md-nav__link">
+    Video Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#deploy-the-default-windows-base-policy-on-the-system" class="md-nav__link">
     Deploy the Default Windows Base Policy on the System
   </a>
@@ -1859,13 +1873,17 @@ or on
     F --&gt; O[Edit-WDACConfig -AllowNewApps]
     F --&gt; P[Edit-SignedWDACConfig -AllowNewApps]
     F --&gt; Q[New-SupplementalWDACConfig -Normal]</code></pre>
-<hr />
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="video-guide">Video Guide<a class="headerlink" href="#video-guide" title="Permanent link">&para;</a></h2>
+<p><a href="https://youtu.be/AgqhcPV9aPY?si=l_2QPbEAKKVhb9z6"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/YouTube%20Video%20Thumbnails/With%20YouTube%20play%20button/WDAC%20policy%20for%20Fully%20managed%20device%20Variant%204.png"></a></p>
 <p><br></p>
 <p><em>Every time I use the word "App", I'm referring to regular Win32 programs as well as Microsoft Store installed apps; Basically, any software that you can run.</em></p>
 <p>This scenario provides the ultimate protection level. Using the WDACConfig module, it's very easy to deploy, manage and maintain a system with this configuration.</p>
 <h2 id="deploy-the-default-windows-base-policy-on-the-system">Deploy the Default Windows Base Policy on the System<a class="headerlink" href="#deploy-the-default-windows-base-policy-on-the-system" title="Permanent link">&para;</a></h2>
 <p>Start by creating the Default Windows base policy xml file, which allows only files and apps that come pre-installed in Windows to run and anything else is blocked.</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-MakeDefaultWindowsWithBlockRules</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-MakeDefaultWindowsWithBlockRules</span> <span class="n">-IncludeSignTool</span>
 </span></code></pre></div>
 <ul>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--makeallowmsftwithblockrules">Parameter info</a></li>
@@ -1955,7 +1973,7 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-09-09T16:16:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-09-09</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-09-19T22:33:05+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-09-19</span>
       
         <br>
         Created:
