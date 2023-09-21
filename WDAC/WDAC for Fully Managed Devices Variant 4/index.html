@@ -1881,12 +1881,15 @@ or on
 <p><br></p>
 <p><em>Every time I use the word "App", I'm referring to regular Win32 programs as well as Microsoft Store installed apps; Basically, any software that you can run.</em></p>
 <p>This scenario provides the ultimate protection level. Using the WDACConfig module, it's very easy to deploy, manage and maintain a system with this configuration.</p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 <h2 id="deploy-the-default-windows-base-policy-on-the-system">Deploy the Default Windows Base Policy on the System<a class="headerlink" href="#deploy-the-default-windows-base-policy-on-the-system" title="Permanent link">&para;</a></h2>
 <p>Start by creating the Default Windows base policy xml file, which allows only files and apps that come pre-installed in Windows to run and anything else is blocked.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-MakeDefaultWindowsWithBlockRules</span> <span class="n">-IncludeSignTool</span>
 </span></code></pre></div>
 <ul>
-<li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--makeallowmsftwithblockrules">Parameter info</a></li>
+<li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--makedefaultwindowswithblockrules">Parameter info</a></li>
 </ul>
 <p><br></p>
 <p>Now what we have the policy xml file for the Default Windows base policy, we need to sign and deploy it.</p>
@@ -1899,6 +1902,8 @@ or on
 <p>Since this is a signed base policy, you need to perform a reboot after deployment so that <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control#if-someone-forcefully-deletes-the-deployed-wdac-policy-file">the anti-tamper protection of a signed base policy</a> will start.</p>
 <p>After deploying the base policy, you can create Supplemental policies to allow other apps that don't come by default with Windows to run. To do that, you have multiple options.</p>
 <p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 <h2 id="creating-supplemental-policy-for-apps-already-installed">Creating Supplemental Policy for Apps Already Installed<a class="headerlink" href="#creating-supplemental-policy-for-apps-already-installed" title="Permanent link">&para;</a></h2>
 <p>If you deployed the Default Windows base policy on a system that already had apps installed, you can create Supplemental policy for them using the following syntaxes. <strong>After creating each Supplemental policy, you need to sign and deploy it <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig">using the same Cmdlet we used above.</a></strong></p>
 <h3 id="based-on-signer-rules-hashes-file-names-etc">Based on signer rules, hashes, file names etc.<a class="headerlink" href="#based-on-signer-rules-hashes-file-names-etc" title="Permanent link">&para;</a></h3>
@@ -1907,6 +1912,7 @@ or on
 <ul>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-SupplementalWDACConfig#new-supplementalwdacconfig--normal">Parameter info</a></li>
 </ul>
+<p><br></p>
 <h3 id="based-on-file-path-with-one-or-more-wildcard-characters">Based on File path with one or more wildcard characters<a class="headerlink" href="#based-on-file-path-with-one-or-more-wildcard-characters" title="Permanent link">&para;</a></h3>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">New-SupplementalWDACConfig</span> <span class="n">-FilePathWildCards</span> <span class="n">-WildCardPath</span> <span class="s2">&quot;C:\Program Files\Program\*&quot;</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;App&#39;s Name&quot;</span> <span class="n">-PolicyPath</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s2">&quot;C:\DefaultWindowsPlusBlockRules.xml&quot;</span> 
@@ -1914,6 +1920,7 @@ or on
 <ul>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-SupplementalWDACConfig#new-supplementalwdacconfig--filepathwildcards">Parameter info</a></li>
 </ul>
+<p><br></p>
 <h3 id="based-on-an-installed-windows-apps-name">Based on an installed Windows app's name<a class="headerlink" href="#based-on-an-installed-windows-apps-name" title="Permanent link">&para;</a></h3>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">New-SupplementalWDACConfig</span> <span class="n">-InstalledAppXPackages</span> <span class="n">-PackageName</span> <span class="s2">&quot;*App&#39;s name*&quot;</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;App&#39;s name&quot;</span> <span class="n">-PolicyPath</span> <span class="s2">&quot;C:\DefaultWindowsPlusBlockRules.xml&quot;</span> 
 </span></code></pre></div>
@@ -1921,23 +1928,27 @@ or on
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-SupplementalWDACConfig#new-supplementalwdacconfig--installedappxpackages">Parameter info</a></li>
 </ul>
 <p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 <h2 id="creating-supplemental-policy-for-new-app-installations-or-apps-already-installed">Creating Supplemental Policy for New App Installations or Apps Already Installed<a class="headerlink" href="#creating-supplemental-policy-for-new-app-installations-or-apps-already-installed" title="Permanent link">&para;</a></h2>
 <p>If the app you are trying to allow isn't installed and when you try to install it you see a blocked/error message, you can use the following syntaxes to allow them to run and then automatically create Supplemental policy for them.</p>
 <p>These methods also work for apps that were installed prior to deploying the Default Windows base policy and now you want to allow them to run by creating Supplemental policy for them.</p>
 <p>You can create a Supplemental policy for more than 1 app at a time by browsing for multiple apps' install directories using the commands below.</p>
-<p><br></p>
 <h3 id="based-on-apps-install-directory-and-event-viewer-logs">Based on App's install directory and Event viewer logs<a class="headerlink" href="#based-on-apps-install-directory-and-event-viewer-logs" title="Permanent link">&para;</a></h3>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Edit-SignedWDACConfig</span> <span class="n">-AllowNewAppsAuditEvents</span> <span class="n">-CertPath</span> <span class="s2">&quot;C:\Certificate.cer&quot;</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;App&#39;s Name&quot;</span> <span class="n">-PolicyPaths</span> <span class="s2">&quot;C:\DefaultWindowsPlusBlockRules.xml&quot;</span> <span class="n">-CertCN</span> <span class="s2">&quot;WDAC Certificate&quot;</span> <span class="n">-LogSize</span> <span class="n">20MB</span>
 </span></code></pre></div>
 <ul>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-SignedWDACConfig#edit-signedwdacconfig--allownewappsauditevents">Parameter info</a></li>
 </ul>
+<p><br></p>
 <h3 id="based-on-apps-install-directory-only">Based on App's install directory only<a class="headerlink" href="#based-on-apps-install-directory-only" title="Permanent link">&para;</a></h3>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">Edit-SignedWDACConfig</span> <span class="n">-AllowNewApps</span> <span class="n">-CertPath</span> <span class="s2">&quot;C:\Certificate.cer&quot;</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;App&#39;s Name&quot;</span> <span class="n">-PolicyPaths</span> <span class="s2">&quot;C:\DefaultWindowsPlusBlockRules.xml&quot;</span> <span class="n">-CertCN</span> <span class="s2">&quot;WDAC Certificate&quot;</span>
 </span></code></pre></div>
 <ul>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-SignedWDACConfig#edit-signedwdacconfig--allownewapps">Parameter info</a></li>
 </ul>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="what-to-do-if-you-have-a-lot-of-supplemental-policies">What to Do if You Have a Lot of Supplemental Policies?<a class="headerlink" href="#what-to-do-if-you-have-a-lot-of-supplemental-policies" title="Permanent link">&para;</a></h2>
 <p>Currently, the limit for the number of policies (Base + Supplemental) that can be deployed on a system at a time is 32. So if you are getting close to that limit, you can merge some or all of your Supplemental policies automatically into 1 using the command below:</p>
@@ -1946,6 +1957,8 @@ or on
 <ul>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-SignedWDACConfig#edit-signedwdacconfig--mergesupplementalpolicies">Parameter info</a></li>
 </ul>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="what-to-do-when-there-is-an-update-for-an-allowed-app">What to Do When There Is an Update for an Allowed App?<a class="headerlink" href="#what-to-do-when-there-is-an-update-for-an-allowed-app" title="Permanent link">&para;</a></h2>
 <p>If you've created a Supplemental policy for an app that is already installed and now there is a newer version of that app available, you have multiple options:</p>
@@ -1973,7 +1986,7 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-09-19T22:40:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-09-19</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-09-21T11:42:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-09-21</span>
       
         <br>
         Created:
