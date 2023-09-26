@@ -1293,6 +1293,13 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-run-multiple-kernel-drivers-in-powershell" class="md-nav__link">
+    How to Run Multiple Kernel Drivers In PowerShell
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2107,6 +2114,13 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-run-multiple-kernel-drivers-in-powershell" class="md-nav__link">
+    How to Run Multiple Kernel Drivers In PowerShell
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2376,13 +2390,24 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nv">$env:USERPROFILE</span>
 </span></code></pre></div>
 <p><br></p>
+<h2 id="how-to-run-multiple-kernel-drivers-in-powershell">How to Run Multiple Kernel Drivers In PowerShell<a class="headerlink" href="#how-to-run-multiple-kernel-drivers-in-powershell" title="Permanent link">&para;</a></h2>
+<p>If you have a folder full of <code>.bin</code> driver files, you can use the following command to create a kernel service and run them one by one.</p>
+<p>This can be useful for testing drivers against a deployed WDAC policy.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">(</span><span class="nb">Get-ChildItem</span> <span class="s2">&quot;C:\drivers&quot;</span><span class="p">).</span><span class="n">FullName</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="n">-begin</span> <span class="p">{</span><span class="nv">$global:i</span><span class="p">=</span><span class="n">1</span><span class="p">}</span> <span class="n">-Process</span> <span class="p">{</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>    <span class="nb">sc </span><span class="n">create</span> <span class="s2">&quot;DriverTest$global:i&quot;</span> <span class="n">type</span><span class="p">=</span><span class="n">kernel</span> <span class="n">binpath</span><span class="p">=</span><span class="s2">&quot;$_&quot;</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>    <span class="nb">Start-Sleep</span> <span class="n">-Seconds</span> <span class="n">1</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>    <span class="nb">Start-Service</span> <span class="n">-Name</span> <span class="s2">&quot;DriverTest$global:i&quot;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>    <span class="nv">$global:i</span><span class="p">++</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><br></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-09-25T17:14:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-09-25</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-09-26T15:40:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-09-26</span>
       
         <br>
         Created:
