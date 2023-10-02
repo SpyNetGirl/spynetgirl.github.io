@@ -1527,14 +1527,14 @@ or on
       
         <li class="md-nav__item">
   <a href="#you-can-merge-the-same-policy-xml-file-with-itself" class="md-nav__link">
-    You Can Merge the Same Policy Xml File With Itself
+    You Can Merge the Same Policy XML File With Itself
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#-audit-parameter-of-the-configci-cmdlets" class="md-nav__link">
-    -Audit Parameter of the Configci Cmdlets
+    -Audit Parameter of the ConfigCi Cmdlets
   </a>
   
 </li>
@@ -2345,14 +2345,14 @@ or on
       
         <li class="md-nav__item">
   <a href="#you-can-merge-the-same-policy-xml-file-with-itself" class="md-nav__link">
-    You Can Merge the Same Policy Xml File With Itself
+    You Can Merge the Same Policy XML File With Itself
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#-audit-parameter-of-the-configci-cmdlets" class="md-nav__link">
-    -Audit Parameter of the Configci Cmdlets
+    -Audit Parameter of the ConfigCi Cmdlets
   </a>
   
 </li>
@@ -2747,7 +2747,7 @@ or on
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
-<h2 id="you-can-merge-the-same-policy-xml-file-with-itself">You Can Merge the Same Policy Xml File With Itself<a class="headerlink" href="#you-can-merge-the-same-policy-xml-file-with-itself" title="Permanent link">&para;</a></h2>
+<h2 id="you-can-merge-the-same-policy-xml-file-with-itself">You Can Merge the Same Policy XML File With Itself<a class="headerlink" href="#you-can-merge-the-same-policy-xml-file-with-itself" title="Permanent link">&para;</a></h2>
 <p>In order to automatically remove unnecessary things from a policy file, such as the EKUs mentioned earlier, you can run a command like this:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">Merge-CIPolicy</span> <span class="p">.\</span><span class="n">Policy</span><span class="p">.</span><span class="n">xml</span> <span class="n">-OutputFilePath</span> <span class="p">.\</span><span class="n">Policy1</span><span class="p">.</span><span class="n">xml</span>
 </span></code></pre></div>
@@ -2755,7 +2755,7 @@ or on
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
-<h2 id="-audit-parameter-of-the-configci-cmdlets">-Audit Parameter of the Configci Cmdlets<a class="headerlink" href="#-audit-parameter-of-the-configci-cmdlets" title="Permanent link">&para;</a></h2>
+<h2 id="-audit-parameter-of-the-configci-cmdlets">-Audit Parameter of the ConfigCi Cmdlets<a class="headerlink" href="#-audit-parameter-of-the-configci-cmdlets" title="Permanent link">&para;</a></h2>
 <p>When you use <code>-Audit</code> parameter of ConfigCI cmdlets such as <a href="https://learn.microsoft.com/en-us/powershell/module/configci/get-systemdriver">Get-SystemDriver</a> and <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy">New-CIPolicy</a>, these 2 event logs are scanned</p>
 <ol>
 <li>AppLocker – MSI and Script event log</li>
@@ -2798,8 +2798,8 @@ or on
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
-<h2 id="what-does-hvci-option-set-to-strict-mean">What Does <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">HVCI option</a> Set to Strict Mean?<a class="headerlink" href="#what-does-hvci-option-set-to-strict-mean" title="Permanent link">&para;</a></h2>
-<p><a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity">HVCI</a> stands for <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control">Hypervisor-protected Code Integrity</a> and it is a feature that uses virtualization-based security (VBS) to protect the Windows kernel from memory attacks. HVCI can be set to different options in a WDAC policy, such as Enabled, DebugMode, or Strict. Setting HVCI to Strict in a WDAC policy provides the highest level of protection for kernel mode code integrity, as it enforces these additional restrictions:</p>
+<h2 id="what-does-hvci-option-set-to-strict-mean">What Does HVCI option Set to Strict Mean?<a class="headerlink" href="#what-does-hvci-option-set-to-strict-mean" title="Permanent link">&para;</a></h2>
+<p><a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity">HVCI</a> stands for <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control">Hypervisor-protected Code Integrity</a> and it is a feature that uses virtualization-based security (VBS) to protect the Windows kernel from memory attacks. HVCI can be set to different options in a WDAC policy, such as Enabled, DebugMode, or Strict. Setting <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">HVCI to Strict</a> in a WDAC policy provides the highest level of protection for kernel mode code integrity, as it enforces these additional restrictions:</p>
 <ul>
 <li>
 <p>It prevents unsigned drivers from loading, even if they are allowed by the WDAC policy.
@@ -2815,7 +2815,7 @@ It prevents drivers that are not compatible with HVCI from loading, even if they
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
-<h2 id="continue-reading-about-byovd-protection-with-wdac"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/arrow-pink.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img width="65" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/arrow-pink.gif"></a> Continue reading about BYOVD protection with WDAC<a class="headerlink" href="#continue-reading-about-byovd-protection-with-wdac" title="Permanent link">&para;</a></h2>
+<h2 id="continue-reading-about-byovd-protection-with-wdac"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/arrow-pink.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img width="65" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/arrow-pink.gif"></a> <a href="#-continue-reading-about-byovd-protection-with-wdac">Continue reading about BYOVD protection with WDAC</a><a class="headerlink" href="#continue-reading-about-byovd-protection-with-wdac" title="Permanent link">&para;</a></h2>
 <h4 id="wdac-policy-for-byovd-kernel-mode-only-protection"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection">WDAC policy</a> for BYOVD Kernel mode only protection<a class="headerlink" href="#wdac-policy-for-byovd-kernel-mode-only-protection" title="Permanent link">&para;</a></h4>
 <p><br></p>
 
