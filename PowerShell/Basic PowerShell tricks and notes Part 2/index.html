@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.3">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.79e020e9.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
@@ -1300,6 +1300,13 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-run-powershell-code-in-cmdbatch" class="md-nav__link">
+    How to Run PowerShell Code in CMD/Batch
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2121,6 +2128,13 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-run-powershell-code-in-cmdbatch" class="md-nav__link">
+    How to Run PowerShell Code in CMD/Batch
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2266,99 +2280,103 @@ or on
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="no">[System.Security.Principal.WindowsIdentity]</span><span class="p">::</span><span class="n">GetCurrent</span><span class="p">().</span><span class="n">Name</span> 
 </span></code></pre></div>
 <p><em>Most secure way</em></p>
+<p>Example</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">$UserSID</span> <span class="p">=</span> <span class="no">[System.Security.Principal.WindowsIdentity]</span><span class="p">::</span><span class="n">GetCurrent</span><span class="p">().</span><span class="n">user</span><span class="p">.</span><span class="n">value</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p">(</span><span class="nb">Get-LocalUser</span> <span class="p">|</span> <span class="nb">where-object</span> <span class="p">{</span><span class="nv">$_</span><span class="p">.</span><span class="n">SID</span> <span class="o">-eq</span> <span class="nv">$UserSID</span><span class="p">}).</span><span class="n">name</span>
+</span></code></pre></div>
 <p><br></p>
 <h2 id="how-to-access-properties-of-an-object-in-powershell">How to Access Properties of an Object in Powershell<a class="headerlink" href="#how-to-access-properties-of-an-object-in-powershell" title="Permanent link">&para;</a></h2>
 <p>For example, you can first assign the entire object to a variable:</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">$Preferences</span> <span class="p">=</span> <span class="nb">Get-MpPreference</span> 
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">$Preferences</span> <span class="p">=</span> <span class="nb">Get-MpPreference</span> 
 </span></code></pre></div>
 <p>Then call properties of that variable</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">$Preferences</span><span class="p">.</span><span class="n">PUAProtection</span> 
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nv">$Preferences</span><span class="p">.</span><span class="n">PUAProtection</span> 
 </span></code></pre></div>
 <p>Another method is this:</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">$(</span><span class="nb">Get-MpPreference</span><span class="p">).</span><span class="n">puaprotection</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">$(</span><span class="nb">Get-MpPreference</span><span class="p">).</span><span class="n">puaprotection</span>
 </span></code></pre></div>
 <p><br></p>
 <h2 id="dot-sourcing">Dot-Sourcing<a class="headerlink" href="#dot-sourcing" title="Permanent link">&para;</a></h2>
 <p>To dot-source a PowerShell function in the same script file, you can use the dot operator <code>.</code> followed by the path of the script file containing the function. The path can be relative or absolute. Here's an example:</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c"># Contents of MyFunctions.ps1</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">function</span> <span class="n">MyFunction</span> <span class="p">{</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;Hello World!&quot;</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="p">}</span>
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
-</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="c"># Contents of Main.ps1</span>
-</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="p">.</span> <span class="p">./</span><span class="n">MyFunctions</span><span class="p">.</span><span class="n">ps1</span>
-</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="n">MyFunction</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c"># Contents of MyFunctions.ps1</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="k">function</span> <span class="n">MyFunction</span> <span class="p">{</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;Hello World!&quot;</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="p">}</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="c"># Contents of Main.ps1</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="p">.</span> <span class="p">./</span><span class="n">MyFunctions</span><span class="p">.</span><span class="n">ps1</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="n">MyFunction</span>
 </span></code></pre></div>
 <p>In this example, <code>Main.ps1</code> dot-sources <code>MyFunctions.ps1</code> using the dot operator and then calls <code>MyFunction</code>. When you run <code>Main.ps1</code>, it will output <code>Hello World!</code> to the console.</p>
 <p>The dot operator tells PowerShell to execute the script file in the current scope instead of a new scope. This means that any functions or variables defined in the script file will be available in the current scope.</p>
 <p><br></p>
 <h2 id="a-custom-script-to-generate-random-words-in-powershell">A Custom Script to Generate Random Words in Powershell<a class="headerlink" href="#a-custom-script-to-generate-random-words-in-powershell" title="Permanent link">&para;</a></h2>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c"># Generate four variables with random names</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nv">$TotallyRandomNamesArray</span> <span class="p">=</span> <span class="p">@()</span> <span class="c"># Create an empty array to store the names</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-lt</span> <span class="n">4</span><span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>    <span class="c"># Loop four times</span>
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    <span class="nv">$Chars</span> <span class="p">=</span> <span class="no">[CHAR[]]</span><span class="p">(</span><span class="nb">Get-Random</span> <span class="n">-Minimum</span> <span class="n">97</span> <span class="n">-Maximum</span> <span class="n">123</span> <span class="n">-Count</span> <span class="n">11</span><span class="p">)</span> <span class="c"># Generate random English letters</span>
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    <span class="nv">$Chars</span><span class="p">[</span><span class="n">0</span><span class="p">]</span> <span class="p">=</span> <span class="no">[CHAR]</span><span class="p">::</span><span class="n">ToUpper</span><span class="p">(</span><span class="nv">$Chars</span><span class="p">[</span><span class="n">0</span><span class="p">])</span> <span class="c"># Change the first character to upper-case</span>
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>    <span class="nv">$TotallyRandomNamesArray</span> <span class="p">+=</span> <span class="n">-join</span> <span class="nv">$Chars</span> <span class="c"># Add the name to the array</span>
-</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="p">}</span>
-</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="c"># Assign the names from the Names array to the individual variables</span>
-</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="nv">$TotallyRandomName1</span><span class="p">,</span> <span class="nv">$TotallyRandomName2</span><span class="p">,</span> <span class="nv">$TotallyRandomName3</span><span class="p">,</span> <span class="nv">$TotallyRandomName4</span> <span class="p">=</span> <span class="nv">$TotallyRandomNamesArray</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c"># Generate four variables with random names</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nv">$TotallyRandomNamesArray</span> <span class="p">=</span> <span class="p">@()</span> <span class="c"># Create an empty array to store the names</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-lt</span> <span class="n">4</span><span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    <span class="c"># Loop four times</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    <span class="nv">$Chars</span> <span class="p">=</span> <span class="no">[CHAR[]]</span><span class="p">(</span><span class="nb">Get-Random</span> <span class="n">-Minimum</span> <span class="n">97</span> <span class="n">-Maximum</span> <span class="n">123</span> <span class="n">-Count</span> <span class="n">11</span><span class="p">)</span> <span class="c"># Generate random English letters</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>    <span class="nv">$Chars</span><span class="p">[</span><span class="n">0</span><span class="p">]</span> <span class="p">=</span> <span class="no">[CHAR]</span><span class="p">::</span><span class="n">ToUpper</span><span class="p">(</span><span class="nv">$Chars</span><span class="p">[</span><span class="n">0</span><span class="p">])</span> <span class="c"># Change the first character to upper-case</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>    <span class="nv">$TotallyRandomNamesArray</span> <span class="p">+=</span> <span class="n">-join</span> <span class="nv">$Chars</span> <span class="c"># Add the name to the array</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="p">}</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="c"># Assign the names from the Names array to the individual variables</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="nv">$TotallyRandomName1</span><span class="p">,</span> <span class="nv">$TotallyRandomName2</span><span class="p">,</span> <span class="nv">$TotallyRandomName3</span><span class="p">,</span> <span class="nv">$TotallyRandomName4</span> <span class="p">=</span> <span class="nv">$TotallyRandomNamesArray</span>
 </span></code></pre></div>
 <p><br></p>
 <h2 id="how-to-see-all-the-shared-folders-and-drives">How to See All the Shared Folders and Drives<a class="headerlink" href="#how-to-see-all-the-shared-folders-and-drives" title="Permanent link">&para;</a></h2>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nb">Get-CimInstance</span> <span class="n">-Class</span> <span class="n">Win32_Share</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">Get-CimInstance</span> <span class="n">-Class</span> <span class="n">Win32_Share</span>
 </span></code></pre></div>
 <p>There are other ways that are not native PowerShell cmdlets, such as</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>net view \\$env:computername /all
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>net view \\$env:computername /all
 </span></code></pre></div>
 <p>And</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>net share
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>net share
 </span></code></pre></div>
 <blockquote>
 <p>Also visible from Computer =&gt; System Tools =&gt; Shared Folders =&gt; Shares</p>
 </blockquote>
 <p><br></p>
 <h2 id="an-example-of-using-f-format-operator">An Example of Using -F Format Operator<a class="headerlink" href="#an-example-of-using-f-format-operator" title="Permanent link">&para;</a></h2>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">Write-output</span><span class="p">(</span><span class="s2">&quot;The drivername {0} is vulnerable with a matching SHA256 hash of {1}&quot;</span> <span class="o">-f</span> <span class="nv">$Filename</span><span class="p">,</span> <span class="nv">$SHA256</span><span class="p">)</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">Write-output</span><span class="p">(</span><span class="s2">&quot;The drivername {0} is vulnerable with a matching SHA256 hash of {1}&quot;</span> <span class="o">-f</span> <span class="nv">$Filename</span><span class="p">,</span> <span class="nv">$SHA256</span><span class="p">)</span>
 </span></code></pre></div>
 <p><a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.3#format-operator--f">More info</a></p>
 <p><br></p>
 <h2 id="how-to-list-all-of-the-positional-parameters-of-a-cmdlet">How to List All of the Positional Parameters of a Cmdlet<a class="headerlink" href="#how-to-list-all-of-the-positional-parameters-of-a-cmdlet" title="Permanent link">&para;</a></h2>
 <p>In this example we use the </p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">Get-Help</span> <span class="n">-Name</span> <span class="s2">&quot;Get-ChildItem&quot;</span> <span class="n">-Parameter</span> <span class="p">*</span> <span class="p">|</span>
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="k">position</span> <span class="p">|</span>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nb">Select-Object</span> <span class="n">-Property</span> <span class="n">name</span><span class="p">,</span> <span class="k">position</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">Get-Help</span> <span class="n">-Name</span> <span class="s2">&quot;Get-ChildItem&quot;</span> <span class="n">-Parameter</span> <span class="p">*</span> <span class="p">|</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="k">position</span> <span class="p">|</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="nb">Select-Object</span> <span class="n">-Property</span> <span class="n">name</span><span class="p">,</span> <span class="k">position</span>
 </span></code></pre></div>
 <p><br></p>
 <h2 id="how-to-get-the-number-of-fans-and-details-about-them-in-powershell">How to Get the Number of Fans and Details About Them in Powershell<a class="headerlink" href="#how-to-get-the-number-of-fans-and-details-about-them-in-powershell" title="Permanent link">&para;</a></h2>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">(</span><span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="n">root</span><span class="p">/</span><span class="n">CIMV2</span> <span class="n">-ClassName</span> <span class="n">Win32_Fan</span><span class="p">).</span><span class="n">count</span>
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="n">root</span><span class="p">/</span><span class="n">CIMV2</span> <span class="n">-ClassName</span> <span class="n">Win32_Fan</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">(</span><span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="n">root</span><span class="p">/</span><span class="n">CIMV2</span> <span class="n">-ClassName</span> <span class="n">Win32_Fan</span><span class="p">).</span><span class="n">count</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="n">root</span><span class="p">/</span><span class="n">CIMV2</span> <span class="n">-ClassName</span> <span class="n">Win32_Fan</span>
 </span></code></pre></div>
 <blockquote>
 <p>P.S VMs don't have fans.</p>
 </blockquote>
 <p><br></p>
 <h2 id="how-to-get-the-last-reboot-time-in-powershell">How to Get the Last Reboot Time in Powershell<a class="headerlink" href="#how-to-get-the-last-reboot-time-in-powershell" title="Permanent link">&para;</a></h2>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="no">[datetime]</span><span class="p">(</span><span class="nb">Get-CimInstance</span> <span class="n">-ClassName</span> <span class="n">win32_operatingsystem</span> <span class="n">-ComputerName</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">LastBootUpTime</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="no">[datetime]</span><span class="p">(</span><span class="nb">Get-CimInstance</span> <span class="n">-ClassName</span> <span class="n">win32_operatingsystem</span> <span class="n">-ComputerName</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">LastBootUpTime</span>
 </span></code></pre></div>
 <p><br></p>
 <h2 id="how-to-add-a-ps-custom-object-to-another-ps-custom-object">How to Add a PS Custom Object to Another PS Custom Object<a class="headerlink" href="#how-to-add-a-ps-custom-object-to-another-ps-custom-object" title="Permanent link">&para;</a></h2>
 <p>You can use the <code>Add-Member</code> cmdlet with the <code>-InputObject</code> parameter. The <code>-InputObject</code> parameter specifies the custom object that you want to add a property to, and the <code>-Value</code> parameter specifies the custom object that you want to add as a property. For example, you can use this code to add the <code>$CustomObject</code> to another custom object called <code>$ParentObject</code>:</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nv">$HashTable</span> <span class="p">=</span> <span class="p">@{</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;Alice&#39;</span>
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>    <span class="n">Age</span> <span class="p">=</span> <span class="n">25</span>
-</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>    <span class="n">Occupation</span> <span class="p">=</span> <span class="s1">&#39;Teacher&#39;</span>
-</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">}</span>
-</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="nv">$CustomObject</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="nv">$HashTable</span>
-</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>
-</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="c"># Create another custom object</span>
-</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="nv">$ParentObject</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span>
-</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>    <span class="n">ID</span> <span class="p">=</span> <span class="n">123</span>
-</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>    <span class="n">Location</span> <span class="p">=</span> <span class="s1">&#39;London&#39;</span>
-</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="p">}</span>
-</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>
-</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="c"># Add the $CustomObject as a property to the $ParentObject</span>
-</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a><span class="nb">Add-Member</span> <span class="n">-InputObject</span> <span class="nv">$ParentObject</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="n">Child</span> <span class="n">-Value</span> <span class="nv">$CustomObject</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nv">$HashTable</span> <span class="p">=</span> <span class="p">@{</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;Alice&#39;</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>    <span class="n">Age</span> <span class="p">=</span> <span class="n">25</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>    <span class="n">Occupation</span> <span class="p">=</span> <span class="s1">&#39;Teacher&#39;</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="p">}</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="nv">$CustomObject</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="nv">$HashTable</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="c"># Create another custom object</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="nv">$ParentObject</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>    <span class="n">ID</span> <span class="p">=</span> <span class="n">123</span>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>    <span class="n">Location</span> <span class="p">=</span> <span class="s1">&#39;London&#39;</span>
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a><span class="p">}</span>
+</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>
+</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a><span class="c"># Add the $CustomObject as a property to the $ParentObject</span>
+</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="nb">Add-Member</span> <span class="n">-InputObject</span> <span class="nv">$ParentObject</span> <span class="n">-MemberType</span> <span class="n">NoteProperty</span> <span class="n">-Name</span> <span class="n">Child</span> <span class="n">-Value</span> <span class="nv">$CustomObject</span>
 </span></code></pre></div>
 <p><br></p>
 <h2 id="some-best-practices-for-powershell-code">Some Best Practices for Powershell Code<a class="headerlink" href="#some-best-practices-for-powershell-code" title="Permanent link">&para;</a></h2>
@@ -2373,33 +2391,44 @@ or on
 <p>When you upload a PowerShell script to GitHub you need to make sure it's set to CRLF. PowerShell codes that are signed have big signature blocks at the end of them. PowerShell expects CRLF when doing authenticode signatures. You can also add those scripts to a <code>.gitattribute</code> config to your repo so that PowerShell files are uploaded with CRLF and not with LF.</p>
 <p><br></p>
 <h2 id="how-to-securely-get-the-temp-directorys-path">How to Securely Get the Temp Directory's Path<a class="headerlink" href="#how-to-securely-get-the-temp-directorys-path" title="Permanent link">&para;</a></h2>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="no">[System.IO.Path]</span><span class="p">::</span><span class="n">GetTempPath</span><span class="p">()</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="no">[System.IO.Path]</span><span class="p">::</span><span class="n">GetTempPath</span><span class="p">()</span>
 </span></code></pre></div>
 <p><br></p>
 <p>A less secure way is this</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nv">$env:Temp</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nv">$env:Temp</span>
 </span></code></pre></div>
 <p>The problem with the 2nd method is that if the path is long, contains too many spaces or contains non-English characters, it might lead to pattern matching using <code>~1</code>.</p>
 <p><br></p>
 <h2 id="how-to-securely-get-the-user-directorys-path">How to Securely Get the User Directory's Path<a class="headerlink" href="#how-to-securely-get-the-user-directorys-path" title="Permanent link">&para;</a></h2>
 <p>The Get-CimInstance cmdlet can query the Win32_UserProfile class and filter by the current user’s SID to get the LocalPath property, which is the path of the current user’s profile directory. This method is more accurate than using the environment variable.</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">(</span><span class="nb">Get-CimInstance</span> <span class="n">Win32_UserProfile</span> <span class="n">-Filter</span> <span class="s2">&quot;SID = &#39;</span><span class="p">$(</span><span class="no">[System.Security.Principal.WindowsIdentity]</span><span class="p">::</span><span class="n">GetCurrent</span><span class="p">().</span><span class="n">User</span><span class="p">.</span><span class="n">Value</span><span class="p">)</span><span class="s2">&#39;&quot;</span><span class="p">).</span><span class="n">LocalPath</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">(</span><span class="nb">Get-CimInstance</span> <span class="n">Win32_UserProfile</span> <span class="n">-Filter</span> <span class="s2">&quot;SID = &#39;</span><span class="p">$(</span><span class="no">[System.Security.Principal.WindowsIdentity]</span><span class="p">::</span><span class="n">GetCurrent</span><span class="p">().</span><span class="n">User</span><span class="p">.</span><span class="n">Value</span><span class="p">)</span><span class="s2">&#39;&quot;</span><span class="p">).</span><span class="n">LocalPath</span>
 </span></code></pre></div>
 <p><br></p>
 <p>A less secure or accurate way is this</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nv">$env:USERPROFILE</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nv">$env:USERPROFILE</span>
 </span></code></pre></div>
 <p><br></p>
 <h2 id="how-to-run-multiple-kernel-drivers-in-powershell">How to Run Multiple Kernel Drivers In PowerShell<a class="headerlink" href="#how-to-run-multiple-kernel-drivers-in-powershell" title="Permanent link">&para;</a></h2>
 <p>If you have a folder full of <code>.bin</code> driver files, you can use the following command to create a kernel service and run them one by one.</p>
 <p>This can be useful for testing drivers against a deployed WDAC policy.</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="p">(</span><span class="nb">Get-ChildItem</span> <span class="s2">&quot;C:\drivers&quot;</span><span class="p">).</span><span class="n">FullName</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="n">-begin</span> <span class="p">{</span><span class="nv">$global:i</span><span class="p">=</span><span class="n">1</span><span class="p">}</span> <span class="n">-Process</span> <span class="p">{</span>
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>    <span class="nb">sc </span><span class="n">create</span> <span class="s2">&quot;DriverTest$global:i&quot;</span> <span class="n">type</span><span class="p">=</span><span class="n">kernel</span> <span class="n">binpath</span><span class="p">=</span><span class="s2">&quot;$_&quot;</span>
-</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>    <span class="nb">Start-Sleep</span> <span class="n">-Seconds</span> <span class="n">1</span>
-</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>    <span class="nb">Start-Service</span> <span class="n">-Name</span> <span class="s2">&quot;DriverTest$global:i&quot;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
-</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>    <span class="nv">$global:i</span><span class="p">++</span>
-</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="p">}</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="p">(</span><span class="nb">Get-ChildItem</span> <span class="s2">&quot;C:\drivers&quot;</span><span class="p">).</span><span class="n">FullName</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="n">-begin</span> <span class="p">{</span><span class="nv">$global:i</span><span class="p">=</span><span class="n">1</span><span class="p">}</span> <span class="n">-Process</span> <span class="p">{</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>    <span class="nb">sc </span><span class="n">create</span> <span class="s2">&quot;DriverTest$global:i&quot;</span> <span class="n">type</span><span class="p">=</span><span class="n">kernel</span> <span class="n">binpath</span><span class="p">=</span><span class="s2">&quot;$_&quot;</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>    <span class="nb">Start-Sleep</span> <span class="n">-Seconds</span> <span class="n">1</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>    <span class="nb">Start-Service</span> <span class="n">-Name</span> <span class="s2">&quot;DriverTest$global:i&quot;</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>    <span class="nv">$global:i</span><span class="p">++</span>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="p">}</span>
 </span></code></pre></div>
+<p><br></p>
+<h2 id="how-to-run-powershell-code-in-cmdbatch">How to Run PowerShell Code in CMD/Batch<a class="headerlink" href="#how-to-run-powershell-code-in-cmdbatch" title="Permanent link">&para;</a></h2>
+<p>Example, the code has no double quotes inside it</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-Command</span> <span class="s2">&quot;$UserSID = [System.Security.Principal.WindowsIdentity]::GetCurrent().user.value;(Get-LocalUser | where-object {$_.SID -eq $UserSID}).name&quot;</span>
+</span></code></pre></div>
+<p><br></p>
+<p>Example, the code has double quotes inside it. We have to escape double quotes with <code>\"</code></p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">powershell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-Command</span> <span class="s2">&quot;$UserSID = [System.Security.Principal.WindowsIdentity]::GetCurrent().user.value;$UserName = (Get-LocalUser | where-object {$_.SID -eq $UserSID}).name;Get-Process | where-object {$_.path -eq &quot;</span><span class="p">\</span><span class="s2">&quot;C:\Users\$UserName\AppData\Local\Microsoft\Edge SxS\Application\msedge.exe\&quot;&quot;} | ForEach-Object {Stop-Process -Id $_.id -Force -ErrorAction SilentlyContinue}&quot;</span>
+</span></code></pre></div>
+<p><br></p>
+<p>A good related answer from <a href="https://stackoverflow.com/a/66847929/21243735">StackOverflow</a></p>
 <p><br></p>
 
   <hr>
@@ -2407,7 +2436,7 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-09-26T15:40:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-09-26</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-04T19:54:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-04</span>
       
         <br>
         Created:
@@ -2429,10 +2458,10 @@ or on
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-            
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-            Back to top
-          </button>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
@@ -2653,10 +2682,11 @@ or on
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+    
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6eac0284.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
