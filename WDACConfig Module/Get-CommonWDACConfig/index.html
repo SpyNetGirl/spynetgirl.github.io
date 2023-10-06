@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
       
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.79e020e9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bd3936ea.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -1522,8 +1522,8 @@ or on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#8-optional-parameters" class="md-nav__link">
-    8 optional parameters
+  <a href="#7-optional-parameters" class="md-nav__link">
+    7 Optional Parameters
   </a>
   
 </li>
@@ -1648,6 +1648,26 @@ or on
   
   
     <li class="md-nav__item">
+      <a href="../Remove-CommonWDACConfig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove-CommonWDACConfig available parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Remove-WDACConfig/" class="md-nav__link">
         
   
@@ -1744,8 +1764,8 @@ or on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#8-optional-parameters" class="md-nav__link">
-    8 optional parameters
+  <a href="#7-optional-parameters" class="md-nav__link">
+    7 Optional Parameters
   </a>
   
 </li>
@@ -1790,25 +1810,15 @@ or on
 </li>
 </ul>
 <p><br></p>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/Harden-Windows-Security/main/images/Wiki%20APNGs/Get-CommonWDACConfig.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://raw.githubusercontent.com/HotCakeX/Harden-Windows-Security/main/images/Wiki%20APNGs/Get-CommonWDACConfig.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Get-CommonWDACConfig</span> <span class="p">[</span><span class="n">-SignedPolicyPath</span><span class="p">]</span> <span class="p">[</span><span class="n">-UnsignedPolicyPath</span><span class="p">]</span> <span class="p">[</span><span class="n">-SignToolPath</span><span class="p">]</span> <span class="p">[</span><span class="n">-CertCN</span><span class="p">]</span> <span class="p">[</span><span class="n">-StrictKernelPolicyGUID</span><span class="p">]</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">[</span><span class="n">-StrictKernelNoFlightRootsPolicyGUID</span><span class="p">]</span> <span class="p">[</span><span class="n">-CertPath</span><span class="p">]</span> <span class="p">[</span><span class="n">-Open</span><span class="p">]</span>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Get-CommonWDACConfig/Get-CommonWDACConfig.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Get-CommonWDACConfig/Get-CommonWDACConfig.apng" /></a></p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Get-CommonWDACConfig</span> <span class="p">[</span><span class="n">-CertCN</span><span class="p">]</span> <span class="p">[</span><span class="n">-CertPath</span><span class="p">]</span> <span class="p">[</span><span class="n">-SignToolPath</span><span class="p">]</span> <span class="p">[</span><span class="n">-SignedPolicyPath</span><span class="p">]</span> <span class="p">[</span><span class="n">-UnsignedPolicyPath</span><span class="p">]</span> <span class="p">[</span><span class="n">-Open</span><span class="p">]</span> <span class="p">[</span><span class="n">-LastUpdateCheck</span><span class="p">]</span>
 </span></code></pre></div>
 <p><br></p>
 <p>Use this cmdlet to query and display the values for common and frequently used parameters in the User Configurations Json file</p>
 <p>All of the applicable cmdlets of the module automatically check the User Configuration file for any available input, if you don't specify values for their parameters.</p>
 <p><br></p>
-<h3 id="8-optional-parameters">8 optional parameters<a class="headerlink" href="#8-optional-parameters" title="Permanent link">&para;</a></h3>
+<h3 id="7-optional-parameters">7 Optional Parameters<a class="headerlink" href="#7-optional-parameters" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><code>-SignedPolicyPath &lt;String&gt;</code>: Displays the path to the xml file of a Signed policy.</p>
-</li>
-<li>
-<p><code>-UnSignedPolicyPath &lt;String&gt;</code>: Displays the path to the xml file of an Unsigned policy.</p>
-</li>
-<li>
-<p><code>-SignToolPath</code>: Displays the path to the SignTool executable.</p>
-</li>
 <li>
 <p><code>-CertCN</code>: Displays the Common Name of an installed certificate.</p>
 </li>
@@ -1816,13 +1826,20 @@ or on
 <p><code>-CertPath</code>: Displays the path to a certificate <code>.cer</code> file.</p>
 </li>
 <li>
-<p><code>-Open</code>: Opens the User Config Json file in the default editor.</p>
+<p><code>-SignToolPath</code>: Displays the path to the SignTool executable.</p>
 </li>
 <li>
-<p><code>-StrictKernelPolicyGUID</code>: Displays the GUID of the Strict Kernel mode policy (Mainly used Internally by the module)</p>
+<p><code>-SignedPolicyPath &lt;String&gt;</code>: Displays the path to the xml file of a Signed policy.</p>
 </li>
 <li>
-<p><code>-StrictKernelNoFlightRootsPolicyGUID</code>: Displays the GUID of the Strict Kernel no Flights root mode policy (Mainly used Internally by the module)</p>
+<p><code>-UnSignedPolicyPath &lt;String&gt;</code>: Displays the path to the xml file of an Unsigned policy.</p>
+</li>
+<li>
+<p><code>-Open</code>: Opens the User Config Json file in the default editor.
+by the module)</p>
+</li>
+<li>
+<p><code>-LastUpdateCheck</code>: Displays the last time online update check was performed.</p>
 </li>
 </ul>
 <p><br></p>
@@ -2079,10 +2096,10 @@ or on
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6eac0284.min.js"></script>
+      <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

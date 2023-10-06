@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.4">
     
     
       
@@ -28,10 +28,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.79e020e9.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bd3936ea.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a5377069.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -1434,13 +1434,6 @@ or on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#confirm-wdacconfig-listactivepolicies" class="md-nav__link">
     Confirm-WDACConfig -ListActivePolicies
   </a>
@@ -1449,8 +1442,8 @@ or on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#has-2-optional-parameter" class="md-nav__link">
-    Has 2 optional parameter
+  <a href="#2-optional-parameters" class="md-nav__link">
+    2 Optional Parameters
   </a>
   
 </li>
@@ -1470,6 +1463,13 @@ or on
         <li class="md-nav__item">
   <a href="#confirm-wdacconfig-checksmartappcontrolstatus" class="md-nav__link">
     Confirm-WDACConfig -CheckSmartAppControlStatus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
   </a>
   
 </li>
@@ -1669,6 +1669,26 @@ or on
   
   
     <li class="md-nav__item">
+      <a href="../Remove-CommonWDACConfig/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove-CommonWDACConfig available parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Remove-WDACConfig/" class="md-nav__link">
         
   
@@ -1757,13 +1777,6 @@ or on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#confirm-wdacconfig-listactivepolicies" class="md-nav__link">
     Confirm-WDACConfig -ListActivePolicies
   </a>
@@ -1772,8 +1785,8 @@ or on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#has-2-optional-parameter" class="md-nav__link">
-    Has 2 optional parameter
+  <a href="#2-optional-parameters" class="md-nav__link">
+    2 Optional Parameters
   </a>
   
 </li>
@@ -1797,6 +1810,13 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1816,6 +1836,38 @@ or on
 
 
 <h1 id="confirm-wdacconfig-available-parameters">Confirm-WDACConfig available parameters<a class="headerlink" href="#confirm-wdacconfig-available-parameters" title="Permanent link">&para;</a></h1>
+<h2 id="confirm-wdacconfig-listactivepolicies">Confirm-WDACConfig -ListActivePolicies<a class="headerlink" href="#confirm-wdacconfig-listactivepolicies" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Confirm-WDACConfig/Confirm-WDACConfig%20-ListActivePolicies.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Confirm-WDACConfig/Confirm-WDACConfig%20-ListActivePolicies.apng" /></a></p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Confirm-WDACConfig</span> <span class="p">[</span><span class="n">-ListActivePolicies</span><span class="p">]</span> <span class="p">[</span><span class="n">-OnlyBasePolicies</span><span class="p">]</span> <span class="p">[</span><span class="n">-OnlySupplementalPolicies</span><span class="p">]</span>
+</span></code></pre></div>
+<p><br></p>
+<p>Lists the non-System Base and Supplemental WDAC Policies using <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/citool-commands">CITool</a> and displays their counts.</p>
+<h3 id="2-optional-parameters">2 Optional Parameters<a class="headerlink" href="#2-optional-parameters" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>-OnlyBasePolicies</code>: Using this will only display Base policies.</li>
+<li><code>-OnlySupplementalPolicies</code>: Using this will only display Supplemental policies.</li>
+</ul>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="confirm-wdacconfig-verifywdacstatus">Confirm-WDACConfig -VerifyWDACStatus<a class="headerlink" href="#confirm-wdacconfig-verifywdacstatus" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Confirm-WDACConfig/Confirm-WDACConfig%20-VerifyWDACStatus.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Confirm-WDACConfig/Confirm-WDACConfig%20-VerifyWDACStatus.apng" /></a></p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Confirm-WDACConfig</span> <span class="p">[</span><span class="n">-VerifyWDACStatus</span><span class="p">]</span>
+</span></code></pre></div>
+<p><br></p>
+<p>Shows the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-Notes#how-to-verify-the-status-of-user-mode-and-kernel-mode-wdac-on-a-system">status</a> of User-mode and Kernel-mode application control.</p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="confirm-wdacconfig-checksmartappcontrolstatus">Confirm-WDACConfig -CheckSmartAppControlStatus<a class="headerlink" href="#confirm-wdacconfig-checksmartappcontrolstatus" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Confirm-WDACConfig/Confirm-WDACConfig%20-CheckSmartAppControlStatus.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Confirm-WDACConfig/Confirm-WDACConfig%20-CheckSmartAppControlStatus.apng" /></a></p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Confirm-WDACConfig</span> <span class="p">[</span><span class="n">-CheckSmartAppControlStatus</span><span class="p">]</span>
+</span></code></pre></div>
+<p><br></p>
+<p>Checks the status of Smart App Control and reports the results on the console, including the evaluation mode expiration date.</p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -1831,36 +1883,6 @@ or on
 <p>Many cmdlets and parameters of the module support the PowerShell's built-in <code>-Debug</code> switch and when that switch is used, they display extra details and debugging messages on the console, showing you what's happening under the hood.</p>
 </li>
 </ul>
-<p><br></p>
-<h2 id="confirm-wdacconfig-listactivepolicies">Confirm-WDACConfig -ListActivePolicies<a class="headerlink" href="#confirm-wdacconfig-listactivepolicies" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/Confirm-WDACConfig%20-ListActivePolicies.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/Confirm-WDACConfig%20-ListActivePolicies.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Confirm-WDACConfig</span> <span class="p">[</span><span class="n">-ListActivePolicies</span><span class="p">]</span> <span class="p">[</span><span class="n">-OnlyBasePolicies</span><span class="p">]</span> <span class="p">[</span><span class="n">-OnlySupplementalPolicies</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Lists the non-System Base and Supplemental WDAC Policies using <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/citool-commands">CITool</a> and displays their counts.</p>
-<h3 id="has-2-optional-parameter">Has 2 optional parameter<a class="headerlink" href="#has-2-optional-parameter" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>-OnlyBasePolicies</code>: Using this will only display Base policies.</li>
-<li><code>-OnlySupplementalPolicies</code>: Using this will only display Supplemental policies.</li>
-</ul>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="confirm-wdacconfig-verifywdacstatus">Confirm-WDACConfig -VerifyWDACStatus<a class="headerlink" href="#confirm-wdacconfig-verifywdacstatus" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/Confirm-WDACConfig%20-VerifyWDACStatus.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/Confirm-WDACConfig%20-VerifyWDACStatus.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Confirm-WDACConfig</span> <span class="p">[</span><span class="n">-VerifyWDACStatus</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Shows the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-Notes#how-to-verify-the-status-of-user-mode-and-kernel-mode-wdac-on-a-system">status</a> of User-mode and Kernel-mode application control.</p>
-<p><br></p>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
-<p><br></p>
-<h2 id="confirm-wdacconfig-checksmartappcontrolstatus">Confirm-WDACConfig -CheckSmartAppControlStatus<a class="headerlink" href="#confirm-wdacconfig-checksmartappcontrolstatus" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/Confirm-WDACConfig%20-CheckSmartAppControlStatus.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Wiki%20APNGs/Confirm-WDACConfig%20-CheckSmartAppControlStatus.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Confirm-WDACConfig</span> <span class="p">[</span><span class="n">-CheckSmartAppControlStatus</span><span class="p">]</span>
-</span></code></pre></div>
-<p><br></p>
-<p>Checks the status of Smart App Control and reports the results on the console, including the evaluation mode expiration date.</p>
 <p><br></p>
 
   <hr>
@@ -2115,10 +2137,10 @@ or on
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.6eac0284.min.js"></script>
+      <script src="../../assets/javascripts/bundle.94c44541.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
