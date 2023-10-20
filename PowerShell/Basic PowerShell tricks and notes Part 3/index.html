@@ -1144,6 +1144,13 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#install-big-powershell-modules-system-wide" class="md-nav__link">
+    Install Big Powershell Modules System Wide
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1789,6 +1796,13 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#install-big-powershell-modules-system-wide" class="md-nav__link">
+    Install Big Powershell Modules System Wide
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1845,13 +1859,26 @@ or on
 <p>You can use the Group-Object cmdlet to group the objects by the property you want to filter, and then select the first object from each group. This way, you will get one object for each "RandomNumber" property with all the properties intact. Using other methods such as <code>Get-Unique</code> or <code>Select-Object -Unique</code> won't work in this particular case.</p>
 <p>You can find more information about the Group-Object cmdlet and its parameters in <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/group-object">this article</a>.</p>
 <p><br></p>
+<h2 id="install-big-powershell-modules-system-wide">Install Big Powershell Modules System Wide<a class="headerlink" href="#install-big-powershell-modules-system-wide" title="Permanent link">&para;</a></h2>
+<p>Modules such as <a href="https://www.powershellgallery.com/packages/AZ/">Az</a> or <a href="https://www.powershellgallery.com/packages/Microsoft.Graph.Beta/">Microsoft.Graph.Beta</a> are big, can have thousands of files and take more than 1GB space after installation.</p>
+<p>By default modules are installed in the Documents directory and when you use OneDrive, everything in there is synced automatically.</p>
+<p>You can install such modules system wide so that they won't be stored in the <code>Documents\PowerShell</code> directory and instead will be stored in <code>C:\Program Files\PowerShell\Modules</code> (for PowerShell core). This will also improve security since Administrator privileges will be required to change module files.</p>
+<p>To do this, you need to use the <code>-Scope AllUsers</code> parameter.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Install-Module</span> <span class="n">Az</span> <span class="n">-Scope</span> <span class="n">AllUsers</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">Install-Module</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">Graph</span><span class="p">.</span><span class="n">Beta</span> <span class="n">-Scope</span> <span class="n">AllUsers</span>
+</span></code></pre></div>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/powershell/module/powershellget/install-module">Parameter Info</a></li>
+</ul>
+<p><br></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-13T11:26:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-20T06:58:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-20</span>
       
         <br>
         Created:
