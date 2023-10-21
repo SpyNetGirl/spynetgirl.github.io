@@ -891,10 +891,10 @@ or on
       
         <li class="md-nav__item">
   <a href="#some-of-the-pitfalls-of-relying-on-third-party-benchmarks" class="md-nav__link">
-    Some of the pitfalls of relying on third-party benchmarks 
+    Some of the Pitfalls of Relying on Third-Party Benchmarks 
   </a>
   
-    <nav class="md-nav" aria-label="Some of the pitfalls of relying on third-party benchmarks">
+    <nav class="md-nav" aria-label="Some of the Pitfalls of Relying on Third-Party Benchmarks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1853,10 +1853,10 @@ or on
       
         <li class="md-nav__item">
   <a href="#some-of-the-pitfalls-of-relying-on-third-party-benchmarks" class="md-nav__link">
-    Some of the pitfalls of relying on third-party benchmarks 
+    Some of the Pitfalls of Relying on Third-Party Benchmarks 
   </a>
   
-    <nav class="md-nav" aria-label="Some of the pitfalls of relying on third-party benchmarks">
+    <nav class="md-nav" aria-label="Some of the Pitfalls of Relying on Third-Party Benchmarks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1945,13 +1945,13 @@ or on
   
 
 
-<h1 id="comparison-of-security-benchmarks">Comparison of security benchmarks <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/lovelybat.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/lovelybat.gif" width="50"></a><a class="headerlink" href="#comparison-of-security-benchmarks" title="Permanent link">&para;</a></h1>
+<h1 id="comparison-of-security-benchmarks"><a href="#comparison-of-security-benchmarks-">Comparison of security benchmarks</a> <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/lovelybat.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/lovelybat.gif" width="50" alt="Comparison of security benchmarks"></a><a class="headerlink" href="#comparison-of-security-benchmarks" title="Permanent link">&para;</a></h1>
 <p>I conducted a thorough analysis of some of the prominent security benchmarks/guidelines for my GitHub repository and I discovered some fascinating insights. By analysis, I mean that I examined every single recommendation in them and compared them with my own suggestions and Microsoft Security Baselines.</p>
 <p>The majority of the recommendations in the security benchmarks align with the Microsoft Security Baselines, which are a set of best practices for securing various products and services. Only a small fraction of the recommendations deviate from the baselines, and they are either additional enhancements (rarely), redundant suggestions or erroneous advice that undermine security!</p>
 <p>For my reviews I used the latest available version of each benchmark.</p>
 <p><br></p>
-<h2 id="some-of-the-pitfalls-of-relying-on-third-party-benchmarks">Some of the pitfalls of relying on third-party benchmarks <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/whyme.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/whyme.gif" width="50"></a><a class="headerlink" href="#some-of-the-pitfalls-of-relying-on-third-party-benchmarks" title="Permanent link">&para;</a></h2>
-<h3 id="clipboard-sharing-from-guest-to-host"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Clipboard sharing from guest to host !<a class="headerlink" href="#clipboard-sharing-from-guest-to-host" title="Permanent link">&para;</a></h3>
+<h2 id="some-of-the-pitfalls-of-relying-on-third-party-benchmarks"><a href="#some-of-the-pitfalls-of-relying-on-third-party-benchmarks-">Some of the Pitfalls of Relying on Third-Party Benchmarks</a> <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/whyme.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/whyme.gif" width="50" alt="Small Gif image for the section named Some of the Pitfalls of Relying on Third-Party Benchmarks"></a><a class="headerlink" href="#some-of-the-pitfalls-of-relying-on-third-party-benchmarks" title="Permanent link">&para;</a></h2>
+<h3 id="clipboard-sharing-from-guest-to-host"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30" alt="Small Gif for Clipboard sharing from guest to host section"></a> <a href="#-clipboard-sharing-from-guest-to-host-">Clipboard sharing from guest to host !</a><a class="headerlink" href="#clipboard-sharing-from-guest-to-host" title="Permanent link">&para;</a></h3>
 <p>CIS 18.10.44.5 (L1) recommends allowing clipboard operation from an isolated session to the host, i.e. guest to host redirection, which is a highly insecure and irrational suggestion!</p>
 <p>These are their precise official words:</p>
 <blockquote>
@@ -1965,7 +1965,7 @@ Microsoft Defender Application Guard clipboard is made accessible to the host, a
 indeed that functionality may often be necessary from an operational standpoint</strong></p>
 </blockquote>
 <p><br></p>
-<h3 id="renaming-built-in-administrator-and-guest-accounts"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Renaming built-in administrator and guest accounts !<a class="headerlink" href="#renaming-built-in-administrator-and-guest-accounts" title="Permanent link">&para;</a></h3>
+<h3 id="renaming-built-in-administrator-and-guest-accounts"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30" alt="Small gif for Renaming built-in administrator and guest accounts section"></a> <a href="#-renaming-built-in-administrator-and-guest-accounts-">Renaming built-in administrator and guest accounts !</a><a class="headerlink" href="#renaming-built-in-administrator-and-guest-accounts" title="Permanent link">&para;</a></h3>
 <p>Both CIS and STIG suggest altering the name of the built-in administrator and guest accounts as a security measure.</p>
 <p>This is futile as those built-in accounts can be readily identified by PowerShell, regardless of any modifications to its name or description (which I have done).</p>
 <p>For example, the <code>BUILTIN\Administrator</code> account always has a relative identifier (RID) of <code>500</code>. </p>
@@ -1987,7 +1987,7 @@ indeed that functionality may often be necessary from an operational standpoint<
 </details>
 
 <p><br></p>
-<h3 id="disabling-windows-hello-pin-and-using-traditional-passwords-instead"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Disabling Windows Hello PIN and using traditional passwords instead !<a class="headerlink" href="#disabling-windows-hello-pin-and-using-traditional-passwords-instead" title="Permanent link">&para;</a></h3>
+<h3 id="disabling-windows-hello-pin-and-using-traditional-passwords-instead"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30" alt="Small gif for Disabling Windows Hello PIN and using traditional passwords instead section"></a> <a href="#-disabling-windows-hello-pin-and-using-traditional-passwords-instead-">Disabling Windows Hello PIN and using traditional passwords instead !</a><a class="headerlink" href="#disabling-windows-hello-pin-and-using-traditional-passwords-instead" title="Permanent link">&para;</a></h3>
 <p>These benchmarks recommend disabling Windows Hello PIN and opting for passwords instead. Stig V-253423 and CIS 18.9.27.4.</p>
 <p>They argue that this is for domain accounts</p>
 <p>Their rationale, which is very wrong, is</p>
@@ -2002,7 +2002,7 @@ most cases a PIN will be much less robust than a password.</p>
 <p>There are proper policies regarding anti-hammering features that can enhance the security of PINs over passwords. I utilize them in my script and <a href="https://github.com/HotCakeX/Harden-Windows-Security#lock-screen">you can find them here</a>.</p>
 <p>The benchmarks/guidelines seem to be uninformed of the fact that Windows allows <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/feature-multifactor-unlock">multi-factor unlock</a>, which can enforce a combination of PIN and biometric factors (plus more), to enforce <strong>PIN + Facial recognition</strong> OR <strong>PIN + Fingerprint</strong> etc.</p>
 <p><br></p>
-<h3 id="bad-configuration-for-early-launch-anti-malware"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Bad configuration for Early Launch Anti Malware<a class="headerlink" href="#bad-configuration-for-early-launch-anti-malware" title="Permanent link">&para;</a></h3>
+<h3 id="bad-configuration-for-early-launch-anti-malware"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30" alt="Small gif for Bad configuration for Early Launch Anti Malware section"></a> <a href="#-bad-configuration-for-early-launch-anti-malware">Bad configuration for Early Launch Anti Malware</a><a class="headerlink" href="#bad-configuration-for-early-launch-anti-malware" title="Permanent link">&para;</a></h3>
 <p>CIS in 18.9.13.1</p>
 <blockquote>
 <p>The recommended state for this setting is: Enabled: Good, unknown and bad but 
@@ -2010,18 +2010,18 @@ critical</p>
 </blockquote>
 <p>That's not even a recommendation, that's the default value! If you use <a href="https://github.com/HotCakeX/Harden-Windows-Security#miscellaneous-configurations">Harden Windows Security script</a> it sets it to <strong>Good Only</strong>, which is the correct recommendation for a secure environment.</p>
 <p><br></p>
-<h3 id="disabling-windows-error-reporting"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Disabling Windows Error reporting !<a class="headerlink" href="#disabling-windows-error-reporting" title="Permanent link">&para;</a></h3>
+<h3 id="disabling-windows-error-reporting"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30" alt="Disabling Windows Error reporting"></a> <a href="#-disabling-windows-error-reporting-">Disabling Windows Error reporting !</a><a class="headerlink" href="#disabling-windows-error-reporting" title="Permanent link">&para;</a></h3>
 <p>Their rationale is:</p>
 <blockquote>
 <p>...There is no benefit to the corporation to report these errors directly to Microsoft...</p>
 </blockquote>
 <p>Indeed, the corporation that uses the software benefits from it by reporting the problems. This exact way of thinking that leads to making such a policy is the reason why problems remain unsolved, because they are not reported to Microsoft and the IT staff of the companies are simply unable to resolve the problem themselves, since they are not the ones developing the OS.</p>
 <p><br></p>
-<h3 id="disabling-cloud-protection"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Disabling Cloud Protection!<a class="headerlink" href="#disabling-cloud-protection" title="Permanent link">&para;</a></h3>
+<h3 id="disabling-cloud-protection"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30" alt="Disabling Cloud Protection"></a> <a href="#-disabling-cloud-protection">Disabling Cloud Protection!</a><a class="headerlink" href="#disabling-cloud-protection" title="Permanent link">&para;</a></h3>
 <p>CIS 18.10.43.5.2 (L2), suggests disabling Cloud Protection of Microsoft Defender. <strong>This is precisely the kind of security measure that Threat Actors and advanced persistent threats (APTs) seek to disable</strong> and then CIS is suggesting to disable it, astonishing.</p>
 <p>This is an extremely <a href="https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/cloud-protection-microsoft-defender-antivirus?view=o365-worldwide">important security feature</a> that should never be disabled and there is no rationale that justifies disabling it. This feature also uses the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/use-wdac-with-intelligent-security-graph">Intelligent Security Graph (ISG)</a>.</p>
 <p><br></p>
-<h3 id="not-enabling-important-attack-surface-reduction-rules"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30"></a> Not enabling important Attack Surface Reduction rules<a class="headerlink" href="#not-enabling-important-attack-surface-reduction-rules" title="Permanent link">&para;</a></h3>
+<h3 id="not-enabling-important-attack-surface-reduction-rules"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30" alt="Not enabling important Attack Surface Reduction rules"></a> <a href="#-not-enabling-important-attack-surface-reduction-rules">Not enabling important Attack Surface Reduction rules</a><a class="headerlink" href="#not-enabling-important-attack-surface-reduction-rules" title="Permanent link">&para;</a></h3>
 <p>CIS in 18.10.43.6.1.2 (L1) intentionally leaves out very important ASR rules</p>
 <ol>
 <li><a href="https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/attack-surface-reduction-rules-reference?view=o365-worldwide#use-advanced-protection-against-ransomware">Use advanced protection against ransomware</a></li>
@@ -2033,7 +2033,7 @@ critical</p>
 <h3 id="to-be-continued">To be continued...<a class="headerlink" href="#to-be-continued" title="Permanent link">&para;</a></h3>
 <p>These benchmarks or guidelines have numerous flaws and I have only examined two of them. There are many other benchmarks, standards, guidelines, etc. that may also contain errors or inconsistencies and are totally <strong>unsafe</strong> to implement them.</p>
 <p><br></p>
-<h2 id="aspects-that-are-lacking">Aspects that are lacking <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/gothwink.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/gothwink.gif" width="50"></a><a class="headerlink" href="#aspects-that-are-lacking" title="Permanent link">&para;</a></h2>
+<h2 id="aspects-that-are-lacking"><a href="#aspects-that-are-lacking-">Aspects that are lacking</a> <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/gothwink.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/gothwink.gif" width="50" alt="Aspects that are lacking"></a><a class="headerlink" href="#aspects-that-are-lacking" title="Permanent link">&para;</a></h2>
 <p>The benchmarks omit many new security features that the <a href="https://github.com/HotCakeX/Harden-Windows-Security">Harden Windows Security script</a> implements.</p>
 <p>Everything in the repository is carefully researched, evaluated and tested. The script ensures that nothing is redundant or incompatible with the latest version of Windows. Older versions of the OS are obsolete and insecure, and should be avoided in any environment that requires protection. Threat actors can exploit vulnerabilities and use PoCs even on the same day that an update is released, this applies to any OS.</p>
 <p>The security measures in the Harden Windows Security repository are also perfectly suitable for regular home users.</p>
@@ -2061,7 +2061,7 @@ critical</p>
 <p>The benchmarks/guidelines suggest using application control or whitelisting, but that's just it, a suggestion, no <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Introduction">comprehensive guide about how to do it</a>.</p>
 <p><br></p>
 <p align="center">
-<a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/thankyou.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/thankyou.gif"></a>
+<a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/thankyou.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/thankyou.gif" alt="Thank You Gif"></a>
 </p>
 
 <p><br></p>
@@ -2071,7 +2071,7 @@ critical</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-18T08:05:48+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-18</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-21T09:42:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-21</span>
       
         <br>
         Created:
