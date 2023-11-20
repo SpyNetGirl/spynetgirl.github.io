@@ -13,7 +13,7 @@ This is how i can target a specific element in a specific light/dark theme
 
 /* Light mode */
 [data-md-color-scheme="default"] {
-    /* background-image: url('https://github.com/SpyNetGirl/spynetgirl.github.io/raw/main/images/Windows6545%20(1).png'); */
+    /* background-image: url('https://github.com/SpyNetGirl/spynetgirl.github.io/raw/main/images/Windows6545.png'); */
     --md-default-bg-color: #ffffff;
 
 }
