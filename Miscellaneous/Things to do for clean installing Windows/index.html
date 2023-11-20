@@ -1070,9 +1070,27 @@ or on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#clear-the-tpm" class="md-nav__link">
+  <a href="#bitlocker" class="md-nav__link">
     <span class="md-ellipsis">
-      Clear the TPM
+      BitLocker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intel-vmd-drivers-varies-by-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intel VMD Drivers (Varies by device)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clear-the-tpm-varies-by-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clear the TPM (Varies by device)
     </span>
   </a>
   
@@ -1823,9 +1841,27 @@ or on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#clear-the-tpm" class="md-nav__link">
+  <a href="#bitlocker" class="md-nav__link">
     <span class="md-ellipsis">
-      Clear the TPM
+      BitLocker
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intel-vmd-drivers-varies-by-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intel VMD Drivers (Varies by device)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clear-the-tpm-varies-by-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clear the TPM (Varies by device)
     </span>
   </a>
   
@@ -1868,9 +1904,19 @@ or on
 
 
 <h1 id="things-to-do-when-clean-installing-windows">Things to do when clean installing Windows<a class="headerlink" href="#things-to-do-when-clean-installing-windows" title="Permanent link">&para;</a></h1>
-<p>There are certain tasks that need to be performed for a proper Windows clean installation</p>
-<h2 id="clear-the-tpm">Clear the TPM<a class="headerlink" href="#clear-the-tpm" title="Permanent link">&para;</a></h2>
-<p>Preparing for a clean installation in this way helps ensure that the new operating system can fully deploy any TPM-based functionality that it includes, such as attestation.</p>
+<p>There are certain tasks that need to be performed for a proper Windows clean installation. Not all of the items below apply to all hardware.</p>
+<p><br></p>
+<h2 id="bitlocker">BitLocker<a class="headerlink" href="#bitlocker" title="Permanent link">&para;</a></h2>
+<p>Suspend the protection of the OS drive and make sure you have the recovery password of all other non-OS drives so that you will be able to unlock them after clean installation of the OS.</p>
+<p><br></p>
+<h2 id="intel-vmd-drivers-varies-by-device">Intel VMD Drivers (Varies by device)<a class="headerlink" href="#intel-vmd-drivers-varies-by-device" title="Permanent link">&para;</a></h2>
+<p>If you use a modern hardware that uses Intel® Volume Management Device (Intel® VMD) technology, you will need to download the VMD drivers on a flash drive and load them during Windows OS installation so that the OS installer will be able to detect the internal SSD and its partitions. You can download the VMD drivers from your hardware manufacturer's website.</p>
+<ul>
+<li><a href="https://www.intel.com/content/www/us/en/support/articles/000057787/memory-and-storage/intel-optane-memory.html">How to Enable Intel® VMD Capable Platforms for RAID or Intel® Optane™ Memory Configuration with the Intel® RST Driver</a></li>
+</ul>
+<p><br></p>
+<h2 id="clear-the-tpm-varies-by-device">Clear the TPM (Varies by device)<a class="headerlink" href="#clear-the-tpm-varies-by-device" title="Permanent link">&para;</a></h2>
+<p>Not all devices have this capability in the UEFI. If your UEFI has the option to clear the TPM, use it prior to clean installation of the OS.</p>
 <ul>
 <li>
 <p><a href="https://learn.microsoft.com/en-us/windows/security/information-protection/tpm/initialize-and-configure-ownership-of-the-tpm#clear-all-the-keys-from-the-tpm">Clear all the keys from the TPM</a></p>
@@ -1878,10 +1924,10 @@ or on
 <li>
 <p><a href="https://learn.microsoft.com/en-us/windows/security/information-protection/tpm/how-windows-uses-the-tpm">How Windows uses the Trusted Platform Module</a></p>
 </li>
-</ul>
-<p><br></p>
-<p><strong>Clear the TPM from the UEFI settings and and not from inside the Windows</strong></p>
+<li>
 <p><a href="https://trustedcomputinggroup.org/wp-content/uploads/PC-Client-Specific-Platform-TPM-Profile-for-TPM-2p0-v1p05p_r14_pub.pdf">Read more about TPM 2.0 specifications</a></p>
+</li>
+</ul>
 <p><br></p>
 <h2 id="formatdelete-the-following-partitions">Format/Delete the following partitions<a class="headerlink" href="#formatdelete-the-following-partitions" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1890,6 +1936,7 @@ or on
 <li>Format/delete the Recovery partition</li>
 </ul>
 <p>Let Windows recreate them during clean installation process</p>
+<p><br></p>
 <p><br></p>
 <h2 id="how-to-create-a-bootable-usb-drive-without-3rd-party-tools">How to create a bootable USB drive without 3rd party tools<a class="headerlink" href="#how-to-create-a-bootable-usb-drive-without-3rd-party-tools" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Create-Bootable-USB-flash-drive-with-no-3rd-party-tools">Refer to this Wiki post</a></p>
@@ -1900,7 +1947,7 @@ or on
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-08-05T18:07:10+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-08-05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-20T15:00:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-20</span>
       
         <br>
         Created:
