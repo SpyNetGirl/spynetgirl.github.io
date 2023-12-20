@@ -84,3 +84,51 @@ This is how i can target a specific element in a specific light/dark theme
     /*   margin: 0.5em; */
     /*  padding: 1em 2em; */
 }
+
+
+
+
+
+/* For tooltips including inlines and standalone ones */
+.md-tooltip--active {
+    /* https://uigradients.com/#MoonlitAsteroid */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+
+    color: rgb(236, 236, 236);
+}
+
+
+
+
+
+
+/* For Site Title */
+.md-header__ellipsis .md-header__topic .md-ellipsis {
+    color: #41ec40;
+    background-image: -webkit-linear-gradient(45deg, #41ec40 50%, #f657e5 29%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* for main menu items*/
+.md-tabs__list .md-tabs__item a {
+
+    color: #fefefe;
+    background-image: -webkit-linear-gradient(45deg, #ffffff 50%, #ff33eb 17%, #ff1da4 96%);
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+
+}
