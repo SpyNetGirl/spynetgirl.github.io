@@ -165,3 +165,17 @@ This is how i can target a specific element in a specific light/dark theme
 div .md-banner {
     background-color: #0d1117;
 }
+
+
+
+
+
+
+
+
+
+
+/* Setting the footer color the same as the background color, which is the GitHub's dark background color */
+.md-container .md-footer .md-footer-meta {
+    background-color: #0d1117;
+}
