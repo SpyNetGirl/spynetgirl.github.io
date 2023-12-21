@@ -24,10 +24,26 @@ This is how i can target a specific element in a specific light/dark theme
     --md-default-bg-color: #0d1117;
 }
 
+
+
+
+
+
+
 /* Making the navigation titles bold  */
 .md-tabs__link {
     font-weight: bold;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 /* Adds animations to the sidebar icons  */
@@ -50,6 +66,10 @@ This is how i can target a specific element in a specific light/dark theme
     position: relative;
     animation: heart 1500ms infinite;
 }
+
+
+
+
 
 
 
@@ -131,4 +151,17 @@ This is how i can target a specific element in a specific light/dark theme
     text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
 
+}
+
+
+
+
+
+
+
+
+
+/* Setting the header/banner color the same as the background color, which is the GitHub's dark background color */
+div .md-banner {
+    background-color: #0d1117;
 }
