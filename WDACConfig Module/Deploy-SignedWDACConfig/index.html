@@ -1602,6 +1602,37 @@ or on
   
   
     <li class="md-nav__item">
+      <a href="../Build-WDACCertificate/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
+  
+  <span class="md-ellipsis">
+    Build-WDACCertificate
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new" title="New">
+    </span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Confirm-WDACConfig/" class="md-nav__link">
         
   
@@ -1702,9 +1733,9 @@ or on
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-optional-parameters" class="md-nav__link">
+  <a href="#3-optional-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      2 Optional Parameters
+      3 Optional Parameters
     </span>
   </a>
   
@@ -2082,9 +2113,9 @@ or on
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-optional-parameters" class="md-nav__link">
+  <a href="#3-optional-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      2 Optional Parameters
+      3 Optional Parameters
     </span>
   </a>
   
@@ -2129,8 +2160,8 @@ or on
 <h1 id="deploy-signedwdacconfig-available-parameters">Deploy-SignedWDACConfig available parameters<a class="headerlink" href="#deploy-signedwdacconfig-available-parameters" title="Permanent link">&para;</a></h1>
 <h3 id="signs-and-deploys-a-wdac-policy"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control">Signs and Deploys a <abbr title="Windows Defender Application Control">WDAC</abbr> policy</a><a class="headerlink" href="#signs-and-deploys-a-wdac-policy" title="Permanent link">&para;</a></h3>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Deploy-SignedWDACConfig/Deploy-SignedWDACConfig.apng" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="image" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Deploy-SignedWDACConfig/Deploy-SignedWDACConfig.apng" /></a></p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Deploy-SignedWDACConfig</span> <span class="n">-PolicyPaths</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">[]&gt;</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span> <span class="p">[</span><span class="n">-CertPath</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-CertCN</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-SignToolPath</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Deploy-SignedWDACConfig</span> <span class="n">-PolicyPaths</span> <span class="p">&lt;</span><span class="n">FileInfo</span><span class="p">[]&gt;</span> <span class="p">[</span><span class="n">-Deploy</span><span class="p">]</span> <span class="p">[</span><span class="n">-CertPath</span> <span class="p">&lt;</span><span class="n">FileInfo</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-CertCN</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">[</span><span class="n">-SignToolPath</span> <span class="p">&lt;</span><span class="n">FileInfo</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Force</span><span class="p">]</span> <span class="p">[</span><span class="n">-SkipVersionCheck</span><span class="p">]</span> <span class="p">[</span><span class="n">-WhatIf</span><span class="p">]</span> <span class="p">[</span><span class="n">-Confirm</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </span></code></pre></div>
 <p><br></p>
 <p>Creates and signs a <code>.CIP</code> file that can be either deployed locally using the <code>-Deploy</code> parameter or you can deploy the signed policy binary on a different machine later using the built-in <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/citool-commands">Citool</a>.</p>
@@ -2148,13 +2179,16 @@ or on
 <p><code>CertCN &lt;String&gt;</code>: Common name of the certificate - Supports argument completion so you don't have to manually enter the Certificate's CN, just make sure the <code>-CertPath</code> is specified and the certificate is installed in the personal store of the user certificates, then press TAB to auto complete the name. You can however enter it manually if you want to.</p>
 </li>
 </ul>
-<h3 id="2-optional-parameters">2 Optional Parameters<a class="headerlink" href="#2-optional-parameters" title="Permanent link">&para;</a></h3>
+<h3 id="3-optional-parameters">3 Optional Parameters<a class="headerlink" href="#3-optional-parameters" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>-SignToolPath &lt;String&gt;</code>: Press TAB to open the file picker GUI and browse for SignTool.exe</p>
 </li>
 <li>
 <p><code>-Deploy</code>: Deploys the signed policy on the system</p>
+</li>
+<li>
+<p><code>-Force</code>: Indicates that the cmdlet won't ask for confirmation and will proceed with deploying the signed policy.</p>
 </li>
 </ul>
 <p><br></p>
@@ -2166,6 +2200,12 @@ or on
 </li>
 <li>
 <p>If Windows SDK Signing Tools for Desktop Apps components is not installed in the default location or you want to manually browse for the <code>signtool.exe</code>, then make sure you either specify its path using <code>Set-CommonWDACConfig -SignToolPath</code> or use the <code>-SignToolPath &lt;String&gt;</code> parameter.</p>
+</li>
+<li>
+<p>If SignTool.exe path is available in user configurations then it will be used, unless the <code>-SignToolPath &lt;String&gt;</code> parameter is specified which takes priority over auto detection and user configurations.</p>
+</li>
+<li>
+<p>Unless you specify the <code>-SignToolPath &lt;String&gt;</code> parameter, or the SignTool.exe path already exists in your user configurations or on your system, you will receive a prompt to authorize the automatic download of the most recent SignTool.exe version from the official Microsoft servers. Upon confirmation, it will be saved in your user configurations and utilized by the cmdlet.</p>
 </li>
 </ol>
 <p><br></p>
@@ -2206,7 +2246,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-20T22:22:14+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-02T10:33:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-02</span>
   </span>
 
     

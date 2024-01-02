@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://spynetgirl.github.io/Miscellaneous/Device%20Guard%20and%20Virtualization%20Based%20Security%20in%20Windows/">
+        <link rel="canonical" href="https://spynetgirl.github.io/WDACConfig%20Module/Build-WDACCertificate/">
       
       
-        <link rel="prev" href="../Create%20Bootable%20USB%20flash%20drive%20with%20no%203rd%20party%20tools/">
+        <link rel="prev" href="../Assert-WDACConfigIntegrity/">
       
       
-        <link rel="next" href="../Event%20Viewer/">
+        <link rel="next" href="../Confirm-WDACConfig/">
       
       
       <link rel="icon" href="../../images/logo.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Device Guard - SpyNetGirl Blog</title>
+        <title>Build-WDACCertificate - SpyNetGirl Blog</title>
       
     
     
@@ -141,7 +141,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#device-guard" class="md-skip">
+        <a href="#build-wdaccertificate-available-parameters" class="md-skip">
           Skip to content
         </a>
       
@@ -197,7 +197,7 @@ or on
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Device Guard<a href="#device-guard"></a>
+              Build-WDACCertificate
             
           </span>
         </div>
@@ -380,13 +380,11 @@ or on
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../Miscellaneous/About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-tabs__link">
           
   
   Miscellaneous
@@ -436,11 +434,13 @@ or on
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../WDACConfig%20Module/Assert-WDACConfigIntegrity/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Assert-WDACConfigIntegrity/" class="md-tabs__link">
           
   
   WDACConfig Module
@@ -804,8 +804,6 @@ or on
       
   
   
-    
-  
   
   
     
@@ -816,12 +814,14 @@ or on
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -835,7 +835,7 @@ or on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Miscellaneous
@@ -849,7 +849,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-nav__link">
+      <a href="../../Miscellaneous/About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -872,7 +872,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../BitLocker%2C%20TPM%20and%20Pluton%20What%20Are%20They%20and%20How%20Do%20They%20Work/" class="md-nav__link">
+      <a href="../../Miscellaneous/BitLocker%2C%20TPM%20and%20Pluton%20What%20Are%20They%20and%20How%20Do%20They%20Work/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -895,7 +895,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Comparison%20of%20Security%20Benchmarks/" class="md-nav__link">
+      <a href="../../Miscellaneous/Comparison%20of%20Security%20Benchmarks/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -918,7 +918,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Create%20Bootable%20USB%20flash%20drive%20with%20no%203rd%20party%20tools/" class="md-nav__link">
+      <a href="../../Miscellaneous/Create%20Bootable%20USB%20flash%20drive%20with%20no%203rd%20party%20tools/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -938,32 +938,10 @@ or on
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
-  
-  <span class="md-ellipsis">
-    Device Guard<a href="#device-guard"></a>
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Miscellaneous/Device%20Guard%20and%20Virtualization%20Based%20Security%20in%20Windows/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -974,53 +952,6 @@ or on
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about-uefi-lock" class="md-nav__link">
-    <span class="md-ellipsis">
-      About UEFI Lock
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#device-guard-controls-and-policies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Device Guard Controls and Policies
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#device-protection-in-windows-security-gives-you-one-of-these-4-hardware-scores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Device Protection in Windows Security Gives You One of These 4 Hardware Scores
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1033,7 +964,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Event%20Viewer/" class="md-nav__link">
+      <a href="../../Miscellaneous/Event%20Viewer/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1056,7 +987,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Group%20Policy/" class="md-nav__link">
+      <a href="../../Miscellaneous/Group%20Policy/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1079,7 +1010,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../How%20to%20Detect%20Changes%20in%20User%20and%20Local%20Machine%20Certificate%20Stores%20in%20Real%20Time%20Using%20PowerShell/" class="md-nav__link">
+      <a href="../../Miscellaneous/How%20to%20Detect%20Changes%20in%20User%20and%20Local%20Machine%20Certificate%20Stores%20in%20Real%20Time%20Using%20PowerShell/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1102,7 +1033,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../How%20to%20compact%20your%20OS%20and%20free%20up%20extra%20space/" class="md-nav__link">
+      <a href="../../Miscellaneous/How%20to%20compact%20your%20OS%20and%20free%20up%20extra%20space/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1125,7 +1056,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Hyper%20V/" class="md-nav__link">
+      <a href="../../Miscellaneous/Hyper%20V/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1148,7 +1079,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Overrides%20for%20Microsoft%20Security%20Baseline/" class="md-nav__link">
+      <a href="../../Miscellaneous/Overrides%20for%20Microsoft%20Security%20Baseline/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1171,7 +1102,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../Things%20to%20do%20for%20clean%20installing%20Windows/" class="md-nav__link">
+      <a href="../../Miscellaneous/Things%20to%20do%20for%20clean%20installing%20Windows/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1595,8 +1526,10 @@ or on
       
   
   
+    
   
   
+  
     
     
     
@@ -1605,14 +1538,12 @@ or on
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
@@ -1626,7 +1557,7 @@ or on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             WDACConfig Module
@@ -1640,7 +1571,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/Assert-WDACConfigIntegrity/" class="md-nav__link">
+      <a href="../Assert-WDACConfigIntegrity/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1668,10 +1599,40 @@ or on
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/Build-WDACCertificate/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
+  
+  <span class="md-ellipsis">
+    Build-WDACCertificate
+  </span>
+  
+    
+  
+  
+    <span class="md-status md-status--new" title="New">
+    </span>
+  
+
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1690,6 +1651,50 @@ or on
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#5-optional-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 Optional Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Optional Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Resources
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1702,7 +1707,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/Confirm-WDACConfig/" class="md-nav__link">
+      <a href="../Confirm-WDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1725,7 +1730,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/Deploy-SignedWDACConfig/" class="md-nav__link">
+      <a href="../Deploy-SignedWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1748,7 +1753,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/Edit-SignedWDACConfig/" class="md-nav__link">
+      <a href="../Edit-SignedWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1771,7 +1776,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/Edit-WDACConfig/" class="md-nav__link">
+      <a href="../Edit-WDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1794,7 +1799,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/Get-CommonWDACConfig/" class="md-nav__link">
+      <a href="../Get-CommonWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1817,7 +1822,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/Invoke-WDACSimulation/" class="md-nav__link">
+      <a href="../Invoke-WDACSimulation/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1840,7 +1845,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/New-DenyWDACConfig/" class="md-nav__link">
+      <a href="../New-DenyWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1863,7 +1868,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/New-KernelModeWDACConfig/" class="md-nav__link">
+      <a href="../New-KernelModeWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1886,7 +1891,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/New-SupplementalWDACConfig/" class="md-nav__link">
+      <a href="../New-SupplementalWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1909,7 +1914,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/New-WDACConfig/" class="md-nav__link">
+      <a href="../New-WDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1932,7 +1937,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/Remove-CommonWDACConfig/" class="md-nav__link">
+      <a href="../Remove-CommonWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1955,7 +1960,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/Remove-WDACConfig/" class="md-nav__link">
+      <a href="../Remove-WDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -1978,7 +1983,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/Set-CommonWDACConfig/" class="md-nav__link">
+      <a href="../Set-CommonWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2001,7 +2006,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="../../WDACConfig%20Module/WDACConfig/" class="md-nav__link">
+      <a href="../WDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.37 2.5 12 5 7.63 7.5v-5L12 0ZM22.487 6l.003 4.986-8.728-4.993L18.118 3.5Zm-4.369 9.508-.001 4.997 4.377-2.5-.003-5.018-4.373-2.502zm-10.49 5.994L12 24l4.369-2.495v-4.997zM7.63 9.5v5.001l4.37 2.5 4.37-2.494V9.5L12 7Zm-6.124 8.504L1.508 13l8.747 5.003-4.376 2.5ZM5.882 3.5l-4.37 2.501-.002 4.998 4.372 2.503z"/></svg>
@@ -2059,29 +2064,26 @@ or on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-uefi-lock" class="md-nav__link">
+  <a href="#5-optional-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      About UEFI Lock
+      5 Optional Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 Optional Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Resources
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#device-guard-controls-and-policies" class="md-nav__link">
-    <span class="md-ellipsis">
-      Device Guard Controls and Policies
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#device-protection-in-windows-security-gives-you-one-of-these-4-hardware-scores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Device Protection in Windows Security Gives You One of These 4 Hardware Scores
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2103,95 +2105,42 @@ or on
   
 
 
-<h1 id="device-guard">Device Guard<a href="#device-guard"><img alt="DeviceGuardIcon" src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/DeviceGuard.png" /></a><a class="headerlink" href="#device-guard" title="Permanent link">&para;</a></h1>
-<p align="center"><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Bing%20AI%20generated/_7b1941d2-cc77-4423-b4d9-76986bdc3680.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Bing%20AI%20generated/_7b1941d2-cc77-4423-b4d9-76986bdc3680.jpg" alt="An AI generated picture of a cat girl working in a server farm" width="600"></a></p>
-
+<h1 id="build-wdaccertificate-available-parameters">Build-WDACCertificate available parameters<a class="headerlink" href="#build-wdaccertificate-available-parameters" title="Permanent link">&para;</a></h1>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Build-WDACCertificate/Build-WDACCertificate.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Build-WDACCertificate demo" src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Wiki%20APNGs/Build-WDACCertificate/Build-WDACCertificate.gif" /></a></p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Build-WDACCertificate</span> <span class="p">[[</span><span class="n">-CommonName</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-FileName</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-BuildingMethod</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;]</span> <span class="p">[[</span><span class="n">-Password</span><span class="p">]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="n">SecureString</span><span class="p">&gt;]</span> <span class="p">[</span><span class="n">-Force</span><span class="p">]</span> <span class="p">[</span><span class="n">-SkipVersionCheck</span><span class="p">]</span> <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
+</span></code></pre></div>
 <p><br></p>
-<p><strong>Most of the Device Guard and Virtualization-Based Security features are Automatically enabled by default</strong> on capable and modern hardware. The rest of them will be enabled and configured to the most secure state after you apply the <strong>Microsoft Security Baselines 23H2 or later</strong>.</p>
-<p>The <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Harden%E2%80%90Windows%E2%80%90Security%E2%80%90Module">Harden Windows Security Module</a> has a feature that is accessible through <code>confirm-SystemCompliance</code> cmdlet. It will let you scan your system and verify the implementations of the Device Guard policies.</p>
-<ul>
-<li><a href="https://www.microsoft.com/en-us/windows/business/windows-11-secured-core-computers"><strong>Check out Secured-Core PC requirements</strong></a>.</li>
-</ul>
+<p>This cmdlet constructs self-signed certificates that adhere to <a href="(https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/use-signed-policies-to-protect-wdac-against-tampering)">Microsoft's specifications</a> for <abbr title="Windows Defender Application Control">WDAC</abbr> policy signing. With this cmdlet, you can dispense with <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control">Windows Server with a <abbr title="Certificate Authority">CA</abbr> role</a> to generate a certificate.</p>
+<p>The generated certificates type is Code Signing, they employ <code>SHA2-512</code> hashing algorithm with <code>RSA 4096-bit</code> encryption (the maximum supported key size for <abbr title="Windows Defender Application Control">WDAC</abbr> signing.)</p>
+<p>Upon constructing a certificate, the cmdlet stores it in the Current User's personal store, then it exports that certificate in 2 files. One of the files has a <code>.cer</code> extension and encompasses only the public key, the other file has a <code>.pfx</code> extension and encompasses both public and private keys. The PFX file is encrypted with <code>SHA-256</code> encryption and safeguarded with the password supplied by the user. After the 2 files are exported, the cmdlet eliminates the certificate from Current Users personal store and then re-imports it using the PFX file, but this time it will store the private key using <a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/tlfs/vsm">VSM</a> (Virtual Secure Mode). In this method, the private keys are stored in the <abbr title="Trusted Platform Module">TPM</abbr> and are highly secured with <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-vbs">VBS</a> (Virtualized-Based Security). The entire process happens in just few seconds.</p>
 <p><br></p>
-<h2 id="about-uefi-lock">About <abbr title="Unified Extensible Firmware Interface">UEFI</abbr> Lock<a class="headerlink" href="#about-uefi-lock" title="Permanent link">&para;</a></h2>
-<p><abbr title="Unified Extensible Firmware Interface">UEFI</abbr> locked security measures are rooted in <strong>Proof of Physical Presence</strong> and they can't be disabled by modifying Group Policy, registry keys or other Administrative tasks.</p>
-<p>The only way to disable <abbr title="Unified Extensible Firmware Interface">UEFI</abbr> locked security measures is to have physical access to the computer, reboot and access the <abbr title="Unified Extensible Firmware Interface">UEFI</abbr> settings, supply the credentials to access the <abbr title="Unified Extensible Firmware Interface">UEFI</abbr>, turn off Secure Boot, reboot the system and then you will be able to disable those security measures with Administrator privileges.</p>
-<p><br></p>
-<h2 id="device-guard-controls-and-policies">Device Guard Controls and Policies<a class="headerlink" href="#device-guard-controls-and-policies" title="Permanent link">&para;</a></h2>
+<h3 id="5-optional-parameters">5 Optional Parameters<a class="headerlink" href="#5-optional-parameters" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity">Virtualization-Based Security + <abbr title="Unified Extensible Firmware Interface">UEFI</abbr> Lock</a> <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" width="15" alt="Rotating green checkmark denoting CSP"></a> <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-deviceguard?WT.mc_id=Portal-fx#enablevirtualizationbasedsecurity">CSP</a></p>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity#validate-enabled-vbs-and-memory-integrity-features">Validate enabled Windows Defender Device Guard hardware-based security features</a></li>
-</ul>
+<p><code>-CommonName</code>: The common name of the certificate, it will also be assigned as the friendly name of the certificate. If it's not provided, the default value of <code>Code Signing Certificate</code> will be used.</p>
 </li>
 <li>
-<p><a href="https://learn.microsoft.com/en-us/windows/security/information-protection/kernel-dma-protection-for-thunderbolt">Secure boot (without requiring DMA protection) for Virtualization-Based Security</a> <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" width="15" alt="Rotating green checkmark denoting CSP"></a> <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-deviceguard?WT.mc_id=Portal-fx#requireplatformsecurityfeatures">CSP</a></p>
-<ul>
-<li>This is in accordance with <a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity#use-registry-keys-to-enable-memory-integrity">Microsoft's recommendation</a>. This option provides Secure Boot with as much protection as is supported by a given computer’s hardware. A computer with input/output memory management units (IOMMUs) will have Secure Boot with DMA protection. A computer without IOMMUs will simply have Secure Boot enabled.</li>
-<li>Secure boot has 2 parts, part 1 is enforced using the Group Policy by this module, but for part 2, you need to <a href="https://support.microsoft.com/en-us/windows/windows-11-and-secure-boot-a8ff1202-c0d9-42f5-940f-843abef64fad">enable Secure Boot in your <abbr title="Unified Extensible Firmware Interface">UEFI</abbr> firmware settings</a> <strong>if</strong> it's not enabled by default (which is the case on older hardware).</li>
-<li><a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-kernel-dma-protection">(Kernel) DMA protection hardware requirements</a></li>
-</ul>
+<p><code>-FileName</code>: The name of the <code>.cer</code> and <code>.pfx</code> files that will be generated. If it's not provided, the default value of <code>Code Signing Certificate</code> will be used. The files are saved in the current working directory.</p>
 </li>
 <li>
-<p>Virtualization-based protection of Code Integrity + <abbr title="Unified Extensible Firmware Interface">UEFI</abbr> Lock <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" width="15" alt="Rotating green checkmark denoting CSP"></a> <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-VirtualizationBasedTechnology?WT.mc_id=Portal-fx#hypervisorenforcedcodeintegrity">CSP</a></p>
+<p><code>-BuildingMethod</code>: 2 methods are used to build the certificates. Method 1 uses the <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/certreq_1">Certreq</a> and the Method 2 uses the <a href="https://learn.microsoft.com/en-us/powershell/module/pki/new-selfsignedcertificate">New-SelfSignedCertificate</a>. Method 2 is the default value.</p>
 </li>
 <li>
-<p><a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-vbs">Require <abbr title="Unified Extensible Firmware Interface">UEFI</abbr> Memory Attributes Table (MAT)</a> <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" width="15" alt="Rotating green checkmark denoting CSP"></a> <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-VirtualizationBasedTechnology?WT.mc_id=Portal-fx#requireuefimemoryattributestable">CSP</a></p>
+<p><code>-Password</code>: The password to be employed to encrypt the <code>.pfx</code> file that encompasses the private and public keys of the certificate. It necessitates being in Secure String type. If it’s not supplied, the user will be prompted to input a password (and a second time to verify it). The minimum password length is 5 characters.</p>
 </li>
 <li>
-<p><a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-manage#enable-virtualization-based-security-and-windows-defender-credential-guard">Windows Defender Credential Guard + <abbr title="Unified Extensible Firmware Interface">UEFI</abbr> Lock</a> <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" width="15" alt="Rotating green checkmark denoting CSP"></a> <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-deviceguard?WT.mc_id=Portal-fx#lsacfgflags">CSP</a></p>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/credential-guard/dg-readiness-tool">Windows Defender Device Guard and Windows Defender Credential Guard hardware readiness tool</a></li>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-requirements">Windows Defender Credential Guard requirements</a></li>
-</ul>
-</li>
-<li>
-<p><a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/system-guard-secure-launch-and-smm-protection#group-policy">System Guard Secure Launch and SMM protection (Firmware Protection)</a> <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" width="15" alt="Rotating green checkmark denoting CSP"></a> <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-deviceguard?WT.mc_id=Portal-fx#configuresystemguardlaunch">CSP</a></p>
-<ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/hardware-security/system-guard-secure-launch-and-smm-protection#how-to-verify-system-guard-secure-launch-is-configured-and-running">How to verify System Guard Secure Launch is configured and running</a></li>
-</ul>
-</li>
-<li>
-<p><a href="https://techcommunity.microsoft.com/t5/microsoft-security-baselines/windows-11-version-22h2-security-baseline/ba-p/3632520">Kernel Mode Hardware Enforced Stack Protection</a></p>
-</li>
-<li>
-<p><a href="https://learn.microsoft.com/en-us/windows-server/security/credentials-protection-and-management/configuring-additional-lsa-protection">Local Security Authority</a> (LSA) process Protection + <abbr title="Unified Extensible Firmware Interface">UEFI</abbr> Lock <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/green-verification.gif" width="15" alt="Rotating green checkmark denoting CSP"></a> <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/policy-csp-lsa#configurelsaprotectedprocess">CSP</a></p>
+<p><code>-Force</code>: The cmdlet verifies whether there is any certificate with the identical common name as the certificate that is being created, on the system. If it detects one, it will prompt the user to for permission to remove them. If this parameter is employed, the prompt will be omitted as it will presume that the user acquiesced.</p>
 </li>
 </ul>
 <p><br></p>
-<h2 id="device-protection-in-windows-security-gives-you-one-of-these-4-hardware-scores"><a href="https://support.microsoft.com/en-us/windows/device-protection-in-windows-security-afa11526-de57-b1c5-599f-3a4c6a61c5e2">Device Protection in Windows Security Gives You One of These 4 Hardware Scores</a><a class="headerlink" href="#device-protection-in-windows-security-gives-you-one-of-these-4-hardware-scores" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Standard hardware security not supported</li>
- <ul>
- <li>This means that your device does not meet at least one of the requirements of Standard Hardware Security.</li>
- </ul>
-<li>Your device meets the requirements for Standard Hardware Security. </li>
- <ul>
- <li><a href="https://support.microsoft.com/en-us/topic/what-is-tpm-705f241d-025d-4470-80c5-4feeb24fa1ee">TPM 2.0</a></li>
- <li><a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot">Secure boot</a></li>
- <li><a href="https://learn.microsoft.com/en-us/windows/win32/memory/data-execution-prevention">DEP</a></li>
- <li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/unified-extensible-firmware-interface">UEFI MAT</a></li>
- </ul>
-<li>Your device meets the requirements for Enhanced Hardware Security</li>
- <ul>
- <li><a href="https://support.microsoft.com/en-us/topic/what-is-tpm-705f241d-025d-4470-80c5-4feeb24fa1ee">TPM 2.0</a></li>
- <li><a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot">Secure boot</a></li>
- <li><a href="https://learn.microsoft.com/en-us/windows/win32/memory/data-execution-prevention">DEP</a></li>
- <li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/unified-extensible-firmware-interface">UEFI MAT</a></li>
- <li><a href="https://support.microsoft.com/en-us/windows/core-isolation-e30ed737-17d8-42f3-a2a9-87521df09b78">Memory Integrity</a></li>
- </ul>
-<li>Your device has all Secured-core PC features enabled</li>
- <ul>
- <li><a href="https://support.microsoft.com/en-us/topic/what-is-tpm-705f241d-025d-4470-80c5-4feeb24fa1ee">TPM 2.0</a></li>
- <li><a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot">Secure boot</a></li>
- <li><a href="https://learn.microsoft.com/en-us/windows/win32/memory/data-execution-prevention">DEP</a></li>
- <li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/unified-extensible-firmware-interface">UEFI MAT</a></li>
- <li><a href="https://support.microsoft.com/en-us/windows/core-isolation-e30ed737-17d8-42f3-a2a9-87521df09b78">Memory Integrity</a></li>
- <li><a href="https://www.microsoft.com/en-us/security/blog/2020/11/12/system-management-mode-deep-dive-how-smm-isolation-hardens-the-platform/">System Management Mode (SMM)</a></li>
- </ul>
-</ol>
-
+<h4 id="related-resources">Related Resources<a class="headerlink" href="#related-resources" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/windows/win32/api/certenroll/ne-certenroll-x500nameflags?redirectedfrom=MSDN">X500NameFlags enumeration</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores">Local Machine and Current User Certificate Stores</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/trusted-root-certification-authorities-certificate-store">Trusted Root Certification Authorities Certificate Store</a></li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.x509certificates.x509basicconstraintsextension">X509BasicConstraintsExtension Class</a></li>
+</ul>
 <p><br></p>
 
 
@@ -2215,7 +2164,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-20T11:10:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-02T10:33:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-02</span>
   </span>
 
     
@@ -2225,7 +2174,7 @@ or on
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-04T13:26:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-02T10:33:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-02</span>
   </span>
 
     
@@ -2298,7 +2247,7 @@ or on
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../Create%20Bootable%20USB%20flash%20drive%20with%20no%203rd%20party%20tools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Create Bootable flash drive no 3rd party tools">
+          <a href="../Assert-WDACConfigIntegrity/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Assert-WDACConfigIntegrity">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2308,20 +2257,20 @@ or on
                 Previous
               </span>
               <div class="md-ellipsis">
-                Create Bootable flash drive no 3rd party tools
+                Assert-WDACConfigIntegrity
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Event%20Viewer/" class="md-footer__link md-footer__link--next" aria-label="Next: Event Viewer">
+          <a href="../Confirm-WDACConfig/" class="md-footer__link md-footer__link--next" aria-label="Next: Confirm-WDACConfig">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Event Viewer
+                Confirm-WDACConfig
               </div>
             </div>
             <div class="md-footer__button md-icon">
