@@ -982,6 +982,15 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-do-the-bitlocker-key-protectors-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Do The BitLocker Key Protectors Work?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pluton-the-ultimate-security-chip" class="md-nav__link">
     <span class="md-ellipsis">
       Pluton, The Ultimate Security Chip
@@ -2179,6 +2188,15 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-do-the-bitlocker-key-protectors-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Do The BitLocker Key Protectors Work?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pluton-the-ultimate-security-chip" class="md-nav__link">
     <span class="md-ellipsis">
       Pluton, The Ultimate Security Chip
@@ -2249,6 +2267,15 @@ or on
 <p>I can guarantee breach into any operating system that has an unencrypted disk, and I don’t have to use any zero days or exploit code.</p>
 <p>BitLocker is a transparent drive encryption technology operating below the file system level and BitLocker encrypted disks always remain encrypted even after Windows Hello authentication and unlocking the OS.</p>
 <p><br></p>
+<h2 id="how-do-the-bitlocker-key-protectors-work">How Do The BitLocker Key Protectors Work?<a class="headerlink" href="#how-do-the-bitlocker-key-protectors-work" title="Permanent link">&para;</a></h2>
+<p>BitLocker key protectors safeguard the encryption key, which encrypts and decrypts the data on the disk. BitLocker provides various key protectors and allows using multiple key protectors simultaneously. However, some key protectors must be combined with other key protectors to attain the required level of security.</p>
+<p>Suppose you want your BitLocker encrypted drive to demand a PIN at Startup, need <abbr title="Trusted Platform Module">TPM</abbr> for verification, and also necessitate a USB flash drive to be plugged in. In <a href="https://learn.microsoft.com/en-us/powershell/module/bitlocker/add-bitlockerkeyprotector">this document</a>, you can see there is a <code>-StartupKeyProtector</code> option for the USB flash drive, <code>-TPMProtector</code> option for <abbr title="Trusted Platform Module">TPM</abbr>, and a <code>-Pin</code> option for the PIN.</p>
+<p>Using those parameters individually will not mandate all 3 key protectors to be used concurrently. It will only oblige one of them to be used. So you will have to either enter the PIN, have the disk connected to the same computer (<abbr title="Trusted Platform Module">TPM</abbr>) or have the USB flash drive plugged in, but all 3 of them are not enforced.</p>
+<p>If you want to enforce a multifactor authentication, you need to use the following command</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Add-BitLockerKeyProtector</span> <span class="n">-MountPoint</span> <span class="n">C</span><span class="p">:</span> <span class="n">-TpmAndPinAndStartupKeyProtector</span>
+</span></code></pre></div>
+<p>This time, all 3 key protectors are essential to unlock the drive. You will have to enter the PIN, have the disk connected to the same computer (<abbr title="Trusted Platform Module">TPM</abbr>), and have the USB flash drive plugged in.</p>
+<p><br></p>
 <h2 id="pluton-the-ultimate-security-chip">Pluton, The Ultimate Security Chip<a class="headerlink" href="#pluton-the-ultimate-security-chip" title="Permanent link">&para;</a></h2>
 <p>One of the most formidable technologies that is impervious to tampering, jumper cable or other vulnerabilities is <a href="https://www.microsoft.com/en-us/security/blog/2020/11/17/meet-the-microsoft-pluton-processor-the-security-chip-designed-for-the-future-of-windows-pcs/">the Pluton chip</a>. The same technology that has been employed in Xbox to stop even the <a href="https://www.youtube.com/watch?v=quLa6kzzra0">most sophisticated physical attacks.</a></p>
 <p>Pluton is a dedicated physical chip that runs on <a href="https://azure.microsoft.com/en-us/products/azure-sphere/">Azure sphere</a> architecture. It is very much out of band and is technically physically on the same die as the CPU, but the CPU has no control over it at all because it has its own dedicated self-maintaining operating system.</p>
@@ -2287,7 +2314,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-20T11:10:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-19T11:03:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-19</span>
   </span>
 
     

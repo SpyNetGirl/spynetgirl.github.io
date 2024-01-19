@@ -1691,6 +1691,24 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hsm-hardware-security-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      HSM (Hardware Security Module)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2087,6 +2105,24 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additional-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hsm-hardware-security-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      HSM (Hardware Security Module)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2113,8 +2149,9 @@ or on
 <p><br></p>
 <p>This cmdlet constructs self-signed certificates that adhere to <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/use-signed-policies-to-protect-wdac-against-tampering">Microsoft's specifications</a> for <abbr title="Windows Defender Application Control">WDAC</abbr> policy signing. With this cmdlet, you can dispense with <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control">Windows Server with a <abbr title="Certificate Authority">CA</abbr> role</a> to generate a certificate.</p>
 <p>The generated certificates type is Code Signing, they employ <code>SHA2-512</code> hashing algorithm with <code>RSA 4096-bit</code> encryption (the maximum supported key size for <abbr title="Windows Defender Application Control">WDAC</abbr> signing.)</p>
-<p>Upon constructing a certificate, the cmdlet stores it in the Current User's personal store, then it exports that certificate in 2 files. One of the files has a <code>.cer</code> extension and encompasses only the public key, the other file has a <code>.pfx</code> extension and encompasses both public and private keys. The PFX file is encrypted with <code>SHA-256</code> encryption and safeguarded with the password supplied by the user. After the 2 files are exported, the cmdlet eliminates the certificate from Current Users personal store and then re-imports it using the PFX file, but this time it will store the private key using <a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/tlfs/vsm">VSM</a> (Virtual Secure Mode). In this method, the private keys are stored in the <abbr title="Trusted Platform Module">TPM</abbr> and are highly secured with <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-vbs">VBS</a> (Virtualized-Based Security). The entire process happens in just few seconds.</p>
-<p><br></p>
+<p>Upon constructing a certificate, the cmdlet stores it in the Current User's personal store, then it exports that certificate in 2 files. One of the files has a <code>.cer</code> extension and encompasses only the public key, the other file has a <code>.pfx</code> extension and encompasses both public and private keys. The PFX file is encrypted with <code>SHA-256</code> encryption and safeguarded with the password supplied by the user. After the 2 files are exported, the cmdlet eliminates the certificate from Current Users personal store and then re-imports it using the PFX file, but this time it will store the private key using <a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/tlfs/vsm">VSM</a> (Virtual Secure Mode). In this method, the private keys are stored in the <abbr title="Trusted Platform Module">TPM</abbr> and are highly secured with <a href="https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-vbs">VBS</a> (Virtualized-Based Security). The entire process happens in just few seconds.
+https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-hvci-enablement
+<br></p>
 <h3 id="5-optional-parameters">5 Optional Parameters<a class="headerlink" href="#5-optional-parameters" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -2140,7 +2177,27 @@ or on
 <li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/local-machine-and-current-user-certificate-stores">Local Machine and Current User Certificate Stores</a></li>
 <li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/trusted-root-certification-authorities-certificate-store">Trusted Root Certification Authorities Certificate Store</a></li>
 <li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.x509certificates.x509basicconstraintsextension">X509BasicConstraintsExtension Class</a></li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc2459">Internet X.509 Public Key Infrastructure Certificate and CRL Profile - RFC2459</a></li>
 </ul>
+<p><br></p>
+<h2 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
+<p>To enhance the security and safeguarding of your certificate further, you can remove the certificate from the Personal store of the Current User certificates and then utilize the PFX file to import it anew in the same location, but this time you will mark additional boxes in the import wizard.</p>
+<p>This video illustrates how to safeguard the Code Signing Certificate generated by the WDACConfig module, so that you will be compelled to either enter your security password or verify your identity every time the certificate is employed. By storing the certificate in this manner, only your user account will have access to it, and you will inherently possess administrator privileges to implement the signed <abbr title="Windows Defender Application Control">WDAC</abbr> policy on the system.</p>
+<p>These options are only accessible in GUI and they are to deter automatic scripts from utilizing the certificates without authentication, this is why the <code>Build-WDACCertificate</code> cmdlet does not activate this security feature by default.</p>
+<div align="center">
+<a href="https://www.youtube.com/watch?v=nrRiAJt-_6E">
+
+<b>YouTube Video</b>
+
+<br>
+
+<a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/How%20to%20safely%20store%20the%20WDAC%20Code%20Signing%20Certificate%20in%20Windows%20-%20WDACConfig%20module%20thumbnail.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/How%20to%20safely%20store%20the%20WDAC%20Code%20Signing%20Certificate%20in%20Windows%20-%20WDACConfig%20module%20thumbnail.gif" alt="How to safely store the WDAC Code Signing Certificate in Windows WDACConfig module thumbnail" width="700"></a>
+</a>
+</div>
+
+<p><br></p>
+<h2 id="hsm-hardware-security-module"><abbr title="Hardware Security Module">HSM</abbr> (Hardware Security Module)<a class="headerlink" href="#hsm-hardware-security-module" title="Permanent link">&para;</a></h2>
+<p>The most secure method of storing code signing certificates is to use a hardware security module (<abbr title="Hardware Security Module">HSM</abbr>) or a similar device. Furthermore, obtaining certificates from a regulated or publicly trusted certificate authority (<abbr title="Certificate Authority">CA</abbr>) requires the use of an <abbr title="Hardware Security Module">HSM</abbr>. The <abbr title="Hardware Security Modules">HSMs</abbr> must also comply with the Federal Information Processing Standards (FIPS).</p>
 <p><br></p>
 
 
@@ -2164,7 +2221,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-02T10:39:42+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-19T11:03:03+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-19</span>
   </span>
 
     
@@ -2184,11 +2241,12 @@ or on
   <span class="md-source-file__fact">
     <span class="md-icon" title="Contributors">
       
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
       
     </span>
     <nav>
       
+        <a href="mailto:not.committed.yet">Not Committed Yet</a>, 
         <a href="mailto:spynetgirl@outlook.com">Violet</a>
     </nav>
   </span>
