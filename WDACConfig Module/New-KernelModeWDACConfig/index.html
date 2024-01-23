@@ -1916,21 +1916,6 @@ or on
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#during-the-prepmodes-the-following-event-log-categories-are-cleared" class="md-nav__link">
-    <span class="md-ellipsis">
-      During the PrepModes, the following event log categories are cleared
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -2194,21 +2179,6 @@ or on
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Notes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#during-the-prepmodes-the-following-event-log-categories-are-cleared" class="md-nav__link">
-    <span class="md-ellipsis">
-      During the PrepModes, the following event log categories are cleared
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
     </ul>
@@ -2237,13 +2207,18 @@ or on
 </span></code></pre></div>
 <p><br></p>
 <h3 id="how-to-use">How to use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h3>
-<p>This cmdlet creates a Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy based on the Default Windows example policy. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection">You can read more about that process in here.</a></p>
-<p>The default parameter indicates that the Strict Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy will be deployed with flight root certificates, allowing you to use insider builds of the OS.</p>
-<p>First you need to use the <strong>PrepMode</strong> parameter to deploy the base policy in Audit mode, then reboot your system, after reboot event logs are generated for Kernel-mode drivers that are running but would otherwise get blocked if the policy was not deployed in Audit mode.</p>
-<p><br></p>
-<p>Now you need to use the <strong>AuditAndEnforce</strong> parameter to create the final base policy. This parameter will scan the event logs, create a supplemental policy for the drivers detected in event logs, merge the supplemental policy with the Strict Kernel-mode base policy and deploy it as a single base policy. <strong>No reboot required after deploying the final enforced mode policy, reboot is only required 1 time, after deploying the Audit mode policy.</strong></p>
-<p>Hardware drivers are scanned based on their certificates so they won't require a policy update when they are updated as long as they are still signed with the same certificate.</p>
-<p>The deployed base policy can have supplemental policies too so if in the future you need to allow more Kernel-mode drivers to run on your system, you can use the following command to automatically create and deploy a Supplemental policy.</p>
+<p>This cmdlet generates a Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy derived from the Default Windows template policy. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection">You can learn more about that procedure in here.</a></p>
+<p>The <strong>-Default</strong> parameter signifies that the Strict Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy will be deployed with flight root certificates, enabling you to utilize insider builds of the OS.</p>
+<p>Initially, you need to use the <strong>-PrepMode</strong> parameter to deploy the base policy in Audit mode, then restart your system. After restarting, event logs are produced for Kernel-mode drivers that are running but would otherwise be blocked if the policy was not deployed in Audit mode.</p>
+<p>Subsequently, you need to use the <strong>-AuditAndEnforce</strong> parameter to generate the final base policy. This parameter will:</p>
+<ol>
+<li>Scan all of the event logs that were produced after deploying the audit mode policy on the system</li>
+<li>Generate a supplemental policy for the drivers detected in event logs</li>
+<li>Merge the supplemental policy with the Strict Kernel-mode base policy</li>
+<li>Deploy it as a single base policy, rebootlessly.</li>
+</ol>
+<p>Hardware drivers are scanned based on their certificates so they will not necessitate a policy update when they are updated as long as they are still signed with the same certificate.</p>
+<p>The deployed base policy can have supplemental policies too so if in the future you need to allow more Kernel-mode drivers to run on your system, you can use the following command to automatically generate and deploy a Supplemental policy.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Edit-WDACConfig</span> <span class="n">-AllowNewAppsAuditEvents</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;Kernel mode drivers for software X&quot;</span> <span class="n">-PolicyPath</span> <span class="p">&lt;</span><span class="n">Path</span> <span class="n">to</span> <span class="n">Strict</span> <span class="n">Kernel-mode</span> <span class="n">policy</span> <span class="n">xml</span> <span class="n">file</span><span class="p">&gt;</span> <span class="n">-Fallbacks</span> <span class="n">None</span> <span class="n">-NoUserPEs</span> <span class="n">-NoScript</span>
 </span></code></pre></div>
 <p><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-WDACConfig"><strong>More info about the command above</strong></a></p>
@@ -2254,7 +2229,7 @@ or on
 <p><code>-PrepMode</code>: Deploys the Strict Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy in Audit mode, preparing the system for an Audit.</p>
 </li>
 <li>
-<p><code>-AuditAndEnforce</code>: Audits the system using event logs for any blocked drivers, generates and deploys the final Strict Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy on the system.</p>
+<p><code>-AuditAndEnforce</code>: Audits the system using event logs for any blocked drivers, generates the final Strict Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy.</p>
 </li>
 <li>
 <p><code>-EVSigners</code>: Uses EVSigners policy rule option. If you want to use this parameter, make sure you use it for both PrepMode and AuditAndEnforce parameters. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-Notes#policies-with-requiredev-signers-rule-option">Read more about <abbr title="Extended Validation">EV</abbr> Signers</a></p>
@@ -2273,12 +2248,18 @@ or on
 </span></code></pre></div>
 <p><br></p>
 <h3 id="how-to-use_1">How to use<a class="headerlink" href="#how-to-use_1" title="Permanent link">&para;</a></h3>
-<p>This cmdlet creates a Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy based on the Default Windows example policy. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection">You can read more about that process in here.</a></p>
-<p>The NoFlightRoots parameter indicates that the Strict Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy will not be deployed with flight root certificates, disallowing you to use insider builds of the OS.</p>
-<p>First you need to use the <strong>PrepMode</strong> parameter to deploy the base policy in Audit mode, then reboot your system, after reboot event logs are generated for Kernel-mode drivers that are running but would otherwise get blocked if the policy was not deployed in Audit mode.</p>
-<p>Now you need to use the <strong>AuditAndEnforce</strong> parameter to create the final base policy. This parameter will scan the event logs, create a supplemental policy for the drivers detected in event logs, merge the supplemental policy with the Strict Kernel-mode base policy and deploy it as a single base policy. <strong>No reboot required after deploying the final enforced mode policy, reboot is only required 1 time, after deploying the Audit mode policy.</strong></p>
-<p>Hardware drivers are scanned based on their certificates so they won't require a policy update when they are updated as long as they are still signed with the same certificate.</p>
-<p>The deployed base policy can have supplemental policies too so if in the future you need to allow more Kernel-mode drivers to run on your system, you can use the following command to automatically create and deploy a Supplemental policy.</p>
+<p>This cmdlet generates a Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy derived from the Default Windows template policy. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection">You can learn more about that procedure in here.</a></p>
+<p>The <strong>-NoFlightRoots</strong> parameter signifies that the Strict Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy will not be deployed with flight root certificates, disallowing you to use insider builds of the OS.</p>
+<p>Initially, you need to use the <strong>-PrepMode</strong> parameter to deploy the base policy in Audit mode, then restart your system. After restarting, event logs are produced for Kernel-mode drivers that are running but would otherwise be blocked if the policy was not deployed in Audit mode.</p>
+<p>Subsequently, you need to use the <strong>-AuditAndEnforce</strong> parameter to generate the final base policy. This parameter will:</p>
+<ol>
+<li>Scan all of the event logs that were produced after deploying the audit mode policy on the system</li>
+<li>Generate a supplemental policy for the drivers detected in event logs</li>
+<li>Merge the supplemental policy with the Strict Kernel-mode base policy</li>
+<li>Deploy it as a single base policy, rebootlessly.</li>
+</ol>
+<p>Hardware drivers are scanned based on their certificates so they will not necessitate a policy update when they are updated as long as they are still signed with the same certificate.</p>
+<p>The deployed base policy can have supplemental policies too so if in the future you need to allow more Kernel-mode drivers to run on your system, you can use the following command to automatically generate and deploy a Supplemental policy.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Edit-WDACConfig</span> <span class="n">-AllowNewAppsAuditEvents</span> <span class="n">-SuppPolicyName</span> <span class="s2">&quot;Kernel mode drivers for software X&quot;</span> <span class="n">-PolicyPath</span> <span class="p">&lt;</span><span class="n">Path</span> <span class="n">to</span> <span class="n">Strict</span> <span class="n">Kernel-mode</span> <span class="n">policy</span> <span class="n">xml</span> <span class="n">file</span><span class="p">&gt;</span> <span class="n">-Fallbacks</span> <span class="n">None</span> <span class="n">-NoUserPEs</span> <span class="n">-NoScript</span>
 </span></code></pre></div>
 <p><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Edit-WDACConfig"><strong>More info about the command above</strong></a></p>
@@ -2289,16 +2270,16 @@ or on
 <p><code>-PrepMode</code>: Deploys the Strict Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy in Audit mode, preparing the system for an Audit.</p>
 </li>
 <li>
-<p><code>-AuditAndEnforce</code>: Audits the system using event logs for any blocked drivers, generates and deploys the final Strict Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy on the system.</p>
+<p><code>-AuditAndEnforce</code>: Audits the system using event logs for any blocked drivers, generates the final Strict Kernel-mode <abbr title="Windows Defender Application Control">WDAC</abbr> policy.</p>
 </li>
 <li>
 <p><code>-EVSigners</code>: Uses EVSigners policy rule option. If you want to use this parameter, make sure you use it for both PrepMode and AuditAndEnforce parameters. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-Notes#policies-with-requiredev-signers-rule-option">Read more about <abbr title="Extended Validation">EV</abbr> Signers</a></p>
 </li>
 <li>
-<p><code>-Deploy</code>: Indicates that the policy will be deployed. If you want to deploy the final strict kernel-mode no flight roots base policy Signed, do not use this parameter with <code>-AuditAndEnforce</code>. Instead just create the policy and then use <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig">Deploy-SignedWDACConfig</a> cmdlet to deploy it.</p>
+<p><code>-Deploy</code>: Indicates that the policy will be deployed. If you want to deploy the final strict kernel-mode base policy Signed, do not use this parameter with <code>-AuditAndEnforce</code>. Instead just create the policy and then use <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-SignedWDACConfig">Deploy-SignedWDACConfig</a> cmdlet to deploy it.
+<br></p>
 </li>
 </ul>
-<p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
@@ -2313,18 +2294,6 @@ or on
 <p><strong>Optional</strong> parameters indicate that they are not required and without using them the module will automatically run with the optimal settings.</p>
 </li>
 </ul>
-<p><br></p>
-<h3 id="during-the-prepmodes-the-following-event-log-categories-are-cleared">During the PrepModes, <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/event-id-explanations">the following event log categories</a> are cleared<a class="headerlink" href="#during-the-prepmodes-the-following-event-log-categories-are-cleared" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>Applications and Services logs – Microsoft – Windows – CodeIntegrity – Operational includes events about Application Control policy activation and the control of executables, dlls, and drivers.</p>
-</li>
-<li>
-<p>Applications and Services logs – Microsoft – Windows – AppLocker – MSI and Script includes events about the control of MSI installers, scripts, and COM objects.</p>
-</li>
-</ul>
-<p>This behavior is required so that the audit phase will have the correct logs to scan and add to the base policy for allow listing. This behavior can be changed/improved in a future module update.</p>
-<p>Before the audit mode phase, make sure you trust all the files and programs installed on your system, otherwise you risk allow listing vulnerable or malicious drivers in your policy.</p>
 <p><br></p>
 
 
@@ -2348,7 +2317,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-02T10:33:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-23T10:28:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-23</span>
   </span>
 
     
