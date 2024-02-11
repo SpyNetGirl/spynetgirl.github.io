@@ -2422,7 +2422,7 @@ or on
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="about-automatic-parameters">About Automatic Parameters<a class="headerlink" href="#about-automatic-parameters" title="Permanent link">&para;</a></h2>
-<p>If a parameter's <strong>Automatic</strong> value is set to True in the parameter description, it indicate that if you used <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Set-CommonWDACConfig">Set-CommonWDACConfig</a> cmdlet to set default value for it, the module will automatically use it. This saves time and prevents repetitive tasks. However, if no value exists in User Configurations for an Automatic parameter and you didn't explicitly provide a value for that parameter either, then you will see an error asking you to provide value for it. Explicitly providing a value for an Automatic parameter in the command line overrides its default value in the User Configurations, meaning the module will ignore the value of the same parameter in the User Configurations file.</p>
+<p>A parameter with an <strong>Automatic</strong> value of True in the description means that the module will use its default value set by the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Set-CommonWDACConfig">Set-CommonWDACConfig</a> cmdlet. This simplifies the process and avoids redundancy. However, if an Automatic parameter has no value in User Configurations and you do not specify one in the command line, you will encounter an error requesting a value. Specifying a value for an Automatic parameter in the command line supersedes its default value in User Configurations, so the module will disregard the value of that parameter in the User Configurations file.</p>
 <p><br></p>
 <h3 id="the-logic-behind-the-signtoolpath-parameter-in-the-module">The Logic Behind The -SignToolPath Parameter in the Module<a class="headerlink" href="#the-logic-behind-the-signtoolpath-parameter-in-the-module" title="Permanent link">&para;</a></h3>
 <ol>
@@ -2486,7 +2486,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-10T21:55:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-11T12:33:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-11</span>
   </span>
 
     

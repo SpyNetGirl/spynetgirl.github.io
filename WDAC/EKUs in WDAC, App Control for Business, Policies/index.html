@@ -1419,6 +1419,15 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-to-convert-the-hexadecimal-format-to-an-oid-for-wdac-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Convert the Hexadecimal Format to an OID for WDAC Policies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#common-ekus-in-wdac-policies" class="md-nav__link">
     <span class="md-ellipsis">
       Common EKUs in WDAC Policies
@@ -1432,6 +1441,39 @@ or on
   <a href="#oids-for-common-microsoft-ekus" class="md-nav__link">
     <span class="md-ellipsis">
       OIDs for Common Microsoft EKUs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-ekus-are-used-by-the-wdac-engine-for-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      How EKUs Are Used by the WDAC Engine for Validation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How EKUs Are Used by the WDAC Engine for Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-see-the-details-in-the-screenshots-below" class="md-nav__link">
+    <span class="md-ellipsis">
+      You can see the details in the screenshots below
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-placement-of-the-certeku-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Placement of the CertEKU Elements
     </span>
   </a>
   
@@ -2248,6 +2290,15 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-to-convert-the-hexadecimal-format-to-an-oid-for-wdac-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Convert the Hexadecimal Format to an OID for WDAC Policies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#common-ekus-in-wdac-policies" class="md-nav__link">
     <span class="md-ellipsis">
       Common EKUs in WDAC Policies
@@ -2261,6 +2312,39 @@ or on
   <a href="#oids-for-common-microsoft-ekus" class="md-nav__link">
     <span class="md-ellipsis">
       OIDs for Common Microsoft EKUs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-ekus-are-used-by-the-wdac-engine-for-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      How EKUs Are Used by the WDAC Engine for Validation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How EKUs Are Used by the WDAC Engine for Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-see-the-details-in-the-screenshots-below" class="md-nav__link">
+    <span class="md-ellipsis">
+      You can see the details in the screenshots below
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-placement-of-the-certeku-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Placement of the CertEKU Elements
     </span>
   </a>
   
@@ -2333,15 +2417,19 @@ or on
 <p><br></p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/1.png" alt="OBS Certificate in WDAC policy supplemental" /></a></p>
 <p><br></p>
+<p><br></p>
 <p>And if we open the properties of one of those signed files, we can observe that they are signed by a certificate that was issued to an individual for Code Signing function only.</p>
 <p><br></p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/2.png" alt="A file in OBS software and its Certificate info" /></a></p>
+<p><br></p>
 <p><br></p>
 <p>If we append an <abbr title="Extended Key Usage">EKU</abbr> that is not supported by this certificate, such as ELAM, to one of the signer rules in the supplemental policy, the OBS software will no longer be permitted by the Code Integrity to run because the certificate the components of the OBS software are signed with does not encompass the ELAM <abbr title="Extended Key Usage">EKU</abbr>.</p>
 <p><br></p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/3.png" alt="Adding fake EKU to the OBS Signer rule in a WDAC supplemental policy" /></a></p>
 <p><br></p>
+<p><br></p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/4.png" alt="ELAM EKU in WDAC supplemental policy" /></a></p>
+<p><br></p>
 <p><br></p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/5.png" alt="Error message when Code Integrity in Windows blocks an executable" /></a></p>
 <p><br></p>
@@ -2426,15 +2514,85 @@ or on
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
+<h2 id="how-to-convert-the-hexadecimal-format-to-an-oid-for-wdac-policies">How to Convert the Hexadecimal Format to an OID for <abbr title="Windows Defender Application Control">WDAC</abbr> Policies<a class="headerlink" href="#how-to-convert-the-hexadecimal-format-to-an-oid-for-wdac-policies" title="Permanent link">&para;</a></h2>
+<p>The following PowerShell function does the exact opposite of the previous function. It converts the hexadecimal representation of an OID to the OID itself.</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Import the System.Formats.Asn1 namespaces</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c"># This allows you to use the AsnReader and AsnWriter classes</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">using</span> <span class="n">namespace</span> <span class="n">System</span><span class="p">.</span><span class="n">Formats</span><span class="p">.</span><span class="n">Asn1</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">Function</span> <span class="nb">Convert-HexToOID</span> <span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  <span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  <span class="p">[</span><span class="n">OutputType</span><span class="p">(</span><span class="no">[System.String]</span><span class="p">)]</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  <span class="k">Param</span> <span class="p">(</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span> <span class="p">=</span> <span class="nv">$true</span><span class="p">,</span> <span class="k">ValueFromPipeline</span> <span class="p">=</span> <span class="nv">$true</span><span class="p">)]</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span><span class="no">[System.String]</span><span class="nv">$Hex</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  <span class="p">)</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>  <span class="cm">&lt;#</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="sd">.SYNOPSIS</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="cm">  Converts a hexadecimal string to an OID</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="sd">.DESCRIPTION</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="cm">  Used for converting hexadecimal values found in the EKU sections of the WDAC policies to their respective OIDs.</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="sd">.PARAMETER</span><span class="cm"> Hex</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="cm">  The hexadecimal string to convert to an OID</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="sd">.EXAMPLE</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="cm">  Convert-HexToOID -Hex &#39;010a2b0601040182374c0301&#39;</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="cm">  Returns &#39;1.3.6.1.4.1.311.76.3.1&#39;</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="sd">.INPUTS</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="cm">  System.String</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="sd">.OUTPUTS</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="cm">  System.String</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="cm">  #&gt;</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>  <span class="k">begin</span> <span class="p">{</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>    <span class="c"># Convert the hexadecimal string to a byte array by looping through the string in pairs of two characters</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>    <span class="c"># and converting each pair to a byte using the base 16 (hexadecimal) system</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>    <span class="no">[System.Byte[]]</span><span class="nv">$NumArray</span> <span class="p">=</span> <span class="k">for</span> <span class="p">(</span><span class="nv">$Index</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$Index</span> <span class="o">-lt</span> <span class="nv">$Hex</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="nv">$Index</span> <span class="p">+=</span> <span class="n">2</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>      <span class="no">[System.Convert]</span><span class="p">::</span><span class="n">ToByte</span><span class="p">(</span><span class="nv">$Hex</span><span class="p">.</span><span class="n">Substring</span><span class="p">(</span><span class="nv">$Index</span><span class="p">,</span> <span class="n">2</span><span class="p">),</span> <span class="n">16</span><span class="p">)</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>    <span class="p">}</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>  <span class="p">}</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>  <span class="k">process</span> <span class="p">{</span>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>    <span class="c"># Change the first byte from 1 to 6 because the hexadecimal string is missing the tag and length bytes</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>    <span class="c"># that are required for the ASN.1 encoding of an OID</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>    <span class="c"># The tag byte indicates the type of the data, and for an OID it is 6</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>    <span class="c"># The length byte indicates the number of bytes that follow the tag byte</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>    <span class="c"># and for this example it is 10 (0A in hexadecimal)</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>    <span class="nv">$NumArray</span><span class="p">[</span><span class="n">0</span><span class="p">]</span> <span class="p">=</span> <span class="n">6</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>    <span class="c"># Create an AsnReader object with the default encoding rules</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>    <span class="c"># This is a class that can read the ASN.1 BER, CER, and DER data formats</span>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>    <span class="c"># BER (Basic Encoding Rules) is the most flexible and widely used encoding rule</span>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>    <span class="c"># CER (Canonical Encoding Rules) is a subset of BER that ensures a unique encoding</span>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>    <span class="c"># DER (Distinguished Encoding Rules) is a subset of CER that ensures a deterministic encoding</span>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>    <span class="c"># The AsnReader object takes the byte array as input and the encoding rule as an argument</span>
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>    <span class="no">[AsnReader]</span><span class="nv">$AsnReader</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">AsnReader</span> <span class="n">-ArgumentList</span> <span class="p">(</span><span class="nv">$NumArray</span><span class="p">,</span> <span class="no">[AsnEncodingRules]</span><span class="p">::</span><span class="n">BER</span><span class="p">)</span>
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>    <span class="c"># Read the OID as an ObjectIdentifier</span>
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>    <span class="c"># This is a method of the AsnReader class that returns the OID as a string</span>
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>    <span class="c"># The first two numbers are derived from the first byte of the encoded data</span>
+</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>    <span class="c"># The rest of the numbers are derived from the subsequent bytes using a base 128 (variable-length) system</span>
+</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>    <span class="no">[System.String]</span><span class="nv">$OID</span> <span class="p">=</span> <span class="nv">$AsnReader</span><span class="p">.</span><span class="n">ReadObjectIdentifier</span><span class="p">()</span>
+</span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>  <span class="p">}</span>
+</span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>
+</span><span id="__span-2-60"><a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>  <span class="k">End</span> <span class="p">{</span>
+</span><span id="__span-2-61"><a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>    <span class="c"># Return the OID value as string</span>
+</span><span id="__span-2-62"><a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>    <span class="k">return</span> <span class="nv">$OID</span>
+</span><span id="__span-2-63"><a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>  <span class="p">}</span>
+</span><span id="__span-2-64"><a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
 <h2 id="common-ekus-in-wdac-policies">Common EKUs in <abbr title="Windows Defender Application Control">WDAC</abbr> Policies<a class="headerlink" href="#common-ekus-in-wdac-policies" title="Permanent link">&para;</a></h2>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WINDOWS&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Windows System Component Verification - 1.3.6.1.4.1.311.10.3.6&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182370A0306&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Windows Hardware Quality Labs (WHQL) - 1.3.6.1.4.1.311.10.3.5&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182370A0305&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_ELAM&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Early Launch Anti Malware - 1.3.6.1.4.1.311.61.4.1&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182373D0401&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_HAL_EXT&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;HAL Extension - 1.3.6.1.4.1.311.61.5.1&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182373D0501&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_RT_EXT&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Windows RT - OID ?&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010a2b0601040182370a0315&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_STORE&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Windows Store - 1.3.6.1.4.1.311.76.3.1&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010a2b0601040182374c0301&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_DCODEGEN&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Dynamic Code Generation - 1.3.6.1.4.1.311.76.5.1&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182374C0501&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_AM&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;AntiMalware - 1.3.6.1.4.1.311.76.11.1&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010a2b0601040182374c0b01&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WINDOWS&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Windows System Component Verification - 1.3.6.1.4.1.311.10.3.6&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182370A0306&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Windows Hardware Quality Labs (WHQL) - 1.3.6.1.4.1.311.10.3.5&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182370A0305&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_ELAM&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Early Launch Anti Malware - 1.3.6.1.4.1.311.61.4.1&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182373D0401&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_HAL_EXT&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;HAL Extension - 1.3.6.1.4.1.311.61.5.1&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182373D0501&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_RT_EXT&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Windows RT - 1.3.6.1.4.1.311.10.3.21&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010a2b0601040182370a0315&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_STORE&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Windows Store - 1.3.6.1.4.1.311.76.3.1&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010a2b0601040182374c0301&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_DCODEGEN&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;Dynamic Code Generation - 1.3.6.1.4.1.311.76.5.1&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010A2B0601040182374C0501&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nt">&lt;EKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_AM&quot;</span><span class="w"> </span><span class="na">FriendlyName=</span><span class="s">&quot;AntiMalware - 1.3.6.1.4.1.311.76.11.1&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;010a2b0601040182374c0b01&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
 </span></code></pre></div>
 <p><br></p>
 <h3 id="oids-for-common-microsoft-ekus">OIDs for Common Microsoft EKUs<a class="headerlink" href="#oids-for-common-microsoft-ekus" title="Permanent link">&para;</a></h3>
@@ -2448,6 +2606,48 @@ or on
 <p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/7.png" alt="EKUs in MsMpEng.exe" /></a></p>
 <p><br></p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/8.png" alt="EKUs in WdBoot.sys which has ELAM EKU" /></a></p>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="how-ekus-are-used-by-the-wdac-engine-for-validation">How EKUs Are Used by the <abbr title="Windows Defender Application Control">WDAC</abbr> Engine for Validation<a class="headerlink" href="#how-ekus-are-used-by-the-wdac-engine-for-validation" title="Permanent link">&para;</a></h2>
+<p>Regarding the incorporation of EKUs in file validation, <abbr title="Windows Defender Application Control">WDAC</abbr> verifies that the file's leaf certificate (File's signer) possesses identical EKUs as the signer element's EKUs. Regardless of whether the Signer's CertRoot (TBS value) and name (CN of the certificate) match with file's root, intermediate or leaf certificates, the EKUs only need to match with the leaf certificate.</p>
+<p>For example, in the Default Windows template policy, the <code>Kernel32.dll</code> is authorized by the following signer:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_WINDOWS_PRODUCTION&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Product Root 2010 Windows EKU&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;Wellknown&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;06&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WINDOWS&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">&lt;/Signer&gt;</span>
+</span></code></pre></div>
+<p><br></p>
+<ul>
+<li>
+<p><code>Microsoft Product Root 2010 Windows EKU</code>: Matches the common name of the file's root certificate (<code>Microsoft Root Certificate Authority 2010</code>) through well known roots.</p>
+</li>
+<li>
+<p><code>CertRoot</code>: Matches the TBS and Common name of the file's root certificate using well known roots.</p>
+</li>
+<li>
+<p><code>CertEKU</code>: Only requires the file's signer, the leaf certificate, to have an <abbr title="Extended Key Usage">EKU</abbr> with the OID of <code>1.3.6.1.4.1.311.10.3.6</code>.</p>
+</li>
+</ul>
+<p><br></p>
+<h4 id="you-can-see-the-details-in-the-screenshots-below">You can see the details in the screenshots below<a class="headerlink" href="#you-can-see-the-details-in-the-screenshots-below" title="Permanent link">&para;</a></h4>
+<p><br></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/9.png" alt="Windows kernel32dll certificates"></a></p>
+<p><br></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Wiki%20About%20EKUs/10.png" alt="Windows kernel32dll EKUs"></a></p>
+<p><br></p>
+<h3 id="the-placement-of-the-certeku-elements">The Placement of the CertEKU Elements<a class="headerlink" href="#the-placement-of-the-certeku-elements" title="Permanent link">&para;</a></h3>
+<p>In every Signer, the <code>CertEKU</code> node should only be placed directly after <code>CertRoot</code>. It is against the Code Integrity schema for any other nodes to exist between them. Below is a example of such configuration</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;Signer</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_SIGNER_F_1&quot;</span><span class="w"> </span><span class="na">Name=</span><span class="s">&quot;Microsoft Windows Production PCA 2011&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&lt;CertRoot</span><span class="w"> </span><span class="na">Type=</span><span class="s">&quot;TBS&quot;</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;TBS Hash&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WINDOWS&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_RT_EXT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_ELAM&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">&lt;CertEKU</span><span class="w"> </span><span class="na">ID=</span><span class="s">&quot;ID_EKU_WHQL&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">&lt;CertPublisher</span><span class="w"> </span><span class="na">Value=</span><span class="s">&quot;Microsoft Windows&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">&lt;FileAttribRef</span><span class="w"> </span><span class="na">RuleID=</span><span class="s">&quot;ID_FILEATTRIB_F_1&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nt">&lt;/Signer&gt;</span>
+</span></code></pre></div>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
@@ -2482,7 +2682,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-01-27T09:14:55+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-01-27</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-11T12:37:12+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-11</span>
   </span>
 
     

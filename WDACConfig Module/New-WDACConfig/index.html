@@ -2268,9 +2268,9 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_1" class="md-nav__link">
+  <a href="#the-outputs-of-the-parameter" class="md-nav__link">
     <span class="md-ellipsis">
-      The outputs of the parameter are
+      The outputs of the parameter
     </span>
   </a>
   
@@ -2328,7 +2328,7 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_2" class="md-nav__link">
+  <a href="#the-outputs-of-the-parameter-are_1" class="md-nav__link">
     <span class="md-ellipsis">
       The outputs of the parameter are
     </span>
@@ -2388,7 +2388,7 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_3" class="md-nav__link">
+  <a href="#the-outputs-of-the-parameter-are_2" class="md-nav__link">
     <span class="md-ellipsis">
       The outputs of the parameter are
     </span>
@@ -2913,9 +2913,9 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_1" class="md-nav__link">
+  <a href="#the-outputs-of-the-parameter" class="md-nav__link">
     <span class="md-ellipsis">
-      The outputs of the parameter are
+      The outputs of the parameter
     </span>
   </a>
   
@@ -2973,7 +2973,7 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_2" class="md-nav__link">
+  <a href="#the-outputs-of-the-parameter-are_1" class="md-nav__link">
     <span class="md-ellipsis">
       The outputs of the parameter are
     </span>
@@ -3033,7 +3033,7 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-outputs-of-the-parameter-are_3" class="md-nav__link">
+  <a href="#the-outputs-of-the-parameter-are_2" class="md-nav__link">
     <span class="md-ellipsis">
       The outputs of the parameter are
     </span>
@@ -3693,7 +3693,7 @@ or on
 </div>
 <p><br></p>
 <h3 id="-debug">-Debug<a class="headerlink" href="#-debug" title="Permanent link">&para;</a></h3>
-<p>Indicates that the module will output 3 additional files for debugging purposes and also write debug messages on the console:</p>
+<p>Indicates that the module will output 3 additional files for debugging purposes:</p>
 <ul>
 <li><em>FileRulesAndFileRefs.txt</em> - Contains the File Rules and Rule refs for the Hash of the files that no longer exist on the disk.</li>
 <li><em>DeletedFilesHashes.xml</em> - Policy file that contains File Rules and Rule refs for the files that no longer exist on the disk.</li>
@@ -3768,7 +3768,7 @@ or on
 </div>
 <p><br></p>
 <h3 id="-levels">-Levels<a class="headerlink" href="#-levels" title="Permanent link">&para;</a></h3>
-<p>Offers the same official <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-level">Levels</a> for scanning of event logs.</p>
+<p>Offers the same official <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-level">Levels</a> for scanning event logs.</p>
 <div class="center-table">
 <table>
 <thead>
@@ -3803,7 +3803,7 @@ or on
 </div>
 <p><br></p>
 <h3 id="-fallbacks">-Fallbacks<a class="headerlink" href="#-fallbacks" title="Permanent link">&para;</a></h3>
-<p>Offers the same official <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-fallback">Fallbacks</a> for scanning of event logs.</p>
+<p>Offers the same official <a href="https://learn.microsoft.com/en-us/powershell/module/configci/new-cipolicy#-fallback">Fallbacks</a> for scanning event logs.</p>
 <div class="center-table">
 <table>
 <thead>
@@ -3986,20 +3986,20 @@ or on
 </table>
 </div>
 <p><br></p>
-<h3 id="the-outputs-of-the-parameter-are_1">The outputs of the parameter are<a class="headerlink" href="#the-outputs-of-the-parameter-are_1" title="Permanent link">&para;</a></h3>
-<p>All of the outputs are saved in a folder named "<abbr title="Windows Defender Application Control">WDAC</abbr>" inside the current working directory.</p>
+<h3 id="the-outputs-of-the-parameter">The outputs of the parameter<a class="headerlink" href="#the-outputs-of-the-parameter" title="Permanent link">&para;</a></h3>
+<p>All of the outputs are saved in an easily identified folder inside the current working directory.</p>
 <ul>
 <li>
-<p><strong><em>AllowMicrosoftPlusBlockRules.xml</em></strong>: base policy created using <a href="#new-wdacconfig--makeallowmsftwithblockrules">-MakeAllowMSFTWithBlockRules</a> parameter</p>
+<p>The base policy XML file</p>
 </li>
 <li>
-<p><strong><em>SupplementalPolicy.xml</em></strong>: The supplemental policy created using the script.</p>
+<p>The supplemental policy XML file</p>
 </li>
 <li>
-<p><strong><em>{<abbr title="Globally Unique Identifier">GUID</abbr>}.cip</em></strong>: Binary file for AllowMicrosoft Policy, ready for deployment.</p>
+<p><code>{GUID}.cip</code> Binary file for the base Policy, ready for deployment.</p>
 </li>
 <li>
-<p><strong><em>{<abbr title="Globally Unique Identifier">GUID</abbr>}.cip</em></strong>: Binary file for SupplementalPolicy policy, ready for deployment.</p>
+<p><code>{GUID}.cip</code> Binary file for the supplemental Policy, ready for deployment.</p>
 </li>
 </ul>
 <p><br></p>
@@ -4148,7 +4148,7 @@ or on
 </table>
 </div>
 <p><br></p>
-<h3 id="the-outputs-of-the-parameter-are_2">The outputs of the parameter are<a class="headerlink" href="#the-outputs-of-the-parameter-are_2" title="Permanent link">&para;</a></h3>
+<h3 id="the-outputs-of-the-parameter-are_1">The outputs of the parameter are<a class="headerlink" href="#the-outputs-of-the-parameter-are_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong><em>SignedAndReputable.xml</em></strong></li>
 <li><strong><em>{<abbr title="Globally Unique Identifier">GUID</abbr>}.cip</em></strong></li>
@@ -4169,9 +4169,10 @@ or on
 <p><br></p>
 <p>Calls the <a href="#new-wdacconfig--getblockrules">-GetBlockRules</a> parameter to get the Microsoft recommended block rules, and merges them with <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/example-wdac-base-policies"><em>DefaultWindows_Enforced policy</em></a>. The Policy uses <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-hvcioptions">strict <abbr title="Hypervisor-protected code integrity">HVCI</abbr></a> and uses the <a href="#new-wdacconfig--makeallowmsftwithblockrules">same policy rule options as -MakeAllowMSFTWithBlockRules</a> parameter.</p>
 <p><br></p>
-<ul>
-<li>Since the module uses PowerShell and not Windows PowerShell that is pre-installed in Windows, this parameter will automatically scan <code>C:\Program Files\PowerShell</code> directory (if it detects the PowerShell is not installed from Microsoft Store) and add PowerShell files to the <strong><em>DefaultWindowsPlusBlockRules.xml</em></strong> policy file so that you will be able to continue using the module after deploying the policy. The scan uses <strong><em>FilePublisher</em></strong> level and <strong><em>Hash</em></strong> fallback.</li>
-</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the module uses PowerShell and not Windows PowerShell that is pre-installed in Windows, this parameter will automatically scan <code>C:\Program Files\PowerShell</code> directory (if it detects the PowerShell is not installed from Microsoft Store) and add PowerShell files to the <strong><em>DefaultWindowsPlusBlockRules.xml</em></strong> policy file so that you will be able to continue using the module after deploying the policy. The scan uses <strong><em>FilePublisher</em></strong> level and <strong><em>Hash</em></strong> fallback.</p>
+</div>
 <h2 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h2>
 <h3 id="-deploy_7">-Deploy<a class="headerlink" href="#-deploy_7" title="Permanent link">&para;</a></h3>
 <p>Indicates that the module will automatically deploy the <strong><em>DefaultWindowsPlusBlockRules</em></strong> policy after creation.</p>
@@ -4281,7 +4282,7 @@ or on
 </table>
 </div>
 <p><br></p>
-<h3 id="the-outputs-of-the-parameter-are_3">The outputs of the parameter are<a class="headerlink" href="#the-outputs-of-the-parameter-are_3" title="Permanent link">&para;</a></h3>
+<h3 id="the-outputs-of-the-parameter-are_2">The outputs of the parameter are<a class="headerlink" href="#the-outputs-of-the-parameter-are_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong><em>DefaultWindowsPlusBlockRules.xml</em></strong> policy file</li>
 <li><strong><em>{<abbr title="Globally Unique Identifier">GUID</abbr>}.cip</em></strong> for the policy above</li>
@@ -4309,7 +4310,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-10T21:55:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-11T12:33:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-11</span>
   </span>
 
     
@@ -4329,12 +4330,11 @@ or on
   <span class="md-source-file__fact">
     <span class="md-icon" title="Contributors">
       
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
       
     </span>
     <nav>
       
-        <a href="mailto:not.committed.yet">Not Committed Yet</a>, 
         <a href="mailto:spynetgirl@outlook.com">Violet</a>
     </nav>
   </span>
