@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
     
     
       
@@ -2396,7 +2396,7 @@ most cases a PIN will be much less robust than a password.</p>
 <p>The guideline/benchmark is fundamentally flawed if it presupposes that the computer is domain-joined, despite the label indicating that it is stand-alone. It also neglects to consider that some users may actually be stand-alone (home users that account for the majority of the users) or use Microsoft Entra ID, and this policy is nonsensical for them.</p>
 <p>STIG commits the same error, as it only provides a generic Windows 11 guideline/benchmark and recommends disabling Windows Hello PIN, without taking into account the factors mentioned above.</p>
 <p>You can <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/hello-why-pin-is-better-than-password">read this Microsoft document</a> to find out why a PIN is better than an online password</p>
-<p>There are proper policies regarding anti-hammering features that can enhance the security of PINs over passwords. I utilize them in my script and <a href="https://github.com/HotCakeX/Harden-Windows-Security#lock-screen">you can find them here</a>.</p>
+<p>There are proper policies regarding anti-hammering features that can enhance the security of PINs over passwords. I utilize them in my module and <a href="https://github.com/HotCakeX/Harden-Windows-Security#lock-screen">you can find them here</a>.</p>
 <p>The benchmarks/guidelines seem to be uninformed of the fact that Windows allows <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/feature-multifactor-unlock">multi-factor unlock</a>, which can enforce a combination of PIN and biometric factors (plus more), to enforce <strong>PIN + Facial recognition</strong> OR <strong>PIN + Fingerprint</strong> etc.</p>
 <p><br></p>
 <h3 id="bad-configuration-for-early-launch-anti-malware"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30" alt="Small gif for Bad configuration for Early Launch Anti Malware section"></a> <a href="#-bad-configuration-for-early-launch-anti-malware">Bad configuration for Early Launch Anti Malware</a><a class="headerlink" href="#bad-configuration-for-early-launch-anti-malware" title="Permanent link">&para;</a></h3>
@@ -2405,7 +2405,7 @@ most cases a PIN will be much less robust than a password.</p>
 <p>The recommended state for this setting is: Enabled: Good, unknown and bad but
 critical</p>
 </blockquote>
-<p>That's not even a recommendation, that's the default value! If you use <a href="https://github.com/HotCakeX/Harden-Windows-Security#miscellaneous-configurations">Harden Windows Security script</a> it sets it to <strong>Good Only</strong>, which is the correct recommendation for a secure environment.</p>
+<p>That's not even a recommendation, that's the default value! If you use <a href="https://github.com/HotCakeX/Harden-Windows-Security#miscellaneous-configurations">Harden Windows Security module</a> it sets it to <strong>Good Only</strong>, which is the correct recommendation for a secure environment.</p>
 <p><br></p>
 <h3 id="disabling-windows-error-reporting"><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/bandage-bleed.gif" width="30" alt="Disabling Windows Error reporting"></a> <a href="#-disabling-windows-error-reporting-">Disabling Windows Error reporting !</a><a class="headerlink" href="#disabling-windows-error-reporting" title="Permanent link">&para;</a></h3>
 <p>Their rationale is:</p>
@@ -2431,8 +2431,8 @@ critical</p>
 <p>These benchmarks or guidelines have numerous flaws and I have only examined two of them. There are many other benchmarks, standards, guidelines, etc. that may also contain errors or inconsistencies and are totally <strong>unsafe</strong> to implement them.</p>
 <p><br></p>
 <h2 id="aspects-that-are-lacking"><a href="#aspects-that-are-lacking-">Aspects that are lacking</a> <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/gothwink.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/Gifs/gothwink.gif" width="50" alt="Aspects that are lacking"></a><a class="headerlink" href="#aspects-that-are-lacking" title="Permanent link">&para;</a></h2>
-<p>The benchmarks omit many new security features that the <a href="https://github.com/HotCakeX/Harden-Windows-Security">Harden Windows Security script</a> implements.</p>
-<p>Everything in the repository is carefully researched, evaluated and tested. The script ensures that nothing is redundant or incompatible with the latest version of Windows. Older versions of the OS are obsolete and insecure, and should be avoided in any environment that requires protection. Threat actors can exploit vulnerabilities and use <abbr title="Proof Of Concepts">PoCs</abbr> even on the same day that an update is released, this applies to any OS.</p>
+<p>The benchmarks omit many new security features that the <a href="https://github.com/HotCakeX/Harden-Windows-Security">Harden Windows Security module</a> implements.</p>
+<p>Everything in the repository is carefully researched, evaluated and tested. The module ensures that nothing is redundant or incompatible with the latest version of Windows. Older versions of the OS are obsolete and insecure, and should be avoided in any environment that requires protection. Threat actors can exploit vulnerabilities and use <abbr title="Proof Of Concepts">PoCs</abbr> even on the same day that an update is released, this applies to any OS.</p>
 <p>The security measures in the Harden Windows Security repository are also perfectly suitable for regular home users.</p>
 <p>There are many security measures that are missing from the benchmarks/guidelines, such as the ones I use in:</p>
 <ul>
@@ -2484,7 +2484,7 @@ critical</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-20T11:10:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-24T13:09:39+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-24</span>
   </span>
 
     
