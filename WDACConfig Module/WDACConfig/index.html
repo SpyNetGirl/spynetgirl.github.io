@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.11">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
     
     
       
@@ -2135,6 +2135,30 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#user-configurations-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Configurations Directory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Configurations Directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-temporary-files-are-stored-in-the-following-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Temporary Files Are Stored in the Following Directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#about-automatic-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       About Automatic Parameters
@@ -2257,6 +2281,30 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#user-configurations-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Configurations Directory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Configurations Directory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-temporary-files-are-stored-in-the-following-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Temporary Files Are Stored in the Following Directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#about-automatic-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       About Automatic Parameters
@@ -2367,7 +2415,7 @@ or on
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="install-the-module">Install The Module<a class="headerlink" href="#install-the-module" title="Permanent link">&para;</a></h2>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;WDACConfig&#39;</span> <span class="n">-Force</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;WDACConfig&#39;</span> <span class="n">-Scope</span> <span class="s1">&#39;AllUsers&#39;</span> <span class="n">-Force</span>
 </span></code></pre></div>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
@@ -2459,11 +2507,24 @@ or on
 </tr>
 <tr>
 <td style="text-align: center;"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Test-CiPolicy">Test-CiPolicy</a></td>
-<td style="text-align: center;">Tests a Code Integrity (<abbr title="Windows Defender Application Control">WDAC</abbr>) Policy XML file against the Schema</td>
+<td style="text-align: center;">Tests a Code Integrity (<abbr title="Windows Defender Application Control">WDAC</abbr>) Policy XML file against the Schema and shows the signers in a signed <code>.CIP</code> files</td>
 <td style="text-align: center;"><code>Get-Help Test-CiPolicy</code></td>
 </tr>
 </tbody>
 </table>
+<p><br></p>
+<p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
+<p><br></p>
+<h2 id="user-configurations-directory">User Configurations Directory<a class="headerlink" href="#user-configurations-directory" title="Permanent link">&para;</a></h2>
+<p>The module stores user configurations and all of the outputs only in the following directory:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>C:\Program Files\WDACConfig
+</span></code></pre></div>
+<p>It's an Admin-protected path that provides security against non-elevated users and processes.</p>
+<p><br></p>
+<h3 id="the-temporary-files-are-stored-in-the-following-directory">The Temporary Files Are Stored in the Following Directory<a class="headerlink" href="#the-temporary-files-are-stored-in-the-following-directory" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>C:\Program Files\WDACConfig\StagingArea
+</span></code></pre></div>
+<p>Each cmdlet of the module creates a subdirectory in the StagingArea to store its temporary files. The subdirectory is named after the cmdlet's name. At the end of the cmdlet's execution, the temporary subdirectory is deleted, unless the <code>-Debug</code> parameter is used.</p>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
@@ -2485,7 +2546,7 @@ or on
 <p>Specifying <code>-SignToolPath</code> parameter explicitly on the command line takes priority over auto detection and value in the user configurations.</p>
 </li>
 <li>
-<p>If SignTool.exe cannot be auto-detected and the user didn't specify it on the command line, you will receive a prompt to authorize the automatic download of the most recent SignTool.exe version from the official Microsoft servers. Upon confirmation, it will be saved in your user configurations and utilized by the cmdlet. The file itself will be saved in the current working directory.</p>
+<p>If SignTool.exe cannot be auto-detected and the user didn't specify it on the command line, you will receive a prompt to authorize the automatic download of the most recent SignTool.exe version from the official Microsoft servers. Upon confirmation, it will be saved in your user configurations and utilized by the cmdlet.</p>
 </li>
 </ol>
 <p><br></p>
@@ -2532,7 +2593,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-11T12:33:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-11</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-03-02T18:34:58+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-03-02</span>
   </span>
 
     
@@ -2874,7 +2935,7 @@ or on
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
