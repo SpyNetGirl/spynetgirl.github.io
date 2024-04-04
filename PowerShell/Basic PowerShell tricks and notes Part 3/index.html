@@ -1181,7 +1181,7 @@ or on
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
   
   <span class="md-ellipsis">
-    Basic PowerShell tricks and notes Part 2
+    Basic PowerShell Tricks and Notes Part 2
   </span>
   
 
@@ -1287,7 +1287,7 @@ or on
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
   
   <span class="md-ellipsis">
-    Basic PowerShell tricks and notes
+    Basic PowerShell Tricks and Notes
   </span>
   
 
@@ -2187,29 +2187,29 @@ or on
 
 
 <h1 id="basic-powershell-tricks-and-notes-part-3">Basic PowerShell Tricks and Notes Part 3<a class="headerlink" href="#basic-powershell-tricks-and-notes-part-3" title="Permanent link">&para;</a></h1>
-<p>This page is part 3 of the <strong>Basic PowerShell tricks and notes</strong> series.</p>
-<ul>
-<li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Basic-PowerShell-tricks-and-notes">part 1 here</a></li>
-<li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Basic-PowerShell-tricks-and-notes-Part-2">part 2 here</a></li>
-</ul>
-<p>Designed for beginners and newcomers to PowerShell who want to quickly learn the essential basics, the most frequently used syntaxes, elements and tricks. It should help you jump start your journey as a PowerShell user.</p>
+<p>This page is designed for beginners and newcomers to PowerShell who want to quickly learn the essential basics, the most frequently used syntaxes, elements and and tricks. It should help you jump start your journey as a PowerShell user.</p>
 <p>The main source for learning PowerShell is Microsoft Learn websites. There are extensive and complete guides about each command/cmdlet with examples.</p>
-<p><a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/?view=powershell-7.4">PowerShell core at Microsoft Learn</a></p>
-<p><strong>Also Use Bing Chat for your PowerShell questions. The AI is fantastic at creating code and explaining everything.</strong></p>
+<p><a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/">PowerShell core at Microsoft Learn</a></p>
+<p>You can also use the Windows Copilot for asking any PowerShell related questions, code examples etc.</p>
+<p>This is part 3 of this series, find other parts here:</p>
+<ul>
+<li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Basic-PowerShell-tricks-and-notes">Part 1</a></li>
+<li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Basic-PowerShell-Tricks-and-Notes-Part-2">Part 2</a></li>
+</ul>
 <p><br></p>
 <h2 id="how-to-get-unique-items-from-a-list-of-objects-based-on-a-specific-property-only">How to Get Unique Items From a List of Objects Based on a Specific Property Only<a class="headerlink" href="#how-to-get-unique-items-from-a-list-of-objects-based-on-a-specific-property-only" title="Permanent link">&para;</a></h2>
 <p>Let's create some dummy data first</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># Create an array of 10 objects with 4 properties each</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$objects</span> <span class="p">=</span> <span class="p">@()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$Objects</span> <span class="p">=</span> <span class="p">@()</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">1</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-le</span> <span class="n">10</span><span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nv">$object</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">PSObject</span> <span class="n">-Property</span> <span class="p">@{</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="s2">&quot;Name&quot;</span> <span class="p">=</span> <span class="s2">&quot;Person$i&quot;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="s2">&quot;Age&quot;</span> <span class="p">=</span> <span class="nb">Get-Random</span> <span class="n">-Minimum</span> <span class="n">20</span> <span class="n">-Maximum</span> <span class="n">40</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="s2">&quot;Gender&quot;</span> <span class="p">=</span> <span class="nb">Get-Random</span> <span class="n">-InputObject</span> <span class="p">@(</span><span class="s2">&quot;Male&quot;</span><span class="p">,</span> <span class="s2">&quot;Female&quot;</span><span class="p">)</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="s2">&quot;Occupation&quot;</span> <span class="p">=</span> <span class="nb">Get-Random</span> <span class="n">-InputObject</span> <span class="p">@(</span><span class="s2">&quot;Teacher&quot;</span><span class="p">,</span> <span class="s2">&quot;Engineer&quot;</span><span class="p">,</span> <span class="s2">&quot;Doctor&quot;</span><span class="p">,</span> <span class="s2">&quot;Lawyer&quot;</span><span class="p">,</span> <span class="s2">&quot;Journalist&quot;</span><span class="p">,</span> <span class="s2">&quot;Chef&quot;</span><span class="p">,</span> <span class="s2">&quot;Artist&quot;</span><span class="p">,</span> <span class="s2">&quot;Writer&quot;</span><span class="p">,</span> <span class="s2">&quot;Student&quot;</span><span class="p">,</span> <span class="s2">&quot;Manager&quot;</span><span class="p">)</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="s2">&quot;RandomNumber&quot;</span> <span class="p">=</span> <span class="nb">Get-Random</span> <span class="n">-InputObject</span> <span class="p">@(</span><span class="s2">&quot;694646152&quot;</span><span class="p">,</span><span class="s2">&quot;9846152&quot;</span><span class="p">,</span><span class="s2">&quot;3153546&quot;</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nv">$Object</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">PSObject</span> <span class="n">-Property</span> <span class="p">@{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="s1">&#39;Name&#39;</span>         <span class="p">=</span> <span class="s2">&quot;Person$i&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="s1">&#39;Age&#39;</span>          <span class="p">=</span> <span class="nb">Get-Random</span> <span class="n">-Minimum</span> <span class="n">20</span> <span class="n">-Maximum</span> <span class="n">40</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="s1">&#39;Gender&#39;</span>       <span class="p">=</span> <span class="nb">Get-Random</span> <span class="n">-InputObject</span> <span class="p">@(</span><span class="s1">&#39;Male&#39;</span><span class="p">,</span> <span class="s1">&#39;Female&#39;</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="s1">&#39;Occupation&#39;</span>   <span class="p">=</span> <span class="nb">Get-Random</span> <span class="n">-InputObject</span> <span class="p">@(</span><span class="s1">&#39;Teacher&#39;</span><span class="p">,</span> <span class="s1">&#39;Engineer&#39;</span><span class="p">,</span> <span class="s1">&#39;Doctor&#39;</span><span class="p">,</span> <span class="s1">&#39;Lawyer&#39;</span><span class="p">,</span> <span class="s1">&#39;Journalist&#39;</span><span class="p">,</span> <span class="s1">&#39;Chef&#39;</span><span class="p">,</span> <span class="s1">&#39;Artist&#39;</span><span class="p">,</span> <span class="s1">&#39;Writer&#39;</span><span class="p">,</span> <span class="s1">&#39;Student&#39;</span><span class="p">,</span> <span class="s1">&#39;Manager&#39;</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="s1">&#39;RandomNumber&#39;</span> <span class="p">=</span> <span class="nb">Get-Random</span> <span class="n">-InputObject</span> <span class="p">@(</span><span class="s1">&#39;694646152&#39;</span><span class="p">,</span> <span class="s1">&#39;9846152&#39;</span><span class="p">,</span> <span class="s1">&#39;3153546&#39;</span><span class="p">)</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="nv">$objects</span> <span class="p">+=</span> <span class="nv">$object</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="nv">$Objects</span> <span class="p">+=</span> <span class="nv">$Object</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Then we can display that data like this in a table</p>
@@ -2218,7 +2218,7 @@ or on
 <p><br></p>
 <p>Now we want to filter the result to get the unique values, but the uniqueness should be based on a specific property, which here is "RandomNumber". We don't want more than 1 object with the same "RandomNumber" property.</p>
 <p>To do that, we use this method in PowerShell</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$objects</span> <span class="p">|</span> <span class="nb">Group-Object</span> <span class="n">-Property</span> <span class="n">RandomNumber</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Group</span><span class="p">[</span><span class="n">0</span><span class="p">]</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">-AutoSize</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$Objects</span> <span class="p">|</span> <span class="nb">Group-Object</span> <span class="n">-Property</span> <span class="n">RandomNumber</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="n">-Process</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Group</span><span class="p">[</span><span class="n">0</span><span class="p">]</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">-AutoSize</span>
 </span></code></pre></div>
 <p><br></p>
 <p>You can use the Group-Object cmdlet to group the objects by the property you want to filter, and then select the first object from each group. This way, you will get one object for each "RandomNumber" property <strong><em>with all the properties intact.</em></strong> Using other methods such as <code>Get-Unique</code> or <code>Select-Object -Unique</code> won't work in this particular case.</p>
@@ -2227,7 +2227,7 @@ or on
 <h2 id="install-big-powershell-modules-system-wide">Install Big Powershell Modules System Wide<a class="headerlink" href="#install-big-powershell-modules-system-wide" title="Permanent link">&para;</a></h2>
 <p>Modules such as <a href="https://www.powershellgallery.com/packages/AZ/">Az</a> or <a href="https://www.powershellgallery.com/packages/Microsoft.Graph.Beta/">Microsoft.Graph.Beta</a> are big, can have thousands of files and take more than 1GB space after installation.</p>
 <p>By default modules are installed in the Documents directory and when you use OneDrive, everything in there is synced automatically.</p>
-<p>You can install such modules system wide so that they won't be stored in the <code>Documents\PowerShell</code> directory and instead will be stored in <code>C:\Program Files\PowerShell\Modules</code> (for PowerShell core). This will also improve security since Administrator privileges will be required to change module files.</p>
+<p>You can install such modules system wide so that they won't be stored in the <code>Documents\PowerShell</code> directory and instead will be stored in <code>C:\Program Files\PowerShell\Modules</code> (for PowerShell core). This will also improve security since Administrator privileges will be required to change module files in that directory.</p>
 <p>To do this, you need to use the <code>-Scope AllUsers</code> parameter.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Install-Module</span> <span class="n">Az</span> <span class="n">-Scope</span> <span class="n">AllUsers</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
@@ -2259,7 +2259,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-20T11:10:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-04-04T21:09:18+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-04-04</span>
   </span>
 
     
@@ -2342,7 +2342,7 @@ or on
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../Basic%20PowerShell%20tricks%20and%20notes%20Part%202/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basic PowerShell tricks and notes Part 2">
+          <a href="../Basic%20PowerShell%20tricks%20and%20notes%20Part%202/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Basic PowerShell Tricks and Notes Part 2">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -2352,20 +2352,20 @@ or on
                 Previous
               </span>
               <div class="md-ellipsis">
-                Basic PowerShell tricks and notes Part 2
+                Basic PowerShell Tricks and Notes Part 2
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Basic%20PowerShell%20tricks%20and%20notes/" class="md-footer__link md-footer__link--next" aria-label="Next: Basic PowerShell tricks and notes">
+          <a href="../Basic%20PowerShell%20tricks%20and%20notes/" class="md-footer__link md-footer__link--next" aria-label="Next: Basic PowerShell Tricks and Notes">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Basic PowerShell tricks and notes
+                Basic PowerShell Tricks and Notes
               </div>
             </div>
             <div class="md-footer__button md-icon">

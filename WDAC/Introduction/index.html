@@ -1178,7 +1178,7 @@ or on
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
   
   <span class="md-ellipsis">
-    Basic PowerShell tricks and notes Part 2
+    Basic PowerShell Tricks and Notes Part 2
   </span>
   
 
@@ -1224,7 +1224,7 @@ or on
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
   
   <span class="md-ellipsis">
-    Basic PowerShell tricks and notes
+    Basic PowerShell Tricks and Notes
   </span>
   
 
@@ -1444,27 +1444,27 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#my-wdacconfig-module" class="md-nav__link">
+  <a href="#wdacconfig-module" class="md-nav__link">
     <span class="md-ellipsis">
-      My WDACConfig Module
+      WDACConfig Module
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#wdac-usage-levels" class="md-nav__link">
+  <a href="#application-control-usage-levels" class="md-nav__link">
     <span class="md-ellipsis">
-      WDAC usage levels
+      Application Control Usage Levels
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#methods-we-can-use-to-create-a-wdac-policy" class="md-nav__link">
+  <a href="#methods-we-can-use-to-create-an-application-control-policy-wdac" class="md-nav__link">
     <span class="md-ellipsis">
-      Methods we can use to create a WDAC policy
+      Methods we can use to create an Application Control policy (WDAC)
     </span>
   </a>
   
@@ -2251,27 +2251,27 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#my-wdacconfig-module" class="md-nav__link">
+  <a href="#wdacconfig-module" class="md-nav__link">
     <span class="md-ellipsis">
-      My WDACConfig Module
+      WDACConfig Module
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#wdac-usage-levels" class="md-nav__link">
+  <a href="#application-control-usage-levels" class="md-nav__link">
     <span class="md-ellipsis">
-      WDAC usage levels
+      Application Control Usage Levels
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#methods-we-can-use-to-create-a-wdac-policy" class="md-nav__link">
+  <a href="#methods-we-can-use-to-create-an-application-control-policy-wdac" class="md-nav__link">
     <span class="md-ellipsis">
-      Methods we can use to create a WDAC policy
+      Methods we can use to create an Application Control policy (WDAC)
     </span>
   </a>
   
@@ -2338,45 +2338,49 @@ or on
 
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <h1 id="what-is-windows-defender-application-control">What is Windows Defender Application Control?<a class="headerlink" href="#what-is-windows-defender-application-control" title="Permanent link">&para;</a></h1>
-<p>Application control is a crucial line of defense for protecting enterprises given today's threat landscape, and it has an inherent advantage over traditional antivirus solutions. Specifically, application control moves away from an application trust model where all applications are assumed trustworthy to one where applications must earn trust in order to run.</p>
-<p>Devices where Windows Defender Application control (<abbr title="Windows Defender Application Control">WDAC</abbr>) policies are deployed on can either be centrally managed via <abbr title="Mobile device management">MDM</abbr>, Intune etc. or they can be home devices, devices that are private and don't belong to any organization, the computer of someone that you want to keep 100% safe and secure <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control">so that even the device's owner can't willingly or forcefully compromise themselves,</a> the possibilities are endless.</p>
+<p>Application control is a crucial line of defense for protecting computer systems given today's threat landscape, and it has an inherent advantage over traditional antivirus solutions. Specifically, application control moves away from an application trust model where all applications are assumed trustworthy to one where applications must earn trust in order to run.</p>
+<p>Devices where Windows Defender Application control (<abbr title="Windows Defender Application Control">WDAC</abbr>) policies are deployed on can either be centrally managed via <abbr title="Mobile device management">MDM</abbr>, Intune etc. or they can be home devices, devices that are private and don't belong to any organization, the computer of someone that you want to keep very much safe and secure <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control">so that even the device's owner can't willingly or forcefully compromise themselves,</a> the possibilities are endless.</p>
+<p><br></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The WDACConfig module is a one-stop shop for all your Application Control (<abbr title="Windows Defender Application Control">WDAC</abbr>) needs. It is scalable, easy to use, enterprise-ready, Azure VM ready and more importantly, it is free and always will be. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig"><strong>Check it out here</strong></a></p>
+</div>
 <p><br></p>
 <h2 id="windows-defender-application-control-wdac-wiki-posts">Windows Defender Application Control (<abbr title="Windows Defender Application Control">WDAC</abbr>) wiki posts<a class="headerlink" href="#windows-defender-application-control-wdac-wiki-posts" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Introduction">Introduction</a></li>
-<li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig"><strong>WDACConfig</strong> Module</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Lightly-Managed-Devices"><abbr title="Windows Defender Application Control">WDAC</abbr> for Lightly managed device</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Fully-Managed-Devices"><abbr title="Windows Defender Application Control">WDAC</abbr> for Fully managed device - Variant 1</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Fully-Managed-Devices--Variant-2"><abbr title="Windows Defender Application Control">WDAC</abbr> for Fully managed device - Variant 2</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-Fully-managed-device---Variant-3"><abbr title="Windows Defender Application Control">WDAC</abbr> for Fully managed device - Variant 3</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-Fully-managed-device---Variant-4"><abbr title="Windows Defender Application Control">WDAC</abbr> for Fully managed device - Variant 4</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-Notes"><abbr title="Windows Defender Application Control">WDAC</abbr> Notes</a></li>
-<li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control"><strong>How to Create and Deploy a Signed <abbr title="Windows Defender Application Control">WDAC</abbr> Policy</strong></a></li>
+<li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control">How to Create and Deploy a Signed <abbr title="Windows Defender Application Control">WDAC</abbr> Policy</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Fast-and-Automatic-Microsoft-Recommended-Driver-Block-Rules-updates">Fast and Automatic Microsoft Recommended Driver Block Rules updates</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection"><abbr title="Windows Defender Application Control">WDAC</abbr> policy for <abbr title="Bring Your Own Vulnerable Driver">BYOVD</abbr> Kernel mode only protection</a></li>
 </ul>
 <p><br></p>
-<h2 id="my-wdacconfig-module"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig">My WDACConfig Module</a><a class="headerlink" href="#my-wdacconfig-module" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig"><strong>WDACConfig</strong></a> is an advanced PowerShell module designed with the aim of automating <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/wdac">Application and File whitelisting in Windows</a> using Windows Defender Application Control. Install it from <a href="https://www.powershellgallery.com/packages/WDACConfig/">PowerShell gallery</a>.</p>
+<h2 id="wdacconfig-module">WDACConfig Module<a class="headerlink" href="#wdacconfig-module" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig"><strong>WDACConfig</strong></a> is an advanced PowerShell module designed with the aim of automating <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/wdac">Application and File whitelisting in Windows</a> using Windows Defender Application Control. It is available in <a href="https://www.powershellgallery.com/packages/WDACConfig/">PowerShell gallery</a>.</p>
 <p><br></p>
-<h2 id="wdac-usage-levels"><abbr title="Windows Defender Application Control">WDAC</abbr> usage levels<a class="headerlink" href="#wdac-usage-levels" title="Permanent link">&para;</a></h2>
-<p>There are many ways you can utilize <abbr title="Windows Defender Application Control">WDAC</abbr> features and here they are sorted by the level of restriction and protection they provide; From top (having the least restriction and protection) to bottom (having the most restriction and protection).</p>
+<h2 id="application-control-usage-levels">Application Control Usage Levels<a class="headerlink" href="#application-control-usage-levels" title="Permanent link">&para;</a></h2>
+<p>There are many ways you can utilize Application Control features and here they are sorted by the level of restriction and protection they provide; From top (having the least restriction and protection) to bottom (having the most restriction and protection).</p>
 <ol>
 <li>
 <p>Use Microsoft recommended driver block rules.</p>
 <ul>
-<li><strong>No user action required</strong>. Starting with Windows 11 2022 update, the vulnerable driver blocklist is enabled by default for all devices, using <abbr title="Hypervisor-protected code integrity">HVCI</abbr> or Memory Integrity.</li>
+<li><strong>No user action required</strong>; The vulnerable driver blocklist is enabled by default for all devices using <abbr title="Hypervisor-protected code integrity">HVCI</abbr> or Memory Integrity.</li>
 <li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules">The built-in driver blocklist is updated with each new major release of Windows, typically 1-2 times per year.</a></li>
 </ul>
 </li>
 <li>
-<p>Update Microsoft recommended driver block rules <strong>outside of the twice a year schedule.</strong></p>
+<p>Update Microsoft recommended driver block rules outside of the twice a year schedule.</p>
 <ul>
-<li>The drivers block list itself <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/commits/public/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules.md">is updated more frequently</a> than twice a year schedule, <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Fast-and-Automatic-Microsoft-Recommended-Driver-Block-Rules-updates">use my <abbr title="Windows Defender Application Control">WDAC</abbr> Module to download and apply them regularly and <strong><em>automatically</em></strong>.</a></li>
+<li>The drivers block list itself <a href="https://github.com/MicrosoftDocs/windows-itpro-docs/commits/public/windows/security/application-security/application-control/windows-defender-application-control/design/microsoft-recommended-driver-block-rules.md">is updated more frequently</a> than twice a year schedule, <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Fast-and-Automatic-Microsoft-Recommended-Driver-Block-Rules-updates">use the WDACConfig Module to setup a scheduled task that keeps the list up-to-date.</a></li>
 </ul>
 </li>
-<li>Use Microsoft recommended block rules PLUS Recommended driver block rules<ul>
-<li><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/applications-that-can-bypass-wdac">The <abbr title="Windows Defender Application Control">WDAC</abbr> XML policy content is provided here</a>, copy them, create a new XML file and paste the content in it and save it. <a href="https://learn.microsoft.com/en-us/powershell/module/configci/set-cipolicyidinfo?view=windowsserver2022-ps#-resetpolicyid">Reset its policy ID and convert it to multiple policy format</a>. <a href="https://docs.microsoft.com/en-us/powershell/module/configci/convertfrom-cipolicy">Convert it to <code>.cip</code> policy binary</a> and then <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/operations/citool-commands#deploy-a-wdac-policy">deploy it</a>. Keep it up to date by regularly repeating this.</li>
+<li>Use Microsoft recommended block rules + Recommended driver block rules<ul>
+<li>Use the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--getblockrules">WDACConfig Module</a> to easily deploy the User-Mode Microsoft recommended block rules on your system.</li>
 </ul>
 </li>
 <li>Create <abbr title="Windows Defender Application Control">WDAC</abbr> policy for <strong>Lightly managed devices</strong><ul>
@@ -2389,8 +2393,9 @@ or on
 <li>It uses both of Microsoft's recommended block rules.</li>
 </ul>
 </li>
+<li>Use Smart App Control + <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New%E2%80%90KernelModeWDACConfig">Strict Kernel-Mode <abbr title="Windows Defender Application Control">WDAC</abbr> Policy</a></li>
 <li>Create <abbr title="Windows Defender Application Control">WDAC</abbr> policy for <strong>Fully managed devices</strong><ul>
-<li>The following scenarios <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/How-to-Create-and-Deploy-a-Signed-WDAC-Policy-Windows-Defender-Application-Control">provide the highest protection</a> against any threats from any sources when cryptographically signed and deployed and properly configured.</li>
+<li>The following scenarios provide the highest protection against any threats from any sources when cryptographically signed and deployed and properly configured.</li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Fully-Managed-Devices"><abbr title="Windows Defender Application Control">WDAC</abbr> for Fully managed device - Variant 1</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-for-Fully-Managed-Devices--Variant-2"><abbr title="Windows Defender Application Control">WDAC</abbr> for Fully managed device - Variant 2</a></li>
 <li><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-Fully-managed-device---Variant-3"><abbr title="Windows Defender Application Control">WDAC</abbr> for Fully managed device - Variant 3</a></li>
@@ -2402,10 +2407,10 @@ or on
 </li>
 </ol>
 <p><br></p>
-<h2 id="methods-we-can-use-to-create-a-wdac-policy">Methods we can use to create a <abbr title="Windows Defender Application Control">WDAC</abbr> policy<a class="headerlink" href="#methods-we-can-use-to-create-a-wdac-policy" title="Permanent link">&para;</a></h2>
+<h2 id="methods-we-can-use-to-create-an-application-control-policy-wdac">Methods we can use to create an Application Control policy (<abbr title="Windows Defender Application Control">WDAC</abbr>)<a class="headerlink" href="#methods-we-can-use-to-create-an-application-control-policy-wdac" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Using <a href="https://learn.microsoft.com/en-us/powershell/module/configci">PowerShell cmdlets</a></li>
-<li>Using <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig">WDACConfig PowerShell module</a></li>
+<li>Using <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig">WDACConfig PowerShell module</a> - <strong>Recommended</strong></li>
 <li>Using <a href="https://webapp-wdac-wizard.azurewebsites.net/"><abbr title="Windows Defender Application Control">WDAC</abbr> Policy Wizard</a></li>
 </ul>
 <p><br></p>
@@ -2468,7 +2473,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-20T11:10:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-04-04T21:09:18+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-04-04</span>
   </span>
 
     
@@ -2488,11 +2493,12 @@ or on
   <span class="md-source-file__fact">
     <span class="md-icon" title="Contributors">
       
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
       
     </span>
     <nav>
       
+        <a href="mailto:not.committed.yet">Not Committed Yet</a>, 
         <a href="mailto:spynetgirl@outlook.com">Violet</a>
     </nav>
   </span>
