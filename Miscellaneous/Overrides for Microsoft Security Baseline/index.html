@@ -2514,12 +2514,15 @@ Computer Configuration -&gt; Windows Settings -&gt; Security Settings -&gt; Wind
 <p><br></p>
 <h2 id="7-enable-the-xblgamesave-standby-task">7. Enable the XblGameSave Standby Task<a class="headerlink" href="#7-enable-the-xblgamesave-standby-task" title="Permanent link">&para;</a></h2>
 <p>The scheduled task is disabled as a result of applying the Microsoft Security Baselines. Using the optional overrides, it will be enabled and its status will be set back to the default state. The task syncs Xbox game saves on PC.</p>
+<p>PowerShell command</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">SCHTASKS</span><span class="p">.</span><span class="n">EXE</span> <span class="p">/</span><span class="n">Change</span> <span class="p">/</span><span class="n">TN</span> <span class="p">\</span><span class="n">Microsoft</span><span class="p">\</span><span class="n">XblGameSave</span><span class="p">\</span><span class="n">XblGameSaveTask</span> <span class="p">/</span><span class="n">Enable</span>
+</span></code></pre></div>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="8-enable-microsoft-defender-exclusion-lists-to-be-visible-to-local-admins">8. Enable Microsoft Defender exclusion lists to be visible to Local Admins<a class="headerlink" href="#8-enable-microsoft-defender-exclusion-lists-to-be-visible-to-local-admins" title="Permanent link">&para;</a></h2>
 <p>This <a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/defender-csp#configurationhideexclusionsfromlocaladmins">policy</a> is located in the following Group Policy path</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Computer Configuration\Administrative Templates\Windows Components\Microsoft Defender Antivirus\Control whether or not exclusions are visible to Local Admins
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Computer Configuration\Administrative Templates\Windows Components\Microsoft Defender Antivirus\Control whether or not exclusions are visible to Local Admins
 </span></code></pre></div>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
@@ -2527,21 +2530,21 @@ Computer Configuration -&gt; Windows Settings -&gt; Security Settings -&gt; Wind
 <h2 id="9-disabled-turn-off-microsoft-consumer-experiences">9. Disabled "Turn off Microsoft Consumer Experiences"<a class="headerlink" href="#9-disabled-turn-off-microsoft-consumer-experiences" title="Permanent link">&para;</a></h2>
 <p>It disables some important features in Windows Settings -&gt; Bluetooth &amp; Devices -&gt; Mobile Devices</p>
 <p>More info in this <a href="https://github.com/HotCakeX/Harden-Windows-Security/pull/207">PR</a></p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Computer Configuration\Administrative Templates\Windows Components\Cloud Content
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Computer Configuration\Administrative Templates\Windows Components\Cloud Content
 </span></code></pre></div>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="10-disabled-configure-password-backup-directory">10. Disabled "Configure password backup directory"<a class="headerlink" href="#10-disabled-configure-password-backup-directory" title="Permanent link">&para;</a></h2>
 <p>Microsoft Security Baselines set its value to "Active Directory", but since the Harden Windows Security module does not apply to computers managed by domain controllers or Entra ID, there is no need for this policy to be active.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Computer Configuration\Administrative Templates\System\LAPS
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Computer Configuration\Administrative Templates\System\LAPS
 </span></code></pre></div>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="11-enabled-apply-uac-restrictions-to-local-accounts-on-network-logons">11. Enabled "Apply UAC restrictions to local accounts on network logons"<a class="headerlink" href="#11-enabled-apply-uac-restrictions-to-local-accounts-on-network-logons" title="Permanent link">&para;</a></h2>
 <p>A <a href="https://learn.microsoft.com/en-US/troubleshoot/windows-server/windows-security/user-account-control-and-remote-restriction">Security feature</a> that is enabled by default and should stay enabled.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Computer Configuration\Administrative Templates\MS Security Guide
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Computer Configuration\Administrative Templates\MS Security Guide
 </span></code></pre></div>
 <p><br></p>
 
@@ -2566,7 +2569,7 @@ Computer Configuration -&gt; Windows Settings -&gt; Security Settings -&gt; Wind
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-24T13:09:39+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-04-21T21:01:39+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-04-21</span>
   </span>
 
     
