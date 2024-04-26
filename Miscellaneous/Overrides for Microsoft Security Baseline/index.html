@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.19">
     
     
       
@@ -948,7 +948,7 @@ or on
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
   
   <span class="md-ellipsis">
-    Device Guard<a href="#device-guard"></a>
+    Device GuardDeviceGuardIcon
   </span>
   
 
@@ -2475,15 +2475,14 @@ If the setting is enabled or not configured, then Recording and Broadcasting (st
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
 <h2 id="3-firewall-local-rule-merging">3. Firewall local rule merging<a class="headerlink" href="#3-firewall-local-rule-merging" title="Permanent link">&para;</a></h2>
-<p>This can prevent Hyper-V default switch from working properly, please see <a href="https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-with-hyper-v-default-switch/m-p/2622890">this forum post on Microsoft Tech Community</a> for more info:</p>
-<p>The Group policy that we change back to default values are located in:
-Computer Configuration -&gt; Windows Settings -&gt; Security Settings -&gt; Windows Firewall with Advanced Security -&gt; Windows Firewall with Advanced Security -&gt; Windows Firewall Properties -&gt; Public Profile Tab -&gt; Settings (select Customize) -&gt; Rule merging, "Apply local connection security rules:" to "No".</p>
-<p>Here is a screenshot:</p>
-<p><br></p>
-<p><a class="glightbox" href="https://user-images.githubusercontent.com/118815227/214886150-0acca5b6-5e38-49c4-b0ef-99b1eb832f4f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Firewall" src="https://user-images.githubusercontent.com/118815227/214886150-0acca5b6-5e38-49c4-b0ef-99b1eb832f4f.png" /></a></p>
-<p>Policy path:</p>
+<p>This can prevent Hyper-V default switch from working properly, please see <a href="https://techcommunity.microsoft.com/t5/microsoft-security-baselines/security-baseline-with-hyper-v-default-switch/m-p/2622890">this forum post on Microsoft Tech Community</a> for more info.</p>
+<p>The Group policies that we change back to default values are located in:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Computer Configuration\Windows Settings\Security Settings\Windows Defender Firewall with Advanced Security\
 </span></code></pre></div>
+<p>From there you need to select <strong><em>properties</em></strong> and then in each relevant profile tab, you need to select <strong><em>Customize</em></strong> and change the 2 settings for <strong><em>Rule merging</em></strong> to <strong><em>Yes (Default)</em></strong> and also set <strong><em>Display a notification</em></strong> to <strong><em>Yes</em></strong>, which is the default value in Windows.</p>
+<p>Here is an screenshot of the settings for the Public Profile tab:</p>
+<p><br></p>
+<p><a class="glightbox" href="https://user-images.githubusercontent.com/118815227/214886150-0acca5b6-5e38-49c4-b0ef-99b1eb832f4f.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Firewall" src="https://user-images.githubusercontent.com/118815227/214886150-0acca5b6-5e38-49c4-b0ef-99b1eb832f4f.png" /></a></p>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
@@ -2569,7 +2568,7 @@ Computer Configuration -&gt; Windows Settings -&gt; Security Settings -&gt; Wind
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-04-21T21:01:39+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-04-21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-04-26T10:20:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-04-26</span>
   </span>
 
     
@@ -2923,7 +2922,7 @@ Computer Configuration -&gt; Windows Settings -&gt; Security Settings -&gt; Wind
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dd8806f2.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
