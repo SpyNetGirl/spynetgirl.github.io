@@ -1605,6 +1605,15 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#strict-kernel-mode-code-integrity-policy-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strict Kernel Mode Code Integrity Policy Scenario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#feedback-and-support" class="md-nav__link">
     <span class="md-ellipsis">
       Feedback and Support
@@ -2466,6 +2475,15 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#strict-kernel-mode-code-integrity-policy-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Strict Kernel Mode Code Integrity Policy Scenario
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#feedback-and-support" class="md-nav__link">
     <span class="md-ellipsis">
       Feedback and Support
@@ -2499,7 +2517,7 @@ or on
 <p><br></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can access Intune portal by navigating to: https://intune.microsoft.com</p>
+<p>You can access Intune portal by navigating to: <a href="https://intune.microsoft.com">https://intune.microsoft.com</a></p>
 </div>
 <p><br></p>
 <h2 id="preparing-the-code-integrity-and-applocker-data">Preparing the Code Integrity and AppLocker Data<a class="headerlink" href="#preparing-the-code-integrity-and-applocker-data" title="Permanent link">&para;</a></h2>
@@ -2515,8 +2533,8 @@ or on
 <p><br></p>
 <p>Please refer to <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig">this document</a> for further info about the commands.</p>
 <p>You will then use Intune to deploy the generated policies to as many endpoints as you want.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p><a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/deployment/deploy-wdac-policies-using-intune">Deploy <abbr title="Windows Defender Application Control">WDAC</abbr> policies using Mobile Device Management (<abbr title="Mobile device management">MDM</abbr>)</a></p>
 </div>
 <p><br></p>
@@ -2530,7 +2548,7 @@ or on
 <p><br></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can access Microsoft Defender for Endpoint's portal by navigating to: https://security.microsoft.com</p>
+<p>You can access Microsoft Defender for Endpoint's portal by navigating to: <a href="https://security.microsoft.com">https://security.microsoft.com</a></p>
 </div>
 <p><br></p>
 <p>That query generates a standard output of the data in CSV file format which is compatible with what the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig">WDACConfig module</a> requires in order to generate <abbr title="Windows Defender Application Control">WDAC</abbr> policies. If you want to customize the query further, make sure the subsequent filters are applied after the initial query to ensure correct data format.</p>
@@ -2547,10 +2565,10 @@ or on
 </div>
 <p><br></p>
 <h2 id="generating-the-wdac-policies">Generating the <abbr title="Windows Defender Application Control">WDAC</abbr> Policies<a class="headerlink" href="#generating-the-wdac-policies" title="Permanent link">&para;</a></h2>
-<p>After exporting the data from MDE Advanced Hunting, we can use the WDACConfig module to generate <abbr title="Windows Defender Application Control">WDAC</abbr> policies. We need to feed the CSV file(s) we collected MDE Advanced Hunting data into the module like so:</p>
+<p>After exporting the data from MDE Advanced Hunting, we can use the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig"><strong>WDACConfig module</strong></a> to generate <abbr title="Windows Defender Application Control">WDAC</abbr> policies. We need to feed the CSV file(s) we collected MDE Advanced Hunting data into the module like so:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">ConvertTo-WDACPolicy</span> <span class="n">-Source</span> <span class="n">MDEAdvancedHunting</span> <span class="n">-MDEAHLogs</span> <span class="p">&lt;</span><span class="n">Path</span> <span class="n">to</span> <span class="n">one</span> <span class="n">or</span> <span class="n">more</span> <span class="n">CSV</span> <span class="n">files</span><span class="p">&gt;</span> <span class="n">-BasePolicyGUID</span> <span class="p">&lt;</span><span class="n">Base</span> <span class="n">policy</span> <span class="n">GUID</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<p>It is only one example of how you can utilize the WDACConfig for policy generation based on MDE AH data, for more information about the cmdlet please refer to its <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/ConvertTo-WDACPolicy">documentations available here</a>.</p>
+<p>It is only one example of how you can utilize the WDACConfig for policy generation based on MDE AH data, for more information about the cmdlet please refer to its <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/ConvertTo-WDACPolicy"><strong>documentations available here</strong></a>.</p>
 <p>The command we used above will process the CSV file(s) and open a GUI window where you can filter the logs based on many criteria, and then either select all or only select some of the logs to be included in the <abbr title="Windows Defender Application Control">WDAC</abbr> policy.</p>
 <p>Note that the generated policy will be a Supplemental policy.</p>
 <p><br></p>
@@ -2602,6 +2620,10 @@ or on
 <p><a href="https://learn.microsoft.com/en-us/windows/client-management/mdm/applicationcontrol-csp">ApplicationControl CSP</a></p>
 </div>
 <p><br></p>
+<h2 id="strict-kernel-mode-code-integrity-policy-scenario">Strict Kernel Mode Code Integrity Policy Scenario<a class="headerlink" href="#strict-kernel-mode-code-integrity-policy-scenario" title="Permanent link">&para;</a></h2>
+<p>I've created a scenario where you can strictly control what is allowed to run in Kernel mode, without blocking any user mode applications. <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-policy-for-BYOVD-Kernel-mode-only-protection"><strong>You can read all about this scenario in here</strong></a>. Using the WDACConfig module and MDE Advanced Hunting intel, you can deploy this scenario across your entire fleet of endpoints.</p>
+<p>This approach demands very minimal upkeep as it exclusively manages Kernel-mode activities, yet it offers an exceptional degree of security. A significant benefit of this method is the safeguarding of your endpoints from all Bring Your Own Vulnerable Driver (<abbr title="Bring Your Own Vulnerable Driver">BYOVD</abbr>) threats.</p>
+<p><br></p>
 <h2 id="feedback-and-support">Feedback and Support<a class="headerlink" href="#feedback-and-support" title="Permanent link">&para;</a></h2>
 <p>If you have any questions, feature requests or feedback regarding this guide or the WDACConfig module, please feel free to reach out to me on GitHub by opening a new issue or discussion.</p>
 <p><br></p>
@@ -2632,7 +2654,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-04-29T08:36:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-04-29</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-04-30T13:03:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-04-30</span>
   </span>
 
     
