@@ -1311,6 +1311,15 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-fastest-way-to-enumerate-all-files-in-directories-based-on-specific-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Fastest Way To Enumerate All Files In Directories Based On Specific Extensions
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2444,6 +2453,15 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#the-fastest-way-to-enumerate-all-files-in-directories-based-on-specific-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Fastest Way To Enumerate All Files In Directories Based On Specific Extensions
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2524,6 +2542,82 @@ or on
 <p>Any PowerShell code at some point will run and be in a ScriptBlock. Functions are their own ScriptBlock, modules (.psm1 files) are their own ScriptBlock, script files (.ps1 files) are their own ScriptBlock, ScriptBlocks themselves are their own ScriptBlock and so on.</p>
 <p>So the presence of the above methods and commands inside a ScriptBlock in the context explained above will disable optimization in that ScriptBlock, you can however use them outside of the ScriptBlock and then utilize them inside which <strong>will not</strong> disable optimization in that ScriptBlock.</p>
 <p><br></p>
+<h2 id="the-fastest-way-to-enumerate-all-files-in-directories-based-on-specific-extensions">The Fastest Way To Enumerate All Files In Directories Based On Specific Extensions<a class="headerlink" href="#the-fastest-way-to-enumerate-all-files-in-directories-based-on-specific-extensions" title="Permanent link">&para;</a></h2>
+<p>This example will enumerate all files in an array of directories based on specific extensions and return an array of FileInfo objects. This is potentially the fastest and most optimized way to do this. This command takes ~9 seconds to complete on my system.</p>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Define a HashSet of file extensions to filter by</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">$Extensions</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.HashSet[System.String]]</span><span class="p">@(</span><span class="s1">&#39;.sys&#39;</span><span class="p">,</span> <span class="s1">&#39;.exe&#39;</span><span class="p">,</span> <span class="s1">&#39;.com&#39;</span><span class="p">,</span> <span class="s1">&#39;.dll&#39;</span><span class="p">,</span> <span class="s1">&#39;.rll&#39;</span><span class="p">,</span> <span class="s1">&#39;.ocx&#39;</span><span class="p">,</span> <span class="s1">&#39;.msp&#39;</span><span class="p">,</span> <span class="s1">&#39;.mst&#39;</span><span class="p">,</span> <span class="s1">&#39;.msi&#39;</span><span class="p">,</span> <span class="s1">&#39;.js&#39;</span><span class="p">,</span> <span class="s1">&#39;.vbs&#39;</span><span class="p">,</span> <span class="s1">&#39;.ps1&#39;</span><span class="p">,</span> <span class="s1">&#39;.appx&#39;</span><span class="p">,</span> <span class="s1">&#39;.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;.bat&#39;</span><span class="p">,</span> <span class="s1">&#39;.hxs&#39;</span><span class="p">,</span> <span class="s1">&#39;.mui&#39;</span><span class="p">,</span> <span class="s1">&#39;.lex&#39;</span><span class="p">,</span> <span class="s1">&#39;.mof&#39;</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c"># Define an array of directory paths to scan through</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="no">[System.IO.DirectoryInfo[]]</span><span class="nv">$Paths</span> <span class="p">=</span> <span class="s1">&#39;C:\ProgramData\Microsoft&#39;</span><span class="p">,</span> <span class="s1">&#39;C:\Program Files\Windows Defender&#39;</span><span class="p">,</span> <span class="s1">&#39;C:\Program Files\Hyper-V&#39;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c"># Define a HashSet to store the initial output</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nv">$Output</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.HashSet[System.IO.FileInfo]]</span><span class="p">@()</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c"># Define the GetFiles parameters</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nv">$Options</span> <span class="p">=</span> <span class="no">[System.IO.EnumerationOptions]</span><span class="p">@{</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">IgnoreInaccessible</span>    <span class="p">=</span> <span class="nv">$true</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="c"># This is equal to -Recurse parameter in Get-ChildItem cmdlet</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">RecurseSubdirectories</span> <span class="p">=</span> <span class="nv">$true</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="c"># By default is skips hidden and system files, here we just skip the System files</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="c"># https://learn.microsoft.com/en-us/dotnet/api/system.io.fileattributes</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="c"># https://learn.microsoft.com/en-us/dotnet/api/system.io.enumerationoptions.attributestoskip</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="n">AttributesToSkip</span>      <span class="p">=</span> <span class="s1">&#39;System&#39;</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="p">}</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c"># Loop over each path and add the files to the output HashSet using UnionWith</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$Path</span> <span class="k">in</span> <span class="nv">$Paths</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="nv">$Output</span><span class="p">.</span><span class="n">UnionWith</span><span class="p">((</span><span class="nb">Get-Item</span> <span class="n">-LiteralPath</span> <span class="nv">$Path</span><span class="p">).</span><span class="n">GetFiles</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="nv">$Options</span><span class="p">))</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="p">}</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="c"># Define a HashSet to store the filtered output - Making sure the comparison is case-insensitive since &quot;Get-ChildItem -Include&quot; is case-insensitive as well and we don&#39;t want to miss files with &quot;.DLL&quot; extension and so on</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="nv">$OutputAfterFiltering</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.HashSet[System.IO.FileInfo]]</span><span class="p">@(</span> <span class="nv">$Output</span><span class="p">.</span><span class="n">Where</span><span class="p">({</span> <span class="nv">$Extensions</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Extension</span><span class="p">.</span><span class="n">ToLower</span><span class="p">())</span> <span class="p">}))</span>
+</span></code></pre></div>
+<p><br></p>
+<p>This is an improved variation of the script above that handles inaccessible directories better but takes a few seconds (~3) more to complete.</p>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># Define a HashSet of file extensions to filter by</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">$Extensions</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.HashSet[System.String]]</span><span class="p">::</span><span class="n">new</span><span class="p">(</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="no">[System.String[]]</span> <span class="p">(</span><span class="s1">&#39;.sys&#39;</span><span class="p">,</span> <span class="s1">&#39;.exe&#39;</span><span class="p">,</span> <span class="s1">&#39;.com&#39;</span><span class="p">,</span> <span class="s1">&#39;.dll&#39;</span><span class="p">,</span> <span class="s1">&#39;.rll&#39;</span><span class="p">,</span> <span class="s1">&#39;.ocx&#39;</span><span class="p">,</span> <span class="s1">&#39;.msp&#39;</span><span class="p">,</span> <span class="s1">&#39;.mst&#39;</span><span class="p">,</span> <span class="s1">&#39;.msi&#39;</span><span class="p">,</span> <span class="s1">&#39;.js&#39;</span><span class="p">,</span> <span class="s1">&#39;.vbs&#39;</span><span class="p">,</span> <span class="s1">&#39;.ps1&#39;</span><span class="p">,</span> <span class="s1">&#39;.appx&#39;</span><span class="p">,</span> <span class="s1">&#39;.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;.bat&#39;</span><span class="p">,</span> <span class="s1">&#39;.hxs&#39;</span><span class="p">,</span> <span class="s1">&#39;.mui&#39;</span><span class="p">,</span> <span class="s1">&#39;.lex&#39;</span><span class="p">,</span> <span class="s1">&#39;.mof&#39;</span><span class="p">),</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="c"># Make it case-insensitive</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="no">[System.StringComparer]</span><span class="p">::</span><span class="n">InvariantCultureIgnoreCase</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c"># Define an array of directory paths to scan through</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="no">[System.IO.DirectoryInfo[]]</span><span class="nv">$Paths</span> <span class="p">=</span> <span class="s1">&#39;C:\ProgramData\Microsoft&#39;</span><span class="p">,</span> <span class="s1">&#39;C:\Program Files\Windows Defender&#39;</span><span class="p">,</span> <span class="s1">&#39;C:\Program Files\Hyper-V&#39;</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c"># Define a HashSet to store the initial output</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nv">$Output</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.HashSet[System.IO.FileInfo]]</span><span class="p">@()</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c"># Define the GetFiles parameters</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nv">$Options</span> <span class="p">=</span> <span class="no">[System.IO.EnumerationOptions]</span><span class="p">@{</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">IgnoreInaccessible</span>    <span class="p">=</span> <span class="nv">$true</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="c"># This is equal to -Recurse parameter in Get-ChildItem cmdlet</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="n">RecurseSubdirectories</span> <span class="p">=</span> <span class="nv">$true</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="c"># This is equal to -Force parameter in Get-ChildItem cmdlet</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span class="n">AttributesToSkip</span>      <span class="p">=</span> <span class="s1">&#39;None&#39;</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="p">}</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="nv">$Output</span> <span class="p">=</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Path</span> <span class="k">in</span> <span class="nv">$Paths</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    <span class="no">[System.IO.Enumeration.FileSystemEnumerator[System.IO.FileInfo]]</span><span class="nv">$Enum</span> <span class="p">=</span> <span class="nv">$Path</span><span class="p">.</span><span class="n">EnumerateFiles</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="nv">$Options</span><span class="p">).</span><span class="n">GetEnumerator</span><span class="p">()</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    <span class="k">while</span> <span class="p">(</span><span class="nv">$true</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        <span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>            <span class="c"># Move to the next file</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>            <span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="nv">$Enum</span><span class="p">.</span><span class="n">MoveNext</span><span class="p">())</span> <span class="p">{</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>                <span class="c"># If we reach the end of the enumeration, we break out of the loop</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>                <span class="k">break</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>            <span class="p">}</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>            <span class="c"># Check if the file extension is in the Extensions HashSet</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>            <span class="k">if</span> <span class="p">(</span><span class="nv">$Extensions</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="nv">$Enum</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Extension</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>                <span class="c"># Pass the file to the output</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>                <span class="nv">$Enum</span><span class="p">.</span><span class="n">Current</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>            <span class="p">}</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>        <span class="p">}</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>        <span class="k">catch</span> <span class="p">{}</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>    <span class="p">}</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="p">}</span>
+</span></code></pre></div>
+<blockquote>
+<p>Shout out to <a href="https://github.com/santisq">Santiago Squarzon</a> for providing this method.</p>
+</blockquote>
+<p><br></p>
+<p>For comparison, the following command takes ~20 minutes to complete on my system and produces the same exact output as the scripts above but it's 100x times slower.</p>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="no">[System.IO.DirectoryInfo[]]</span><span class="nv">$Paths</span> <span class="p">=</span> <span class="s1">&#39;C:\ProgramData\Microsoft&#39;</span><span class="p">,</span> <span class="s1">&#39;C:\Program Files\Windows Defender&#39;</span><span class="p">,</span> <span class="s1">&#39;C:\Program Files\Hyper-V&#39;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="no">[System.String[]]</span><span class="nv">$Extensions</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;*.sys&#39;</span><span class="p">,</span> <span class="s1">&#39;*.exe&#39;</span><span class="p">,</span> <span class="s1">&#39;*.com&#39;</span><span class="p">,</span> <span class="s1">&#39;*.dll&#39;</span><span class="p">,</span> <span class="s1">&#39;*.rll&#39;</span><span class="p">,</span> <span class="s1">&#39;*.ocx&#39;</span><span class="p">,</span> <span class="s1">&#39;*.msp&#39;</span><span class="p">,</span> <span class="s1">&#39;*.mst&#39;</span><span class="p">,</span> <span class="s1">&#39;*.msi&#39;</span><span class="p">,</span> <span class="s1">&#39;*.js&#39;</span><span class="p">,</span> <span class="s1">&#39;*.vbs&#39;</span><span class="p">,</span> <span class="s1">&#39;*.ps1&#39;</span><span class="p">,</span> <span class="s1">&#39;*.appx&#39;</span><span class="p">,</span> <span class="s1">&#39;*.bin&#39;</span><span class="p">,</span> <span class="s1">&#39;*.bat&#39;</span><span class="p">,</span> <span class="s1">&#39;*.hxs&#39;</span><span class="p">,</span> <span class="s1">&#39;*.mui&#39;</span><span class="p">,</span> <span class="s1">&#39;*.lex&#39;</span><span class="p">,</span> <span class="s1">&#39;*.mof&#39;</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="no">[System.IO.FileInfo[]]</span><span class="nv">$Output</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="o">-File</span> <span class="n">-LiteralPath</span> <span class="nv">$Paths</span> <span class="n">-Include</span> <span class="nv">$Extensions</span> <span class="n">-Force</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span></code></pre></div>
+<p><br></p>
 
 
 
@@ -2546,7 +2640,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-06-15T14:41:17+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-15</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-06-19T21:49:44+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-19</span>
   </span>
 
     
