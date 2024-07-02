@@ -2184,6 +2184,15 @@ or on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#-xmlfilepath" class="md-nav__link">
+    <span class="md-ellipsis">
+      -XmlFilePath
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-folderpath" class="md-nav__link">
     <span class="md-ellipsis">
       -FolderPath
@@ -2202,18 +2211,18 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#-xmlfilepath" class="md-nav__link">
+  <a href="#-booleanoutput" class="md-nav__link">
     <span class="md-ellipsis">
-      -XmlFilePath
+      -BooleanOutput
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-booleanoutput" class="md-nav__link">
+  <a href="#-csvoutput" class="md-nav__link">
     <span class="md-ellipsis">
-      -BooleanOutput
+      -CSVOutput
     </span>
   </a>
   
@@ -2229,9 +2238,27 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#-csvoutput" class="md-nav__link">
+  <a href="#-catrootpath" class="md-nav__link">
     <span class="md-ellipsis">
-      -CSVOutput
+      -CatRootPath
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-nocatalogscanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      -NoCatalogScanning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-threadscount" class="md-nav__link">
+    <span class="md-ellipsis">
+      -ThreadsCount
     </span>
   </a>
   
@@ -2578,6 +2605,15 @@ or on
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#-xmlfilepath" class="md-nav__link">
+    <span class="md-ellipsis">
+      -XmlFilePath
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#-folderpath" class="md-nav__link">
     <span class="md-ellipsis">
       -FolderPath
@@ -2596,18 +2632,18 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#-xmlfilepath" class="md-nav__link">
+  <a href="#-booleanoutput" class="md-nav__link">
     <span class="md-ellipsis">
-      -XmlFilePath
+      -BooleanOutput
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#-booleanoutput" class="md-nav__link">
+  <a href="#-csvoutput" class="md-nav__link">
     <span class="md-ellipsis">
-      -BooleanOutput
+      -CSVOutput
     </span>
   </a>
   
@@ -2623,9 +2659,27 @@ or on
 </li>
         
           <li class="md-nav__item">
-  <a href="#-csvoutput" class="md-nav__link">
+  <a href="#-catrootpath" class="md-nav__link">
     <span class="md-ellipsis">
-      -CSVOutput
+      -CatRootPath
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-nocatalogscanning" class="md-nav__link">
+    <span class="md-ellipsis">
+      -NoCatalogScanning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-threadscount" class="md-nav__link">
+    <span class="md-ellipsis">
+      -ThreadsCount
     </span>
   </a>
   
@@ -2659,35 +2713,41 @@ or on
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Invoke-WDACSimulation</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="p">[</span><span class="n">-XmlFilePath</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">FileInfo</span><span class="p">&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="p">[[</span><span class="n">-FolderPath</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">DirectoryInfo</span><span class="p">&gt;]</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="p">[[</span><span class="n">-FilePath</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">FileInfo</span><span class="p">&gt;]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="p">[[</span><span class="n">-FolderPath</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">DirectoryInfo</span><span class="p">[]&gt;]</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="p">[[</span><span class="n">-FilePath</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">FileInfo</span><span class="p">[]&gt;]</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="p">[</span><span class="n">-BooleanOutput</span><span class="p">]</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="p">[</span><span class="n">-Log</span><span class="p">]</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="p">[</span><span class="n">-CSVOutput</span><span class="p">]</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  <span class="p">[</span><span class="n">-SkipVersionCheck</span><span class="p">]</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="p">[</span><span class="n">-CSVOutput</span><span class="p">]</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="p">[</span><span class="n">-Log</span><span class="p">]</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  <span class="p">[</span><span class="n">-NoCatalogScanning</span><span class="p">]</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  <span class="p">[[</span><span class="n">-CatRootPath</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">DirectoryInfo</span><span class="p">[]&gt;]</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  <span class="p">[[</span><span class="n">-ThreadsCount</span><span class="p">]</span> <span class="p">&lt;</span><span class="n">UInt32</span><span class="p">&gt;]</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  <span class="p">[&lt;</span><span class="n">CommonParameters</span><span class="p">&gt;]</span>
 </span></code></pre></div>
 <h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
-<p>This cmdlet allows you to simulate a <abbr title="Windows Defender Application Control">WDAC</abbr> (App Control for Business) policy deployment. Simply select a folder or file and a policy XML file, it will show you whether the selected files would be allowed or blocked by your <abbr title="Windows Defender Application Control">WDAC</abbr> policy if it was actually deployed on a system and those files were run.</p>
+<p>This cmdlet allows you to simulate a <abbr title="Windows Defender Application Control">WDAC</abbr> (App Control for Business) policy deployment. Simply select folders or files and a policy XML file, it will show you whether the selected files would be allowed or blocked by your <abbr title="Windows Defender Application Control">WDAC</abbr> policy if it was actually deployed on a system and those files were run.</p>
 <p><br></p>
 <h2 id="supported-levels-and-specificfilenamelevel-options">Supported Levels and SpecificFileNameLevel Options<a class="headerlink" href="#supported-levels-and-specificfilenamelevel-options" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>The <abbr title="Windows Defender Application Control">WDAC</abbr> Simulation engine supports the following levels: (Support for the remaining <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-2-windows-defender-application-control-policy---file-rule-levels">levels</a> will be added in a future update)</p>
+<p>The <abbr title="Windows Defender Application Control">WDAC</abbr> Simulation engine <strong>supports</strong> the following <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-Rule-Levels-Comparison-and-Guide">levels</a>:</p>
 </li>
 <li>
-<p>FilePublisher</p>
+<p>WHQLFilePublisher</p>
 </li>
+<li>WHQLPublisher</li>
+<li><abbr title="Windows Hardware Quality Lab">WHQL</abbr></li>
+<li>FilePublisher</li>
 <li>Publisher</li>
 <li>SignedVersion</li>
 <li>PCA Certificate</li>
 <li>Root Certificate</li>
 <li>Leaf Certificate</li>
+<li>Hash</li>
 <li>
-<p>Hash</p>
+<p>FilePath</p>
 </li>
 <li>
-<p>The engine supports all of the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-3--specificfilenamelevel-options">SpecificFileNameLevel</a> options when validating the FilePublisher level.</p>
+<p>The engine <strong>supports</strong> all of the <a href="https://learn.microsoft.com/en-us/windows/security/application-security/application-control/windows-defender-application-control/design/select-types-of-rules-to-create#table-3--specificfilenamelevel-options">SpecificFileNameLevel</a> options when validating the FilePublisher level.</p>
 </li>
 <li>
 <p>FileDescription</p>
@@ -2696,20 +2756,20 @@ or on
 <li>OriginalFileName</li>
 <li>PackageFamilyName</li>
 <li>ProductName</li>
-<li>Filepath</li>
+<li>
+<p>Filepath</p>
+</li>
+<li>
+<p>The Simulation engine <em>doesn't support</em> the following <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDAC-Rule-Levels-Comparison-and-Guide#--filename">level</a> yet (they will be added in a future update):</p>
+<ul>
+<li>FileName</li>
+</ul>
+</li>
 </ul>
 <p><br></p>
 <h2 id="accuracy">Accuracy<a class="headerlink" href="#accuracy" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>The engine can determine with 100% accuracy whether a file is authorized by a given policy or not as long as the file was scanned based on one of the supported levels mentioned above.</p>
-</li>
-<li>
-<p>The <code>SpecificFileNameLevel</code> is established with 99.99% accuracy. The only exception is when a file is damaged in a manner that impairs the detection of its additional attributes. <em>However, this is a rare occurrence, as I have not encountered any such file in over 1 million tests</em>.</p>
-</li>
-<li>
-<p>Explicit Deny rules are not taken into account during simulation. Support for them will be added in a future update. <strong>The nature of the <abbr title="Windows Defender Application Control">WDAC</abbr> policies is whitelisting and anything not mentioned in them is automatically blocked/denied</strong>.</p>
-</li>
+<li>The engine can determine with 100% accuracy whether a file is authorized by a given policy or not as long as the file was scanned based on one of the supported levels mentioned above.</li>
 </ul>
 <p><br></p>
 <h2 id="some-use-cases">Some Use Cases<a class="headerlink" href="#some-use-cases" title="Permanent link">&para;</a></h2>
@@ -2728,85 +2788,6 @@ or on
 </li>
 </ul>
 <h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
-<h3 id="-folderpath">-FolderPath<a class="headerlink" href="#-folderpath" title="Permanent link">&para;</a></h3>
-<p>Path to a folder. Supports argument tab completion, select the parameter then press TAB to open the Folder picker GUI.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Either FilePath or FolderPath must be provided.</p>
-</div>
-<div class="center-table">
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Type:</th>
-<th style="text-align: center;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo">DirectoryInfo</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Position:</td>
-<td style="text-align: center;">Named</td>
-</tr>
-<tr>
-<td style="text-align: center;">Default value:</td>
-<td style="text-align: center;">None</td>
-</tr>
-<tr>
-<td style="text-align: center;">Required:</td>
-<td style="text-align: center;">True</td>
-</tr>
-<tr>
-<td style="text-align: center;">Accept pipeline input:</td>
-<td style="text-align: center;">False</td>
-</tr>
-<tr>
-<td style="text-align: center;">Accept wildcard characters:</td>
-<td style="text-align: center;">False</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><br></p>
-<h3 id="-filepath">-FilePath<a class="headerlink" href="#-filepath" title="Permanent link">&para;</a></h3>
-<p>Provide path to a file that you want <abbr title="Windows Defender Application Control">WDAC</abbr> simulation to run against</p>
-<p>Uses LiteralPath to take the path exactly as typed including Special characters such as <code>[</code> and <code>]</code></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-</div>
-<p>Either FilePath or FolderPath must be provided.</p>
-<div class="center-table">
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Type:</th>
-<th style="text-align: center;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo">FileInfo</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Position:</td>
-<td style="text-align: center;">Named</td>
-</tr>
-<tr>
-<td style="text-align: center;">Default value:</td>
-<td style="text-align: center;">None</td>
-</tr>
-<tr>
-<td style="text-align: center;">Required:</td>
-<td style="text-align: center;">True</td>
-</tr>
-<tr>
-<td style="text-align: center;">Accept pipeline input:</td>
-<td style="text-align: center;">False</td>
-</tr>
-<tr>
-<td style="text-align: center;">Accept wildcard characters:</td>
-<td style="text-align: center;">False</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><br></p>
 <h3 id="-xmlfilepath">-XmlFilePath<a class="headerlink" href="#-xmlfilepath" title="Permanent link">&para;</a></h3>
 <p>Path to a xml file. Supports argument tab completion, select the parameter then press TAB to open the file picker GUI that only shows xml files.</p>
 <div class="center-table">
@@ -2842,8 +2823,114 @@ or on
 </table>
 </div>
 <p><br></p>
+<h3 id="-folderpath">-FolderPath<a class="headerlink" href="#-folderpath" title="Permanent link">&para;</a></h3>
+<p>Path to folders. Supports argument tab completion, select the parameter then press TAB to open the Folder picker GUI.</p>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type:</th>
+<th style="text-align: center;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo">DirectoryInfo</a>[]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Position:</td>
+<td style="text-align: center;">Named</td>
+</tr>
+<tr>
+<td style="text-align: center;">Default value:</td>
+<td style="text-align: center;">None</td>
+</tr>
+<tr>
+<td style="text-align: center;">Required:</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;">Accept pipeline input:</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;">Accept wildcard characters:</td>
+<td style="text-align: center;">False</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<h3 id="-filepath">-FilePath<a class="headerlink" href="#-filepath" title="Permanent link">&para;</a></h3>
+<p>Provide path to files that you want <abbr title="Windows Defender Application Control">WDAC</abbr> simulation to run against</p>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type:</th>
+<th style="text-align: center;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo">FileInfo</a>[]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Position:</td>
+<td style="text-align: center;">Named</td>
+</tr>
+<tr>
+<td style="text-align: center;">Default value:</td>
+<td style="text-align: center;">None</td>
+</tr>
+<tr>
+<td style="text-align: center;">Required:</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;">Accept pipeline input:</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;">Accept wildcard characters:</td>
+<td style="text-align: center;">False</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
 <h3 id="-booleanoutput">-BooleanOutput<a class="headerlink" href="#-booleanoutput" title="Permanent link">&para;</a></h3>
-<p>Can be used with any parameter to return a boolean value instead of displaying the object output</p>
+<p>Can be used with any parameter to return a boolean value instead of displaying the object output. If any of the selected files or any of the files in the selected folders are not authorized by the selected XML file, the result is <code>$false</code>. Otherwise, the result is <code>$true</code>.</p>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type:</th>
+<th style="text-align: center;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.management.automation.switchparameter">SwitchParameter</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Position:</td>
+<td style="text-align: center;">Named</td>
+</tr>
+<tr>
+<td style="text-align: center;">Default value:</td>
+<td style="text-align: center;">None</td>
+</tr>
+<tr>
+<td style="text-align: center;">Required:</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;">Accept pipeline input:</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;">Accept wildcard characters:</td>
+<td style="text-align: center;">False</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<h3 id="-csvoutput">-CSVOutput<a class="headerlink" href="#-csvoutput" title="Permanent link">&para;</a></h3>
+<p>Upon completion of the simulation, you will obtain a CSV file containing the output of the simulation with exhaustive details of each file that would be blocked/allowed by the selected policy, and which rule or signer in the XML policy is responsible for the decision.</p>
+<p>It is saved in the WDACConfig folder in <code>C:\Program Files\WDACConfig</code></p>
 <div class="center-table">
 <table>
 <thead>
@@ -2879,10 +2966,7 @@ or on
 <p><br></p>
 <h3 id="-log">-Log<a class="headerlink" href="#-log" title="Permanent link">&para;</a></h3>
 <p>Use this switch to start a transcript of the <abbr title="Windows Defender Application Control">WDAC</abbr> simulation and log everything displayed on the screen.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Highly recommended to use the <code>-Verbose</code> parameter with this switch to log the verbose output as well.</p>
-</div>
+<p>The log file is saved in the WDACConfig folder in <code>C:\Program Files\WDACConfig</code></p>
 <div class="center-table">
 <table>
 <thead>
@@ -2916,8 +3000,47 @@ or on
 </table>
 </div>
 <p><br></p>
-<h3 id="-csvoutput">-CSVOutput<a class="headerlink" href="#-csvoutput" title="Permanent link">&para;</a></h3>
-<p>Upon completion of the simulation, you will obtain a CSV file containing the output of the simulation with exhaustive details of each file that would be blocked/allowed by the selected policy.</p>
+<h3 id="-catrootpath">-CatRootPath<a class="headerlink" href="#-catrootpath" title="Permanent link">&para;</a></h3>
+<p>Provide path(s) to directories where security catalog <code>.cat</code> files are located. If not provided, the default path is <code>C:\Windows\System32\CatRoot</code>. Supports argument tab completion, select the parameter then press TAB to open the Folder picker GUI.</p>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type:</th>
+<th style="text-align: center;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo">DirectoryInfo</a>[]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Aliases:</td>
+<td style="text-align: center;">Cat</td>
+</tr>
+<tr>
+<td style="text-align: center;">Position:</td>
+<td style="text-align: center;">Named</td>
+</tr>
+<tr>
+<td style="text-align: center;">Default value:</td>
+<td style="text-align: center;">None</td>
+</tr>
+<tr>
+<td style="text-align: center;">Required:</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;">Accept pipeline input:</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;">Accept wildcard characters:</td>
+<td style="text-align: center;">False</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<h3 id="-nocatalogscanning">-NoCatalogScanning<a class="headerlink" href="#-nocatalogscanning" title="Permanent link">&para;</a></h3>
+<p>Bypass the scanning of the security catalogs on the system. It can make the scan results less accurate.</p>
 <div class="center-table">
 <table>
 <thead>
@@ -2934,6 +3057,50 @@ or on
 <tr>
 <td style="text-align: center;">Default value:</td>
 <td style="text-align: center;">None</td>
+</tr>
+<tr>
+<td style="text-align: center;">Required:</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;">Accept pipeline input:</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;">Accept wildcard characters:</td>
+<td style="text-align: center;">False</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br></p>
+<h3 id="-threadscount">-ThreadsCount<a class="headerlink" href="#-threadscount" title="Permanent link">&para;</a></h3>
+<p>The number of the concurrent/parallel tasks to use when performing <abbr title="Windows Defender Application Control">WDAC</abbr> Simulation.</p>
+<ul>
+<li>Max is the number of your system's CPU cores.</li>
+<li>Min is 1.</li>
+<li>If you enter a number higher than your system's CPU cores, it will be set to your system's CPU cores count.</li>
+</ul>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type:</th>
+<th style="text-align: center;"><a href="https://learn.microsoft.com/en-us/dotnet/api/system.uint32">UInt32</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Aliases:</td>
+<td style="text-align: center;">CPU</td>
+</tr>
+<tr>
+<td style="text-align: center;">Position:</td>
+<td style="text-align: center;">Named</td>
+</tr>
+<tr>
+<td style="text-align: center;">Default value:</td>
+<td style="text-align: center;">2</td>
 </tr>
 <tr>
 <td style="text-align: center;">Required:</td>
@@ -2973,7 +3140,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-06-20T20:36:09+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-07-02T00:24:53+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-07-02</span>
   </span>
 
     

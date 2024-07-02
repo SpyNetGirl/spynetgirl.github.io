@@ -1320,6 +1320,63 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-view-the-loaded-assemblies-in-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To View The Loaded Assemblies In PowerShell
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To View The Loaded Assemblies In PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-load-all-dlls-that-come-with-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Load All DLLs That Come With PowerShell
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Load All DLLs That Come With PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instead-of-pscustomobjects-define-and-use-custom-types-wherever-possible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instead of PSCustomObjects, Define And Use Custom Types Wherever Possible
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-performance-reasons-avoid-using-the-following-operators-and-cmdlets-for-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Performance Reasons Avoid Using The Following Operators And Cmdlets For Loops
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2462,6 +2519,63 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-view-the-loaded-assemblies-in-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To View The Loaded Assemblies In PowerShell
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To View The Loaded Assemblies In PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-load-all-dlls-that-come-with-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Load All DLLs That Come With PowerShell
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Load All DLLs That Come With PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instead-of-pscustomobjects-define-and-use-custom-types-wherever-possible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instead of PSCustomObjects, Define And Use Custom Types Wherever Possible
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#for-performance-reasons-avoid-using-the-following-operators-and-cmdlets-for-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Performance Reasons Avoid Using The Following Operators And Cmdlets For Loops
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2618,6 +2732,127 @@ or on
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="no">[System.IO.FileInfo[]]</span><span class="nv">$Output</span> <span class="p">=</span> <span class="nb">Get-ChildItem</span> <span class="n">-Recurse</span> <span class="o">-File</span> <span class="n">-LiteralPath</span> <span class="nv">$Paths</span> <span class="n">-Include</span> <span class="nv">$Extensions</span> <span class="n">-Force</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
 </span></code></pre></div>
 <p><br></p>
+<h2 id="how-to-view-the-loaded-assemblies-in-powershell">How To View The Loaded Assemblies In PowerShell<a class="headerlink" href="#how-to-view-the-loaded-assemblies-in-powershell" title="Permanent link">&para;</a></h2>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="no">[System.AppDomain]</span><span class="p">::</span><span class="n">CurrentDomain</span><span class="p">.</span><span class="n">GetAssemblies</span><span class="p">()</span> <span class="p">|</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">Where-Object</span> <span class="n">-FilterScript</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Location</span> <span class="p">}</span> <span class="p">|</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="n">FullName</span> <span class="p">|</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nb">Select-Object</span> <span class="n">-Property</span> <span class="n">FullName</span><span class="p">,</span> <span class="n">Location</span><span class="p">,</span> <span class="n">GlobalAssemblyCache</span><span class="p">,</span> <span class="n">IsFullyTrusted</span> <span class="p">|</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">Out-GridView</span> <span class="n">-OutputMode</span> <span class="n">Multiple</span>
+</span></code></pre></div>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.appdomain">Read more</a></li>
+</ul>
+<p><br></p>
+<h3 id="how-to-load-all-dlls-that-come-with-powershell">How To Load All DLLs That Come With PowerShell<a class="headerlink" href="#how-to-load-all-dlls-that-come-with-powershell" title="Permanent link">&para;</a></h3>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$Dll</span> <span class="k">in</span> <span class="p">(</span><span class="nb">Convert-Path</span> <span class="n">-Path</span> <span class="p">(</span><span class="s2">&quot;</span><span class="p">$(</span><span class="no">[psobject]</span><span class="p">.</span><span class="n">Assembly</span><span class="p">.</span><span class="n">Location</span><span class="p">)</span><span class="s2">\..\*.dll&quot;</span><span class="p">)))</span> <span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="nb">Add-Type</span> <span class="n">-Path</span> <span class="nv">$Dll</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="p">}</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="k">catch</span> <span class="p">{}</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><br></p>
+<h4 id="alternative-method">Alternative Method<a class="headerlink" href="#alternative-method" title="Permanent link">&para;</a></h4>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$Dll</span> <span class="k">in</span> <span class="nb">Get-ChildItem</span> <span class="o">-File</span> <span class="n">-Filter</span> <span class="s1">&#39;*.dll&#39;</span> <span class="n">-Path</span> <span class="nv">$PSHOME</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>        <span class="nb">Add-Type</span> <span class="n">-AssemblyName</span> <span class="p">(</span><span class="nv">$Dll</span><span class="p">.</span><span class="n">Name</span><span class="p">).</span><span class="n">Replace</span><span class="p">(</span><span class="nv">$Dll</span><span class="p">.</span><span class="n">Extension</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="p">}</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="k">catch</span> <span class="p">{}</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><br></p>
+<p>Utilizing a try/catch block is essential in this scenario where not all DLLs located at the root of PowerShell are importable. This code is compatible with PowerShell installed through the Store or the MSI file.</p>
+<p>Manually importing DLLs can be advantageous, particularly when transitioning from writing code in VS Code to executing it in PowerShell within Windows Terminal. In VS Code, the integrated extension automatically loads necessary assemblies, ensuring smooth operation. However, this automatic process is absent outside of VS Code, potentially leading to discrepancies in code behavior. To mitigate this, manually identifying and importing the missing assemblies is required. By importing all DLLs preemptively, you eliminate the concern of missing assemblies.</p>
+<p>To streamline this process, incorporate that code into your <code>RootModule.psm1</code> or <code>ScriptsToProcess.ps1</code> file. This ensures the code executes solely during the module's import phase, optimizing performance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>-ReferencedAssemblies</code> in <code>Add-Type -Path &lt;Paths&gt; -ReferencedAssemblies &lt;Assemblies&gt;</code> uses lazy loading, if a referenced assembly is not part of the type being added or the type doesn't reference a member from that assembly, nothing really happens. This lazy loading behavior improves load times.</p>
+<p>Shout out to <a href="https://github.com/SeeminglyScience">SeeminglyScience</a> for providing this info.</p>
+</div>
+<p><br></p>
+<h2 id="instead-of-pscustomobjects-define-and-use-custom-types-wherever-possible">Instead of PSCustomObjects, Define And Use Custom Types Wherever Possible<a class="headerlink" href="#instead-of-pscustomobjects-define-and-use-custom-types-wherever-possible" title="Permanent link">&para;</a></h2>
+<p>If you don't need the extra features of PSCustomObjects such as dynamically adding/removing properties then consider defining and using custom classes in <code>C#</code> and use them in PowerShell. They are at least twice faster and this is very visible in loops. Run the benchmark below to see the difference.</p>
+<p><br></p>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Define a C# class in PowerShell</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">Add-Type</span> <span class="n">-TypeDefinition</span> <span class="sh">@&#39;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="sh">public class CustomCSharpClass {</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="sh">    public string Property { get; set; }</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="sh">    public CustomCSharpClass(string property) {</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="sh">        Property = property;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="sh">    }</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="sh">}</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="sh">&#39;@</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c"># Benchmark PSCustomObject creation</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="nv">$psCustomObjectTime</span> <span class="p">=</span> <span class="nb">Measure-Command</span> <span class="p">{</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-lt</span> <span class="n">10000</span><span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>        <span class="nv">$obj</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span><span class="n">Property</span> <span class="p">=</span> <span class="s1">&#39;Value&#39;</span> <span class="p">}</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    <span class="p">}</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="p">}</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="c"># Benchmark C# class object creation</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="nv">$csharpClassTime</span> <span class="p">=</span> <span class="nb">Measure-Command</span> <span class="p">{</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="p">=</span> <span class="n">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">-lt</span> <span class="n">10000</span><span class="p">;</span> <span class="nv">$i</span><span class="p">++)</span> <span class="p">{</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>        <span class="nv">$obj</span> <span class="p">=</span> <span class="no">[CustomCSharpClass]</span><span class="p">::</span><span class="n">new</span><span class="p">(</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>            <span class="s1">&#39;Value&#39;</span>
+</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>        <span class="p">)</span>
+</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>    <span class="p">}</span>
+</span><span id="__span-9-25"><a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="p">}</span>
+</span><span id="__span-9-26"><a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>
+</span><span id="__span-9-27"><a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="c"># Output the results</span>
+</span><span id="__span-9-28"><a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a><span class="s2">&quot;PSCustomObject creation time: </span><span class="p">$(</span><span class="nv">$psCustomObjectTime</span><span class="p">.</span><span class="n">TotalMilliseconds</span><span class="p">)</span><span class="s2"> ms&quot;</span>
+</span><span id="__span-9-29"><a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="s2">&quot;C# class object creation time: </span><span class="p">$(</span><span class="nv">$csharpClassTime</span><span class="p">.</span><span class="n">TotalMilliseconds</span><span class="p">)</span><span class="s2"> ms&quot;</span>
+</span></code></pre></div>
+<p><br></p>
+<h2 id="for-performance-reasons-avoid-using-the-following-operators-and-cmdlets-for-loops">For Performance Reasons Avoid Using The Following Operators And Cmdlets For Loops<a class="headerlink" href="#for-performance-reasons-avoid-using-the-following-operators-and-cmdlets-for-loops" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>+=</code> operator</li>
+<li><code>Where-Object</code> cmdlet</li>
+<li><code>ForEach-Object</code> cmdlet</li>
+</ul>
+<p><strong>Instead, use <code>Foreach</code> loop with Direct Assignment. It's a language construct, it's always faster than the cmdlets and has less overhead.</strong></p>
+<p>Here is a small benchmark you can run to see the difference in timing</p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c"># Define your collection</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">$Y</span> <span class="p">=</span> <span class="n">1</span><span class="p">..</span><span class="n">10000</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c"># First script</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nv">$firstScript</span> <span class="p">=</span> <span class="p">{</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="nv">$array</span> <span class="p">=</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$X</span> <span class="k">in</span> <span class="nv">$Y</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>        <span class="nv">$X</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="p">}</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">}</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c"># Second script</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="nv">$secondScript</span> <span class="p">=</span> <span class="p">{</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="nv">$array</span> <span class="p">=</span> <span class="p">@()</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$X</span> <span class="k">in</span> <span class="nv">$Y</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>        <span class="nv">$array</span> <span class="p">+=</span> <span class="nv">$X</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    <span class="p">}</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="p">}</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="c"># Third script</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="nv">$thirdScript</span> <span class="p">=</span> <span class="p">{</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>    <span class="nv">$array</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="s1">&#39;System.Collections.Generic.List[psobject]&#39;</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$X</span> <span class="k">in</span> <span class="nv">$Y</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>        <span class="nv">$array</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="nv">$X</span><span class="p">)</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>    <span class="p">}</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="p">}</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="c"># Measure the time taken by the first script</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="nv">$firstScriptTime</span> <span class="p">=</span> <span class="nb">Measure-Command</span> <span class="n">-Expression</span> <span class="nv">$firstScript</span>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="c"># Measure the time taken by the second script</span>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="nv">$secondScriptTime</span> <span class="p">=</span> <span class="nb">Measure-Command</span> <span class="n">-Expression</span> <span class="nv">$secondScript</span>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="c"># Measure the time taken by the third script</span>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="nv">$thirdScriptTime</span> <span class="p">=</span> <span class="nb">Measure-Command</span> <span class="n">-Expression</span> <span class="nv">$thirdScript</span>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a>
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="c"># Output the results</span>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="s2">&quot;First script execution time: </span><span class="p">$(</span><span class="nv">$firstScriptTime</span><span class="p">.</span><span class="n">TotalMilliseconds</span><span class="p">)</span><span class="s2"> ms&quot;</span>
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="s2">&quot;Second script execution time: </span><span class="p">$(</span><span class="nv">$secondScriptTime</span><span class="p">.</span><span class="n">TotalMilliseconds</span><span class="p">)</span><span class="s2"> ms&quot;</span>
+</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a><span class="s2">&quot;Third script execution time: </span><span class="p">$(</span><span class="nv">$thirdScriptTime</span><span class="p">.</span><span class="n">TotalMilliseconds</span><span class="p">)</span><span class="s2"> ms&quot;</span>
+</span></code></pre></div>
+<p><br></p>
 
 
 
@@ -2640,7 +2875,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-06-19T21:49:44+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-07-02T00:24:53+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-07-02</span>
   </span>
 
     

@@ -1458,6 +1458,30 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#use-c-if-you-need-custom-global-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use C# If You Need Custom Global Classes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use C# If You Need Custom Global Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-would-you-make-powershell-classes-globally-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Would You Make PowerShell Classes Globally Available?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#more-resources-from-microsoft-that-you-should-check-out" class="md-nav__link">
     <span class="md-ellipsis">
       More Resources From Microsoft That You Should Check Out
@@ -2562,6 +2586,30 @@ or on
 </li>
       
         <li class="md-nav__item">
+  <a href="#use-c-if-you-need-custom-global-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use C# If You Need Custom Global Classes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Use C# If You Need Custom Global Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-would-you-make-powershell-classes-globally-available" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Would You Make PowerShell Classes Globally Available?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#more-resources-from-microsoft-that-you-should-check-out" class="md-nav__link">
     <span class="md-ellipsis">
       More Resources From Microsoft That You Should Check Out
@@ -2665,6 +2713,63 @@ or on
 <p>Global variables are not recommended in general because of security implications. They can be overwritten by the user on console as well.</p>
 <p>If you need to define global variables, make sure you set them as <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-variable#-option">constants or read-only</a> so that they cannot be overwritten once they are defined.</p>
 <p><br></p>
+<h2 id="use-c-if-you-need-custom-global-classes">Use C# If You Need Custom Global Classes<a class="headerlink" href="#use-c-if-you-need-custom-global-classes" title="Permanent link">&para;</a></h2>
+<p>If you need custom types in PowerShell and want them to be globally available to your module, It's recommended to use C# and define custom classes with <strong>specific and unique Namespace and Class names</strong> so that there won't be any possible conflicts with other classes/types that belong to 3rd party modules.</p>
+<p><br></p>
+<h3 id="how-would-you-make-powershell-classes-globally-available">How Would You Make PowerShell Classes Globally Available?<a class="headerlink" href="#how-would-you-make-powershell-classes-globally-available" title="Permanent link">&para;</a></h3>
+<p>Even though it's not recommended, here is how you can make custom classes globally available in PowerShell. Classes will be available process-wide and therefore also in other runspaces, defining them with the <code>[NoRunspaceAffinity()]</code> attribute.</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_classes#exporting-classes-with-type-accelerators">Read more</a></li>
+</ul>
+<p><br></p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">[</span><span class="n">NoRunspaceAffinity</span><span class="p">()]</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">Class</span> <span class="n">Items</span> <span class="p">:</span> <span class="n">System</span><span class="p">.</span><span class="n">Management</span><span class="p">.</span><span class="n">Automation</span><span class="p">.</span><span class="n">IValidateSetValuesGenerator</span> <span class="p">{</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="no">[System.String[]]</span> <span class="n">GetValidValues</span><span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>        <span class="nv">$Items</span> <span class="p">=</span> <span class="p">(</span><span class="s1">&#39;Item1&#39;</span><span class="p">,</span> <span class="s1">&#39;Item2&#39;</span><span class="p">,</span> <span class="s1">&#39;Item3&#39;</span><span class="p">)</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        <span class="k">return</span> <span class="no">[System.String[]]</span><span class="nv">$Items</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="p">}</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="p">[</span><span class="n">NoRunspaceAffinity</span><span class="p">()]</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="n">Class</span> <span class="n">BasePolicyNames</span> <span class="p">:</span> <span class="n">System</span><span class="p">.</span><span class="n">Management</span><span class="p">.</span><span class="n">Automation</span><span class="p">.</span><span class="n">IValidateSetValuesGenerator</span> <span class="p">{</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>    <span class="no">[System.String[]]</span> <span class="n">GetValidValues</span><span class="p">()</span> <span class="p">{</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>        <span class="no">[System.String[]]</span><span class="nv">$BasePolicyNames</span> <span class="p">=</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Policy</span> <span class="k">in</span> <span class="p">(&amp;</span><span class="s1">&#39;C:\Windows\System32\CiTool.exe&#39;</span> <span class="n">-lp</span> <span class="n">-json</span> <span class="p">|</span> <span class="nb">ConvertFrom-Json</span><span class="p">).</span><span class="n">Policies</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>            <span class="k">if</span> <span class="p">(</span><span class="nv">$Policy</span><span class="p">.</span><span class="n">IsSystemPolicy</span> <span class="o">-ne</span> <span class="s1">&#39;True&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>                <span class="k">if</span> <span class="p">(</span><span class="nv">$Policy</span><span class="p">.</span><span class="n">PolicyID</span> <span class="o">-eq</span> <span class="nv">$Policy</span><span class="p">.</span><span class="n">BasePolicyID</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>                    <span class="nv">$Policy</span><span class="p">.</span><span class="n">FriendlyName</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>                <span class="p">}</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>            <span class="p">}</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>        <span class="p">}</span>
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>        <span class="k">return</span> <span class="nv">$BasePolicyNames</span>
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>    <span class="p">}</span>   
+</span><span id="__span-12-22"><a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="p">}</span>
+</span><span id="__span-12-23"><a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>
+</span><span id="__span-12-24"><a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="c"># Define the types to export with type accelerators.</span>
+</span><span id="__span-12-25"><a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="no">[System.Reflection.TypeInfo[]]</span><span class="nv">$ExportableTypes</span> <span class="p">=</span> <span class="p">@(</span>
+</span><span id="__span-12-26"><a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>    <span class="no">[Items]</span>
+</span><span id="__span-12-27"><a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a>    <span class="no">[BasePolicyNames]</span>    
+</span><span id="__span-12-28"><a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="p">)</span>
+</span><span id="__span-12-29"><a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a>
+</span><span id="__span-12-30"><a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="c"># Get the non-public TypeAccelerators class for defining new accelerators.</span>
+</span><span id="__span-12-31"><a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="no">[System.Reflection.TypeInfo]</span><span class="nv">$TypeAcceleratorsClass</span> <span class="p">=</span> <span class="no">[psobject]</span><span class="p">.</span><span class="n">Assembly</span><span class="p">.</span><span class="n">GetType</span><span class="p">(</span><span class="s1">&#39;System.Management.Automation.TypeAccelerators&#39;</span><span class="p">)</span>
+</span><span id="__span-12-32"><a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a>
+</span><span id="__span-12-33"><a id="__codelineno-12-33" name="__codelineno-12-33" href="#__codelineno-12-33"></a><span class="c"># Add type accelerators for every exportable type.</span>
+</span><span id="__span-12-34"><a id="__codelineno-12-34" name="__codelineno-12-34" href="#__codelineno-12-34"></a><span class="nv">$ExistingTypeAccelerators</span> <span class="p">=</span> <span class="nv">$TypeAcceleratorsClass</span><span class="p">::</span><span class="n">Get</span>
+</span><span id="__span-12-35"><a id="__codelineno-12-35" name="__codelineno-12-35" href="#__codelineno-12-35"></a>
+</span><span id="__span-12-36"><a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$Type</span> <span class="k">in</span> <span class="nv">$ExportableTypes</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-12-37"><a id="__codelineno-12-37" name="__codelineno-12-37" href="#__codelineno-12-37"></a>
+</span><span id="__span-12-38"><a id="__codelineno-12-38" name="__codelineno-12-38" href="#__codelineno-12-38"></a>    <span class="c"># !! $TypeAcceleratorsClass::Add() quietly ignores attempts to redefine existing</span>
+</span><span id="__span-12-39"><a id="__codelineno-12-39" name="__codelineno-12-39" href="#__codelineno-12-39"></a>    <span class="c"># !! accelerators with different target types, so we check explicitly.</span>
+</span><span id="__span-12-40"><a id="__codelineno-12-40" name="__codelineno-12-40" href="#__codelineno-12-40"></a>    <span class="nv">$Existing</span> <span class="p">=</span> <span class="nv">$ExistingTypeAccelerators</span><span class="p">[</span><span class="nv">$Type</span><span class="p">.</span><span class="n">FullName</span><span class="p">]</span>
+</span><span id="__span-12-41"><a id="__codelineno-12-41" name="__codelineno-12-41" href="#__codelineno-12-41"></a>
+</span><span id="__span-12-42"><a id="__codelineno-12-42" name="__codelineno-12-42" href="#__codelineno-12-42"></a>    <span class="k">if</span> <span class="p">((</span><span class="nv">$null</span> <span class="o">-ne</span> <span class="nv">$Existing</span><span class="p">)</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$Existing</span> <span class="o">-ne</span> <span class="nv">$Type</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-12-43"><a id="__codelineno-12-43" name="__codelineno-12-43" href="#__codelineno-12-43"></a>        <span class="k">throw</span> <span class="s2">&quot;Unable to register type accelerator [</span><span class="p">$(</span><span class="nv">$Type</span><span class="p">.</span><span class="n">FullName</span><span class="p">)</span><span class="s2">], because it is already defined with a different type ([$Existing]).&quot;</span>
+</span><span id="__span-12-44"><a id="__codelineno-12-44" name="__codelineno-12-44" href="#__codelineno-12-44"></a>    <span class="p">}</span>
+</span><span id="__span-12-45"><a id="__codelineno-12-45" name="__codelineno-12-45" href="#__codelineno-12-45"></a>    <span class="nv">$TypeAcceleratorsClass</span><span class="p">::</span><span class="n">Add</span><span class="p">(</span><span class="nv">$Type</span><span class="p">.</span><span class="n">FullName</span><span class="p">,</span> <span class="nv">$Type</span><span class="p">)</span>
+</span><span id="__span-12-46"><a id="__codelineno-12-46" name="__codelineno-12-46" href="#__codelineno-12-46"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><br></p>
 <h2 id="more-resources-from-microsoft-that-you-should-check-out">More Resources From Microsoft That You Should Check Out<a class="headerlink" href="#more-resources-from-microsoft-that-you-should-check-out" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://learn.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-development-guidelines">Cmdlet Development Guidelines</a></li>
@@ -2695,7 +2800,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-05-12T09:52:42+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-05-12</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-07-02T00:24:53+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-07-02</span>
   </span>
 
     
