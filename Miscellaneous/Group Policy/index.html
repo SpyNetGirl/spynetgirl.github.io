@@ -1203,9 +1203,9 @@ or on
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-verify-security-baselines-xzip-file-and-100-trust-it" class="md-nav__link">
+  <a href="#how-to-verify-security-baselines-x-directory-and-100-trust-it" class="md-nav__link">
     <span class="md-ellipsis">
-      How to verify security-baselines-x.zip file and 100% trust it?
+      How to verify Security-Baselines-X directory and 100% trust it?
     </span>
   </a>
   
@@ -2757,9 +2757,9 @@ or on
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-verify-security-baselines-xzip-file-and-100-trust-it" class="md-nav__link">
+  <a href="#how-to-verify-security-baselines-x-directory-and-100-trust-it" class="md-nav__link">
     <span class="md-ellipsis">
-      How to verify security-baselines-x.zip file and 100% trust it?
+      How to verify Security-Baselines-X directory and 100% trust it?
     </span>
   </a>
   
@@ -2884,7 +2884,7 @@ or on
 <p>The module downloads the official Microsoft Security Baselines from Microsoft servers and applies them to the system.</p>
 </li>
 <li>
-<p>It then downloads Group Policies from this GitHub repository, which represent the configurations explained in the main Readme page, and applies them to the system, on top of Microsoft Security Baselines, so where there is a conflict of policy, the module will replace the configurations set by Microsoft Security Baselines.</p>
+<p>It then uses the group policies included in the Module files for security measures explained on the readme page and applies them to the system, on top of Microsoft Security Baselines, so where there is a conflict of policy, the module will replace the configurations set by Microsoft Security Baselines.</p>
 </li>
 <li>
 <p>When applying the Microsoft Security Baselines, you have the option to apply the optional overrides too, <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Overrides-for-Microsoft-Security-Baseline">you can find the details of those overrides in here,</a>, they are required to be applied if you are using Harden Windows Security Module in Azure VMs and highly recommended in general.</p>
@@ -2906,7 +2906,7 @@ or on
 <p>After completing each category, used <code>LGPO.exe /b C:</code> to backup Group Policies of the system by creating a full GPO.</p>
 </li>
 <li>
-<p>Then I took only files needed from the backup, <code>registry.pol</code> and <code>GptTmpl.inf</code> and put them in a zip file, renamed it to <code>Security-Baselines-X.zip</code></p>
+<p>Then I took only files needed from the backup, <code>registry.pol</code> and <code>GptTmpl.inf</code> and put them in a folder, renamed it to <code>Security-Baselines-X</code></p>
 </li>
 </ol>
 <h3 id="how-i-maintain-them">How I Maintain Them<a class="headerlink" href="#how-i-maintain-them" title="Permanent link">&para;</a></h3>
@@ -2924,7 +2924,7 @@ or on
 <p>Use <code>PolicyAnalyzer</code> to double check everything by comparing the old file with the new one and making sure the correct changes are applied.</p>
 </li>
 <li>
-<p>Replace the old Group Policy file with the new file and create a new <code>Security-Baselines-X</code> to upload to the GitHub repository.</p>
+<p>Replace the old Group Policy file with the new file in the Security-Baselines-X directory and upload it to the GitHub repository.</p>
 </li>
 </ol>
 <p><br></p>
@@ -2949,10 +2949,10 @@ or on
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
-<h2 id="how-to-verify-security-baselines-xzip-file-and-100-trust-it">How to verify <code>security-baselines-x.zip</code> file and 100% trust it?<a class="headerlink" href="#how-to-verify-security-baselines-xzip-file-and-100-trust-it" title="Permanent link">&para;</a></h2>
+<h2 id="how-to-verify-security-baselines-x-directory-and-100-trust-it">How to verify Security-Baselines-X directory and 100% trust it?<a class="headerlink" href="#how-to-verify-security-baselines-x-directory-and-100-trust-it" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Download <a href="https://github.com/HotCakeX/Harden-Windows-Security/blob/main/Payload/Security-Baselines-X.zip">the security-baselines-x.zip file</a>, extract it.</li>
-<li>Open Policy Analyzer, Navigate to Add -&gt; File -&gt; Select either <code>Add User Configuration (registry.pol)</code> or <code>Add Security Template (*.inf)</code> -&gt; Browser for the folder that was extracted from the <code>security-baselines-x.zip</code>, navigate to the category you want.</li>
+<li>Download <a href="https://github.com/HotCakeX/Harden-Windows-Security/tree/main/Harden-Windows-Security%20Module/Main%20files/Resources/Security-Baselines-X">the files from here</a>.</li>
+<li>Open the Policy Analyzer, Navigate to Add -&gt; File -&gt; Select either <code>Add User Configuration (registry.pol)</code> or <code>Add Security Template (*.inf)</code> -&gt; Browser for the <code>Security-Baselines-X</code> directory, navigate to the category you want.</li>
 <li>
 <p>Select either <code>.pol</code> or <code>.inf</code> file, Import it, give it a name, save it in <code>\Documents\PolicyAnalyzer\</code></p>
 </li>
@@ -2963,7 +2963,6 @@ or on
 <p>As you will see, everything is according to what has been explicitly stated in the <a href="https://github.com/HotCakeX/Harden-Windows-Security">GitHub's Readme page</a>.</p>
 </li>
 </ol>
-<p><em>You can also use <a href="https://www.virustotal.com/gui/home/upload">Virus Total website</a> to scan <code>security-baselines-x.zip</code> without downloading it first</em></p>
 <p><br></p>
 <p><a class="glightbox" href="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://github.com/HotCakeX/Harden-Windows-Security/raw/main/images/Gifs/1pxRainbowLine.gif" width= "300000" alt="horizontal super thin rainbow RGB line"></a></p>
 <p><br></p>
@@ -3010,7 +3009,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-20T11:10:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-07-08T10:44:30+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-07-08</span>
   </span>
 
     
