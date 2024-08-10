@@ -10,22 +10,28 @@
       
       
       
+        <link rel="canonical" href="https://spynetgirl.github.io/C%23/C%23%20Tips%20And%20Tricks%20Part%201/">
       
       
+        <link rel="prev" href="../../Azure/How%20to%20Securely%20Connect%20to%20Azure%20VMs%20and%20Use%20RDP/">
       
-      <link rel="icon" href="/images/logo.png">
+      
+        <link rel="next" href="../../GitHub/Cloning%20Personal%20and%20Enterprise%20Repositories%20Using%20GitHub%20Desktop/">
+      
+      
+      <link rel="icon" href="../../images/logo.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
-        <title>SpyNetGirl Blog</title>
+        <title>C# Tips And Tricks Part 1 - SpyNetGirl Blog</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -38,11 +44,11 @@
       
     
     
-      <link rel="stylesheet" href="/css/timeago.css">
+      <link rel="stylesheet" href="../../css/timeago.css">
     
-      <link rel="stylesheet" href="/extra.css">
+      <link rel="stylesheet" href="../../extra.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -105,7 +111,16 @@
 
 
 
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -122,6 +137,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#c-tips-and-tricks-part-1" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -156,9 +176,9 @@ or on
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="SpyNetGirl Blog" class="md-header__button md-logo" aria-label="SpyNetGirl Blog" data-md-component="logo">
+    <a href="../.." title="SpyNetGirl Blog" class="md-header__button md-logo" aria-label="SpyNetGirl Blog" data-md-component="logo">
       
-  <img src="/images/logo.png" alt="logo">
+  <img src="../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -175,7 +195,7 @@ or on
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              C# Tips And Tricks Part 1
             
           </span>
         </div>
@@ -289,7 +309,7 @@ or on
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -308,7 +328,7 @@ or on
     
     
       <li class="md-tabs__item">
-        <a href="/Azure/Clean%20Source%20principle%2C%20Azure%20and%20Privileged%20Access%20Workstations/" class="md-tabs__link">
+        <a href="../../Azure/Clean%20Source%20principle%2C%20Azure%20and%20Privileged%20Access%20Workstations/" class="md-tabs__link">
           
   
   Azure
@@ -322,11 +342,13 @@ or on
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/C%23/C%23%20Tips%20And%20Tricks%20Part%201/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   C#
@@ -344,7 +366,7 @@ or on
     
     
       <li class="md-tabs__item">
-        <a href="/GitHub/Cloning%20Personal%20and%20Enterprise%20Repositories%20Using%20GitHub%20Desktop/" class="md-tabs__link">
+        <a href="../../GitHub/Cloning%20Personal%20and%20Enterprise%20Repositories%20Using%20GitHub%20Desktop/" class="md-tabs__link">
           
   
   GitHub
@@ -362,7 +384,7 @@ or on
     
     
       <li class="md-tabs__item">
-        <a href="/Harden-Windows-Security-Module/Harden-Windows-Security-Module/" class="md-tabs__link">
+        <a href="../../Harden-Windows-Security-Module/Harden-Windows-Security-Module/" class="md-tabs__link">
           
   
   Harden Windows Security Module
@@ -380,7 +402,7 @@ or on
     
     
       <li class="md-tabs__item">
-        <a href="/Microsoft%20Cloud/Microsoft%20Graph%20Explorer%20and%20API%20Basics/" class="md-tabs__link">
+        <a href="../../Microsoft%20Cloud/Microsoft%20Graph%20Explorer%20and%20API%20Basics/" class="md-tabs__link">
           
   
   Microsoft Cloud
@@ -398,7 +420,7 @@ or on
     
     
       <li class="md-tabs__item">
-        <a href="/Miscellaneous/About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-tabs__link">
+        <a href="../../Miscellaneous/About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-tabs__link">
           
   
   Miscellaneous
@@ -416,7 +438,7 @@ or on
     
     
       <li class="md-tabs__item">
-        <a href="/PowerShell/Basic%20PowerShell%20tricks%20and%20notes%20Part%202/" class="md-tabs__link">
+        <a href="../../PowerShell/Basic%20PowerShell%20tricks%20and%20notes%20Part%202/" class="md-tabs__link">
           
   
   PowerShell
@@ -434,7 +456,7 @@ or on
     
     
       <li class="md-tabs__item">
-        <a href="/WDAC/Application%20Control%20WDAC%20Frequently%20Asked%20Questions%20FAQs/" class="md-tabs__link">
+        <a href="../../WDAC/Application%20Control%20WDAC%20Frequently%20Asked%20Questions%20FAQs/" class="md-tabs__link">
           
   
   WDAC
@@ -452,7 +474,7 @@ or on
     
     
       <li class="md-tabs__item">
-        <a href="/WDACConfig%20Module/Assert-WDACConfigIntegrity/" class="md-tabs__link">
+        <a href="../../WDACConfig%20Module/Assert-WDACConfigIntegrity/" class="md-tabs__link">
           
   
   WDACConfig Module
@@ -485,9 +507,9 @@ or on
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="SpyNetGirl Blog" class="md-nav__button md-logo" aria-label="SpyNetGirl Blog" data-md-component="logo">
+    <a href="../.." title="SpyNetGirl Blog" class="md-nav__button md-logo" aria-label="SpyNetGirl Blog" data-md-component="logo">
       
-  <img src="/images/logo.png" alt="logo">
+  <img src="../../images/logo.png" alt="logo">
 
     </a>
     SpyNetGirl Blog
@@ -514,7 +536,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -576,7 +598,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Azure/Clean%20Source%20principle%2C%20Azure%20and%20Privileged%20Access%20Workstations/" class="md-nav__link">
+      <a href="../../Azure/Clean%20Source%20principle%2C%20Azure%20and%20Privileged%20Access%20Workstations/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.05 4.24 6.56 18.05 2 18l5.09-8.76 5.96-5m.7 1.09L22 19.76H6.74l9.3-1.66-4.87-5.79 2.58-6.98Z"/></svg>
@@ -599,7 +621,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Azure/How%20to%20Securely%20Connect%20to%20Azure%20VMs%20and%20Use%20RDP/" class="md-nav__link">
+      <a href="../../Azure/How%20to%20Securely%20Connect%20to%20Azure%20VMs%20and%20Use%20RDP/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.05 4.24 6.56 18.05 2 18l5.09-8.76 5.96-5m.7 1.09L22 19.76H6.74l9.3-1.66-4.87-5.79 2.58-6.98Z"/></svg>
@@ -626,27 +648,30 @@ or on
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -657,7 +682,7 @@ or on
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             C#
@@ -668,10 +693,32 @@ or on
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/C%23/C%23%20Tips%20And%20Tricks%20Part%201/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.5 15.97.41 2.44c-.26.14-.68.27-1.24.39-.57.13-1.24.2-2.01.2-2.21-.04-3.87-.7-4.98-1.96C2.56 15.77 2 14.16 2 12.21c.05-2.31.72-4.08 2-5.32C5.32 5.64 6.96 5 8.94 5c.75 0 1.4.07 1.94.19s.94.25 1.2.4l-.58 2.49-1.06-.34c-.4-.1-.86-.15-1.39-.15-1.16-.01-2.12.36-2.87 1.1-.76.73-1.15 1.85-1.18 3.34 0 1.36.37 2.42 1.08 3.2.71.77 1.71 1.17 2.99 1.18l1.33-.12c.43-.08.79-.19 1.1-.32M13.89 19l.61-4H13l.34-2h1.5l.32-2h-1.5L14 9h1.5l.61-4h2l-.61 4h1l.61-4h2l-.61 4H22l-.34 2h-1.5l-.32 2h1.5L21 15h-1.5l-.61 4h-2l.61-4h-1l-.61 4h-2m2.95-6h1l.32-2h-1l-.32 2Z"/></svg>
+  
+  <span class="md-ellipsis">
+    C# Tips And Tricks Part 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m11.5 15.97.41 2.44c-.26.14-.68.27-1.24.39-.57.13-1.24.2-2.01.2-2.21-.04-3.87-.7-4.98-1.96C2.56 15.77 2 14.16 2 12.21c.05-2.31.72-4.08 2-5.32C5.32 5.64 6.96 5 8.94 5c.75 0 1.4.07 1.94.19s.94.25 1.2.4l-.58 2.49-1.06-.34c-.4-.1-.86-.15-1.39-.15-1.16-.01-2.12.36-2.87 1.1-.76.73-1.15 1.85-1.18 3.34 0 1.36.37 2.42 1.08 3.2.71.77 1.71 1.17 2.99 1.18l1.33-.12c.43-.08.79-.19 1.1-.32M13.89 19l.61-4H13l.34-2h1.5l.32-2h-1.5L14 9h1.5l.61-4h2l-.61 4h1l.61-4h2l-.61 4H22l-.34 2h-1.5l-.32 2h1.5L21 15h-1.5l-.61 4h-2l.61-4h-1l-.61 4h-2m2.95-6h1l.32-2h-1l-.32 2Z"/></svg>
@@ -682,6 +729,86 @@ or on
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#do-not-manually-reference-assemblies-or-dlls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do Not Manually Reference Assemblies or DLLs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-activate-wpf-and-winforms-in-your-c-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Activate WPF and WinForms in Your C# Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-make-non-code-files-in-your-solution-available-to-your-code-after-compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Make Non-Code Files In Your Solution Available To Your Code After Compilation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Make Non-Code Files In Your Solution Available To Your Code After Compilation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-way-copying-to-the-output-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Way | Copying To The Output Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-way-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Way | Embedding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-use-embedded-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Embedded Resources?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -743,7 +870,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/GitHub/Cloning%20Personal%20and%20Enterprise%20Repositories%20Using%20GitHub%20Desktop/" class="md-nav__link">
+      <a href="../../GitHub/Cloning%20Personal%20and%20Enterprise%20Repositories%20Using%20GitHub%20Desktop/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
@@ -766,7 +893,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/GitHub/Git%20GitHub%20Desktop%20and%20Mandatory%20ASLR/" class="md-nav__link">
+      <a href="../../GitHub/Git%20GitHub%20Desktop%20and%20Mandatory%20ASLR/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
@@ -789,7 +916,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/GitHub/Signed%20and%20Verified%20commits%20with%20GitHub%20desktop/" class="md-nav__link">
+      <a href="../../GitHub/Signed%20and%20Verified%20commits%20with%20GitHub%20desktop/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
@@ -861,7 +988,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Harden-Windows-Security-Module/Harden-Windows-Security-Module/" class="md-nav__link">
+      <a href="../../Harden-Windows-Security-Module/Harden-Windows-Security-Module/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12h7c-.53 4.11-3.28 7.78-7 8.92V12H5V6.3l7-3.11M12 1 3 5v6c0 5.55 3.84 10.73 9 12 5.16-1.27 9-6.45 9-12V5l-9-4Z"/></svg>
@@ -933,7 +1060,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Microsoft%20Cloud/Microsoft%20Graph%20Explorer%20and%20API%20Basics/" class="md-nav__link">
+      <a href="../../Microsoft%20Cloud/Microsoft%20Graph%20Explorer%20and%20API%20Basics/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.103 10.107c0-4.244 3.445-7.607 7.733-7.607 3.19 0 5.912 1.858 7.099 4.563l.01.022.001.006C21.348 7.345 24 10.095 24 13.536 24 17.148 21.076 20 17.431 20H5.017C2.23 20 0 17.83 0 15.06a4.899 4.899 0 0 1 3.112-4.581 7.696 7.696 0 0 1-.009-.372ZM10.836 4c-3.485 0-6.233 2.717-6.233 6.107 0 .284.022.602.052.756a.75.75 0 0 1-.552.869c-1.52.385-2.603 1.712-2.603 3.328 0 1.917 1.532 3.44 3.517 3.44h12.414c2.843 0 5.069-2.206 5.069-4.964 0-2.759-2.226-4.965-5.069-4.965a.75.75 0 0 1-.696-.47l-.179-.446C15.606 5.5 13.424 4 10.836 4Z"/></svg>
@@ -1005,7 +1132,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-nav__link">
+      <a href="../../Miscellaneous/About%20TLS%2C%20DNS%2C%20Encryption%20and%20OPSEC%20concepts/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1028,7 +1155,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/BitLocker%2C%20TPM%20and%20Pluton%20What%20Are%20They%20and%20How%20Do%20They%20Work/" class="md-nav__link">
+      <a href="../../Miscellaneous/BitLocker%2C%20TPM%20and%20Pluton%20What%20Are%20They%20and%20How%20Do%20They%20Work/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1051,7 +1178,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/Comparison%20of%20Security%20Benchmarks/" class="md-nav__link">
+      <a href="../../Miscellaneous/Comparison%20of%20Security%20Benchmarks/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1074,7 +1201,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/Create%20Bootable%20USB%20flash%20drive%20with%20no%203rd%20party%20tools/" class="md-nav__link">
+      <a href="../../Miscellaneous/Create%20Bootable%20USB%20flash%20drive%20with%20no%203rd%20party%20tools/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1097,7 +1224,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/Device%20Guard%20and%20Virtualization%20Based%20Security%20in%20Windows/" class="md-nav__link">
+      <a href="../../Miscellaneous/Device%20Guard%20and%20Virtualization%20Based%20Security%20in%20Windows/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1120,7 +1247,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/Event%20Viewer/" class="md-nav__link">
+      <a href="../../Miscellaneous/Event%20Viewer/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1143,7 +1270,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/Group%20Policy/" class="md-nav__link">
+      <a href="../../Miscellaneous/Group%20Policy/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1166,7 +1293,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/How%20to%20Detect%20Changes%20in%20User%20and%20Local%20Machine%20Certificate%20Stores%20in%20Real%20Time%20Using%20PowerShell/" class="md-nav__link">
+      <a href="../../Miscellaneous/How%20to%20Detect%20Changes%20in%20User%20and%20Local%20Machine%20Certificate%20Stores%20in%20Real%20Time%20Using%20PowerShell/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1189,7 +1316,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/How%20to%20compact%20your%20OS%20and%20free%20up%20extra%20space/" class="md-nav__link">
+      <a href="../../Miscellaneous/How%20to%20compact%20your%20OS%20and%20free%20up%20extra%20space/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1212,7 +1339,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/Hyper%20V/" class="md-nav__link">
+      <a href="../../Miscellaneous/Hyper%20V/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1235,7 +1362,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/Only%20a%20Small%20Portion%20of%20The%20Windows%20OS%20Security%20Apparatus/" class="md-nav__link">
+      <a href="../../Miscellaneous/Only%20a%20Small%20Portion%20of%20The%20Windows%20OS%20Security%20Apparatus/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1258,7 +1385,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/Overrides%20for%20Microsoft%20Security%20Baseline/" class="md-nav__link">
+      <a href="../../Miscellaneous/Overrides%20for%20Microsoft%20Security%20Baseline/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1281,7 +1408,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/Miscellaneous/Things%20to%20do%20for%20clean%20installing%20Windows/" class="md-nav__link">
+      <a href="../../Miscellaneous/Things%20to%20do%20for%20clean%20installing%20Windows/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.1 18.55-.1.1-.11-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5 22 5.41 19.58 3 16.5 3Z"/></svg>
@@ -1353,7 +1480,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/PowerShell/Basic%20PowerShell%20tricks%20and%20notes%20Part%202/" class="md-nav__link">
+      <a href="../../PowerShell/Basic%20PowerShell%20tricks%20and%20notes%20Part%202/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
@@ -1376,7 +1503,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/PowerShell/Basic%20PowerShell%20tricks%20and%20notes%20Part%203/" class="md-nav__link">
+      <a href="../../PowerShell/Basic%20PowerShell%20tricks%20and%20notes%20Part%203/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
@@ -1399,7 +1526,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/PowerShell/Basic%20PowerShell%20tricks%20and%20notes%20Part%204/" class="md-nav__link">
+      <a href="../../PowerShell/Basic%20PowerShell%20tricks%20and%20notes%20Part%204/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
@@ -1422,7 +1549,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/PowerShell/Basic%20PowerShell%20tricks%20and%20notes%20Part%205/" class="md-nav__link">
+      <a href="../../PowerShell/Basic%20PowerShell%20tricks%20and%20notes%20Part%205/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
@@ -1445,7 +1572,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/PowerShell/Basic%20PowerShell%20tricks%20and%20notes/" class="md-nav__link">
+      <a href="../../PowerShell/Basic%20PowerShell%20tricks%20and%20notes/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
@@ -1468,7 +1595,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/PowerShell/How%20To%20Access%20All%20Stream%20Outputs%20From%20Thread%20Jobs%20In%20PowerShell%20In%20Real%20Time/" class="md-nav__link">
+      <a href="../../PowerShell/How%20To%20Access%20All%20Stream%20Outputs%20From%20Thread%20Jobs%20In%20PowerShell%20In%20Real%20Time/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
@@ -1491,7 +1618,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/PowerShell/How%20To%20Asynchronously%20Access%20All%20Stream%20Outputs%20From%20Background%20Jobs%20In%20PowerShell/" class="md-nav__link">
+      <a href="../../PowerShell/How%20To%20Asynchronously%20Access%20All%20Stream%20Outputs%20From%20Background%20Jobs%20In%20PowerShell/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
@@ -1514,7 +1641,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/PowerShell/PowerShell%20Best%20Practices/" class="md-nav__link">
+      <a href="../../PowerShell/PowerShell%20Best%20Practices/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
@@ -1537,7 +1664,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/PowerShell/Powershell%20Dynamic%20Parameters%20and%20How%20to%20Add%20Them%20to%20the%20Get-Help%20Syntax/" class="md-nav__link">
+      <a href="../../PowerShell/Powershell%20Dynamic%20Parameters%20and%20How%20to%20Add%20Them%20to%20the%20Get-Help%20Syntax/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
@@ -1560,7 +1687,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/PowerShell/RunSpaces%20In%20PowerShell/" class="md-nav__link">
+      <a href="../../PowerShell/RunSpaces%20In%20PowerShell/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4h16.09m-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44-6.53 4.6Z"/></svg>
@@ -1632,7 +1759,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/Application%20Control%20WDAC%20Frequently%20Asked%20Questions%20FAQs/" class="md-nav__link">
+      <a href="../../WDAC/Application%20Control%20WDAC%20Frequently%20Asked%20Questions%20FAQs/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1655,7 +1782,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/EKUs%20in%20WDAC%2C%20App%20Control%20for%20Business%2C%20Policies/" class="md-nav__link">
+      <a href="../../WDAC/EKUs%20in%20WDAC%2C%20App%20Control%20for%20Business%2C%20Policies/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1686,7 +1813,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/Fast%20and%20Automatic%20Microsoft%20Recommended%20Driver%20Block%20Rules%20updates/" class="md-nav__link">
+      <a href="../../WDAC/Fast%20and%20Automatic%20Microsoft%20Recommended%20Driver%20Block%20Rules%20updates/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1709,7 +1836,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/How%20to%20Create%20and%20Deploy%20a%20Signed%20WDAC%20Policy%20Windows%20Defender%20Application%20Control/" class="md-nav__link">
+      <a href="../../WDAC/How%20to%20Create%20and%20Deploy%20a%20Signed%20WDAC%20Policy%20Windows%20Defender%20Application%20Control/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1732,7 +1859,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/How%20to%20Use%20Microsoft%20Defender%20for%20Endpoint%20Advanced%20Hunting%20With%20WDAC%20App%20Control/" class="md-nav__link">
+      <a href="../../WDAC/How%20to%20Use%20Microsoft%20Defender%20for%20Endpoint%20Advanced%20Hunting%20With%20WDAC%20App%20Control/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1755,7 +1882,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/Introduction/" class="md-nav__link">
+      <a href="../../WDAC/Introduction/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1778,7 +1905,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/Script%20Enforcement%20and%20PowerShell%20Constrained%20Language%20Mode%20in%20WDAC%20App%20Control%20Policies/" class="md-nav__link">
+      <a href="../../WDAC/Script%20Enforcement%20and%20PowerShell%20Constrained%20Language%20Mode%20in%20WDAC%20App%20Control%20Policies/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1801,7 +1928,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/WDAC%20Notes/" class="md-nav__link">
+      <a href="../../WDAC/WDAC%20Notes/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1824,7 +1951,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/WDAC%20for%20Fully%20Managed%20Devices%20%282nd%20variant%29/" class="md-nav__link">
+      <a href="../../WDAC/WDAC%20for%20Fully%20Managed%20Devices%20%282nd%20variant%29/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1847,7 +1974,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/WDAC%20for%20Fully%20Managed%20Devices%20Variant%203/" class="md-nav__link">
+      <a href="../../WDAC/WDAC%20for%20Fully%20Managed%20Devices%20Variant%203/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1870,7 +1997,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/WDAC%20for%20Fully%20Managed%20Devices%20Variant%204/" class="md-nav__link">
+      <a href="../../WDAC/WDAC%20for%20Fully%20Managed%20Devices%20Variant%204/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1893,7 +2020,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/WDAC%20for%20Fully%20Managed%20Devices/" class="md-nav__link">
+      <a href="../../WDAC/WDAC%20for%20Fully%20Managed%20Devices/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1916,7 +2043,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/WDAC%20for%20Lightly%20Managed%20Devices/" class="md-nav__link">
+      <a href="../../WDAC/WDAC%20for%20Lightly%20Managed%20Devices/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -1939,7 +2066,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDAC/WDAC%20policy%20for%20BYOVD%20Kernel%20mode%20only%20protection/" class="md-nav__link">
+      <a href="../../WDAC/WDAC%20policy%20for%20BYOVD%20Kernel%20mode%20only%20protection/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h9v9H2V3m9 19H2v-9h9v9M21 3v9h-9V3h9m0 19h-9v-9h9v9Z"/></svg>
@@ -2011,7 +2138,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Assert-WDACConfigIntegrity/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Assert-WDACConfigIntegrity/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2034,7 +2161,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Build-WDACCertificate/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Build-WDACCertificate/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2057,7 +2184,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Confirm-WDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Confirm-WDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2080,7 +2207,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/ConvertTo-WDACPolicy/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/ConvertTo-WDACPolicy/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2111,7 +2238,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Deploy-SignedWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Deploy-SignedWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2134,7 +2261,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Edit-SignedWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Edit-SignedWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2157,7 +2284,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Edit-WDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Edit-WDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2180,7 +2307,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Get-CIPolicySetting/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Get-CIPolicySetting/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2203,7 +2330,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Get-CiFileHashes/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Get-CiFileHashes/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2234,7 +2361,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Get-CommonWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Get-CommonWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2257,7 +2384,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Invoke-WDACSimulation/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Invoke-WDACSimulation/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2280,7 +2407,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/New-DenyWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/New-DenyWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2303,7 +2430,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/New-KernelModeWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/New-KernelModeWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2326,7 +2453,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/New-SupplementalWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/New-SupplementalWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2349,7 +2476,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/New-WDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/New-WDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2372,7 +2499,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Remove-CommonWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Remove-CommonWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2395,7 +2522,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Remove-WDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Remove-WDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2418,7 +2545,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Set-CiRuleOptions/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Set-CiRuleOptions/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2441,7 +2568,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Set-CommonWDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Set-CommonWDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2464,7 +2591,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/Test-CiPolicy/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/Test-CiPolicy/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v.67l-2.5-1.11-6.5 2.88V15H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h8c.06 2.25 1 4.4 2.46 6H3a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M8 5h1V3H8v2m0 8h1v-2H8v2m0 8h1v-2H8v2M4 3v2h2V3H4m0 8v2h2v-2H4m0 8v2h2v-2H4m13.5-7 4.5 2v3c0 2.78-1.92 5.37-4.5 6-2.58-.63-4.5-3.22-4.5-6v-3l4.5-2m0 1.94L15 15.06v2.66c0 1.54 1.07 2.98 2.5 3.34v-7.12Z"/></svg>
@@ -2487,7 +2614,7 @@ or on
   
   
     <li class="md-nav__item">
-      <a href="/WDACConfig%20Module/WDACConfig/" class="md-nav__link">
+      <a href="../../WDACConfig%20Module/WDACConfig/" class="md-nav__link">
         
   
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.37 2.5 12 5 7.63 7.5v-5L12 0ZM22.487 6l.003 4.986-8.728-4.993L18.118 3.5Zm-4.369 9.508-.001 4.997 4.377-2.5-.003-5.018-4.373-2.502zm-10.49 5.994L12 24l4.369-2.495v-4.997zM7.63 9.5v5.001l4.37 2.5 4.37-2.494V9.5L12 7Zm-6.124 8.504L1.508 13l8.747 5.003-4.376 2.5ZM5.882 3.5l-4.37 2.501-.002 4.998 4.372 2.503z"/></svg>
@@ -2535,6 +2662,76 @@ or on
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#do-not-manually-reference-assemblies-or-dlls" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do Not Manually Reference Assemblies or DLLs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-activate-wpf-and-winforms-in-your-c-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Activate WPF and WinForms in Your C# Project
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-make-non-code-files-in-your-solution-available-to-your-code-after-compilation" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Make Non-Code Files In Your Solution Available To Your Code After Compilation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Make Non-Code Files In Your Solution Available To Your Code After Compilation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alternative-way-copying-to-the-output-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Way | Copying To The Output Directory
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-way-embedding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative Way | Embedding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-use-embedded-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Embedded Resources?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2546,8 +2743,265 @@ or on
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+  
+
+
+<h1 id="c-tips-and-tricks-part-1">C# Tips And Tricks Part 1<a class="headerlink" href="#c-tips-and-tricks-part-1" title="Permanent link">&para;</a></h1>
+<p>This is part 1 of the <strong>C# Tips And Tricks series</strong>. These are not tutorials, but rather a collection of notes and tips that can be useful for beginners. They are updated regularly with more info.</p>
+<p><br></p>
+<h2 id="do-not-manually-reference-assemblies-or-dlls">Do Not Manually Reference Assemblies or DLLs<a class="headerlink" href="#do-not-manually-reference-assemblies-or-dlls" title="Permanent link">&para;</a></h2>
+<p>When working in the modern IDE, Visual Studio 2022 and with .NET, you do not need to reference .NET dlls manually, they will be available to your project automatically.</p>
+<p>If you need to reference a DLL that is not part of the .NET by default, then use the <a href="https://www.nuget.org/">Nuget</a> package manager to add it.</p>
+<p>So if you have lines like this in your <code>.csproj</code> file, remove them completely.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;ItemGroup&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">   </span><span class="nt">&lt;Reference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Security.Cryptography&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">       </span><span class="nt">&lt;HintPath&gt;</span>&quot;Path<span class="w"> </span>To<span class="w"> </span>.DLL<span class="w"> </span>file&quot;<span class="nt">&lt;/HintPath&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">   </span><span class="nt">&lt;/Reference&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span><span class="nt">&lt;Reference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;System&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">       </span><span class="nt">&lt;HintPath&gt;</span>&quot;Path<span class="w"> </span>To<span class="w"> </span>.DLL<span class="w"> </span>file&quot;<span class="nt">&lt;/HintPath&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">   </span><span class="nt">&lt;/Reference&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">&lt;/ItemGroup&gt;</span>
+</span></code></pre></div>
+<p><br></p>
+<p>Nuget Package references look like this</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;ItemGroup&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;System.Management&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;9.0.0&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;PackageReference</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;System.Management.Automation&quot;</span><span class="w"> </span><span class="na">Version=</span><span class="s">&quot;7.5.&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">&lt;/ItemGroup&gt;</span>
+</span></code></pre></div>
+<p><br></p>
+<h2 id="how-to-activate-wpf-and-winforms-in-your-c-project">How To Activate WPF and WinForms in Your C# Project<a class="headerlink" href="#how-to-activate-wpf-and-winforms-in-your-c-project" title="Permanent link">&para;</a></h2>
+<p>When working with WPF or Windows Forms, additional assemblies need to be made available to your project.</p>
+<p>Use the following line in your <code>.csproj</code> file to enable WPF assemblies</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;UseWpf&gt;</span>true<span class="nt">&lt;/UseWpf&gt;</span>
+</span></code></pre></div>
+<p>Use the following line in your <code>.csproj</code> file to enable Windows Forms assemblies</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;UseWindowsForms&gt;</span>true<span class="nt">&lt;/UseWindowsForms&gt;</span>
+</span></code></pre></div>
+<p>They are MSBuild properties, you can <a href="https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props-desktop">read more about them on this page</a>.</p>
+<p><br></p>
+<h2 id="how-to-make-non-code-files-in-your-solution-available-to-your-code-after-compilation">How To Make Non-Code Files In Your Solution Available To Your Code After Compilation<a class="headerlink" href="#how-to-make-non-code-files-in-your-solution-available-to-your-code-after-compilation" title="Permanent link">&para;</a></h2>
+<p>If you have non-code files in your solution explorer, such as <code>.XML</code>, <code>.CSV</code>, <code>.JSON</code> files etc. that you want to be available to your code after compilation, maybe because they rely on them and they are important resources for your application, you can configure your project to automatically copy them to the output folder after compilation.</p>
+<p>For example, use the following code in your <code>.csproj</code> file to make everything in the <code>Resources</code> folder, which is in the <code>Main</code> folder, copied to the output folder after compilation. The exact folder structure will be preserved.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;ItemGroup&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;Content</span><span class="w"> </span><span class="na">Include=</span><span class="s">&quot;Main\Resources\**&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="nt">&lt;CopyToOutputDirectory&gt;</span>PreserveNewest<span class="nt">&lt;/CopyToOutputDirectory&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&lt;/Content&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nt">&lt;/ItemGroup&gt;</span>
+</span></code></pre></div>
+<p><br></p>
+<h3 id="alternative-way-copying-to-the-output-directory">Alternative Way | Copying To The Output Directory<a class="headerlink" href="#alternative-way-copying-to-the-output-directory" title="Permanent link">&para;</a></h3>
+<p>You can navigate to an individual file in your solution explorer, right-click on it and select Properties, in the <em>Copy To Output Directory</em> property select <em>Copy always</em>.</p>
+<div align="center">
+<a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Copy%20To%20output%20Directory.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/main/Pictures/PNG%20and%20JPG/Copy%20To%20output%20Directory.png" alt="Visual Studio file properties"></a>
+</div>
+
+<p><br></p>
+<p>You can access the output directory using the following variable</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">AppDomain</span><span class="p">.</span><span class="n">CurrentDomain</span><span class="p">.</span><span class="n">BaseDirectory</span>
+</span></code></pre></div>
+<p>So in the example above, the files will be in the following directory</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Path</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">AppDomain</span><span class="p">.</span><span class="n">CurrentDomain</span><span class="p">.</span><span class="n">BaseDirectory</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Main&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Resources&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p><br></p>
+<h3 id="alternative-way-embedding">Alternative Way | Embedding<a class="headerlink" href="#alternative-way-embedding" title="Permanent link">&para;</a></h3>
+<p>There are of course other options, such as designating/embedding the file as a resource of your application.</p>
+<p>To do that first navigate to the file and right-click on it, select Properties, and in the <em>Build Action</em> property select <em>Embedded Resource</em>.</p>
+<p>Then you can access the file using the following code</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Reflection</span><span class="p">;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">HardenWindowsSecurity</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">{</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">            </span><span class="c1">// Specify the resource name</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">resourceName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;HardenWindowsSecurity.Main_files.Resources.XAML.Main.xaml&quot;</span><span class="p">;</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">            </span><span class="c1">// Load the resource from the assembly</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">assembly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Assembly</span><span class="p">.</span><span class="n">GetExecutingAssembly</span><span class="p">();</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">Stream</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">assembly</span><span class="p">.</span><span class="n">GetManifestResourceStream</span><span class="p">(</span><span class="n">resourceName</span><span class="p">))</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">StreamReader</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StreamReader</span><span class="p">(</span><span class="n">stream</span><span class="p">))</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">                </span><span class="c1">// Read the content of the XAML file as a string</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">                </span><span class="kt">string</span><span class="w"> </span><span class="n">xamlContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reader</span><span class="p">.</span><span class="n">ReadToEnd</span><span class="p">();</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">                </span><span class="c1">// Print the content to the console</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">                </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">xamlContent</span><span class="p">);</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><br></p>
+<p>Or use this code to load the XAML GUI</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.IO</span><span class="p">;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Reflection</span><span class="p">;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Windows</span><span class="p">;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Windows.Markup</span><span class="p">;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">HardenWindowsSecurity</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">{</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">        </span><span class="na">[STAThread]</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Application</span><span class="w"> </span><span class="n">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Application</span><span class="p">();</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="w">            </span><span class="c1">// Get the current assembly</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">            </span><span class="n">Assembly</span><span class="w"> </span><span class="n">assembly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Assembly</span><span class="p">.</span><span class="n">GetExecutingAssembly</span><span class="p">();</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">            </span><span class="c1">// Define the resource path</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">resourcePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;HardenWindowsSecurity.Main_files.Resources.XAML.Main.xaml&quot;</span><span class="p">;</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="w">            </span><span class="c1">// Load the XAML file as a stream</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="w">            </span><span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">Stream</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">assembly</span><span class="p">.</span><span class="n">GetManifestResourceStream</span><span class="p">(</span><span class="n">resourcePath</span><span class="p">))</span>
+</span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stream</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+</span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">                </span><span class="p">{</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">                    </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;Failed to load XAML resource.&quot;</span><span class="p">);</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">                    </span><span class="k">return</span><span class="p">;</span>
+</span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
+</span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="w">                </span><span class="c1">// Load the XAML from the stream</span>
+</span><span id="__span-8-32"><a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="w">                </span><span class="n">Window</span><span class="w"> </span><span class="n">window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Window</span><span class="p">)</span><span class="n">XamlReader</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
+</span><span id="__span-8-33"><a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>
+</span><span id="__span-8-34"><a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="w">                </span><span class="c1">// Show the window as a dialog</span>
+</span><span id="__span-8-35"><a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="w">                </span><span class="n">window</span><span class="p">.</span><span class="n">ShowDialog</span><span class="p">();</span>
+</span><span id="__span-8-36"><a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-8-37"><a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-8-38"><a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-39"><a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><br></p>
+<p>Or use this code to get the name of the embedded resources</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Reflection</span><span class="p">;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">namespace</span><span class="w"> </span><span class="nn">HardenWindowsSecurity</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="k">class</span><span class="w"> </span><span class="nc">Program</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="na">[STAThread]</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="k">static</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Main</span><span class="p">()</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">            </span><span class="c1">// Get the current assembly</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">            </span><span class="n">Assembly</span><span class="w"> </span><span class="n">assembly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Assembly</span><span class="p">.</span><span class="n">GetExecutingAssembly</span><span class="p">();</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">            </span><span class="c1">// List all resource names</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">            </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">resourceName</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">assembly</span><span class="p">.</span><span class="n">GetManifestResourceNames</span><span class="p">())</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">            </span><span class="p">{</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">                </span><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">resourceName</span><span class="p">);</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><br></p>
+<ul>
+<li>
+<p>When you set a file as an <em>Embedded Resource</em> in Visual Studio, it gets compiled into the assembly (i.e., your project's output file, such as .exe or .dll). This means the file becomes a part of the compiled binary and can be accessed programmatically using reflection.</p>
+</li>
+<li>
+<p>The resource name is critical as it follows a specific pattern: Namespace.FolderStructure.Filename.</p>
+</li>
+<li>
+<p>If your project's default namespace is <code>YourNamespace</code>, and your XAML file is located in <code>"Main files"/Resources/XAML/Main.xaml</code>, the resource name would be <code>YourNamespace.Main_files.Resources.XAML.Main.xaml</code>.</p>
+</li>
+<li>
+<p><code>Assembly.GetExecutingAssembly()</code>: This method returns the assembly that contains the code currently executing. This is important because your embedded resource is part of this assembly.</p>
+</li>
+<li>
+<p><code>GetManifestResourceStream</code>: This method retrieves the resource stream (a sequence of bytes) of the embedded resource based on its name. The method returns a Stream object that you can use to read the content of the resource.</p>
+</li>
+<li>
+<p><code>StreamReader</code>: This class is used to read characters from a stream. Since <code>GetManifestResourceStream</code> returns a stream, we wrap it in a <code>StreamReader</code> to easily read the text content.</p>
+</li>
+</ul>
+<p><br></p>
+<h3 id="why-use-embedded-resources">Why Use Embedded Resources?<a class="headerlink" href="#why-use-embedded-resources" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Portability: Since the resource is embedded in the assembly, you don't have to worry about distributing external files with your application.</p>
+</li>
+<li>
+<p>Security: The resource is somewhat protected since it’s part of the compiled binary, making it harder (though not impossible) for others to tamper with the file.</p>
+</li>
+<li>
+<p>Ease of Access: Accessing resources via the assembly makes it straightforward, as you don't need to deal with file paths, especially when deploying your application.</p>
+</li>
+<li>
+<p>This method is powerful for scenarios where you want to package files directly within your application and access them as needed.</p>
+</li>
+</ul>
+<p><br></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-08-10T20:02:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-08-10</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-08-10T20:02:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-08-10</span>
+  </span>
+
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:spynetgirl@outlook.com">Violet</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -2565,6 +3019,44 @@ or on
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../Azure/How%20to%20Securely%20Connect%20to%20Azure%20VMs%20and%20Use%20RDP/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How to Securely Connect to Azure VMs and Use RDP">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                How to Securely Connect to Azure VMs and Use RDP
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../GitHub/Cloning%20Personal%20and%20Enterprise%20Repositories%20Using%20GitHub%20Desktop/" class="md-footer__link md-footer__link--next" aria-label="Next: Cloning Personal and Enterprise GitHub Repositories">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Cloning Personal and Enterprise GitHub Repositories
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -2736,8 +3228,6 @@ or on
 
 
   
-    
-  
 
 
 
@@ -2802,15 +3292,17 @@ or on
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share", "content.tooltips"], "search": "/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
-        <script src="/js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="/js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
