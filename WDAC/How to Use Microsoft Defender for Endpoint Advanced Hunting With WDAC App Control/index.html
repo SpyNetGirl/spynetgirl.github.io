@@ -2865,11 +2865,11 @@ or on
 <p>To start, we need our endpoints to be generating data and intelligence we can work with. These data points are the Code Integrity and AppLocker events. These events are generated when an application or file is blocked or audited by <abbr title="Windows Defender Application Control">WDAC</abbr>, or when a script or MSI file is blocked or audited by AppLocker. We can trigger the data generation by deploying <abbr title="Windows Defender Application Control">WDAC</abbr> policies to our endpoints in Audit mode. This mode will not block any applications, instead it will generate data points for any application, file, script, MSI file and so on that would have been blocked if the policy was in Enforce mode.</p>
 <p>You can create Audit mode policies using the WDACConfig module based on different levels of trust.</p>
 <p>For instance, the following command will create an Audit mode policy that once deployed on an endpoint, starts generating Audit logs for any file that runs but is not part of the Windows by default.</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-PrepDefaultWindowsAudit</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-PolicyType</span> <span class="n">DefaultWindows</span> <span class="n">-Audit</span>
 </span></code></pre></div>
 <p><br></p>
 <p>Another option would be the following command, which will create an Audit mode policy that once deployed, starts generating Audit logs for any file that runs but is not signed by Microsoft certificates.</p>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-PrepMSFTOnlyAudit</span>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-PolicyType</span> <span class="n">AllowMicrosoft</span> <span class="n">-Audit</span>
 </span></code></pre></div>
 <p><br></p>
 <p>Please refer to <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig">this document</a> for further info about the commands.</p>
@@ -2935,11 +2935,11 @@ or on
 <p><br></p>
 <h2 id="deploying-the-wdac-policies">Deploying the <abbr title="Windows Defender Application Control">WDAC</abbr> Policies<a class="headerlink" href="#deploying-the-wdac-policies" title="Permanent link">&para;</a></h2>
 <p>After generating the Supplemental policies based off of the MDE Advanced Hunting data, you need to remove the Audit mode policies you deployed to your endpoints initially and replace them with Enforced mode policies.</p>
-<h4 id="generate-allow-microsoft-base-policy-enforced-mode"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--makeallowmsftwithblockrules">Generate Allow Microsoft Base Policy (Enforced Mode)</a><a class="headerlink" href="#generate-allow-microsoft-base-policy-enforced-mode" title="Permanent link">&para;</a></h4>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-MakeAllowMSFTWithBlockRules</span>
+<h4 id="generate-allow-microsoft-base-policy-enforced-mode"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--policytype">Generate Allow Microsoft Base Policy (Enforced Mode)</a><a class="headerlink" href="#generate-allow-microsoft-base-policy-enforced-mode" title="Permanent link">&para;</a></h4>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-PolicyType</span> <span class="n">AllowMicrosoft</span>
 </span></code></pre></div>
-<h4 id="generate-default-windows-base-policy-enforced-mode"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--makedefaultwindowswithblockrules">Generate Default Windows Base Policy (Enforced Mode)</a><a class="headerlink" href="#generate-default-windows-base-policy-enforced-mode" title="Permanent link">&para;</a></h4>
-<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-MakeDefaultWindowsWithBlockRules</span>
+<h4 id="generate-default-windows-base-policy-enforced-mode"><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/New-WDACConfig#new-wdacconfig--policytype">Generate Default Windows Base Policy (Enforced Mode)</a><a class="headerlink" href="#generate-default-windows-base-policy-enforced-mode" title="Permanent link">&para;</a></h4>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">New-WDACConfig</span> <span class="n">-PolicyType</span> <span class="n">DefaultWindows</span>
 </span></code></pre></div>
 <p><br></p>
 <div class="admonition important">
@@ -2994,7 +2994,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-06-04T11:02:41+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-06-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-08-15T22:06:29+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-08-15</span>
   </span>
 
     
