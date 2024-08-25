@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
     
     
       
@@ -1565,6 +1565,45 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-display-modern-toast-notifications-in-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Display Modern Toast Notifications In PowerShell
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Display Modern Toast Notifications In PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2749,6 +2788,45 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-display-modern-toast-notifications-in-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Display Modern Toast Notifications In PowerShell
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How To Display Modern Toast Notifications In PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Related Documentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2828,6 +2906,177 @@ or on
 <h2 id="note-about-psreadline-module">Note About PSReadLine Module<a class="headerlink" href="#note-about-psreadline-module" title="Permanent link">&para;</a></h2>
 <p>If you install or uninstall a <a href="https://learn.microsoft.com/en-us/powershell/module/psreadline/about/about_psreadline">PSReadLine</a> version, totally exit the Terminal or VS Code if using the IDE. That's one of those modules that can't be unloaded normally.</p>
 <p><br></p>
+<h2 id="how-to-display-modern-toast-notifications-in-powershell">How To Display Modern Toast Notifications In PowerShell<a class="headerlink" href="#how-to-display-modern-toast-notifications-in-powershell" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
+<p>You need to first have the following DLL files in one directory:</p>
+<ul>
+<li>
+<p><strong>Microsoft.Toolkit.Uwp.Notifications.dll</strong></p>
+<ul>
+<li>
+<p>from <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">Microsoft.Toolkit.Uwp.Notifications</a></p>
+</li>
+<li>
+<p>found in <code>microsoft.toolkit.uwp.notifications.7.1.3\lib\net5.0-windows10.0.17763\Microsoft.Toolkit.Uwp.Notifications.dll</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Microsoft.Win32.SystemEvents.dll</strong></p>
+<ul>
+<li>
+<p>from <a href="https://www.nuget.org/packages/Microsoft.Win32.SystemEvents/">Microsoft.Win32.SystemEvents</a></p>
+</li>
+<li>
+<p>found in <code>microsoft.win32.systemevents.8.0.0\lib\net8.0\Microsoft.Win32.SystemEvents.dll</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Microsoft.Windows.SDK.NET.dll</strong></p>
+<ul>
+<li>
+<p>from <a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref">Microsoft.Windows.SDK.NET.Ref</a></p>
+</li>
+<li>
+<p>found in <code>microsoft.windows.sdk.net.ref.10.0.26100.42\lib\net8.0\Microsoft.Windows.SDK.NET.dll</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>WinRT.Runtime.dll</strong></p>
+<ul>
+<li>
+<p>from <a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref">Microsoft.Windows.SDK.NET.Ref</a></p>
+</li>
+<li>
+<p>found in <code>microsoft.windows.sdk.net.ref.10.0.26100.42\lib\net8.0\WinRT.Runtime.dll</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>System.Drawing.Common.dll</strong></p>
+<ul>
+<li>
+<p>from <a href="https://www.nuget.org/packages/System.Drawing.Common/">System.Drawing.Common</a></p>
+</li>
+<li>
+<p>found in <code>system.drawing.common.8.0.8\lib\net8.0\System.Drawing.Common.dll</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Then you can use the following PowerShell code to natively display the toast notifications</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Change <code>D:\notifications</code> to the correct folder in your computer where the DLLs exist.</p>
+</div>
+<p><br></p>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># Load the required assemblies</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">Add-Type</span> <span class="n">-Path</span> <span class="s1">&#39;D:\notifications\Microsoft.Toolkit.Uwp.Notifications.dll&#39;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">Add-Type</span> <span class="n">-Path</span> <span class="s1">&#39;D:\notifications\System.Drawing.Common.dll&#39;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c"># Create an instance of the ToastContentBuilder class</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nv">$toastContentBuilderType</span> <span class="p">=</span> <span class="no">[Type]</span><span class="p">::</span><span class="n">GetType</span><span class="p">(</span><span class="s1">&#39;Microsoft.Toolkit.Uwp.Notifications.ToastContentBuilder, Microsoft.Toolkit.Uwp.Notifications&#39;</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="nv">$toastContentBuilder</span> <span class="p">=</span> <span class="no">[Activator]</span><span class="p">::</span><span class="n">CreateInstance</span><span class="p">(</span><span class="nv">$toastContentBuilderType</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c"># Add text elements</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nv">$toastContentBuilder</span><span class="p">.</span><span class="n">AddText</span><span class="p">(</span><span class="s1">&#39;Main Notification Title&#39;</span><span class="p">)</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nv">$toastContentBuilder</span><span class="p">.</span><span class="n">AddText</span><span class="p">(</span><span class="s1">&#39;This is the first line of content with summary details.&#39;</span><span class="p">)</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="nv">$toastContentBuilder</span><span class="p">.</span><span class="n">AddText</span><span class="p">(</span><span class="s1">&#39;Additional line of content.&#39;</span><span class="p">)</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="c"># Add Attribution Text</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="nv">$toastContentBuilder</span><span class="p">.</span><span class="n">AddAttributionText</span><span class="p">(</span><span class="s1">&#39;Brought to you by Your Company&#39;</span><span class="p">)</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c"># Add Header</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="nv">$toastContentBuilder</span><span class="p">.</span><span class="n">AddHeader</span><span class="p">(</span><span class="s1">&#39;6289&#39;</span><span class="p">,</span> <span class="s1">&#39;Camping!!&#39;</span><span class="p">,</span> <span class="s1">&#39;action=openConversation&amp;id=6289&#39;</span><span class="p">)</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="c"># Add Hero Image</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="nv">$heroImagePath</span> <span class="p">=</span> <span class="s1">&#39;D:\notifications\2.jpg&#39;</span> 
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="nv">$toastContentBuilder</span><span class="p">.</span><span class="n">AddHeroImage</span><span class="p">(</span><span class="no">[Uri]</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="nv">$heroImagePath</span><span class="p">))</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="c"># Add Inline Image</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="nv">$inlineImagePath</span> <span class="p">=</span> <span class="s1">&#39;D:\notifications\1.jpg&#39;</span> 
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="nv">$toastContentBuilder</span><span class="p">.</span><span class="n">AddInlineImage</span><span class="p">(</span><span class="no">[Uri]</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="nv">$inlineImagePath</span><span class="p">))</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="c"># Show the notification</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="nv">$toastContentBuilder</span><span class="p">.</span><span class="n">Show</span><span class="p">()</span> <span class="p">|</span> <span class="nb">Out-Null</span>
+</span></code></pre></div>
+<p><br></p>
+<p>You can also use the following C# code in PowerShell to do the same</p>
+<div class="language-PowerShell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="no">[System.String[]]</span><span class="nv">$Assemblies</span> <span class="p">=</span> <span class="p">@(</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="s1">&#39;D:\notifications\Microsoft.Toolkit.Uwp.Notifications.dll&#39;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="s1">&#39;D:\notifications\Microsoft.Win32.SystemEvents.dll&#39;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="s1">&#39;D:\notifications\Microsoft.Windows.SDK.NET.dll&#39;</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="s1">&#39;D:\notifications\System.Drawing.Common.dll&#39;</span><span class="p">,</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="s1">&#39;D:\notifications\WinRT.Runtime.dll&#39;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">)</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">Add-Type</span> <span class="n">-TypeDefinition</span> <span class="sh">@&#39;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="sh">using System;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="sh">using Microsoft.Toolkit.Uwp.Notifications;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="sh">public class Notification {</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="sh">    public static void ShowNotif()</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="sh">    {</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="sh">        new ToastContentBuilder()</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="sh">            .AddAppLogoOverride(new Uri(&quot;file:///D:/notifications/2.jpg&quot;), ToastGenericAppLogoCrop.Circle)</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="sh">            .AddText(&quot;Main Notification Title&quot;)</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="sh">            .AddText(&quot;This is the first line of content with summary details.&quot;)</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="sh">            .AddText(&quot;Main Notification Title&quot;)</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="sh">            .AddHeroImage(new Uri(&quot;file:///D:/notifications/1.jpg&quot;))</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="sh">            .AddInlineImage(new Uri(&quot;file:///D:/notifications/3.jpg&quot;))</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="sh">            .AddButton(new ToastButton()</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="sh">                .SetContent(&quot;View Details&quot;)</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="sh">                .AddArgument(&quot;action&quot;, &quot;viewDetails&quot;)</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="sh">                .SetImageUri(new Uri(&quot;file:///D:/notifications/view_icon.jpg&quot;)))</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="sh">            .AddButton(new ToastButton()</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="sh">                .SetContent(&quot;Dismiss&quot;)</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="sh">                .AddArgument(&quot;action&quot;, &quot;dismiss&quot;)</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="sh">                .SetImageUri(new Uri(&quot;file:///D:/notifications/view_icon.jpg&quot;)))</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="sh">            .AddButton(new ToastButton()</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="sh">                .SetContent(&quot;Open App&quot;)</span>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="sh">                .AddArgument(&quot;action&quot;, &quot;openApp&quot;)</span>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="sh">                .SetImageUri(new Uri(&quot;file:///D:/notifications/view_icon.jpg&quot;)))</span>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="sh">            .AddButton(new ToastButton()</span>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="sh">                .SetContent(&quot;Open App&quot;)</span>
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="sh">                .AddArgument(&quot;action&quot;, &quot;openApp&quot;)</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="sh">                .SetImageUri(new Uri(&quot;file:///D:/notifications/view_icon.jpg&quot;)))</span>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="sh">            .AddButton(new ToastButton()</span>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="sh">                .SetContent(&quot;Open App&quot;)</span>
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="sh">                .AddArgument(&quot;action&quot;, &quot;openApp&quot;)</span>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="sh">                .SetImageUri(new Uri(&quot;file:///D:/notifications/view_icon.jpg&quot;)))</span>
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="sh">            .AddAudio(new Uri(&quot;ms-winsoundevent:Notification.SMS&quot;))</span>
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="sh">            .AddAttributionText(&quot;Brought to you by Your Company&quot;)</span>
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="sh">            .AddHeader(&quot;6289&quot;, &quot;Camping!!&quot;, &quot;action=openConversation&amp;id=6289&quot;)</span>
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="sh">            .Show();</span>
+</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="sh">    }</span>
+</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="sh">}</span>
+</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="sh">&#39;@</span> <span class="n">-ReferencedAssemblies</span> <span class="nv">$Assemblies</span> <span class="n">-CompilerOptions</span> <span class="s1">&#39;/nowarn:1701&#39;</span>
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a>
+</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="nv">$Assemblies</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span><span class="nb">Add-Type</span> <span class="n">-Path</span> <span class="nv">$_</span><span class="p">}</span>
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>
+</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="no">[Notification]</span><span class="p">::</span><span class="n">ShowNotif</span><span class="p">()</span>
+</span></code></pre></div>
+<p><br></p>
+<h4 id="related-documentation">Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notifications/send-local-toast">Send a local toast notification from a C# app</a></p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts">App notification content</a></p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/uwp/schemas/tiles/toastschema/element-audio">audio (Toast XML Schema)</a></p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/windows/apps/design/shell/tiles-and-notifications/toast-headers">Toast headers</a></p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/dotnet/api/microsoft.toolkit.uwp.notifications.toastcontentbuilder">ToastContentBuilder Class</a></p>
+</li>
+</ul>
+<p><br></p>
 
 
 
@@ -2850,7 +3099,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-07-30T06:57:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-07-30</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-08-25T19:47:24+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-08-25</span>
   </span>
 
     
@@ -3204,7 +3453,7 @@ or on
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
