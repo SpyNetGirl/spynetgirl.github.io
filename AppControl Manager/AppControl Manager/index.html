@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -695,6 +695,24 @@ or on
   <a href="#features-implemented-so-far" class="md-nav__link">
     <span class="md-ellipsis">
       Features Implemented So Far
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-installation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      About the Installation Process
     </span>
   </a>
   
@@ -2792,6 +2810,24 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-installation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      About the Installation Process
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2811,26 +2847,31 @@ or on
 
 
 <h1 id="appcontrol-manager">AppControl Manager<a class="headerlink" href="#appcontrol-manager" title="Permanent link">&para;</a></h1>
-<p>AppControl Manager is a modern secure app that provides easy to use graphical user interface to mange App Control on your device.</p>
-<p>The goal is for AppControl manager to reach feature parity with the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig">WDACConfig</a> Powershell module as fast as possible and then to surpass it with additional features and improvements.</p>
+<p>AppControl Manager is a modern secure app that provides easy to use graphical user interface to mange App Control and Code Integrity on your device.</p>
+<p>The short-term goal is for the AppControl manager to reach feature parity with the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/WDACConfig">WDACConfig</a> Powershell module, as fast as possible, and then to surpass it with new unique features and improvements.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The AppControl Manager application is built publicly using a <a href="https://github.com/HotCakeX/Harden-Windows-Security/actions/workflows/Build%20AppControl%20Manager%20MSIX%20Package.yml">GitHub action</a> and uploaded to the GitHub release. The action uses <a href="https://github.com/HotCakeX/Harden-Windows-Security/attestations">Artifact Attestation</a> and <a href="https://github.com/HotCakeX/Harden-Windows-Security/network/dependencies">SBOM (Software Bill of Materials)</a> generation to comply with <a href="https://slsa.dev/spec/v1.0/levels">SLSA</a> level 2 and <a href="https://docs.github.com/en/actions/security-for-github-actions/using-artifact-attestations/using-artifact-attestations-to-establish-provenance-for-builds">security standards</a>. The source code as well as the package is <a href="https://github.com/HotCakeX/Harden-Windows-Security/actions/workflows/VirusTotal.yml">uploaded to Virus Total</a> automatically. Also <a href="https://github.com/HotCakeX/Harden-Windows-Security/actions/workflows/codeql.yml">GitHub's CodeQL Advanced workflow</a> with extended security model scans the entire repository.</p>
+</div>
 <p><br></p>
 <h2 id="how-to-install-or-update-the-app">How To Install or Update The App<a class="headerlink" href="#how-to-install-or-update-the-app" title="Permanent link">&para;</a></h2>
 <p>Use the following PowerShell <a href="https://github.com/HotCakeX/Harden-Windows-Security/blob/main/Harden-Windows-Security.ps1">command</a> as Admin, it will automatically download the latest MSIX file from this repository's release page and install it for you.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>The same command can be used to update the app whenever there is a new version available. In the future the updating functionality will be incorporated inside of the app.</p>
+<p>The app includes an update section that allows you to check for update and install the new version securely with just a press of a button. It is a very convenient and non-intrusive update experience because when the app is updated, it won't restart itself, instead it will wait for you to close it and the next time you open it you will be automatically using the new version.</p>
 </div>
 <p><br></p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nb">irm </span><span class="s1">&#39;https://raw.githubusercontent.com/HotCakeX/Harden-Windows-Security/main/Harden-Windows-Security.ps1&#39;</span><span class="p">)+</span><span class="s1">&#39;AppControl&#39;</span><span class="p">|</span><span class="nb">iex</span>
 </span></code></pre></div>
 <p><br></p>
-<p>You can find the MSIX file in the <a href="https://github.com/HotCakeX/Harden-Windows-Security/releases">GitHub releases</a> section.</p>
+<p>Please feel free to open a discussion if you have any questions about the build process, security, how to use or have feedbacks.</p>
 <p><br></p>
 <h2 id="preview-of-the-app">Preview of the App<a class="headerlink" href="#preview-of-the-app" title="Permanent link">&para;</a></h2>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControlManager.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControlManager.gif" alt="AppControl Manager preview"/></a></p>
 <p><br></p>
 <h2 id="technical-details-of-the-app">Technical Details of The App<a class="headerlink" href="#technical-details-of-the-app" title="Permanent link">&para;</a></h2>
 <ul>
+<li>Secure and transparent development and build process.</li>
 <li>Built using <a href="https://learn.microsoft.com/en-us/windows/apps/winui/winui3/">WinUI3</a> / <a href="https://github.com/microsoft/microsoft-ui-xaml">XAML</a> / <a href="https://learn.microsoft.com/en-us/dotnet/csharp/">C#</a>.</li>
 <li>Built using the latest <a href="https://dotnet.microsoft.com">.NET</a>.</li>
 <li>Powered by the <a href="https://github.com/microsoft/WindowsAppSDK">WinAppSDK</a> (formerly Project Reunion).</li>
@@ -2857,10 +2898,51 @@ or on
 <li>Adding/Changing/Removing User Configurations</li>
 <li>Configure policy rule options</li>
 <li>View deployed policies on the system (with filtering search)</li>
-<li>Remove unsigned policies from the system</li>
+<li>Remove unsigned Base policies and signed/unsigned Supplemental policies from the system</li>
 <li>Quick access to App Control resources and documentations right within the app</li>
+<li>Self-updating the app</li>
+<li>Displaying advanced Code Integrity information about the system</li>
+<li>Complete App Control Simulation feature</li>
 </ul>
 <p>More features will come very quickly in the near future.</p>
+<p><br></p>
+<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
+<p>Security is paramount when selecting any application designed to safeguard your systems. The last thing you want is a security-focused tool that inadvertently expands your attack surface or one that doesn't prioritize security at its core.</p>
+<p>AppControl Manager is engineered with a security-first approach from the ground up. It's crafted specifically for defense teams, yet its design has been rigorously shaped with a keen awareness of potential offensive strategies, ensuring resilience against emerging threats.</p>
+<ul>
+<li>
+<p>The AppControl Manager does not rely on any 3rd party component or dependency.</p>
+</li>
+<li>
+<p>Any file(s) the AppControl Manager ever produces, uses or expects is only from an Administrator-protected location in <code>C:\Program Files\WDACConfig</code>.</p>
+</li>
+<li>
+<p>The AppControl Manager supports <a href="https://learn.microsoft.com/en-us/defender-endpoint/exploit-protection-reference">process mitigations / Exploit Protections</a> such as: <code>Blocking low integrity images</code>, <code>Blocking remote images</code>, <code>Blocking untrusted fonts</code>, <code>Disabling extension points</code>, <code>Export Address Filtering</code>, <code>Hardware enforced stack protection</code>, <code>Import Address Filtering</code>, <code>Validate handle usage</code>, <code>Validate stack integrity</code> and so on.</p>
+</li>
+</ul>
+<p><br></p>
+<h2 id="about-the-installation-process">About the Installation Process<a class="headerlink" href="#about-the-installation-process" title="Permanent link">&para;</a></h2>
+<p>The installation process for AppControl Manager is uniquely streamlined. When you execute the PowerShell one-liner command mentioned above, it initiates <a href="(https://github.com/HotCakeX/Harden-Windows-Security/blob/main/Harden-Windows-Security.ps1)">a file</a> containing the <code>AppControl</code> function, which serves as the bootstrapper script. This script is thoroughly documented, with detailed explanations and justifications for each step, as outlined below:</p>
+<ul>
+<li>
+<p>The latest version of the AppControl Manager MSIX package is securely downloaded from the GitHub release page, where it is built publicly with full artifact attestation and SBOMs.</p>
+</li>
+<li>
+<p>The <code>SignTool.exe</code> utility is sourced directly from Microsoft by retrieving the associated <a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.BuildTools/">Nuget package</a>, ensuring a trusted origin.</p>
+</li>
+<li>
+<p>A secure, on-device code-signing certificate is then generated. This certificate, managed by the Microsoft-signed <code>SignTool.exe</code>, is used to sign the MSIX package obtained from GitHub.</p>
+</li>
+<li>
+<p>The private keys of the certificate are encrypted with a randomly generated, 100-character password during the signing process, which lasts only a few seconds. Once signing is complete, the private keys are securely discarded, leaving only the public keys on the device to allow AppControl Manager to function properly on the system and prevent the certificate from being able to sign anything else.</p>
+</li>
+<li>
+<p>The entire process is designed to leave no residual files. Each time the script runs, any certificates from previous executions are detected and removed, ensuring a clean system.</p>
+</li>
+<li>
+<p>Finally, the <code>AppControlManager.dll</code> and <code>AppControlManager.exe</code> files are added to the Attack Surface Reduction (ASR) exclusions to prevent ASR rules from blocking these newly released binaries. Previous version exclusions are also removed from the ASRs exclusions list to maintain a clean, streamlined setup for the user.</p>
+</li>
+</ul>
 <p><br></p>
 
 
@@ -2884,7 +2966,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-10-13T20:30:31+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-10-27T20:27:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-27</span>
   </span>
 
     
@@ -2914,6 +2996,29 @@ or on
   </span>
 
     
+    
+      
+  <span class="md-source-file__fact">
+    
+      
+  <span class="md-icon" title="Contributors">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+  </span>
+  <span>GitHub</span>
+
+    
+    <nav>
+      
+        <a href="https://github.com/HotCakeX" class="md-author" title="@HotCakeX">
+          
+          <img src="https://avatars.githubusercontent.com/u/118815227?v=4&size=72" alt="HotCakeX">
+        </a>
+      
+      
+      
+    </nav>
+  </span>
+
     
   </aside>
 
@@ -3215,7 +3320,7 @@ or on
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       

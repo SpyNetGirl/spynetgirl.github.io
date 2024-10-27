@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1485,6 +1485,21 @@ or on
       Using Configuration Service Providers (CSPs) and Provisioning Packages (Work in Progress)
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Using Configuration Service Providers (CSPs) and Provisioning Packages (Work in Progress)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-all-cim-namespaces-their-methods-and-properties-in-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Get All CIM Namespaces, Their Methods and Properties in PowerShell
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3086,6 +3101,21 @@ or on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Using Configuration Service Providers (CSPs) and Provisioning Packages (Work in Progress)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-all-cim-namespaces-their-methods-and-properties-in-powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Get All CIM Namespaces, Their Methods and Properties in PowerShell
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3284,10 +3314,19 @@ or on
 <p>This command gets the information about all installed provisioning packages on your system.</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Get-ProvisioningPackage</span> <span class="n">-AllInstalledPackages</span>
 </span></code></pre></div>
+<p><br></p>
+<ul>
+<li>
 <p><a href="https://learn.microsoft.com/en-us/windows/configuration/provisioning-packages/how-it-pros-can-use-configuration-service-providers">Configuration service providers for IT pros</a></p>
+</li>
+<li>
 <p><a href="https://learn.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-uninstall-package">Settings changed when you uninstall a provisioning package</a></p>
+</li>
+<li>
 <p><a href="https://learn.microsoft.com/en-us/mem/intune/configuration/group-policy-analytics">Why Intune and CSPs are the future of Windows management instead of Group Policy</a></p>
-<p><a href="https://www.reddit.com/r/Intune/comments/pc4btv/comment/hai3o3s/?utm_source=share&amp;utm_medium=web2x&amp;context=3">Link to Microsoft Employee's comment</a></p>
+</li>
+</ul>
+<p><br></p>
 <p>Download Windows Configuration Designer from <a href="https://apps.microsoft.com/store/detail/windows-configuration-designer/9NBLGGH4TX22">Microsoft Store</a> or from <a href="https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install">Windows ADK</a> or from <a href="https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewADK">Windows insiders ADK</a>, to easily <a href="https://learn.microsoft.com/en-us/windows/configuration/provisioning-packages/provisioning-create-package">create provisioning packages</a> for your device(s)</p>
 <p>You can use <a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/gpresult">gpresult</a> to see more info about Group Policies on your computer</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># What policies are applied to your computer:</span>
@@ -3300,6 +3339,111 @@ or on
 </span></code></pre></div>
 <p>We can manually backup and restore Group Policy settings by copying this folder and all of its content:</p>
 <p><code>C:\Windows\System32\GroupPolicy</code></p>
+<p><br></p>
+<h3 id="how-to-get-all-cim-namespaces-their-methods-and-properties-in-powershell">How to Get All CIM Namespaces, Their Methods and Properties in PowerShell<a class="headerlink" href="#how-to-get-all-cim-namespaces-their-methods-and-properties-in-powershell" title="Permanent link">&para;</a></h3>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Defining the custom class for CIM instance classes</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">class</span> <span class="n">CimClassInfo</span> <span class="p">{</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="no">[System.String]</span><span class="nv">$ClassName</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="no">[System.Collections.Generic.List[System.String]]</span><span class="nv">$Methods</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="no">[System.Collections.Generic.List[System.String]]</span><span class="nv">$Properties</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">CimClassInfo</span><span class="p">(</span><span class="no">[System.String]</span><span class="nv">$ClassName</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="nv">$this</span><span class="p">.</span><span class="n">ClassName</span> <span class="p">=</span> <span class="nv">$ClassName</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="nv">$this</span><span class="p">.</span><span class="n">Methods</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.List[System.String]]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>        <span class="nv">$this</span><span class="p">.</span><span class="n">Properties</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.List[System.String]]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="p">}</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="p">}</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c"># Defining the custom class for namespaces</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="n">class</span> <span class="n">NamespaceInfo</span> <span class="p">{</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    <span class="no">[System.String]</span><span class="nv">$NamespaceName</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    <span class="no">[System.Collections.Generic.List[CimClassInfo]]</span><span class="nv">$Classes</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>    <span class="n">NamespaceInfo</span><span class="p">(</span><span class="no">[System.String]</span><span class="nv">$NamespaceName</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>        <span class="nv">$this</span><span class="p">.</span><span class="n">NamespaceName</span> <span class="p">=</span> <span class="nv">$NamespaceName</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>        <span class="nv">$this</span><span class="p">.</span><span class="n">Classes</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.List[CimClassInfo]]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>    <span class="p">}</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="p">}</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="k">function</span> <span class="nb">Get-NamespaceInfo</span> <span class="p">{</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>    <span class="p">[</span><span class="n">OutputType</span><span class="p">(</span><span class="no">[System.Collections.Generic.List[NamespaceInfo]]</span><span class="p">)]</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>    <span class="k">param</span> <span class="p">(</span>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>        <span class="no">[System.String]</span><span class="nv">$RootNamespace</span> <span class="p">=</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>        <span class="no">[System.String]</span><span class="nv">$OutputFile</span> <span class="p">=</span> <span class="nv">$null</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>    <span class="p">)</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>    <span class="c"># Initialize a list to hold NamespaceInfo objects</span>
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>    <span class="nv">$NamespaceInfos</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.List[NamespaceInfo]]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>
+</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>    <span class="c"># Initialize a list to hold namespaces</span>
+</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>    <span class="nv">$Namespaces</span> <span class="p">=</span> <span class="no">[System.Collections.Generic.List[System.String]]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>
+</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>    <span class="nv">$Namespaces</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="nv">$RootNamespace</span><span class="p">)</span>
+</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>
+</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>    <span class="c"># Initialize an index to track the current namespace</span>
+</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>    <span class="nv">$Index</span> <span class="p">=</span> <span class="n">0</span>
+</span><span id="__span-7-41"><a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>
+</span><span id="__span-7-42"><a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>    <span class="c"># Loop through namespaces</span>
+</span><span id="__span-7-43"><a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>    <span class="k">while</span> <span class="p">(</span><span class="nv">$Index</span> <span class="o">-lt</span> <span class="nv">$Namespaces</span><span class="p">.</span><span class="n">Count</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-7-44"><a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>        <span class="c"># Get the current namespace</span>
+</span><span id="__span-7-45"><a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>        <span class="nv">$CurrentNamespace</span> <span class="p">=</span> <span class="nv">$Namespaces</span><span class="p">[</span><span class="nv">$Index</span><span class="p">]</span>
+</span><span id="__span-7-46"><a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a>
+</span><span id="__span-7-47"><a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a>        <span class="c"># Create a new NamespaceInfo object</span>
+</span><span id="__span-7-48"><a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>        <span class="nv">$NamespaceInfo</span> <span class="p">=</span> <span class="no">[NamespaceInfo]</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="nv">$CurrentNamespace</span><span class="p">)</span>
+</span><span id="__span-7-49"><a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a>
+</span><span id="__span-7-50"><a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a>        <span class="c"># Get child namespaces of the current namespace</span>
+</span><span id="__span-7-51"><a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a>        <span class="nv">$ChildNamespaces</span> <span class="p">=</span> <span class="nb">Get-CimInstance</span> <span class="n">-Namespace</span> <span class="nv">$CurrentNamespace</span> <span class="n">-ClassName</span> <span class="n">__Namespace</span>
+</span><span id="__span-7-52"><a id="__codelineno-7-52" name="__codelineno-7-52" href="#__codelineno-7-52"></a>
+</span><span id="__span-7-53"><a id="__codelineno-7-53" name="__codelineno-7-53" href="#__codelineno-7-53"></a>        <span class="c"># Add child namespaces to the list</span>
+</span><span id="__span-7-54"><a id="__codelineno-7-54" name="__codelineno-7-54" href="#__codelineno-7-54"></a>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$ChildNamespace</span> <span class="k">in</span> <span class="nv">$ChildNamespaces</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-7-55"><a id="__codelineno-7-55" name="__codelineno-7-55" href="#__codelineno-7-55"></a>            <span class="nv">$Namespaces</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s2">&quot;$CurrentNamespace\$ChildNamespace&quot;</span><span class="p">)</span>
+</span><span id="__span-7-56"><a id="__codelineno-7-56" name="__codelineno-7-56" href="#__codelineno-7-56"></a>        <span class="p">}</span>
+</span><span id="__span-7-57"><a id="__codelineno-7-57" name="__codelineno-7-57" href="#__codelineno-7-57"></a>
+</span><span id="__span-7-58"><a id="__codelineno-7-58" name="__codelineno-7-58" href="#__codelineno-7-58"></a>        <span class="c"># Get classes in the current namespace</span>
+</span><span id="__span-7-59"><a id="__codelineno-7-59" name="__codelineno-7-59" href="#__codelineno-7-59"></a>        <span class="nv">$Classes</span> <span class="p">=</span> <span class="nb">Get-CimClass</span> <span class="n">-Namespace</span> <span class="nv">$CurrentNamespace</span>
+</span><span id="__span-7-60"><a id="__codelineno-7-60" name="__codelineno-7-60" href="#__codelineno-7-60"></a>
+</span><span id="__span-7-61"><a id="__codelineno-7-61" name="__codelineno-7-61" href="#__codelineno-7-61"></a>        <span class="c"># Add classes to the NamespaceInfo object</span>
+</span><span id="__span-7-62"><a id="__codelineno-7-62" name="__codelineno-7-62" href="#__codelineno-7-62"></a>        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Class</span> <span class="k">in</span> <span class="nv">$Classes</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-7-63"><a id="__codelineno-7-63" name="__codelineno-7-63" href="#__codelineno-7-63"></a>            <span class="c"># Create a new CimClassInfo object</span>
+</span><span id="__span-7-64"><a id="__codelineno-7-64" name="__codelineno-7-64" href="#__codelineno-7-64"></a>            <span class="nv">$CimClassInfo</span> <span class="p">=</span> <span class="no">[CimClassInfo]</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="nv">$Class</span><span class="p">.</span><span class="n">CimClassName</span><span class="p">)</span>
+</span><span id="__span-7-65"><a id="__codelineno-7-65" name="__codelineno-7-65" href="#__codelineno-7-65"></a>
+</span><span id="__span-7-66"><a id="__codelineno-7-66" name="__codelineno-7-66" href="#__codelineno-7-66"></a>            <span class="c"># Get methods of the class</span>
+</span><span id="__span-7-67"><a id="__codelineno-7-67" name="__codelineno-7-67" href="#__codelineno-7-67"></a>            <span class="nv">$Methods</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Class</span><span class="p">.</span><span class="n">CimClassMethods</span><span class="p">).</span><span class="n">Name</span>
+</span><span id="__span-7-68"><a id="__codelineno-7-68" name="__codelineno-7-68" href="#__codelineno-7-68"></a>
+</span><span id="__span-7-69"><a id="__codelineno-7-69" name="__codelineno-7-69" href="#__codelineno-7-69"></a>            <span class="c"># Add methods to the CimClassInfo object</span>
+</span><span id="__span-7-70"><a id="__codelineno-7-70" name="__codelineno-7-70" href="#__codelineno-7-70"></a>            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Method</span> <span class="k">in</span> <span class="nv">$Methods</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-7-71"><a id="__codelineno-7-71" name="__codelineno-7-71" href="#__codelineno-7-71"></a>                <span class="nv">$CimClassInfo</span><span class="p">.</span><span class="n">Methods</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="nv">$Method</span><span class="p">)</span>
+</span><span id="__span-7-72"><a id="__codelineno-7-72" name="__codelineno-7-72" href="#__codelineno-7-72"></a>            <span class="p">}</span>
+</span><span id="__span-7-73"><a id="__codelineno-7-73" name="__codelineno-7-73" href="#__codelineno-7-73"></a>
+</span><span id="__span-7-74"><a id="__codelineno-7-74" name="__codelineno-7-74" href="#__codelineno-7-74"></a>            <span class="c"># Get properties of the class</span>
+</span><span id="__span-7-75"><a id="__codelineno-7-75" name="__codelineno-7-75" href="#__codelineno-7-75"></a>            <span class="nv">$Properties</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Class</span><span class="p">.</span><span class="n">CimClassProperties</span><span class="p">).</span><span class="n">Name</span>
+</span><span id="__span-7-76"><a id="__codelineno-7-76" name="__codelineno-7-76" href="#__codelineno-7-76"></a>
+</span><span id="__span-7-77"><a id="__codelineno-7-77" name="__codelineno-7-77" href="#__codelineno-7-77"></a>            <span class="c"># Add properties to the CimClassInfo object</span>
+</span><span id="__span-7-78"><a id="__codelineno-7-78" name="__codelineno-7-78" href="#__codelineno-7-78"></a>            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Property</span> <span class="k">in</span> <span class="nv">$Properties</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-7-79"><a id="__codelineno-7-79" name="__codelineno-7-79" href="#__codelineno-7-79"></a>                <span class="nv">$CimClassInfo</span><span class="p">.</span><span class="n">Properties</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="nv">$Property</span><span class="p">)</span>
+</span><span id="__span-7-80"><a id="__codelineno-7-80" name="__codelineno-7-80" href="#__codelineno-7-80"></a>            <span class="p">}</span>
+</span><span id="__span-7-81"><a id="__codelineno-7-81" name="__codelineno-7-81" href="#__codelineno-7-81"></a>
+</span><span id="__span-7-82"><a id="__codelineno-7-82" name="__codelineno-7-82" href="#__codelineno-7-82"></a>            <span class="c"># Add the CimClassInfo object to the NamespaceInfo object</span>
+</span><span id="__span-7-83"><a id="__codelineno-7-83" name="__codelineno-7-83" href="#__codelineno-7-83"></a>            <span class="nv">$NamespaceInfo</span><span class="p">.</span><span class="n">Classes</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="nv">$CimClassInfo</span><span class="p">)</span>
+</span><span id="__span-7-84"><a id="__codelineno-7-84" name="__codelineno-7-84" href="#__codelineno-7-84"></a>        <span class="p">}</span>
+</span><span id="__span-7-85"><a id="__codelineno-7-85" name="__codelineno-7-85" href="#__codelineno-7-85"></a>
+</span><span id="__span-7-86"><a id="__codelineno-7-86" name="__codelineno-7-86" href="#__codelineno-7-86"></a>        <span class="c"># Add the NamespaceInfo object to the list</span>
+</span><span id="__span-7-87"><a id="__codelineno-7-87" name="__codelineno-7-87" href="#__codelineno-7-87"></a>        <span class="nv">$NamespaceInfos</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="nv">$NamespaceInfo</span><span class="p">)</span>
+</span><span id="__span-7-88"><a id="__codelineno-7-88" name="__codelineno-7-88" href="#__codelineno-7-88"></a>
+</span><span id="__span-7-89"><a id="__codelineno-7-89" name="__codelineno-7-89" href="#__codelineno-7-89"></a>        <span class="c"># Move to the next namespace</span>
+</span><span id="__span-7-90"><a id="__codelineno-7-90" name="__codelineno-7-90" href="#__codelineno-7-90"></a>        <span class="nv">$Index</span><span class="p">++</span>
+</span><span id="__span-7-91"><a id="__codelineno-7-91" name="__codelineno-7-91" href="#__codelineno-7-91"></a>    <span class="p">}</span>
+</span><span id="__span-7-92"><a id="__codelineno-7-92" name="__codelineno-7-92" href="#__codelineno-7-92"></a>
+</span><span id="__span-7-93"><a id="__codelineno-7-93" name="__codelineno-7-93" href="#__codelineno-7-93"></a>    <span class="c"># Export to JSON too if OutputFile is specified</span>
+</span><span id="__span-7-94"><a id="__codelineno-7-94" name="__codelineno-7-94" href="#__codelineno-7-94"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$OutputFile</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-7-95"><a id="__codelineno-7-95" name="__codelineno-7-95" href="#__codelineno-7-95"></a>        <span class="nv">$NamespaceInfos</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">100</span> <span class="p">|</span> <span class="nb">Out-File</span> <span class="n">-FilePath</span> <span class="nv">$OutputFile</span>
+</span><span id="__span-7-96"><a id="__codelineno-7-96" name="__codelineno-7-96" href="#__codelineno-7-96"></a>    <span class="p">}</span>
+</span><span id="__span-7-97"><a id="__codelineno-7-97" name="__codelineno-7-97" href="#__codelineno-7-97"></a>
+</span><span id="__span-7-98"><a id="__codelineno-7-98" name="__codelineno-7-98" href="#__codelineno-7-98"></a>    <span class="k">return</span> <span class="nv">$NamespaceInfos</span>
+</span><span id="__span-7-99"><a id="__codelineno-7-99" name="__codelineno-7-99" href="#__codelineno-7-99"></a><span class="p">}</span>
+</span><span id="__span-7-100"><a id="__codelineno-7-100" name="__codelineno-7-100" href="#__codelineno-7-100"></a>
+</span><span id="__span-7-101"><a id="__codelineno-7-101" name="__codelineno-7-101" href="#__codelineno-7-101"></a><span class="nv">$NamespaceInfo</span> <span class="p">=</span> <span class="nb">Get-NamespaceInfo</span> <span class="n">-RootNamespace</span> <span class="s1">&#39;root&#39;</span> <span class="n">-OutputFile</span> <span class="s1">&#39;NamespaceInfo.json&#39;</span>
+</span><span id="__span-7-102"><a id="__codelineno-7-102" name="__codelineno-7-102" href="#__codelineno-7-102"></a><span class="nv">$NamespaceInfo</span>
+</span></code></pre></div>
 <p><br></p>
 
 
@@ -3323,7 +3467,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-09-04T22:58:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-09-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-10-27T17:35:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-10-27</span>
   </span>
 
     
@@ -3677,7 +3821,7 @@ or on
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
