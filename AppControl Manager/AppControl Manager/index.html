@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
     
     
       
@@ -692,6 +692,21 @@ or on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How To Install or Update The App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-operation-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Operation Systems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -758,6 +773,15 @@ or on
   <a href="#which-urls-does-the-appcontrol-manager-connect-to" class="md-nav__link">
     <span class="md-ellipsis">
       Which URLs does the AppControl Manager Connect To?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install-appcontrol-manager-completely-offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Install AppControl Manager Completely Offline?
     </span>
   </a>
   
@@ -952,6 +976,27 @@ or on
   
   <span class="md-ellipsis">
     Get Secure Policy Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Merge%20App%20Control%20Policies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Merge App Control Policies
   </span>
   
 
@@ -3101,6 +3146,21 @@ or on
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How To Install or Update The App">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-operation-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Operation Systems
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3172,6 +3232,15 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#how-to-install-appcontrol-manager-completely-offline" class="md-nav__link">
+    <span class="md-ellipsis">
+      How To Install AppControl Manager Completely Offline?
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3201,20 +3270,29 @@ or on
 <p><br></p>
 <h2 id="how-to-install-or-update-the-app">How To Install or Update The App<a class="headerlink" href="#how-to-install-or-update-the-app" title="Permanent link">&para;</a></h2>
 <p>Use the following PowerShell <a href="https://github.com/HotCakeX/Harden-Windows-Security/blob/main/Harden-Windows-Security.ps1">command</a> as Admin, it will automatically download the latest MSIX file from this repository's release page and install it for you.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>The app includes an update section that allows you to check for update and install the new version securely with just a press of a button. It is a very convenient and non-intrusive update experience because when the app is updated, it won't restart itself, instead it will wait for you to close it and the next time you open it you will be automatically using the new version.</p>
-</div>
-<p><br></p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nb">irm </span><span class="s1">&#39;https://raw.githubusercontent.com/HotCakeX/Harden-Windows-Security/main/Harden-Windows-Security.ps1&#39;</span><span class="p">)+</span><span class="s1">&#39;AppControl&#39;</span><span class="p">|</span><span class="nb">iex</span>
 </span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Update">AppControl Manager supports auto-update and has built-in updater.</a></p>
+</div>
 <p><br></p>
 <p>Please feel free to open a discussion if you have any questions about the build process, security, how to use or have feedbacks. <a href="https://github.com/HotCakeX/Harden-Windows-Security/tree/main/AppControl%20Manager"><strong>Source code on this repository</strong></a></p>
+<p><br></p>
+<h3 id="supported-operation-systems">Supported Operation Systems<a class="headerlink" href="#supported-operation-systems" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Windows 11 24H2</li>
+<li>Windows 11 23H2</li>
+<li>Windows 11 22H2</li>
+<li>Windows Server 2025</li>
+</ul>
 <p><br></p>
 <h2 id="preview-of-the-app">Preview of the App<a class="headerlink" href="#preview-of-the-app" title="Permanent link">&para;</a></h2>
 <div align="center">
 
 <a href="https://www.youtube.com/watch?v=SzMs13n7elE"> <a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControlManager.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControlManager.gif" alt="AppControl Manager preview"/></a> </a>
+
+<a href="https://www.youtube.com/watch?v=SzMs13n7elE">YouTube video Link</a>
 
 <br>
 
@@ -3252,12 +3330,13 @@ or on
 <li><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Build%20new%20certificate.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Build%20new%20certificate.gif" alt="AppControl Manager Menu Item" width="20"></a> <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Build-New-Certificate">Build New Certificate</a></li>
 <li><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Create%20policy%20from%20Event%20Logs.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Create%20policy%20from%20Event%20Logs.gif" alt="AppControl Manager Menu Item" width="20"></a> <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Create-Policy-From-Event-Logs">Create Policy From Event Logs</a></li>
 <li><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Create%20policy%20from%20MDE%20Advanced%20Hunting.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Create%20policy%20from%20MDE%20Advanced%20Hunting.gif" alt="AppControl Manager Menu Item" width="20"></a> <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Create-Policy-From-MDE-Advanced-Hunting">Create Policy From MDE Advanced Hunting</a></li>
+<li><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Merge%20App%20Control%20Policies.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Merge%20App%20Control%20Policies.gif" width="20" alt="AppControl Manager Menu Item"></a> <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Merge-App-Control-Policies">Merge App Control Policies</a></li>
 <li><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Deployment.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Deployment.gif" alt="AppControl Manager Menu Item" width="20"></a> <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Deploy-App-Control-Policy">Deploy App Control Policy</a></li>
 <li><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Get%20CI%20Hahses.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Get%20CI%20Hahses.gif" alt="AppControl Manager Menu Item" width="20"></a> <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Get-Code-Integrity-Hashes">Get Code Integrity Hashes</a></li>
 <li><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Get%20Secure%20policy%20settings.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Get%20Secure%20policy%20settings.gif" alt="AppControl Manager Menu Item" width="20"></a> <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Get-Secure-Policy-Settings">Get Secure Policy Settings</a></li>
 <li><a class="glightbox" href="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Update.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/refs/heads/main/Pictures/Gifs/AppControl%20Manager%20Menu/Update.gif" alt="AppControl Manager Menu Item" width="20"></a> <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Update">Update</a></li>
 </ul>
-<p>More features will come very quickly in the near future.</p>
+<p><em>More features will come very quickly in the near future.</em></p>
 <p><br></p>
 <h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
 <p>Security is paramount when selecting any application designed to safeguard your systems. The last thing you want is a security-focused tool that inadvertently expands your attack surface or one that doesn't prioritize security at its core.</p>
@@ -3294,7 +3373,7 @@ or on
 </ul>
 <p><br></p>
 <h2 id="about-the-installation-process">About the Installation Process<a class="headerlink" href="#about-the-installation-process" title="Permanent link">&para;</a></h2>
-<p>The installation process for AppControl Manager is uniquely streamlined. When you execute the PowerShell one-liner command mentioned above, it initiates <a href="(https://github.com/HotCakeX/Harden-Windows-Security/blob/main/Harden-Windows-Security.ps1)">a file</a> containing the <code>AppControl</code> function, which serves as the bootstrapper script. This script is thoroughly documented, with detailed explanations and justifications for each step, as outlined below:</p>
+<p>The installation process for AppControl Manager is uniquely streamlined. When you execute the PowerShell one-liner command mentioned above, it initiates <a href="https://github.com/HotCakeX/Harden-Windows-Security/blob/main/Harden-Windows-Security.ps1">a file</a> containing the <code>AppControl</code> function, which serves as the bootstrapper script. This script is thoroughly documented, with detailed explanations and justifications for each step, as outlined below:</p>
 <ul>
 <li>
 <p>The latest version of the AppControl Manager MSIX package is securely downloaded from the GitHub release page, where it is built publicly with full artifact attestation and SBOMs.</p>
@@ -3306,7 +3385,7 @@ or on
 <p>A secure, on-device code-signing certificate is then generated. This certificate, managed by the Microsoft-signed <code>SignTool.exe</code>, is used to sign the MSIX package obtained from GitHub.</p>
 </li>
 <li>
-<p>The private keys of the certificate are encrypted with a randomly generated, 100-character password during the signing process, which lasts only a few seconds. Once signing is complete, the private keys are securely discarded, leaving only the public keys on the device to allow AppControl Manager to function properly on the system and prevent the certificate from being able to sign anything else.</p>
+<p>The private key of the certificate is non-exportable, never written on the disk and is securely discarded once signing is complete, leaving only the public key on the device to allow AppControl Manager to function properly on the system and prevent the certificate from being able to sign anything else.</p>
 </li>
 <li>
 <p>The entire process is designed to leave no residual files. Each time the script runs, any certificates from previous executions are detected and removed, ensuring a clean system.</p>
@@ -3400,9 +3479,45 @@ or on
 <td style="text-align: center;">https://x.com/CyberCakeX</td>
 <td style="text-align: center;">Mentioned in the Links section at the bottom of the About section in Settings</td>
 </tr>
+<tr>
+<td style="text-align: center;">https://icons8.com</td>
+<td style="text-align: center;">Mentioned in the Links section at the bottom of the About section in Settings as credit</td>
+</tr>
 </tbody>
 </table>
 </div>
+<p><br></p>
+<h2 id="how-to-install-appcontrol-manager-completely-offline">How To Install AppControl Manager Completely Offline?<a class="headerlink" href="#how-to-install-appcontrol-manager-completely-offline" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Download <a href="https://github.com/HotCakeX/Harden-Windows-Security/blob/main/Harden-Windows-Security.ps1">this PowerShell script</a>.</p>
+</li>
+<li>
+<p>Have <code>SignTool.exe</code>. You can find it in <a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.BuildTools/">here</a> if you don't already have it.</p>
+</li>
+<li>
+<p>Download the latest MSIX package of the AppControl Manager from the <a href="https://github.com/HotCakeX/Harden-Windows-Security/releases">GitHub releases</a> or build it from <a href="https://github.com/HotCakeX/Harden-Windows-Security/tree/main/AppControl%20Manager">the source code</a> yourself.</p>
+</li>
+<li>
+<p>Start an elevated PowerShell and import the script file via <code>Import-Module "Path to script file"</code>.</p>
+</li>
+<li>
+<p>Use the following syntax to Install the AppControl Manager</p>
+</li>
+</ol>
+<div class="language-powershell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">AppControl</span> <span class="n">-MSIXPath</span> <span class="s2">&quot;Path To the MSIX&quot;</span> <span class="n">-SignTool</span> <span class="s2">&quot;Path to signtool.exe&quot;</span> <span class="n">-Verbose</span>
+</span></code></pre></div>
+<p><br></p>
+<h1 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Q: Why isn't AppControl Manager on Microsoft Store?</li>
+<li>A: Because Microsoft Store currently does not accept apps that require Administrator privileges to run (i.e., MediumIL).</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Q: Why isn't the MSIX package pre-signed?</li>
+<li>A: Because I haven't started paying for a code-signing certificate yet.</li>
+</ul>
 <p><br></p>
 
 
@@ -3426,7 +3541,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-12-01T09:18:53+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-12-13T17:23:31+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-13</span>
   </span>
 
     
