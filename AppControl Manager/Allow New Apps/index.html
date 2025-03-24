@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -669,6 +669,24 @@ or on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Use Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-details" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration Details
@@ -940,6 +958,50 @@ or on
   
   <span class="md-ellipsis">
     Merge App Control Policies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PolicyEditor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Policy Editor
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Privacy%20Policy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Privacy Policy for the AppControl Manager
     
   </span>
   
@@ -3188,6 +3250,24 @@ or on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Use Cases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-details" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration Details
@@ -3224,9 +3304,10 @@ or on
 
 <p><br></p>
 <p><br></p>
-<p>This page in <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/AppControl-Manager">AppControl Manager</a> is designed as a practical hub for managing App Control on your system. Consider it your centralized solution for effortlessly overseeing your app-related policies and allowing new apps.</p>
-<p>When you need to install a new application, this page provides an intuitive way to temporarily enable Audit mode in your existing base policy. This allows the installation of the app while ensuring the base policy automatically reverts to Enforced mode immediately afterward.</p>
-<p>During Audit mode, AppControl Manager captures all relevant Code Integrity and AppLocker events, analyzes them, and presents detailed insights in an organized view. You can also navigate to the specific folder paths where the application was installed, enabling the tool to scan and display the contents on a separate page.</p>
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<p>Use this page in <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/AppControl-Manager">AppControl Manager</a> on a system where Application Control policies are already deployed.</p>
+<p>When you need to install a new application, this page provides an intuitive way to temporarily enable Audit mode in your existing deployed base policy. This allows the installation of the app while ensuring the base policy automatically reverts to Enforced mode immediately afterward.</p>
+<p>During Audit mode, AppControl Manager captures all relevant Code Integrity and AppLocker events, analyzes them, and presents detailed insights in an organized view. You can also navigate to the specific folder path(s) where the application was installed, enabling the app to scan and display the contents on a separate page.</p>
 <p>The compiled data, scanned files and recorded events, are presented for you to review, filter, sort, and manage. Once you're satisfied, you can seamlessly convert these into a single Supplemental policy ready for deployment.</p>
 <p>While much of the process is automated, you remain in full control. With just a few clicks, you can fine-tune and manage your App Control policy efficiently.</p>
 <p>Rest assured, no unauthorized software or malware can make its way into your Supplemental policy. Every file and event is accompanied by highly detailed information, eliminating any guesswork and ensuring only trusted elements are included.</p>
@@ -3239,6 +3320,41 @@ or on
 <p class="admonition-title">Tip</p>
 <p>You can use both Signed and Unsigned App Control policies. The app will automatically detect the signing status of the XML policy file that you select and prompt for any additional information required.</p>
 </div>
+<p><br></p>
+<h2 id="other-use-cases">Other Use Cases<a class="headerlink" href="#other-use-cases" title="Permanent link">&para;</a></h2>
+<p>You can also use this page to create supplemental policies for every program you wish to deploy to your endpoints. For example, if your company needs to allow the employees to use 20 programs such as Photoshop, AutoDesk, Visual Studio etc., you can follow these steps:</p>
+<ol>
+<li>
+<p>Prepare a clean VM (Virtual Machine such as Hyper-V) by installing the latest OS version on it and updating it. After update and restart of the guest OS in the VM, Install the <strong>AppControl Manager</strong> on it and shut it down. Now create a Hyper-V checkpoint. You will use this checkpoint to return back to this clean state.</p>
+</li>
+<li>
+<p>Use AppControl Manager to <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Create-App-Control-Policy">deploy a base policy</a> such as <code>Allow Microsoft</code>.</p>
+</li>
+<li>
+<p>Use the <code>Allow New Apps</code> feature to browse for the base policy and enter the name of the program you wish to create a supplemental policy for.</p>
+</li>
+<li>
+<p>In <code>Step 2</code>, the Audit mode is enabled, so start installing your program. After installation is completed, run the program, use it a bit and close it.</p>
+</li>
+<li>
+<p>Browse for the installation directories of the installed program and go to <code>Step 3</code>.</p>
+</li>
+<li>
+<p>The AppControl Manager will begin redeploying the base policy in enforced mode and starts scanning the directories you selected and any audit events that were generated.</p>
+</li>
+<li>
+<p>The detected and captured data will be presented to you in 2 different pages. Review them, search through them and remove any of them that you don't want to be included in the supplemental policy.</p>
+</li>
+<li>
+<p>Once you're done reviewing, create the supplemental policy and deploy it on the system. Use the FilePublisher level which will create maintainable supplemental policies and will use signature(s) of the signed files and hashes of the unsigned files.</p>
+</li>
+<li>
+<p>After the policy is deployed, try starting your program again and make sure it 100% works and all of its features are usable.</p>
+</li>
+<li>
+<p>If one of the files of the program still gets blocked, that means you didn't browse for the directory where that file is located or you didn't use the program's feature that would trigger audit logs to be generated for its files. AppControl Manager offers multiple features that you can use to generate supplemental policies and then <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Merge-App-Control-Policies">merge them all</a> into one. For example, you can <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/Create-Policy-From-Event-Logs">create a supplemental policy just from the event logs</a>.</p>
+</li>
+</ol>
 <p><br></p>
 <h2 id="configuration-details">Configuration Details<a class="headerlink" href="#configuration-details" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3256,6 +3372,9 @@ or on
 </li>
 <li>
 <p><strong>Browse for folders</strong>: Use this button in Step 2 to browse for the installation directories of the app(s) you installed. This will help improve the accuracy of the supplemental policy that will be created. If for some reason you cannot locate the installation directory of the app you installed, ensure you start the app after installation, use it as you normally would so that audit logs will be generated for all of its files and components. These audit logs will then be displayed to you in the <code>Review the Event Logs</code> tab.</p>
+</li>
+<li>
+<p><strong>Deploy After Creation</strong>: If toggled, only the supplemental policy XML file will be available in the <a href="https://github.com/HotCakeX/Harden-Windows-Security/wiki/AppControl-Manager#where-is-the-user-configurations-directory">User Configuration directory</a> at the end of the operation. If it's not toggled, the CIP file will also be made available. Both files will have the same name as the policy name that you choose.</p>
 </li>
 </ul>
 <p><br></p>
@@ -3281,7 +3400,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-24T08:19:23+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="March 24, 2025 10:44:23"><span class="timeago" datetime="2025-03-24T10:44:23+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="March 24, 2025 10:44:23">2025-03-24</span>
   </span>
 
     
@@ -3291,7 +3410,7 @@ or on
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-12-01T08:49:37+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-01</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="December 1, 2024 08:49:37"><span class="timeago" datetime="2024-12-01T08:49:37+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="December 1, 2024 08:49:37">2024-12-01</span>
   </span>
 
     
@@ -3619,7 +3738,7 @@ or on
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.instant", "navigation.tracking", "navigation.sections", "navigation.top", "navigation.expand", "navigation.footer", "content.code.annotate", "content.code.copy", "search.highlight", "search.suggest", "search.share", "content.tooltips"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
         <script src="../../js/timeago.min.js"></script>
       
