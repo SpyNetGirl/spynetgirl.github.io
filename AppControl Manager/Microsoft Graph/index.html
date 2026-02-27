@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../images/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -962,6 +962,34 @@ or on
   
   
     <li class="md-nav__item">
+      <a href="../Firewall%20Sentinel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firewall Sentinel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Get%20Code%20Integrity%20Hashes/" class="md-nav__link">
         
   
@@ -1161,6 +1189,17 @@ or on
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#azure-cloud-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Cloud Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1210,6 +1249,17 @@ or on
     <span class="md-ellipsis">
       
         Active Account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-token-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Token Caching
       
     </span>
   </a>
@@ -2104,6 +2154,62 @@ or on
   
   
     <li class="md-nav__item">
+      <a href="../../Harden%20System%20Security/Duplicate%20Photo%20Finder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Duplicate Photos Finder | Harden System Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Harden%20System%20Security/EXIF%20Manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EXIF Manager | Harden System Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Harden%20System%20Security/Edge%20Browser/" class="md-nav__link">
         
   
@@ -2476,6 +2582,34 @@ or on
     
   
     Protect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Harden%20System%20Security/Service%20Manager/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Manager | Harden System Security
   
 
     
@@ -4996,6 +5130,17 @@ or on
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#azure-cloud-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Azure Cloud Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5051,6 +5196,17 @@ or on
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#local-token-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Token Caching
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5090,16 +5246,42 @@ or on
 </ul>
 <h3 id="authentication-context">Authentication Context<a class="headerlink" href="#authentication-context" title="Permanent link">¶</a></h3>
 <p>Here you can select the authentication context for the sign-in process. They are groups of permissions that the application will request from Microsoft Graph in order to perform certain operations.</p>
+<p>Available authentication contexts:
+* <strong>Intune</strong>: Requests permissions required to create, read, update, and delete device configuration policies, groups, and scripts (<code>Group.ReadWrite.All</code>, <code>DeviceManagementConfiguration.ReadWrite.All</code>, <code>DeviceManagementScripts.ReadWrite.All</code>).
+* <strong>MDEAdvancedHunting</strong>: Requests permissions required to retrieve Microsoft Defender for Endpoint Advanced Hunting queries (<code>ThreatHunting.Read.All</code>).</p>
+<h3 id="azure-cloud-environment">Azure Cloud Environment<a class="headerlink" href="#azure-cloud-environment" title="Permanent link">¶</a></h3>
+<p>Here you can select the target Azure Cloud environment for your authentication session.</p>
+<ul>
+<li><strong>Public</strong>: The standard Microsoft Azure public cloud environment.</li>
+<li><strong>US Government (GCC High)</strong>: The US government cloud environment.</li>
+</ul>
 <p><br></p>
 <h2 id="signed-in-accounts">Signed In Accounts<a class="headerlink" href="#signed-in-accounts" title="Permanent link">¶</a></h2>
 <h3 id="remove">Remove <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://raw.githubusercontent.com/HotCakeX/.github/7ac3898730bc82a790f56a61e301b6663dfc9d5a/Pictures/Gifs/AppControl%20Manager%20Menu/Microsoft%20Graph%20-%20Log%20Out.gif" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/7ac3898730bc82a790f56a61e301b6663dfc9d5a/Pictures/Gifs/AppControl%20Manager%20Menu/Microsoft%20Graph%20-%20Log%20Out.gif" alt="Remove" width="30"></a><a class="headerlink" href="#remove" title="Permanent link">¶</a></h3>
 <p>After selecting an account from the list, you can remove it by clicking this button. This will log you out of the selected account and remove it from the list of signed-in accounts. It will also completely remove its authentication token from the application's memory.</p>
 <h3 id="set-active-account">Set Active Account <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://raw.githubusercontent.com/HotCakeX/.github/7ac3898730bc82a790f56a61e301b6663dfc9d5a/Pictures/Gifs/AppControl%20Manager%20Menu/Microsoft%20Graph%20-%20Set%20Active%20Account.gif" data-desc-position="bottom"><img src="https://raw.githubusercontent.com/HotCakeX/.github/7ac3898730bc82a790f56a61e301b6663dfc9d5a/Pictures/Gifs/AppControl%20Manager%20Menu/Microsoft%20Graph%20-%20Set%20Active%20Account.gif" alt="Set Active Account" width="30"></a><a class="headerlink" href="#set-active-account" title="Permanent link">¶</a></h3>
 <p>After selecting an account from the list, you can set it as the active account by clicking this button. This will make the selected account the default account for all operations that require Microsoft Graph access in the page you are currently on.</p>
+<p>The Signed In Accounts list displays the following details for each authenticated session to help you manage multiple logins:
+* Username
+* Tenant ID
+* Account Identifier
+* Permissions
+* Environment</p>
 <p><br></p>
 <h2 id="active-account">Active Account<a class="headerlink" href="#active-account" title="Permanent link">¶</a></h2>
 <p>This section shows you the details of the currently active account that will be used for all operations that require Microsoft Graph access in the page you are currently on.</p>
+<p>The displayed details for the active account include:
+* <strong>Username</strong>: The user principal name or email address of the authenticated account.
+* <strong>Tenant ID</strong>: The unique ID of the Microsoft Entra ID tenant.
+* <strong>Account Identifier</strong>: The unique home account identifier.
+* <strong>Permissions</strong>: The list of Graph API scopes granted during the sign-in process.
+* <strong>Environment</strong>: The Azure Cloud environment (Public or US Government) the account is authenticated against.</p>
 <p><br></p>
+<h2 id="local-token-caching">Local Token Caching<a class="headerlink" href="#local-token-caching" title="Permanent link">¶</a></h2>
+<p>Use the <code>Cache Tokens Locally</code> checkbox before signing into your tenant in order to enable local caching of the authentication tokens for that specific tenant. If before signing in, the checkbox is not selected, the authentication tokens will only be stored in the app's memory and will be lost once the application is closed.</p>
+<p>Token caching helps you save time by not having to sign in every time you close and reopen the application, by encrypting and storing the authentication tokens securely on your local device. The exact location is in the App's own cache directory which is cleaned up automatically by the system when app itself is uninstalled.</p>
+<p>You can use the <code>Clear Local Cache</code> button to manually clear all locally cached tokens. This will log you out of all accounts that were signed in with the <code>Cache Tokens Locally</code> option enabled, and remove their authentication tokens from the application's memory and local storage.</p>
+<p>The encryption of the local cache is done via <a href="https://learn.microsoft.com/dotnet/standard/security/how-to-use-data-protection">DPAPI</a> and current user's context. That means if the tokens are ever moved to another system then they won't be readable. They cannot be read by another user account on the same device either.</p>
 
 
 
@@ -5122,7 +5304,7 @@ or on
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 26, 2025 07:00:59 UTC"><span class="timeago" datetime="2025-04-26T07:00:59+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 26, 2025 07:00:59 UTC">2025-04-26</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 27, 2026 16:39:52 UTC"><span class="timeago" datetime="2026-02-27T16:39:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 27, 2026 16:39:52 UTC">2026-02-27</span>
   </span>
 
     
